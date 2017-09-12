@@ -17,8 +17,9 @@
             verbose="false"
     >
     <php>
-        <env name="WEBSHOPID" value="928"/>
-        <env name="PASSWORD" value="hermanus"/>
+        <env name="WSDL" value=""/>
+        <env name="APIUSER" value=""/>
+        <env name="APIKEY" value=""/>
     </php>
 
     <testsuites>
