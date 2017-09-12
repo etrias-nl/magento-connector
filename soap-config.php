@@ -13,12 +13,25 @@
 use Phpro\SoapClient\CodeGenerator\Assembler;
 use Phpro\SoapClient\CodeGenerator\Config\Config;
 use Phpro\SoapClient\CodeGenerator\Rules;
+use Phpro\SoapClient\Wsdl\Provider\GuzzleWsdlProvider;
 use Zend\Code\Generator\PropertyGenerator;
 
+$guzzleClient = new \GuzzleHttp\Client([
+    'verify' => false
+]);
+
 return Config::create()
-    ->setWsdl('https://ost.paazl.com/parcelshipperservice/orderRequest.wsdl')
+    ->setSoapOptions([
+        'stream_context' => stream_context_create([
+            'ssl' => [
+                'verify_peer'       => false
+            ]
+        ])
+    ])
+    ->setWsdl('https://www.etrias.nl.dev/index.php/api/v2_soap/?wsdl')
+    ->setWsdlProvider(GuzzleWsdlProvider::createForClient($guzzleClient))
     ->setDestination('src/SoapTypes')
-    ->setNamespace('\\Etrias\\PaazlConnector\\SoapTypes')
+    ->setNamespace('\\Etrias\\MagentoConnector\\SoapTypes')
     ->setRuleSet(
         new Rules\RuleSet(
             [

@@ -9,7 +9,7 @@
 namespace Etrias\MagentoConnector\Exceptions;
 
 
-class AccessDeniedException
+class AccessDeniedException extends MagentoSoapException
 {
 
 }

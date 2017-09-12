@@ -1,22 +1,23 @@
 {
-    "name": "etrias/paazl-connector",
-    "description": "Package generated from https://ost.paazl.com/parcelshipperservice/orderRequest.wsdl using wsdltophp/packagegenerator",
+    "name": "etrias/magento-connector",
+    "description": "",
     "require": {
         "php": ">=5.3.3",
         "ext-soap": "*",
         "phpro/soap-client": "^0.5.0",
         "http-interop/http-factory": "^0.2.0",
         "guzzlehttp/guzzle": "^6.2",
-        "http-interop/http-factory-guzzle": "^0.1.0"
+        "http-interop/http-factory-guzzle": "^0.1.0",
+        "symfony/cache": "^3.3"
     },
     "autoload": {
         "psr-4": {
-            "Etrias\\PaazlConnector\\": "./src/"
+            "Etrias\\MagentoConnector\\": "./src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Etrias\\PaazlConnector\\": "./tests/"
+            "Tests\\Etrias\\MagentoConnector\\": "./tests/"
         }
     },
     "require-dev": {

@@ -27,13 +27,13 @@ class AuthenticationServiceTest extends AbstractServiceTest
     public function setUp()
     {
         parent::setUp();
-        $this->storesService = new AuthenticationService($this->soapClient);
+        $this->authenticationService = new AuthenticationService($this->soapClient, getenv('APIUSER'), getenv('APIKEY'));
     }
 
 
     public function testLogin()
     {
-        $response = $this->authenticationService->getSessionId();
-        var_dump($response);
+        $sessionId = $this->authenticationService->getSessionId();
+        $this->assertEquals(32, strlen($sessionId));
     }
 }

@@ -10,13 +10,13 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Etrias\EwarelConnector\Exceptions;
+namespace Etrias\MagentoConnector\Exceptions;
 
 use Exception;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class EwarehousingException extends Exception
+class MagentoSoapException extends Exception
 {
 
     /** @var RequestInterface|null */
@@ -34,9 +34,9 @@ class EwarehousingException extends Exception
     }
 
     /**
-     * @param null|RequestInterface $request
+     * @param RequestInterface $request
      *
-     * @return EwarehousingException
+     * @return MagentoSoapException
      */
     public function setRequest($request)
     {
@@ -56,7 +56,7 @@ class EwarehousingException extends Exception
     /**
      * @param null|ResultInterface $response
      *
-     * @return EwarehousingException
+     * @return MagentoSoapException
      */
     public function setResponse($response)
     {
