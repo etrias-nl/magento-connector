@@ -17,10 +17,28 @@ use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\MultiArgumentRequest;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
+use SoapClient;
 use SoapFault;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class MagentoClient extends Client implements MagentoClientInterface
 {
+
+    /**
+     * @var ExceptionMap
+     */
+    protected $exceptionMap;
+
+    public function __construct(
+        SoapClient $soapClient,
+        EventDispatcherInterface $dispatcher,
+        ExceptionMap $exceptionMap
+    )
+    {
+        parent::__construct($soapClient, $dispatcher);
+        $this->exceptionMap = $exceptionMap;
+    }
+
     public function processRequest($functionName, RequestInterface $request)
     {
         try {
@@ -28,15 +46,12 @@ class MagentoClient extends Client implements MagentoClientInterface
         } catch (SoapException $exception) {
             $previous = $exception->getPrevious();
             if ($previous instanceof SoapFault) {
-                $code = $previous->faultcode;
-                $exceptionName = ExceptionMap::getException($previous->faultcode);
+                $module = $this->exceptionMap->getModuleByMethodName($functionName);
+                $exceptionName = $this->exceptionMap->getExceptionClassName($previous->faultcode, $module);
+
+                /** @var MagentoSoapException $throwable */
+                $throwable = new $exceptionName($previous->faultstring, $previous->faultcode, $exception);
             }
-
-            /** @var MagentoSoapException $throwable */
-            $throwable = new $exceptionName($previous->faultstring, $previous->faultcode, $exception);
-            $throwable->setRequest($request);
-
-            throw $throwable;
         }
 
         return $this->processResponse($request, $response);
