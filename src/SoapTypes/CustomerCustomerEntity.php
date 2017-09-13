@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CustomerCustomerEntity
 {
-
     /**
      * @var int
      */
@@ -96,26 +107,45 @@ class CustomerCustomerEntity
     protected $password_hash = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var int $customer_id
+     * @var int
      * @var string $created_at
      * @var string $updated_at
      * @var string $increment_id
-     * @var int $store_id
-     * @var int $website_id
+     * @var int    $store_id
+     * @var int    $website_id
      * @var string $created_in
      * @var string $email
      * @var string $firstname
      * @var string $middlename
      * @var string $lastname
-     * @var int $group_id
+     * @var int    $group_id
      * @var string $prefix
      * @var string $suffix
      * @var string $dob
      * @var string $taxvat
-     * @var bool $confirmation
+     * @var bool   $confirmation
      * @var string $password_hash
+     *
+     * @param mixed $customer_id
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $increment_id
+     * @param mixed $store_id
+     * @param mixed $website_id
+     * @param mixed $created_in
+     * @param mixed $email
+     * @param mixed $firstname
+     * @param mixed $middlename
+     * @param mixed $lastname
+     * @param mixed $group_id
+     * @param mixed $prefix
+     * @param mixed $suffix
+     * @param mixed $dob
+     * @param mixed $taxvat
+     * @param mixed $confirmation
+     * @param mixed $password_hash
      */
     public function __construct($customer_id, $created_at, $updated_at, $increment_id, $store_id, $website_id, $created_in, $email, $firstname, $middlename, $lastname, $group_id, $prefix, $suffix, $dob, $taxvat, $confirmation, $password_hash)
     {
@@ -149,11 +179,13 @@ class CustomerCustomerEntity
 
     /**
      * @param int $customer_id
+     *
      * @return $this
      */
     public function setCustomer_id($customer_id)
     {
         $this->customer_id = $customer_id;
+
         return $this;
     }
 
@@ -167,11 +199,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -185,11 +219,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -203,11 +239,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $increment_id
+     *
      * @return $this
      */
     public function setIncrement_id($increment_id)
     {
         $this->increment_id = $increment_id;
+
         return $this;
     }
 
@@ -221,11 +259,13 @@ class CustomerCustomerEntity
 
     /**
      * @param int $store_id
+     *
      * @return $this
      */
     public function setStore_id($store_id)
     {
         $this->store_id = $store_id;
+
         return $this;
     }
 
@@ -239,11 +279,13 @@ class CustomerCustomerEntity
 
     /**
      * @param int $website_id
+     *
      * @return $this
      */
     public function setWebsite_id($website_id)
     {
         $this->website_id = $website_id;
+
         return $this;
     }
 
@@ -257,11 +299,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $created_in
+     *
      * @return $this
      */
     public function setCreated_in($created_in)
     {
         $this->created_in = $created_in;
+
         return $this;
     }
 
@@ -275,11 +319,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $email
+     *
      * @return $this
      */
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
@@ -293,11 +339,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $firstname
+     *
      * @return $this
      */
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
+
         return $this;
     }
 
@@ -311,11 +359,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $middlename
+     *
      * @return $this
      */
     public function setMiddlename($middlename)
     {
         $this->middlename = $middlename;
+
         return $this;
     }
 
@@ -329,11 +379,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $lastname
+     *
      * @return $this
      */
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
+
         return $this;
     }
 
@@ -347,11 +399,13 @@ class CustomerCustomerEntity
 
     /**
      * @param int $group_id
+     *
      * @return $this
      */
     public function setGroup_id($group_id)
     {
         $this->group_id = $group_id;
+
         return $this;
     }
 
@@ -365,11 +419,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $prefix
+     *
      * @return $this
      */
     public function setPrefix($prefix)
     {
         $this->prefix = $prefix;
+
         return $this;
     }
 
@@ -383,11 +439,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $suffix
+     *
      * @return $this
      */
     public function setSuffix($suffix)
     {
         $this->suffix = $suffix;
+
         return $this;
     }
 
@@ -401,11 +459,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $dob
+     *
      * @return $this
      */
     public function setDob($dob)
     {
         $this->dob = $dob;
+
         return $this;
     }
 
@@ -419,11 +479,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $taxvat
+     *
      * @return $this
      */
     public function setTaxvat($taxvat)
     {
         $this->taxvat = $taxvat;
+
         return $this;
     }
 
@@ -437,11 +499,13 @@ class CustomerCustomerEntity
 
     /**
      * @param bool $confirmation
+     *
      * @return $this
      */
     public function setConfirmation($confirmation)
     {
         $this->confirmation = $confirmation;
+
         return $this;
     }
 
@@ -455,14 +519,13 @@ class CustomerCustomerEntity
 
     /**
      * @param string $password_hash
+     *
      * @return $this
      */
     public function setPassword_hash($password_hash)
     {
         $this->password_hash = $password_hash;
+
         return $this;
     }
-
-
 }
-

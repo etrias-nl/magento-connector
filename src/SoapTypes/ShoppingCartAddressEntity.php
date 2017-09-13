@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class ShoppingCartAddressEntity
 {
-
     /**
      * @var string
      */
@@ -141,13 +152,13 @@ class ShoppingCartAddressEntity
     protected $weight = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $address_id
+     * @var string
      * @var string $created_at
      * @var string $updated_at
      * @var string $customer_id
-     * @var int $save_in_address_book
+     * @var int    $save_in_address_book
      * @var string $customer_address_id
      * @var string $address_type
      * @var string $email
@@ -165,11 +176,39 @@ class ShoppingCartAddressEntity
      * @var string $country_id
      * @var string $telephone
      * @var string $fax
-     * @var int $same_as_billing
-     * @var int $free_shipping
+     * @var int    $same_as_billing
+     * @var int    $free_shipping
      * @var string $shipping_method
      * @var string $shipping_description
-     * @var float $weight
+     * @var float  $weight
+     *
+     * @param mixed $address_id
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $customer_id
+     * @param mixed $save_in_address_book
+     * @param mixed $customer_address_id
+     * @param mixed $address_type
+     * @param mixed $email
+     * @param mixed $prefix
+     * @param mixed $firstname
+     * @param mixed $middlename
+     * @param mixed $lastname
+     * @param mixed $suffix
+     * @param mixed $company
+     * @param mixed $street
+     * @param mixed $city
+     * @param mixed $region
+     * @param mixed $region_id
+     * @param mixed $postcode
+     * @param mixed $country_id
+     * @param mixed $telephone
+     * @param mixed $fax
+     * @param mixed $same_as_billing
+     * @param mixed $free_shipping
+     * @param mixed $shipping_method
+     * @param mixed $shipping_description
+     * @param mixed $weight
      */
     public function __construct($address_id, $created_at, $updated_at, $customer_id, $save_in_address_book, $customer_address_id, $address_type, $email, $prefix, $firstname, $middlename, $lastname, $suffix, $company, $street, $city, $region, $region_id, $postcode, $country_id, $telephone, $fax, $same_as_billing, $free_shipping, $shipping_method, $shipping_description, $weight)
     {
@@ -212,11 +251,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $address_id
+     *
      * @return $this
      */
     public function setAddress_id($address_id)
     {
         $this->address_id = $address_id;
+
         return $this;
     }
 
@@ -230,11 +271,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -248,11 +291,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -266,11 +311,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $customer_id
+     *
      * @return $this
      */
     public function setCustomer_id($customer_id)
     {
         $this->customer_id = $customer_id;
+
         return $this;
     }
 
@@ -284,11 +331,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param int $save_in_address_book
+     *
      * @return $this
      */
     public function setSave_in_address_book($save_in_address_book)
     {
         $this->save_in_address_book = $save_in_address_book;
+
         return $this;
     }
 
@@ -302,11 +351,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $customer_address_id
+     *
      * @return $this
      */
     public function setCustomer_address_id($customer_address_id)
     {
         $this->customer_address_id = $customer_address_id;
+
         return $this;
     }
 
@@ -320,11 +371,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $address_type
+     *
      * @return $this
      */
     public function setAddress_type($address_type)
     {
         $this->address_type = $address_type;
+
         return $this;
     }
 
@@ -338,11 +391,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $email
+     *
      * @return $this
      */
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
@@ -356,11 +411,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $prefix
+     *
      * @return $this
      */
     public function setPrefix($prefix)
     {
         $this->prefix = $prefix;
+
         return $this;
     }
 
@@ -374,11 +431,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $firstname
+     *
      * @return $this
      */
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
+
         return $this;
     }
 
@@ -392,11 +451,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $middlename
+     *
      * @return $this
      */
     public function setMiddlename($middlename)
     {
         $this->middlename = $middlename;
+
         return $this;
     }
 
@@ -410,11 +471,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $lastname
+     *
      * @return $this
      */
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
+
         return $this;
     }
 
@@ -428,11 +491,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $suffix
+     *
      * @return $this
      */
     public function setSuffix($suffix)
     {
         $this->suffix = $suffix;
+
         return $this;
     }
 
@@ -446,11 +511,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $company
+     *
      * @return $this
      */
     public function setCompany($company)
     {
         $this->company = $company;
+
         return $this;
     }
 
@@ -464,11 +531,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $street
+     *
      * @return $this
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
@@ -482,11 +551,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $city
+     *
      * @return $this
      */
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
@@ -500,11 +571,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $region
+     *
      * @return $this
      */
     public function setRegion($region)
     {
         $this->region = $region;
+
         return $this;
     }
 
@@ -518,11 +591,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $region_id
+     *
      * @return $this
      */
     public function setRegion_id($region_id)
     {
         $this->region_id = $region_id;
+
         return $this;
     }
 
@@ -536,11 +611,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $postcode
+     *
      * @return $this
      */
     public function setPostcode($postcode)
     {
         $this->postcode = $postcode;
+
         return $this;
     }
 
@@ -554,11 +631,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $country_id
+     *
      * @return $this
      */
     public function setCountry_id($country_id)
     {
         $this->country_id = $country_id;
+
         return $this;
     }
 
@@ -572,11 +651,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $telephone
+     *
      * @return $this
      */
     public function setTelephone($telephone)
     {
         $this->telephone = $telephone;
+
         return $this;
     }
 
@@ -590,11 +671,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $fax
+     *
      * @return $this
      */
     public function setFax($fax)
     {
         $this->fax = $fax;
+
         return $this;
     }
 
@@ -608,11 +691,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param int $same_as_billing
+     *
      * @return $this
      */
     public function setSame_as_billing($same_as_billing)
     {
         $this->same_as_billing = $same_as_billing;
+
         return $this;
     }
 
@@ -626,11 +711,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param int $free_shipping
+     *
      * @return $this
      */
     public function setFree_shipping($free_shipping)
     {
         $this->free_shipping = $free_shipping;
+
         return $this;
     }
 
@@ -644,11 +731,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $shipping_method
+     *
      * @return $this
      */
     public function setShipping_method($shipping_method)
     {
         $this->shipping_method = $shipping_method;
+
         return $this;
     }
 
@@ -662,11 +751,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param string $shipping_description
+     *
      * @return $this
      */
     public function setShipping_description($shipping_description)
     {
         $this->shipping_description = $shipping_description;
+
         return $this;
     }
 
@@ -680,14 +771,13 @@ class ShoppingCartAddressEntity
 
     /**
      * @param float $weight
+     *
      * @return $this
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
         return $this;
     }
-
-
 }
-

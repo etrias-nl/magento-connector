@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of PHP CS Fixer.
  *
@@ -102,7 +104,6 @@ use Etrias\MagentoConnector\Exceptions\WebsiteNotFoundException;
  */
 class ExceptionMap
 {
-
     /**
      * @var array
      */
@@ -201,14 +202,14 @@ class ExceptionMap
             '413' => IncorrectResourceTypeException::class,
             '414' => CannotSaveException::class,
             '415' => ValidationException::class,
-            '416' => CannotRemoveException::class
+            '416' => CannotRemoveException::class,
         ],
         'giftmessage' => [
             '1001' => StoreNotExistsException::class,
             '1002' => QuoteNotExistsException::class,
             '1101' => InvalidGiftMessageException::class,
             '1102' => InvalidProductDataException::class,
-            '1103' => QuoteItemNotExistsException::class
+            '1103' => QuoteItemNotExistsException::class,
         ],
         'sales' => [
             '100' => OrderNotExistsOrRequestedShipmentNotExistsException::class,
@@ -231,8 +232,7 @@ class ExceptionMap
         'OPPCw' => [
             '101' => InvalidfiltersException::class,
             '102' => TransactionNotExistsException::class,
-        ]
-
+        ],
     ];
 
     /**
@@ -247,8 +247,8 @@ class ExceptionMap
 
     /**
      * @param $code
-     *
      * @param string $module
+     *
      * @return string
      */
     public function getExceptionClassName($code, $module = '')
@@ -270,12 +270,12 @@ class ExceptionMap
 
     /**
      * @param $methodName
+     *
      * @return string
      */
     public function getModuleByMethodName($methodName)
     {
         if (false !== $underscorePos = strpos($methodName, '_')) {
-
             return substr($methodName, 0, $underscorePos);
         }
 
@@ -284,7 +284,8 @@ class ExceptionMap
 
     /**
      * @param string $module
-     * @param array $codeMap
+     * @param array  $codeMap
+     *
      * @return $this
      */
     public function addModule($module, array $codeMap)
@@ -293,6 +294,4 @@ class ExceptionMap
 
         return $this;
     }
-
-
 }

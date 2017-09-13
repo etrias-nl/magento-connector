@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CustomerAddressEntityCreate
 {
-
     /**
      * @var string
      */
@@ -86,24 +97,41 @@ class CustomerAddressEntityCreate
     protected $is_default_shipping = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $city
-     * @var string $company
-     * @var string $country_id
-     * @var string $fax
-     * @var string $firstname
-     * @var string $lastname
-     * @var string $middlename
-     * @var string $postcode
-     * @var string $prefix
-     * @var int $region_id
-     * @var string $region
+     * @var string
+     * @var string        $company
+     * @var string        $country_id
+     * @var string        $fax
+     * @var string        $firstname
+     * @var string        $lastname
+     * @var string        $middlename
+     * @var string        $postcode
+     * @var string        $prefix
+     * @var int           $region_id
+     * @var string        $region
      * @var ArrayOfString $street
-     * @var string $suffix
-     * @var string $telephone
-     * @var bool $is_default_billing
-     * @var bool $is_default_shipping
+     * @var string        $suffix
+     * @var string        $telephone
+     * @var bool          $is_default_billing
+     * @var bool          $is_default_shipping
+     *
+     * @param mixed $city
+     * @param mixed $company
+     * @param mixed $country_id
+     * @param mixed $fax
+     * @param mixed $firstname
+     * @param mixed $lastname
+     * @param mixed $middlename
+     * @param mixed $postcode
+     * @param mixed $prefix
+     * @param mixed $region_id
+     * @param mixed $region
+     * @param mixed $street
+     * @param mixed $suffix
+     * @param mixed $telephone
+     * @param mixed $is_default_billing
+     * @param mixed $is_default_shipping
      */
     public function __construct($city, $company, $country_id, $fax, $firstname, $lastname, $middlename, $postcode, $prefix, $region_id, $region, $street, $suffix, $telephone, $is_default_billing, $is_default_shipping)
     {
@@ -135,11 +163,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $city
+     *
      * @return $this
      */
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
@@ -153,11 +183,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $company
+     *
      * @return $this
      */
     public function setCompany($company)
     {
         $this->company = $company;
+
         return $this;
     }
 
@@ -171,11 +203,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $country_id
+     *
      * @return $this
      */
     public function setCountry_id($country_id)
     {
         $this->country_id = $country_id;
+
         return $this;
     }
 
@@ -189,11 +223,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $fax
+     *
      * @return $this
      */
     public function setFax($fax)
     {
         $this->fax = $fax;
+
         return $this;
     }
 
@@ -207,11 +243,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $firstname
+     *
      * @return $this
      */
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
+
         return $this;
     }
 
@@ -225,11 +263,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $lastname
+     *
      * @return $this
      */
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
+
         return $this;
     }
 
@@ -243,11 +283,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $middlename
+     *
      * @return $this
      */
     public function setMiddlename($middlename)
     {
         $this->middlename = $middlename;
+
         return $this;
     }
 
@@ -261,11 +303,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $postcode
+     *
      * @return $this
      */
     public function setPostcode($postcode)
     {
         $this->postcode = $postcode;
+
         return $this;
     }
 
@@ -279,11 +323,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $prefix
+     *
      * @return $this
      */
     public function setPrefix($prefix)
     {
         $this->prefix = $prefix;
+
         return $this;
     }
 
@@ -297,11 +343,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param int $region_id
+     *
      * @return $this
      */
     public function setRegion_id($region_id)
     {
         $this->region_id = $region_id;
+
         return $this;
     }
 
@@ -315,11 +363,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $region
+     *
      * @return $this
      */
     public function setRegion($region)
     {
         $this->region = $region;
+
         return $this;
     }
 
@@ -333,11 +383,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param ArrayOfString $street
+     *
      * @return $this
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
@@ -351,11 +403,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $suffix
+     *
      * @return $this
      */
     public function setSuffix($suffix)
     {
         $this->suffix = $suffix;
+
         return $this;
     }
 
@@ -369,11 +423,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param string $telephone
+     *
      * @return $this
      */
     public function setTelephone($telephone)
     {
         $this->telephone = $telephone;
+
         return $this;
     }
 
@@ -387,11 +443,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param bool $is_default_billing
+     *
      * @return $this
      */
     public function setIs_default_billing($is_default_billing)
     {
         $this->is_default_billing = $is_default_billing;
+
         return $this;
     }
 
@@ -405,14 +463,13 @@ class CustomerAddressEntityCreate
 
     /**
      * @param bool $is_default_shipping
+     *
      * @return $this
      */
     public function setIs_default_shipping($is_default_shipping)
     {
         $this->is_default_shipping = $is_default_shipping;
+
         return $this;
     }
-
-
 }
-

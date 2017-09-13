@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogAssignedProduct
 {
-
     /**
      * @var int
      */
@@ -31,13 +42,19 @@ class CatalogAssignedProduct
     protected $position = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var int $product_id
+     * @var int
      * @var string $type
-     * @var int $set
+     * @var int    $set
      * @var string $sku
-     * @var int $position
+     * @var int    $position
+     *
+     * @param mixed $product_id
+     * @param mixed $type
+     * @param mixed $set
+     * @param mixed $sku
+     * @param mixed $position
      */
     public function __construct($product_id, $type, $set, $sku, $position)
     {
@@ -58,11 +75,13 @@ class CatalogAssignedProduct
 
     /**
      * @param int $product_id
+     *
      * @return $this
      */
     public function setProduct_id($product_id)
     {
         $this->product_id = $product_id;
+
         return $this;
     }
 
@@ -76,11 +95,13 @@ class CatalogAssignedProduct
 
     /**
      * @param string $type
+     *
      * @return $this
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -94,11 +115,13 @@ class CatalogAssignedProduct
 
     /**
      * @param int $set
+     *
      * @return $this
      */
     public function setSet($set)
     {
         $this->set = $set;
+
         return $this;
     }
 
@@ -112,11 +135,13 @@ class CatalogAssignedProduct
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -130,14 +155,13 @@ class CatalogAssignedProduct
 
     /**
      * @param int $position
+     *
      * @return $this
      */
     public function setPosition($position)
     {
         $this->position = $position;
+
         return $this;
     }
-
-
 }
-

@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class AssociativeEntity
 {
-
     /**
      * @var string
      */
@@ -16,10 +27,13 @@ class AssociativeEntity
     protected $value = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $key
+     * @var string
      * @var string $value
+     *
+     * @param mixed $key
+     * @param mixed $value
      */
     public function __construct($key, $value)
     {
@@ -37,11 +51,13 @@ class AssociativeEntity
 
     /**
      * @param string $key
+     *
      * @return $this
      */
     public function setKey($key)
     {
         $this->key = $key;
+
         return $this;
     }
 
@@ -55,14 +71,13 @@ class AssociativeEntity
 
     /**
      * @param string $value
+     *
      * @return $this
      */
     public function setValue($value)
     {
         $this->value = $value;
+
         return $this;
     }
-
-
 }
-

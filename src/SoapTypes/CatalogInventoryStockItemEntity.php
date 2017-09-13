@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogInventoryStockItemEntity
 {
-
     /**
      * @var string
      */
@@ -26,12 +37,17 @@ class CatalogInventoryStockItemEntity
     protected $is_in_stock = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $product_id
+     * @var string
      * @var string $sku
      * @var string $qty
      * @var string $is_in_stock
+     *
+     * @param mixed $product_id
+     * @param mixed $sku
+     * @param mixed $qty
+     * @param mixed $is_in_stock
      */
     public function __construct($product_id, $sku, $qty, $is_in_stock)
     {
@@ -51,11 +67,13 @@ class CatalogInventoryStockItemEntity
 
     /**
      * @param string $product_id
+     *
      * @return $this
      */
     public function setProduct_id($product_id)
     {
         $this->product_id = $product_id;
+
         return $this;
     }
 
@@ -69,11 +87,13 @@ class CatalogInventoryStockItemEntity
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -87,11 +107,13 @@ class CatalogInventoryStockItemEntity
 
     /**
      * @param string $qty
+     *
      * @return $this
      */
     public function setQty($qty)
     {
         $this->qty = $qty;
+
         return $this;
     }
 
@@ -105,14 +127,13 @@ class CatalogInventoryStockItemEntity
 
     /**
      * @param string $is_in_stock
+     *
      * @return $this
      */
     public function setIs_in_stock($is_in_stock)
     {
         $this->is_in_stock = $is_in_stock;
+
         return $this;
     }
-
-
 }
-

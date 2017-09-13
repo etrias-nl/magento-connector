@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class ExistsFaltureEntity
 {
-
     /**
      * @var string
      */
@@ -16,10 +27,13 @@ class ExistsFaltureEntity
     protected $message = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $code
+     * @var string
      * @var string $message
+     *
+     * @param mixed $code
+     * @param mixed $message
      */
     public function __construct($code, $message)
     {
@@ -37,11 +51,13 @@ class ExistsFaltureEntity
 
     /**
      * @param string $code
+     *
      * @return $this
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -55,14 +71,13 @@ class ExistsFaltureEntity
 
     /**
      * @param string $message
+     *
      * @return $this
      */
     public function setMessage($message)
     {
         $this->message = $message;
+
         return $this;
     }
-
-
 }
-

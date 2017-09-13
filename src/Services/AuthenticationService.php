@@ -1,13 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: cprinse
- * Date: 4-9-17
- * Time: 15:55
+
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Etrias\MagentoConnector\Services;
-
 
 use BadMethodCallException;
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
@@ -22,28 +27,28 @@ class AuthenticationService
     /** @var MagentoAdapterInterface */
     protected $adapter;
 
-    /** @var  string */
-    private $username;
-
-    /** @var  string */
-    private $apiKey;
-
-    /** @var  AdapterInterface */
-    private $cacheAdapter;
-
-    /** @var  integer */
+    /** @var int */
     protected $cacheTtl;
 
-    /** @var  string */
+    /** @var string */
     protected $cacheKey;
+
+    /** @var string */
+    private $username;
+
+    /** @var string */
+    private $apiKey;
+
+    /** @var AdapterInterface */
+    private $cacheAdapter;
 
     /**
      * AuthenticationService constructor.
      *
      * @param MagentoAdapterInterface $adapter
-     * @param string $username
-     * @param string $apiKey
-     * @param AdapterInterface|null $cacheAdapter
+     * @param string                  $username
+     * @param string                  $apiKey
+     * @param AdapterInterface|null   $cacheAdapter
      */
     public function __construct(
         MagentoAdapterInterface $adapter,
@@ -74,6 +79,7 @@ class AuthenticationService
 
     /**
      * @param int $cacheTtl
+     *
      * @return AuthenticationService
      */
     public function setCacheTtl($cacheTtl)
@@ -93,6 +99,7 @@ class AuthenticationService
 
     /**
      * @param string $cacheKey
+     *
      * @return AuthenticationService
      */
     public function setCacheKey($cacheKey)
@@ -105,7 +112,7 @@ class AuthenticationService
     /**
      * @throws BadMethodCallException
      */
-    public function startSession() :string
+    public function startSession(): string
     {
         throw new BadMethodCallException('Please use the loginMethod');
     }
@@ -113,7 +120,7 @@ class AuthenticationService
     /**
      * @return bool
      */
-    public function endSession() :bool
+    public function endSession(): bool
     {
         $cacheItem = $this->cacheAdapter->getItem($this->getCacheKey());
         if ($cacheItem->isHit()) {
@@ -126,14 +133,14 @@ class AuthenticationService
     /**
      * @return string SessionId
      */
-    public function login() :string
+    public function login(): string
     {
         $cacheItem = $this->cacheAdapter->getItem($this->getCacheKey());
         if ($cacheItem->isHit()) {
             return $cacheItem->get();
         }
 
-        $response = $this->adapter->login($this->username,  $this->apiKey);
+        $response = $this->adapter->login($this->username, $this->apiKey);
 
         $cacheItem
             ->expiresAfter($this->getCacheTtl())
@@ -143,5 +150,4 @@ class AuthenticationService
 
         return $response;
     }
-
 }

@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductAttributeOptionLabelEntity
 {
-
     /**
      * @var ArrayOfString
      */
@@ -16,10 +27,13 @@ class CatalogProductAttributeOptionLabelEntity
     protected $value = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var ArrayOfString $store_id
-     * @var string $value
+     * @var ArrayOfString
+     * @var string        $value
+     *
+     * @param mixed $store_id
+     * @param mixed $value
      */
     public function __construct($store_id, $value)
     {
@@ -37,11 +51,13 @@ class CatalogProductAttributeOptionLabelEntity
 
     /**
      * @param ArrayOfString $store_id
+     *
      * @return $this
      */
     public function setStore_id($store_id)
     {
         $this->store_id = $store_id;
+
         return $this;
     }
 
@@ -55,14 +71,13 @@ class CatalogProductAttributeOptionLabelEntity
 
     /**
      * @param string $value
+     *
      * @return $this
      */
     public function setValue($value)
     {
         $this->value = $value;
+
         return $this;
     }
-
-
 }
-

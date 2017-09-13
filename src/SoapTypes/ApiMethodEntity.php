@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class ApiMethodEntity
 {
-
     /**
      * @var string
      */
@@ -26,12 +37,17 @@ class ApiMethodEntity
     protected $aliases = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $title
-     * @var string $path
-     * @var string $name
+     * @var string
+     * @var string        $path
+     * @var string        $name
      * @var ArrayOfString $aliases
+     *
+     * @param mixed $title
+     * @param mixed $path
+     * @param mixed $name
+     * @param mixed $aliases
      */
     public function __construct($title, $path, $name, $aliases)
     {
@@ -51,11 +67,13 @@ class ApiMethodEntity
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -69,11 +87,13 @@ class ApiMethodEntity
 
     /**
      * @param string $path
+     *
      * @return $this
      */
     public function setPath($path)
     {
         $this->path = $path;
+
         return $this;
     }
 
@@ -87,11 +107,13 @@ class ApiMethodEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -105,14 +127,13 @@ class ApiMethodEntity
 
     /**
      * @param ArrayOfString $aliases
+     *
      * @return $this
      */
     public function setAliases($aliases)
     {
         $this->aliases = $aliases;
+
         return $this;
     }
-
-
 }
-

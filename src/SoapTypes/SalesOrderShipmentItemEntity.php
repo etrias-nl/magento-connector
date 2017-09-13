@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class SalesOrderShipmentItemEntity
 {
-
     /**
      * @var string
      */
@@ -71,9 +82,9 @@ class SalesOrderShipmentItemEntity
     protected $item_id = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $increment_id
+     * @var string
      * @var string $parent_id
      * @var string $created_at
      * @var string $updated_at
@@ -86,6 +97,20 @@ class SalesOrderShipmentItemEntity
      * @var string $price
      * @var string $qty
      * @var string $item_id
+     *
+     * @param mixed $increment_id
+     * @param mixed $parent_id
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $is_active
+     * @param mixed $sku
+     * @param mixed $name
+     * @param mixed $order_item_id
+     * @param mixed $product_id
+     * @param mixed $weight
+     * @param mixed $price
+     * @param mixed $qty
+     * @param mixed $item_id
      */
     public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $sku, $name, $order_item_id, $product_id, $weight, $price, $qty, $item_id)
     {
@@ -114,11 +139,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $increment_id
+     *
      * @return $this
      */
     public function setIncrement_id($increment_id)
     {
         $this->increment_id = $increment_id;
+
         return $this;
     }
 
@@ -132,11 +159,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $parent_id
+     *
      * @return $this
      */
     public function setParent_id($parent_id)
     {
         $this->parent_id = $parent_id;
+
         return $this;
     }
 
@@ -150,11 +179,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -168,11 +199,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -186,11 +219,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $is_active
+     *
      * @return $this
      */
     public function setIs_active($is_active)
     {
         $this->is_active = $is_active;
+
         return $this;
     }
 
@@ -204,11 +239,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -222,11 +259,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -240,11 +279,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $order_item_id
+     *
      * @return $this
      */
     public function setOrder_item_id($order_item_id)
     {
         $this->order_item_id = $order_item_id;
+
         return $this;
     }
 
@@ -258,11 +299,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $product_id
+     *
      * @return $this
      */
     public function setProduct_id($product_id)
     {
         $this->product_id = $product_id;
+
         return $this;
     }
 
@@ -276,11 +319,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $weight
+     *
      * @return $this
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
         return $this;
     }
 
@@ -294,11 +339,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $price
+     *
      * @return $this
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
 
@@ -312,11 +359,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $qty
+     *
      * @return $this
      */
     public function setQty($qty)
     {
         $this->qty = $qty;
+
         return $this;
     }
 
@@ -330,14 +379,13 @@ class SalesOrderShipmentItemEntity
 
     /**
      * @param string $item_id
+     *
      * @return $this
      */
     public function setItem_id($item_id)
     {
         $this->item_id = $item_id;
+
         return $this;
     }
-
-
 }
-

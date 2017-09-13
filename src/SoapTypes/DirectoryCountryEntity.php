@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class DirectoryCountryEntity
 {
-
     /**
      * @var string
      */
@@ -26,12 +37,17 @@ class DirectoryCountryEntity
     protected $name = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $country_id
+     * @var string
      * @var string $iso2_code
      * @var string $iso3_code
      * @var string $name
+     *
+     * @param mixed $country_id
+     * @param mixed $iso2_code
+     * @param mixed $iso3_code
+     * @param mixed $name
      */
     public function __construct($country_id, $iso2_code, $iso3_code, $name)
     {
@@ -51,11 +67,13 @@ class DirectoryCountryEntity
 
     /**
      * @param string $country_id
+     *
      * @return $this
      */
     public function setCountry_id($country_id)
     {
         $this->country_id = $country_id;
+
         return $this;
     }
 
@@ -69,11 +87,13 @@ class DirectoryCountryEntity
 
     /**
      * @param string $iso2_code
+     *
      * @return $this
      */
     public function setIso2_code($iso2_code)
     {
         $this->iso2_code = $iso2_code;
+
         return $this;
     }
 
@@ -87,11 +107,13 @@ class DirectoryCountryEntity
 
     /**
      * @param string $iso3_code
+     *
      * @return $this
      */
     public function setIso3_code($iso3_code)
     {
         $this->iso3_code = $iso3_code;
+
         return $this;
     }
 
@@ -105,14 +127,13 @@ class DirectoryCountryEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
-
-
 }
-

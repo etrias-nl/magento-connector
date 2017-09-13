@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogCategoryEntity
 {
-
     /**
      * @var int
      */
@@ -41,15 +52,23 @@ class CatalogCategoryEntity
     protected $children = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var int $category_id
-     * @var int $parent_id
-     * @var string $name
-     * @var int $is_active
-     * @var int $position
-     * @var int $level
+     * @var int
+     * @var int                            $parent_id
+     * @var string                         $name
+     * @var int                            $is_active
+     * @var int                            $position
+     * @var int                            $level
      * @var ArrayOfCatalogCategoryEntities $children
+     *
+     * @param mixed $category_id
+     * @param mixed $parent_id
+     * @param mixed $name
+     * @param mixed $is_active
+     * @param mixed $position
+     * @param mixed $level
+     * @param mixed $children
      */
     public function __construct($category_id, $parent_id, $name, $is_active, $position, $level, $children)
     {
@@ -72,11 +91,13 @@ class CatalogCategoryEntity
 
     /**
      * @param int $category_id
+     *
      * @return $this
      */
     public function setCategory_id($category_id)
     {
         $this->category_id = $category_id;
+
         return $this;
     }
 
@@ -90,11 +111,13 @@ class CatalogCategoryEntity
 
     /**
      * @param int $parent_id
+     *
      * @return $this
      */
     public function setParent_id($parent_id)
     {
         $this->parent_id = $parent_id;
+
         return $this;
     }
 
@@ -108,11 +131,13 @@ class CatalogCategoryEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -126,11 +151,13 @@ class CatalogCategoryEntity
 
     /**
      * @param int $is_active
+     *
      * @return $this
      */
     public function setIs_active($is_active)
     {
         $this->is_active = $is_active;
+
         return $this;
     }
 
@@ -144,11 +171,13 @@ class CatalogCategoryEntity
 
     /**
      * @param int $position
+     *
      * @return $this
      */
     public function setPosition($position)
     {
         $this->position = $position;
+
         return $this;
     }
 
@@ -162,11 +191,13 @@ class CatalogCategoryEntity
 
     /**
      * @param int $level
+     *
      * @return $this
      */
     public function setLevel($level)
     {
         $this->level = $level;
+
         return $this;
     }
 
@@ -180,14 +211,13 @@ class CatalogCategoryEntity
 
     /**
      * @param ArrayOfCatalogCategoryEntities $children
+     *
      * @return $this
      */
     public function setChildren($children)
     {
         $this->children = $children;
+
         return $this;
     }
-
-
 }
-

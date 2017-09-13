@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductAttributeSetEntity
 {
-
     /**
      * @var int
      */
@@ -16,10 +27,13 @@ class CatalogProductAttributeSetEntity
     protected $name = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var int $set_id
+     * @var int
      * @var string $name
+     *
+     * @param mixed $set_id
+     * @param mixed $name
      */
     public function __construct($set_id, $name)
     {
@@ -37,11 +51,13 @@ class CatalogProductAttributeSetEntity
 
     /**
      * @param int $set_id
+     *
      * @return $this
      */
     public function setSet_id($set_id)
     {
         $this->set_id = $set_id;
+
         return $this;
     }
 
@@ -55,14 +71,13 @@ class CatalogProductAttributeSetEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
-
-
 }
-

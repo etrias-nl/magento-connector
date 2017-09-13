@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductCustomOptionAdditionalFieldsEntity
 {
-
     /**
      * @var string
      */
@@ -56,9 +67,9 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     protected $value_id = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $title
+     * @var string
      * @var string $price
      * @var string $price_type
      * @var string $sku
@@ -68,6 +79,17 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      * @var string $image_size_x
      * @var string $image_size_y
      * @var string $value_id
+     *
+     * @param mixed $title
+     * @param mixed $price
+     * @param mixed $price_type
+     * @param mixed $sku
+     * @param mixed $max_characters
+     * @param mixed $sort_order
+     * @param mixed $file_extension
+     * @param mixed $image_size_x
+     * @param mixed $image_size_y
+     * @param mixed $value_id
      */
     public function __construct($title, $price, $price_type, $sku, $max_characters, $sort_order, $file_extension, $image_size_x, $image_size_y, $value_id)
     {
@@ -93,11 +115,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -111,11 +135,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $price
+     *
      * @return $this
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
 
@@ -129,11 +155,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $price_type
+     *
      * @return $this
      */
     public function setPrice_type($price_type)
     {
         $this->price_type = $price_type;
+
         return $this;
     }
 
@@ -147,11 +175,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -165,11 +195,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $max_characters
+     *
      * @return $this
      */
     public function setMax_characters($max_characters)
     {
         $this->max_characters = $max_characters;
+
         return $this;
     }
 
@@ -183,11 +215,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $sort_order
+     *
      * @return $this
      */
     public function setSort_order($sort_order)
     {
         $this->sort_order = $sort_order;
+
         return $this;
     }
 
@@ -201,11 +235,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $file_extension
+     *
      * @return $this
      */
     public function setFile_extension($file_extension)
     {
         $this->file_extension = $file_extension;
+
         return $this;
     }
 
@@ -219,11 +255,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $image_size_x
+     *
      * @return $this
      */
     public function setImage_size_x($image_size_x)
     {
         $this->image_size_x = $image_size_x;
+
         return $this;
     }
 
@@ -237,11 +275,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $image_size_y
+     *
      * @return $this
      */
     public function setImage_size_y($image_size_y)
     {
         $this->image_size_y = $image_size_y;
+
         return $this;
     }
 
@@ -255,14 +295,13 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
 
     /**
      * @param string $value_id
+     *
      * @return $this
      */
     public function setValue_id($value_id)
     {
         $this->value_id = $value_id;
+
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of PHP CS Fixer.
  *
@@ -12,8 +14,6 @@
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
-use BadMethodCallException;
-use Etrias\MagentoConnector\Services\AuthenticationService;
 use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\SoapTypes\ApiEntity;
 use Etrias\MagentoConnector\SoapTypes\ExistsFaltureEntity;
@@ -34,7 +34,6 @@ class GeneralServiceTest extends AbstractServiceTest
         $this->service = new GeneralService($this->adapter, $this->authenticationService);
     }
 
-
     public function testGetResources()
     {
         $resources = $this->service->getResources();
@@ -52,5 +51,4 @@ class GeneralServiceTest extends AbstractServiceTest
         $faults = $this->service->getResourceFaults('catalog');
         $this->assertInstanceOf(ExistsFaltureEntity::class, reset($faults));
     }
-
 }

@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class SalesOrderAddressEntity
 {
-
     /**
      * @var string
      */
@@ -96,9 +107,9 @@ class SalesOrderAddressEntity
     protected $address_id = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $increment_id
+     * @var string
      * @var string $parent_id
      * @var string $created_at
      * @var string $updated_at
@@ -116,6 +127,25 @@ class SalesOrderAddressEntity
      * @var string $fax
      * @var string $region_id
      * @var string $address_id
+     *
+     * @param mixed $increment_id
+     * @param mixed $parent_id
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $is_active
+     * @param mixed $address_type
+     * @param mixed $firstname
+     * @param mixed $lastname
+     * @param mixed $company
+     * @param mixed $street
+     * @param mixed $city
+     * @param mixed $region
+     * @param mixed $postcode
+     * @param mixed $country_id
+     * @param mixed $telephone
+     * @param mixed $fax
+     * @param mixed $region_id
+     * @param mixed $address_id
      */
     public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $address_type, $firstname, $lastname, $company, $street, $city, $region, $postcode, $country_id, $telephone, $fax, $region_id, $address_id)
     {
@@ -149,11 +179,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $increment_id
+     *
      * @return $this
      */
     public function setIncrement_id($increment_id)
     {
         $this->increment_id = $increment_id;
+
         return $this;
     }
 
@@ -167,11 +199,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $parent_id
+     *
      * @return $this
      */
     public function setParent_id($parent_id)
     {
         $this->parent_id = $parent_id;
+
         return $this;
     }
 
@@ -185,11 +219,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -203,11 +239,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -221,11 +259,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $is_active
+     *
      * @return $this
      */
     public function setIs_active($is_active)
     {
         $this->is_active = $is_active;
+
         return $this;
     }
 
@@ -239,11 +279,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $address_type
+     *
      * @return $this
      */
     public function setAddress_type($address_type)
     {
         $this->address_type = $address_type;
+
         return $this;
     }
 
@@ -257,11 +299,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $firstname
+     *
      * @return $this
      */
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
+
         return $this;
     }
 
@@ -275,11 +319,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $lastname
+     *
      * @return $this
      */
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
+
         return $this;
     }
 
@@ -293,11 +339,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $company
+     *
      * @return $this
      */
     public function setCompany($company)
     {
         $this->company = $company;
+
         return $this;
     }
 
@@ -311,11 +359,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $street
+     *
      * @return $this
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
@@ -329,11 +379,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $city
+     *
      * @return $this
      */
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
@@ -347,11 +399,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $region
+     *
      * @return $this
      */
     public function setRegion($region)
     {
         $this->region = $region;
+
         return $this;
     }
 
@@ -365,11 +419,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $postcode
+     *
      * @return $this
      */
     public function setPostcode($postcode)
     {
         $this->postcode = $postcode;
+
         return $this;
     }
 
@@ -383,11 +439,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $country_id
+     *
      * @return $this
      */
     public function setCountry_id($country_id)
     {
         $this->country_id = $country_id;
+
         return $this;
     }
 
@@ -401,11 +459,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $telephone
+     *
      * @return $this
      */
     public function setTelephone($telephone)
     {
         $this->telephone = $telephone;
+
         return $this;
     }
 
@@ -419,11 +479,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $fax
+     *
      * @return $this
      */
     public function setFax($fax)
     {
         $this->fax = $fax;
+
         return $this;
     }
 
@@ -437,11 +499,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $region_id
+     *
      * @return $this
      */
     public function setRegion_id($region_id)
     {
         $this->region_id = $region_id;
+
         return $this;
     }
 
@@ -455,14 +519,13 @@ class SalesOrderAddressEntity
 
     /**
      * @param string $address_id
+     *
      * @return $this
      */
     public function setAddress_id($address_id)
     {
         $this->address_id = $address_id;
+
         return $this;
     }
-
-
 }
-

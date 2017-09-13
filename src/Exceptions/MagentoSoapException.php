@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of PHP CS Fixer.
  *
@@ -18,7 +20,6 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class MagentoSoapException extends Exception
 {
-
     /** @var RequestInterface|null */
     protected $request = null;
 

@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductEntity
 {
-
     /**
      * @var string
      */
@@ -41,15 +52,23 @@ class CatalogProductEntity
     protected $website_ids = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $product_id
-     * @var string $sku
-     * @var string $name
-     * @var string $set
-     * @var string $type
+     * @var string
+     * @var string        $sku
+     * @var string        $name
+     * @var string        $set
+     * @var string        $type
      * @var ArrayOfString $category_ids
      * @var ArrayOfString $website_ids
+     *
+     * @param mixed $product_id
+     * @param mixed $sku
+     * @param mixed $name
+     * @param mixed $set
+     * @param mixed $type
+     * @param mixed $category_ids
+     * @param mixed $website_ids
      */
     public function __construct($product_id, $sku, $name, $set, $type, $category_ids, $website_ids)
     {
@@ -72,11 +91,13 @@ class CatalogProductEntity
 
     /**
      * @param string $product_id
+     *
      * @return $this
      */
     public function setProduct_id($product_id)
     {
         $this->product_id = $product_id;
+
         return $this;
     }
 
@@ -90,11 +111,13 @@ class CatalogProductEntity
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -108,11 +131,13 @@ class CatalogProductEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -126,11 +151,13 @@ class CatalogProductEntity
 
     /**
      * @param string $set
+     *
      * @return $this
      */
     public function setSet($set)
     {
         $this->set = $set;
+
         return $this;
     }
 
@@ -144,11 +171,13 @@ class CatalogProductEntity
 
     /**
      * @param string $type
+     *
      * @return $this
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -162,11 +191,13 @@ class CatalogProductEntity
 
     /**
      * @param ArrayOfString $category_ids
+     *
      * @return $this
      */
     public function setCategory_ids($category_ids)
     {
         $this->category_ids = $category_ids;
+
         return $this;
     }
 
@@ -180,14 +211,13 @@ class CatalogProductEntity
 
     /**
      * @param ArrayOfString $website_ids
+     *
      * @return $this
      */
     public function setWebsite_ids($website_ids)
     {
         $this->website_ids = $website_ids;
+
         return $this;
     }
-
-
 }
-

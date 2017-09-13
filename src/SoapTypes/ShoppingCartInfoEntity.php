@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class ShoppingCartInfoEntity
 {
-
     /**
      * @var string
      */
@@ -311,69 +322,131 @@ class ShoppingCartInfoEntity
     protected $payment = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $store_id
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $converted_at
-     * @var int $quote_id
-     * @var int $is_active
-     * @var int $is_virtual
-     * @var int $is_multi_shipping
-     * @var float $items_count
-     * @var float $items_qty
-     * @var string $orig_order_id
-     * @var string $store_to_base_rate
-     * @var string $store_to_quote_rate
-     * @var string $base_currency_code
-     * @var string $store_currency_code
-     * @var string $quote_currency_code
-     * @var string $grand_total
-     * @var string $base_grand_total
-     * @var string $checkout_method
-     * @var string $customer_id
-     * @var string $customer_tax_class_id
-     * @var int $customer_group_id
-     * @var string $customer_email
-     * @var string $customer_prefix
-     * @var string $customer_firstname
-     * @var string $customer_middlename
-     * @var string $customer_lastname
-     * @var string $customer_suffix
-     * @var string $customer_note
-     * @var string $customer_note_notify
-     * @var string $customer_is_guest
-     * @var string $applied_rule_ids
-     * @var string $reserved_order_id
-     * @var string $password_hash
-     * @var string $coupon_code
-     * @var string $global_currency_code
-     * @var float $base_to_global_rate
-     * @var float $base_to_quote_rate
-     * @var string $customer_taxvat
-     * @var string $customer_gender
-     * @var float $subtotal
-     * @var float $base_subtotal
-     * @var float $subtotal_with_discount
-     * @var float $base_subtotal_with_discount
-     * @var string $ext_shipping_info
-     * @var string $gift_message_id
-     * @var string $gift_message
-     * @var float $customer_balance_amount_used
-     * @var float $base_customer_balance_amount_used
-     * @var string $use_customer_balance
-     * @var string $gift_cards_amount
-     * @var string $base_gift_cards_amount
-     * @var string $gift_cards_amount_used
-     * @var string $use_reward_points
-     * @var string $reward_points_balance
-     * @var string $base_reward_currency_amount
-     * @var string $reward_currency_amount
-     * @var shoppingCartAddressEntity $shipping_address
-     * @var shoppingCartAddressEntity $billing_address
+     * @var string
+     * @var string                      $created_at
+     * @var string                      $updated_at
+     * @var string                      $converted_at
+     * @var int                         $quote_id
+     * @var int                         $is_active
+     * @var int                         $is_virtual
+     * @var int                         $is_multi_shipping
+     * @var float                       $items_count
+     * @var float                       $items_qty
+     * @var string                      $orig_order_id
+     * @var string                      $store_to_base_rate
+     * @var string                      $store_to_quote_rate
+     * @var string                      $base_currency_code
+     * @var string                      $store_currency_code
+     * @var string                      $quote_currency_code
+     * @var string                      $grand_total
+     * @var string                      $base_grand_total
+     * @var string                      $checkout_method
+     * @var string                      $customer_id
+     * @var string                      $customer_tax_class_id
+     * @var int                         $customer_group_id
+     * @var string                      $customer_email
+     * @var string                      $customer_prefix
+     * @var string                      $customer_firstname
+     * @var string                      $customer_middlename
+     * @var string                      $customer_lastname
+     * @var string                      $customer_suffix
+     * @var string                      $customer_note
+     * @var string                      $customer_note_notify
+     * @var string                      $customer_is_guest
+     * @var string                      $applied_rule_ids
+     * @var string                      $reserved_order_id
+     * @var string                      $password_hash
+     * @var string                      $coupon_code
+     * @var string                      $global_currency_code
+     * @var float                       $base_to_global_rate
+     * @var float                       $base_to_quote_rate
+     * @var string                      $customer_taxvat
+     * @var string                      $customer_gender
+     * @var float                       $subtotal
+     * @var float                       $base_subtotal
+     * @var float                       $subtotal_with_discount
+     * @var float                       $base_subtotal_with_discount
+     * @var string                      $ext_shipping_info
+     * @var string                      $gift_message_id
+     * @var string                      $gift_message
+     * @var float                       $customer_balance_amount_used
+     * @var float                       $base_customer_balance_amount_used
+     * @var string                      $use_customer_balance
+     * @var string                      $gift_cards_amount
+     * @var string                      $base_gift_cards_amount
+     * @var string                      $gift_cards_amount_used
+     * @var string                      $use_reward_points
+     * @var string                      $reward_points_balance
+     * @var string                      $base_reward_currency_amount
+     * @var string                      $reward_currency_amount
+     * @var shoppingCartAddressEntity   $shipping_address
+     * @var shoppingCartAddressEntity   $billing_address
      * @var shoppingCartItemEntityArray $items
-     * @var shoppingCartPaymentEntity $payment
+     * @var shoppingCartPaymentEntity   $payment
+     *
+     * @param mixed $store_id
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $converted_at
+     * @param mixed $quote_id
+     * @param mixed $is_active
+     * @param mixed $is_virtual
+     * @param mixed $is_multi_shipping
+     * @param mixed $items_count
+     * @param mixed $items_qty
+     * @param mixed $orig_order_id
+     * @param mixed $store_to_base_rate
+     * @param mixed $store_to_quote_rate
+     * @param mixed $base_currency_code
+     * @param mixed $store_currency_code
+     * @param mixed $quote_currency_code
+     * @param mixed $grand_total
+     * @param mixed $base_grand_total
+     * @param mixed $checkout_method
+     * @param mixed $customer_id
+     * @param mixed $customer_tax_class_id
+     * @param mixed $customer_group_id
+     * @param mixed $customer_email
+     * @param mixed $customer_prefix
+     * @param mixed $customer_firstname
+     * @param mixed $customer_middlename
+     * @param mixed $customer_lastname
+     * @param mixed $customer_suffix
+     * @param mixed $customer_note
+     * @param mixed $customer_note_notify
+     * @param mixed $customer_is_guest
+     * @param mixed $applied_rule_ids
+     * @param mixed $reserved_order_id
+     * @param mixed $password_hash
+     * @param mixed $coupon_code
+     * @param mixed $global_currency_code
+     * @param mixed $base_to_global_rate
+     * @param mixed $base_to_quote_rate
+     * @param mixed $customer_taxvat
+     * @param mixed $customer_gender
+     * @param mixed $subtotal
+     * @param mixed $base_subtotal
+     * @param mixed $subtotal_with_discount
+     * @param mixed $base_subtotal_with_discount
+     * @param mixed $ext_shipping_info
+     * @param mixed $gift_message_id
+     * @param mixed $gift_message
+     * @param mixed $customer_balance_amount_used
+     * @param mixed $base_customer_balance_amount_used
+     * @param mixed $use_customer_balance
+     * @param mixed $gift_cards_amount
+     * @param mixed $base_gift_cards_amount
+     * @param mixed $gift_cards_amount_used
+     * @param mixed $use_reward_points
+     * @param mixed $reward_points_balance
+     * @param mixed $base_reward_currency_amount
+     * @param mixed $reward_currency_amount
+     * @param mixed $shipping_address
+     * @param mixed $billing_address
+     * @param mixed $items
+     * @param mixed $payment
      */
     public function __construct($store_id, $created_at, $updated_at, $converted_at, $quote_id, $is_active, $is_virtual, $is_multi_shipping, $items_count, $items_qty, $orig_order_id, $store_to_base_rate, $store_to_quote_rate, $base_currency_code, $store_currency_code, $quote_currency_code, $grand_total, $base_grand_total, $checkout_method, $customer_id, $customer_tax_class_id, $customer_group_id, $customer_email, $customer_prefix, $customer_firstname, $customer_middlename, $customer_lastname, $customer_suffix, $customer_note, $customer_note_notify, $customer_is_guest, $applied_rule_ids, $reserved_order_id, $password_hash, $coupon_code, $global_currency_code, $base_to_global_rate, $base_to_quote_rate, $customer_taxvat, $customer_gender, $subtotal, $base_subtotal, $subtotal_with_discount, $base_subtotal_with_discount, $ext_shipping_info, $gift_message_id, $gift_message, $customer_balance_amount_used, $base_customer_balance_amount_used, $use_customer_balance, $gift_cards_amount, $base_gift_cards_amount, $gift_cards_amount_used, $use_reward_points, $reward_points_balance, $base_reward_currency_amount, $reward_currency_amount, $shipping_address, $billing_address, $items, $payment)
     {
@@ -450,11 +523,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $store_id
+     *
      * @return $this
      */
     public function setStore_id($store_id)
     {
         $this->store_id = $store_id;
+
         return $this;
     }
 
@@ -468,11 +543,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -486,11 +563,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -504,11 +583,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $converted_at
+     *
      * @return $this
      */
     public function setConverted_at($converted_at)
     {
         $this->converted_at = $converted_at;
+
         return $this;
     }
 
@@ -522,11 +603,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param int $quote_id
+     *
      * @return $this
      */
     public function setQuote_id($quote_id)
     {
         $this->quote_id = $quote_id;
+
         return $this;
     }
 
@@ -540,11 +623,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param int $is_active
+     *
      * @return $this
      */
     public function setIs_active($is_active)
     {
         $this->is_active = $is_active;
+
         return $this;
     }
 
@@ -558,11 +643,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param int $is_virtual
+     *
      * @return $this
      */
     public function setIs_virtual($is_virtual)
     {
         $this->is_virtual = $is_virtual;
+
         return $this;
     }
 
@@ -576,11 +663,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param int $is_multi_shipping
+     *
      * @return $this
      */
     public function setIs_multi_shipping($is_multi_shipping)
     {
         $this->is_multi_shipping = $is_multi_shipping;
+
         return $this;
     }
 
@@ -594,11 +683,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $items_count
+     *
      * @return $this
      */
     public function setItems_count($items_count)
     {
         $this->items_count = $items_count;
+
         return $this;
     }
 
@@ -612,11 +703,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $items_qty
+     *
      * @return $this
      */
     public function setItems_qty($items_qty)
     {
         $this->items_qty = $items_qty;
+
         return $this;
     }
 
@@ -630,11 +723,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $orig_order_id
+     *
      * @return $this
      */
     public function setOrig_order_id($orig_order_id)
     {
         $this->orig_order_id = $orig_order_id;
+
         return $this;
     }
 
@@ -648,11 +743,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $store_to_base_rate
+     *
      * @return $this
      */
     public function setStore_to_base_rate($store_to_base_rate)
     {
         $this->store_to_base_rate = $store_to_base_rate;
+
         return $this;
     }
 
@@ -666,11 +763,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $store_to_quote_rate
+     *
      * @return $this
      */
     public function setStore_to_quote_rate($store_to_quote_rate)
     {
         $this->store_to_quote_rate = $store_to_quote_rate;
+
         return $this;
     }
 
@@ -684,11 +783,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $base_currency_code
+     *
      * @return $this
      */
     public function setBase_currency_code($base_currency_code)
     {
         $this->base_currency_code = $base_currency_code;
+
         return $this;
     }
 
@@ -702,11 +803,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $store_currency_code
+     *
      * @return $this
      */
     public function setStore_currency_code($store_currency_code)
     {
         $this->store_currency_code = $store_currency_code;
+
         return $this;
     }
 
@@ -720,11 +823,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $quote_currency_code
+     *
      * @return $this
      */
     public function setQuote_currency_code($quote_currency_code)
     {
         $this->quote_currency_code = $quote_currency_code;
+
         return $this;
     }
 
@@ -738,11 +843,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $grand_total
+     *
      * @return $this
      */
     public function setGrand_total($grand_total)
     {
         $this->grand_total = $grand_total;
+
         return $this;
     }
 
@@ -756,11 +863,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $base_grand_total
+     *
      * @return $this
      */
     public function setBase_grand_total($base_grand_total)
     {
         $this->base_grand_total = $base_grand_total;
+
         return $this;
     }
 
@@ -774,11 +883,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $checkout_method
+     *
      * @return $this
      */
     public function setCheckout_method($checkout_method)
     {
         $this->checkout_method = $checkout_method;
+
         return $this;
     }
 
@@ -792,11 +903,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_id
+     *
      * @return $this
      */
     public function setCustomer_id($customer_id)
     {
         $this->customer_id = $customer_id;
+
         return $this;
     }
 
@@ -810,11 +923,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_tax_class_id
+     *
      * @return $this
      */
     public function setCustomer_tax_class_id($customer_tax_class_id)
     {
         $this->customer_tax_class_id = $customer_tax_class_id;
+
         return $this;
     }
 
@@ -828,11 +943,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param int $customer_group_id
+     *
      * @return $this
      */
     public function setCustomer_group_id($customer_group_id)
     {
         $this->customer_group_id = $customer_group_id;
+
         return $this;
     }
 
@@ -846,11 +963,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_email
+     *
      * @return $this
      */
     public function setCustomer_email($customer_email)
     {
         $this->customer_email = $customer_email;
+
         return $this;
     }
 
@@ -864,11 +983,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_prefix
+     *
      * @return $this
      */
     public function setCustomer_prefix($customer_prefix)
     {
         $this->customer_prefix = $customer_prefix;
+
         return $this;
     }
 
@@ -882,11 +1003,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_firstname
+     *
      * @return $this
      */
     public function setCustomer_firstname($customer_firstname)
     {
         $this->customer_firstname = $customer_firstname;
+
         return $this;
     }
 
@@ -900,11 +1023,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_middlename
+     *
      * @return $this
      */
     public function setCustomer_middlename($customer_middlename)
     {
         $this->customer_middlename = $customer_middlename;
+
         return $this;
     }
 
@@ -918,11 +1043,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_lastname
+     *
      * @return $this
      */
     public function setCustomer_lastname($customer_lastname)
     {
         $this->customer_lastname = $customer_lastname;
+
         return $this;
     }
 
@@ -936,11 +1063,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_suffix
+     *
      * @return $this
      */
     public function setCustomer_suffix($customer_suffix)
     {
         $this->customer_suffix = $customer_suffix;
+
         return $this;
     }
 
@@ -954,11 +1083,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_note
+     *
      * @return $this
      */
     public function setCustomer_note($customer_note)
     {
         $this->customer_note = $customer_note;
+
         return $this;
     }
 
@@ -972,11 +1103,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_note_notify
+     *
      * @return $this
      */
     public function setCustomer_note_notify($customer_note_notify)
     {
         $this->customer_note_notify = $customer_note_notify;
+
         return $this;
     }
 
@@ -990,11 +1123,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_is_guest
+     *
      * @return $this
      */
     public function setCustomer_is_guest($customer_is_guest)
     {
         $this->customer_is_guest = $customer_is_guest;
+
         return $this;
     }
 
@@ -1008,11 +1143,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $applied_rule_ids
+     *
      * @return $this
      */
     public function setApplied_rule_ids($applied_rule_ids)
     {
         $this->applied_rule_ids = $applied_rule_ids;
+
         return $this;
     }
 
@@ -1026,11 +1163,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $reserved_order_id
+     *
      * @return $this
      */
     public function setReserved_order_id($reserved_order_id)
     {
         $this->reserved_order_id = $reserved_order_id;
+
         return $this;
     }
 
@@ -1044,11 +1183,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $password_hash
+     *
      * @return $this
      */
     public function setPassword_hash($password_hash)
     {
         $this->password_hash = $password_hash;
+
         return $this;
     }
 
@@ -1062,11 +1203,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $coupon_code
+     *
      * @return $this
      */
     public function setCoupon_code($coupon_code)
     {
         $this->coupon_code = $coupon_code;
+
         return $this;
     }
 
@@ -1080,11 +1223,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $global_currency_code
+     *
      * @return $this
      */
     public function setGlobal_currency_code($global_currency_code)
     {
         $this->global_currency_code = $global_currency_code;
+
         return $this;
     }
 
@@ -1098,11 +1243,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $base_to_global_rate
+     *
      * @return $this
      */
     public function setBase_to_global_rate($base_to_global_rate)
     {
         $this->base_to_global_rate = $base_to_global_rate;
+
         return $this;
     }
 
@@ -1116,11 +1263,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $base_to_quote_rate
+     *
      * @return $this
      */
     public function setBase_to_quote_rate($base_to_quote_rate)
     {
         $this->base_to_quote_rate = $base_to_quote_rate;
+
         return $this;
     }
 
@@ -1134,11 +1283,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_taxvat
+     *
      * @return $this
      */
     public function setCustomer_taxvat($customer_taxvat)
     {
         $this->customer_taxvat = $customer_taxvat;
+
         return $this;
     }
 
@@ -1152,11 +1303,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $customer_gender
+     *
      * @return $this
      */
     public function setCustomer_gender($customer_gender)
     {
         $this->customer_gender = $customer_gender;
+
         return $this;
     }
 
@@ -1170,11 +1323,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $subtotal
+     *
      * @return $this
      */
     public function setSubtotal($subtotal)
     {
         $this->subtotal = $subtotal;
+
         return $this;
     }
 
@@ -1188,11 +1343,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $base_subtotal
+     *
      * @return $this
      */
     public function setBase_subtotal($base_subtotal)
     {
         $this->base_subtotal = $base_subtotal;
+
         return $this;
     }
 
@@ -1206,11 +1363,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $subtotal_with_discount
+     *
      * @return $this
      */
     public function setSubtotal_with_discount($subtotal_with_discount)
     {
         $this->subtotal_with_discount = $subtotal_with_discount;
+
         return $this;
     }
 
@@ -1224,11 +1383,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $base_subtotal_with_discount
+     *
      * @return $this
      */
     public function setBase_subtotal_with_discount($base_subtotal_with_discount)
     {
         $this->base_subtotal_with_discount = $base_subtotal_with_discount;
+
         return $this;
     }
 
@@ -1242,11 +1403,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $ext_shipping_info
+     *
      * @return $this
      */
     public function setExt_shipping_info($ext_shipping_info)
     {
         $this->ext_shipping_info = $ext_shipping_info;
+
         return $this;
     }
 
@@ -1260,11 +1423,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $gift_message_id
+     *
      * @return $this
      */
     public function setGift_message_id($gift_message_id)
     {
         $this->gift_message_id = $gift_message_id;
+
         return $this;
     }
 
@@ -1278,11 +1443,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $gift_message
+     *
      * @return $this
      */
     public function setGift_message($gift_message)
     {
         $this->gift_message = $gift_message;
+
         return $this;
     }
 
@@ -1296,11 +1463,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $customer_balance_amount_used
+     *
      * @return $this
      */
     public function setCustomer_balance_amount_used($customer_balance_amount_used)
     {
         $this->customer_balance_amount_used = $customer_balance_amount_used;
+
         return $this;
     }
 
@@ -1314,11 +1483,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param float $base_customer_balance_amount_used
+     *
      * @return $this
      */
     public function setBase_customer_balance_amount_used($base_customer_balance_amount_used)
     {
         $this->base_customer_balance_amount_used = $base_customer_balance_amount_used;
+
         return $this;
     }
 
@@ -1332,11 +1503,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $use_customer_balance
+     *
      * @return $this
      */
     public function setUse_customer_balance($use_customer_balance)
     {
         $this->use_customer_balance = $use_customer_balance;
+
         return $this;
     }
 
@@ -1350,11 +1523,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $gift_cards_amount
+     *
      * @return $this
      */
     public function setGift_cards_amount($gift_cards_amount)
     {
         $this->gift_cards_amount = $gift_cards_amount;
+
         return $this;
     }
 
@@ -1368,11 +1543,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $base_gift_cards_amount
+     *
      * @return $this
      */
     public function setBase_gift_cards_amount($base_gift_cards_amount)
     {
         $this->base_gift_cards_amount = $base_gift_cards_amount;
+
         return $this;
     }
 
@@ -1386,11 +1563,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $gift_cards_amount_used
+     *
      * @return $this
      */
     public function setGift_cards_amount_used($gift_cards_amount_used)
     {
         $this->gift_cards_amount_used = $gift_cards_amount_used;
+
         return $this;
     }
 
@@ -1404,11 +1583,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $use_reward_points
+     *
      * @return $this
      */
     public function setUse_reward_points($use_reward_points)
     {
         $this->use_reward_points = $use_reward_points;
+
         return $this;
     }
 
@@ -1422,11 +1603,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $reward_points_balance
+     *
      * @return $this
      */
     public function setReward_points_balance($reward_points_balance)
     {
         $this->reward_points_balance = $reward_points_balance;
+
         return $this;
     }
 
@@ -1440,11 +1623,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $base_reward_currency_amount
+     *
      * @return $this
      */
     public function setBase_reward_currency_amount($base_reward_currency_amount)
     {
         $this->base_reward_currency_amount = $base_reward_currency_amount;
+
         return $this;
     }
 
@@ -1458,11 +1643,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param string $reward_currency_amount
+     *
      * @return $this
      */
     public function setReward_currency_amount($reward_currency_amount)
     {
         $this->reward_currency_amount = $reward_currency_amount;
+
         return $this;
     }
 
@@ -1476,11 +1663,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param shoppingCartAddressEntity $shipping_address
+     *
      * @return $this
      */
     public function setShipping_address($shipping_address)
     {
         $this->shipping_address = $shipping_address;
+
         return $this;
     }
 
@@ -1494,11 +1683,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param shoppingCartAddressEntity $billing_address
+     *
      * @return $this
      */
     public function setBilling_address($billing_address)
     {
         $this->billing_address = $billing_address;
+
         return $this;
     }
 
@@ -1512,11 +1703,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param shoppingCartItemEntityArray $items
+     *
      * @return $this
      */
     public function setItems($items)
     {
         $this->items = $items;
+
         return $this;
     }
 
@@ -1530,14 +1723,13 @@ class ShoppingCartInfoEntity
 
     /**
      * @param shoppingCartPaymentEntity $payment
+     *
      * @return $this
      */
     public function setPayment($payment)
     {
         $this->payment = $payment;
+
         return $this;
     }
-
-
 }
-

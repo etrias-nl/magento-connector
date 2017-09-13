@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogAttributeEntity
 {
-
     /**
      * @var int
      */
@@ -31,13 +42,19 @@ class CatalogAttributeEntity
     protected $scope = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var int $attribute_id
+     * @var int
      * @var string $code
      * @var string $type
      * @var string $required
      * @var string $scope
+     *
+     * @param mixed $attribute_id
+     * @param mixed $code
+     * @param mixed $type
+     * @param mixed $required
+     * @param mixed $scope
      */
     public function __construct($attribute_id, $code, $type, $required, $scope)
     {
@@ -58,11 +75,13 @@ class CatalogAttributeEntity
 
     /**
      * @param int $attribute_id
+     *
      * @return $this
      */
     public function setAttribute_id($attribute_id)
     {
         $this->attribute_id = $attribute_id;
+
         return $this;
     }
 
@@ -76,11 +95,13 @@ class CatalogAttributeEntity
 
     /**
      * @param string $code
+     *
      * @return $this
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -94,11 +115,13 @@ class CatalogAttributeEntity
 
     /**
      * @param string $type
+     *
      * @return $this
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -112,11 +135,13 @@ class CatalogAttributeEntity
 
     /**
      * @param string $required
+     *
      * @return $this
      */
     public function setRequired($required)
     {
         $this->required = $required;
+
         return $this;
     }
 
@@ -130,14 +155,13 @@ class CatalogAttributeEntity
 
     /**
      * @param string $scope
+     *
      * @return $this
      */
     public function setScope($scope)
     {
         $this->scope = $scope;
+
         return $this;
     }
-
-
 }
-

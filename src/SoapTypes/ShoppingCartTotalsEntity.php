@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class ShoppingCartTotalsEntity
 {
-
     /**
      * @var string
      */
@@ -16,10 +27,13 @@ class ShoppingCartTotalsEntity
     protected $amount = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $title
-     * @var float $amount
+     * @var string
+     * @var float  $amount
+     *
+     * @param mixed $title
+     * @param mixed $amount
      */
     public function __construct($title, $amount)
     {
@@ -37,11 +51,13 @@ class ShoppingCartTotalsEntity
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -55,14 +71,13 @@ class ShoppingCartTotalsEntity
 
     /**
      * @param float $amount
+     *
      * @return $this
      */
     public function setAmount($amount)
     {
         $this->amount = $amount;
+
         return $this;
     }
-
-
 }
-

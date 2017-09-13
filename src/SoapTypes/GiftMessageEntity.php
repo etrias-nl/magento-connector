@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class GiftMessageEntity
 {
-
     /**
      * @var string
      */
@@ -21,11 +32,15 @@ class GiftMessageEntity
     protected $message = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $from
+     * @var string
      * @var string $to
      * @var string $message
+     *
+     * @param mixed $from
+     * @param mixed $to
+     * @param mixed $message
      */
     public function __construct($from, $to, $message)
     {
@@ -44,11 +59,13 @@ class GiftMessageEntity
 
     /**
      * @param string $from
+     *
      * @return $this
      */
     public function setFrom($from)
     {
         $this->from = $from;
+
         return $this;
     }
 
@@ -62,11 +79,13 @@ class GiftMessageEntity
 
     /**
      * @param string $to
+     *
      * @return $this
      */
     public function setTo($to)
     {
         $this->to = $to;
+
         return $this;
     }
 
@@ -80,14 +99,13 @@ class GiftMessageEntity
 
     /**
      * @param string $message
+     *
      * @return $this
      */
     public function setMessage($message)
     {
         $this->message = $message;
+
         return $this;
     }
-
-
 }
-

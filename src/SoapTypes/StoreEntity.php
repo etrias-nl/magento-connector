@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class StoreEntity
 {
-
     /**
      * @var int
      */
@@ -41,15 +52,23 @@ class StoreEntity
     protected $is_active = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var int $store_id
+     * @var int
      * @var string $code
-     * @var int $website_id
-     * @var int $group_id
+     * @var int    $website_id
+     * @var int    $group_id
      * @var string $name
-     * @var int $sort_order
-     * @var int $is_active
+     * @var int    $sort_order
+     * @var int    $is_active
+     *
+     * @param mixed $store_id
+     * @param mixed $code
+     * @param mixed $website_id
+     * @param mixed $group_id
+     * @param mixed $name
+     * @param mixed $sort_order
+     * @param mixed $is_active
      */
     public function __construct($store_id, $code, $website_id, $group_id, $name, $sort_order, $is_active)
     {
@@ -72,11 +91,13 @@ class StoreEntity
 
     /**
      * @param int $store_id
+     *
      * @return $this
      */
     public function setStore_id($store_id)
     {
         $this->store_id = $store_id;
+
         return $this;
     }
 
@@ -90,11 +111,13 @@ class StoreEntity
 
     /**
      * @param string $code
+     *
      * @return $this
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -108,11 +131,13 @@ class StoreEntity
 
     /**
      * @param int $website_id
+     *
      * @return $this
      */
     public function setWebsite_id($website_id)
     {
         $this->website_id = $website_id;
+
         return $this;
     }
 
@@ -126,11 +151,13 @@ class StoreEntity
 
     /**
      * @param int $group_id
+     *
      * @return $this
      */
     public function setGroup_id($group_id)
     {
         $this->group_id = $group_id;
+
         return $this;
     }
 
@@ -144,11 +171,13 @@ class StoreEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -162,11 +191,13 @@ class StoreEntity
 
     /**
      * @param int $sort_order
+     *
      * @return $this
      */
     public function setSort_order($sort_order)
     {
         $this->sort_order = $sort_order;
+
         return $this;
     }
 
@@ -180,14 +211,13 @@ class StoreEntity
 
     /**
      * @param int $is_active
+     *
      * @return $this
      */
     public function setIs_active($is_active)
     {
         $this->is_active = $is_active;
+
         return $this;
     }
-
-
 }
-

@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductLinkEntity
 {
-
     /**
      * @var string
      */
@@ -36,14 +47,21 @@ class CatalogProductLinkEntity
     protected $qty = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $product_id
+     * @var string
      * @var string $type
      * @var string $set
      * @var string $sku
      * @var string $position
      * @var string $qty
+     *
+     * @param mixed $product_id
+     * @param mixed $type
+     * @param mixed $set
+     * @param mixed $sku
+     * @param mixed $position
+     * @param mixed $qty
      */
     public function __construct($product_id, $type, $set, $sku, $position, $qty)
     {
@@ -65,11 +83,13 @@ class CatalogProductLinkEntity
 
     /**
      * @param string $product_id
+     *
      * @return $this
      */
     public function setProduct_id($product_id)
     {
         $this->product_id = $product_id;
+
         return $this;
     }
 
@@ -83,11 +103,13 @@ class CatalogProductLinkEntity
 
     /**
      * @param string $type
+     *
      * @return $this
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -101,11 +123,13 @@ class CatalogProductLinkEntity
 
     /**
      * @param string $set
+     *
      * @return $this
      */
     public function setSet($set)
     {
         $this->set = $set;
+
         return $this;
     }
 
@@ -119,11 +143,13 @@ class CatalogProductLinkEntity
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -137,11 +163,13 @@ class CatalogProductLinkEntity
 
     /**
      * @param string $position
+     *
      * @return $this
      */
     public function setPosition($position)
     {
         $this->position = $position;
+
         return $this;
     }
 
@@ -155,14 +183,13 @@ class CatalogProductLinkEntity
 
     /**
      * @param string $qty
+     *
      * @return $this
      */
     public function setQty($qty)
     {
         $this->qty = $qty;
+
         return $this;
     }
-
-
 }
-

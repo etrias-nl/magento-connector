@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductTierPriceEntity
 {
-
     /**
      * @var string
      */
@@ -26,12 +37,17 @@ class CatalogProductTierPriceEntity
     protected $price = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $customer_group_id
+     * @var string
      * @var string $website
-     * @var int $qty
-     * @var float $price
+     * @var int    $qty
+     * @var float  $price
+     *
+     * @param mixed $customer_group_id
+     * @param mixed $website
+     * @param mixed $qty
+     * @param mixed $price
      */
     public function __construct($customer_group_id, $website, $qty, $price)
     {
@@ -51,11 +67,13 @@ class CatalogProductTierPriceEntity
 
     /**
      * @param string $customer_group_id
+     *
      * @return $this
      */
     public function setCustomer_group_id($customer_group_id)
     {
         $this->customer_group_id = $customer_group_id;
+
         return $this;
     }
 
@@ -69,11 +87,13 @@ class CatalogProductTierPriceEntity
 
     /**
      * @param string $website
+     *
      * @return $this
      */
     public function setWebsite($website)
     {
         $this->website = $website;
+
         return $this;
     }
 
@@ -87,11 +107,13 @@ class CatalogProductTierPriceEntity
 
     /**
      * @param int $qty
+     *
      * @return $this
      */
     public function setQty($qty)
     {
         $this->qty = $qty;
+
         return $this;
     }
 
@@ -105,14 +127,13 @@ class CatalogProductTierPriceEntity
 
     /**
      * @param float $price
+     *
      * @return $this
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
-
-
 }
-

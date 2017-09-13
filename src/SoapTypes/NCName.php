@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class NCName
 {
-
     /**
      * @var NCName
      */
@@ -21,11 +32,15 @@ class NCName
     protected $href = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var NCName $_
-     * @var ID $id
+     * @var NCName
+     * @var ID     $id
      * @var anyURI $href
+     *
+     * @param mixed $_
+     * @param mixed $id
+     * @param mixed $href
      */
     public function __construct($_, $id, $href)
     {
@@ -44,11 +59,13 @@ class NCName
 
     /**
      * @param NCName $_
+     *
      * @return $this
      */
     public function set_($_)
     {
         $this->_ = $_;
+
         return $this;
     }
 
@@ -62,11 +79,13 @@ class NCName
 
     /**
      * @param ID $id
+     *
      * @return $this
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -80,14 +99,13 @@ class NCName
 
     /**
      * @param anyURI $href
+     *
      * @return $this
      */
     public function setHref($href)
     {
         $this->href = $href;
+
         return $this;
     }
-
-
 }
-

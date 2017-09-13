@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class ShoppingCartProductEntity
 {
-
     /**
      * @var string
      */
@@ -41,15 +52,23 @@ class ShoppingCartProductEntity
     protected $links = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $product_id
-     * @var string $sku
-     * @var float $qty
+     * @var string
+     * @var string           $sku
+     * @var float            $qty
      * @var associativeArray $options
      * @var associativeArray $bundle_option
      * @var associativeArray $bundle_option_qty
-     * @var ArrayOfString $links
+     * @var ArrayOfString    $links
+     *
+     * @param mixed $product_id
+     * @param mixed $sku
+     * @param mixed $qty
+     * @param mixed $options
+     * @param mixed $bundle_option
+     * @param mixed $bundle_option_qty
+     * @param mixed $links
      */
     public function __construct($product_id, $sku, $qty, $options, $bundle_option, $bundle_option_qty, $links)
     {
@@ -72,11 +91,13 @@ class ShoppingCartProductEntity
 
     /**
      * @param string $product_id
+     *
      * @return $this
      */
     public function setProduct_id($product_id)
     {
         $this->product_id = $product_id;
+
         return $this;
     }
 
@@ -90,11 +111,13 @@ class ShoppingCartProductEntity
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -108,11 +131,13 @@ class ShoppingCartProductEntity
 
     /**
      * @param float $qty
+     *
      * @return $this
      */
     public function setQty($qty)
     {
         $this->qty = $qty;
+
         return $this;
     }
 
@@ -126,11 +151,13 @@ class ShoppingCartProductEntity
 
     /**
      * @param associativeArray $options
+     *
      * @return $this
      */
     public function setOptions($options)
     {
         $this->options = $options;
+
         return $this;
     }
 
@@ -144,11 +171,13 @@ class ShoppingCartProductEntity
 
     /**
      * @param associativeArray $bundle_option
+     *
      * @return $this
      */
     public function setBundle_option($bundle_option)
     {
         $this->bundle_option = $bundle_option;
+
         return $this;
     }
 
@@ -162,11 +191,13 @@ class ShoppingCartProductEntity
 
     /**
      * @param associativeArray $bundle_option_qty
+     *
      * @return $this
      */
     public function setBundle_option_qty($bundle_option_qty)
     {
         $this->bundle_option_qty = $bundle_option_qty;
+
         return $this;
     }
 
@@ -180,14 +211,13 @@ class ShoppingCartProductEntity
 
     /**
      * @param ArrayOfString $links
+     *
      * @return $this
      */
     public function setLinks($links)
     {
         $this->links = $links;
+
         return $this;
     }
-
-
 }
-

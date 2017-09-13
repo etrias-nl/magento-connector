@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of PHP CS Fixer.
  *
@@ -17,16 +19,16 @@ use Phpro\SoapClient\Wsdl\Provider\GuzzleWsdlProvider;
 use Zend\Code\Generator\PropertyGenerator;
 
 $guzzleClient = new \GuzzleHttp\Client([
-    'verify' => false
+    'verify' => false,
 ]);
 
 return Config::create()
     ->setSoapOptions([
         'stream_context' => stream_context_create([
             'ssl' => [
-                'verify_peer'       => false
-            ]
-        ])
+                'verify_peer' => false,
+            ],
+        ]),
     ])
     ->setWsdl('https://www.etrias.nl.dev/index.php/api/v2_soap/?wsdl')
     ->setWsdlProvider(GuzzleWsdlProvider::createForClient($guzzleClient))

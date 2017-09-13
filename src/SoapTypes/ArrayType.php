@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class ArrayType
 {
-
     /**
      * @var <anyXML>
      */
@@ -31,13 +42,19 @@ class ArrayType
     protected $href = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var <anyXML> $any
-     * @var string $arrayType
+     * @var <anyXML>
+     * @var string          $arrayType
      * @var arrayCoordinate $offset
-     * @var ID $id
-     * @var anyURI $href
+     * @var ID              $id
+     * @var anyURI          $href
+     *
+     * @param mixed $any
+     * @param mixed $arrayType
+     * @param mixed $offset
+     * @param mixed $id
+     * @param mixed $href
      */
     public function __construct($any, $arrayType, $offset, $id, $href)
     {
@@ -58,11 +75,13 @@ class ArrayType
 
     /**
      * @param <anyXML> $any
+     *
      * @return $this
      */
     public function setAny($any)
     {
         $this->any = $any;
+
         return $this;
     }
 
@@ -76,11 +95,13 @@ class ArrayType
 
     /**
      * @param string $arrayType
+     *
      * @return $this
      */
     public function setArrayType($arrayType)
     {
         $this->arrayType = $arrayType;
+
         return $this;
     }
 
@@ -94,11 +115,13 @@ class ArrayType
 
     /**
      * @param arrayCoordinate $offset
+     *
      * @return $this
      */
     public function setOffset($offset)
     {
         $this->offset = $offset;
+
         return $this;
     }
 
@@ -112,11 +135,13 @@ class ArrayType
 
     /**
      * @param ID $id
+     *
      * @return $this
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -130,14 +155,13 @@ class ArrayType
 
     /**
      * @param anyURI $href
+     *
      * @return $this
      */
     public function setHref($href)
     {
         $this->href = $href;
+
         return $this;
     }
-
-
 }
-

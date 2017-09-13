@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class SalesOrderStatusHistoryEntity
 {
-
     /**
      * @var string
      */
@@ -46,9 +57,9 @@ class SalesOrderStatusHistoryEntity
     protected $comment = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $increment_id
+     * @var string
      * @var string $parent_id
      * @var string $created_at
      * @var string $updated_at
@@ -56,6 +67,15 @@ class SalesOrderStatusHistoryEntity
      * @var string $is_customer_notified
      * @var string $status
      * @var string $comment
+     *
+     * @param mixed $increment_id
+     * @param mixed $parent_id
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $is_active
+     * @param mixed $is_customer_notified
+     * @param mixed $status
+     * @param mixed $comment
      */
     public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $is_customer_notified, $status, $comment)
     {
@@ -79,11 +99,13 @@ class SalesOrderStatusHistoryEntity
 
     /**
      * @param string $increment_id
+     *
      * @return $this
      */
     public function setIncrement_id($increment_id)
     {
         $this->increment_id = $increment_id;
+
         return $this;
     }
 
@@ -97,11 +119,13 @@ class SalesOrderStatusHistoryEntity
 
     /**
      * @param string $parent_id
+     *
      * @return $this
      */
     public function setParent_id($parent_id)
     {
         $this->parent_id = $parent_id;
+
         return $this;
     }
 
@@ -115,11 +139,13 @@ class SalesOrderStatusHistoryEntity
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -133,11 +159,13 @@ class SalesOrderStatusHistoryEntity
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -151,11 +179,13 @@ class SalesOrderStatusHistoryEntity
 
     /**
      * @param string $is_active
+     *
      * @return $this
      */
     public function setIs_active($is_active)
     {
         $this->is_active = $is_active;
+
         return $this;
     }
 
@@ -169,11 +199,13 @@ class SalesOrderStatusHistoryEntity
 
     /**
      * @param string $is_customer_notified
+     *
      * @return $this
      */
     public function setIs_customer_notified($is_customer_notified)
     {
         $this->is_customer_notified = $is_customer_notified;
+
         return $this;
     }
 
@@ -187,11 +219,13 @@ class SalesOrderStatusHistoryEntity
 
     /**
      * @param string $status
+     *
      * @return $this
      */
     public function setStatus($status)
     {
         $this->status = $status;
+
         return $this;
     }
 
@@ -205,14 +239,13 @@ class SalesOrderStatusHistoryEntity
 
     /**
      * @param string $comment
+     *
      * @return $this
      */
     public function setComment($comment)
     {
         $this->comment = $comment;
+
         return $this;
     }
-
-
 }
-

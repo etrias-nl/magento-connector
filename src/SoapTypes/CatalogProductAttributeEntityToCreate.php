@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductAttributeEntityToCreate
 {
-
     /**
      * @var string
      */
@@ -86,24 +97,41 @@ class CatalogProductAttributeEntityToCreate
     protected $frontend_label = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $attribute_code
-     * @var string $frontend_input
-     * @var string $scope
-     * @var string $default_value
-     * @var int $is_unique
-     * @var int $is_required
-     * @var ArrayOfString $apply_to
-     * @var int $is_configurable
-     * @var int $is_searchable
-     * @var int $is_visible_in_advanced_search
-     * @var int $is_comparable
-     * @var int $is_used_for_promo_rules
-     * @var int $is_visible_on_front
-     * @var int $used_in_product_listing
-     * @var associativeArray $additional_fields
+     * @var string
+     * @var string                                    $frontend_input
+     * @var string                                    $scope
+     * @var string                                    $default_value
+     * @var int                                       $is_unique
+     * @var int                                       $is_required
+     * @var ArrayOfString                             $apply_to
+     * @var int                                       $is_configurable
+     * @var int                                       $is_searchable
+     * @var int                                       $is_visible_in_advanced_search
+     * @var int                                       $is_comparable
+     * @var int                                       $is_used_for_promo_rules
+     * @var int                                       $is_visible_on_front
+     * @var int                                       $used_in_product_listing
+     * @var associativeArray                          $additional_fields
      * @var catalogProductAttributeFrontendLabelArray $frontend_label
+     *
+     * @param mixed $attribute_code
+     * @param mixed $frontend_input
+     * @param mixed $scope
+     * @param mixed $default_value
+     * @param mixed $is_unique
+     * @param mixed $is_required
+     * @param mixed $apply_to
+     * @param mixed $is_configurable
+     * @param mixed $is_searchable
+     * @param mixed $is_visible_in_advanced_search
+     * @param mixed $is_comparable
+     * @param mixed $is_used_for_promo_rules
+     * @param mixed $is_visible_on_front
+     * @param mixed $used_in_product_listing
+     * @param mixed $additional_fields
+     * @param mixed $frontend_label
      */
     public function __construct($attribute_code, $frontend_input, $scope, $default_value, $is_unique, $is_required, $apply_to, $is_configurable, $is_searchable, $is_visible_in_advanced_search, $is_comparable, $is_used_for_promo_rules, $is_visible_on_front, $used_in_product_listing, $additional_fields, $frontend_label)
     {
@@ -135,11 +163,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param string $attribute_code
+     *
      * @return $this
      */
     public function setAttribute_code($attribute_code)
     {
         $this->attribute_code = $attribute_code;
+
         return $this;
     }
 
@@ -153,11 +183,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param string $frontend_input
+     *
      * @return $this
      */
     public function setFrontend_input($frontend_input)
     {
         $this->frontend_input = $frontend_input;
+
         return $this;
     }
 
@@ -171,11 +203,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param string $scope
+     *
      * @return $this
      */
     public function setScope($scope)
     {
         $this->scope = $scope;
+
         return $this;
     }
 
@@ -189,11 +223,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param string $default_value
+     *
      * @return $this
      */
     public function setDefault_value($default_value)
     {
         $this->default_value = $default_value;
+
         return $this;
     }
 
@@ -207,11 +243,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $is_unique
+     *
      * @return $this
      */
     public function setIs_unique($is_unique)
     {
         $this->is_unique = $is_unique;
+
         return $this;
     }
 
@@ -225,11 +263,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $is_required
+     *
      * @return $this
      */
     public function setIs_required($is_required)
     {
         $this->is_required = $is_required;
+
         return $this;
     }
 
@@ -243,11 +283,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param ArrayOfString $apply_to
+     *
      * @return $this
      */
     public function setApply_to($apply_to)
     {
         $this->apply_to = $apply_to;
+
         return $this;
     }
 
@@ -261,11 +303,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $is_configurable
+     *
      * @return $this
      */
     public function setIs_configurable($is_configurable)
     {
         $this->is_configurable = $is_configurable;
+
         return $this;
     }
 
@@ -279,11 +323,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $is_searchable
+     *
      * @return $this
      */
     public function setIs_searchable($is_searchable)
     {
         $this->is_searchable = $is_searchable;
+
         return $this;
     }
 
@@ -297,11 +343,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $is_visible_in_advanced_search
+     *
      * @return $this
      */
     public function setIs_visible_in_advanced_search($is_visible_in_advanced_search)
     {
         $this->is_visible_in_advanced_search = $is_visible_in_advanced_search;
+
         return $this;
     }
 
@@ -315,11 +363,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $is_comparable
+     *
      * @return $this
      */
     public function setIs_comparable($is_comparable)
     {
         $this->is_comparable = $is_comparable;
+
         return $this;
     }
 
@@ -333,11 +383,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $is_used_for_promo_rules
+     *
      * @return $this
      */
     public function setIs_used_for_promo_rules($is_used_for_promo_rules)
     {
         $this->is_used_for_promo_rules = $is_used_for_promo_rules;
+
         return $this;
     }
 
@@ -351,11 +403,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $is_visible_on_front
+     *
      * @return $this
      */
     public function setIs_visible_on_front($is_visible_on_front)
     {
         $this->is_visible_on_front = $is_visible_on_front;
+
         return $this;
     }
 
@@ -369,11 +423,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param int $used_in_product_listing
+     *
      * @return $this
      */
     public function setUsed_in_product_listing($used_in_product_listing)
     {
         $this->used_in_product_listing = $used_in_product_listing;
+
         return $this;
     }
 
@@ -387,11 +443,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param associativeArray $additional_fields
+     *
      * @return $this
      */
     public function setAdditional_fields($additional_fields)
     {
         $this->additional_fields = $additional_fields;
+
         return $this;
     }
 
@@ -405,14 +463,13 @@ class CatalogProductAttributeEntityToCreate
 
     /**
      * @param catalogProductAttributeFrontendLabelArray $frontend_label
+     *
      * @return $this
      */
     public function setFrontend_label($frontend_label)
     {
         $this->frontend_label = $frontend_label;
+
         return $this;
     }
-
-
 }
-

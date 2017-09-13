@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of PHP CS Fixer.
  *
@@ -31,7 +33,6 @@ class AuthenticationServiceTest extends AbstractServiceTest
         $this->authenticationService = new AuthenticationService($this->adapter, getenv('APIUSER'), getenv('APIKEY'));
     }
 
-
     public function testStartSession()
     {
         $this->expectException(BadMethodCallException::class);
@@ -46,6 +47,6 @@ class AuthenticationServiceTest extends AbstractServiceTest
     public function testLogin()
     {
         $sessionId = $this->authenticationService->login();
-        $this->assertEquals(32, strlen($sessionId));
+        $this->assertSame(32, strlen($sessionId));
     }
 }

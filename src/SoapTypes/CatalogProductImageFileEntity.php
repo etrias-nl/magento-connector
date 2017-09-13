@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductImageFileEntity
 {
-
     /**
      * @var string
      */
@@ -21,11 +32,15 @@ class CatalogProductImageFileEntity
     protected $name = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $content
+     * @var string
      * @var string $mime
      * @var string $name
+     *
+     * @param mixed $content
+     * @param mixed $mime
+     * @param mixed $name
      */
     public function __construct($content, $mime, $name)
     {
@@ -44,11 +59,13 @@ class CatalogProductImageFileEntity
 
     /**
      * @param string $content
+     *
      * @return $this
      */
     public function setContent($content)
     {
         $this->content = $content;
+
         return $this;
     }
 
@@ -62,11 +79,13 @@ class CatalogProductImageFileEntity
 
     /**
      * @param string $mime
+     *
      * @return $this
      */
     public function setMime($mime)
     {
         $this->mime = $mime;
+
         return $this;
     }
 
@@ -80,14 +99,13 @@ class CatalogProductImageFileEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
-
-
 }
-

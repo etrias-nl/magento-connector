@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductCustomOptionListEntity
 {
-
     /**
      * @var string
      */
@@ -31,13 +42,19 @@ class CatalogProductCustomOptionListEntity
     protected $is_require = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $option_id
+     * @var string
      * @var string $title
      * @var string $type
      * @var string $sort_order
-     * @var int $is_require
+     * @var int    $is_require
+     *
+     * @param mixed $option_id
+     * @param mixed $title
+     * @param mixed $type
+     * @param mixed $sort_order
+     * @param mixed $is_require
      */
     public function __construct($option_id, $title, $type, $sort_order, $is_require)
     {
@@ -58,11 +75,13 @@ class CatalogProductCustomOptionListEntity
 
     /**
      * @param string $option_id
+     *
      * @return $this
      */
     public function setOption_id($option_id)
     {
         $this->option_id = $option_id;
+
         return $this;
     }
 
@@ -76,11 +95,13 @@ class CatalogProductCustomOptionListEntity
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -94,11 +115,13 @@ class CatalogProductCustomOptionListEntity
 
     /**
      * @param string $type
+     *
      * @return $this
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -112,11 +135,13 @@ class CatalogProductCustomOptionListEntity
 
     /**
      * @param string $sort_order
+     *
      * @return $this
      */
     public function setSort_order($sort_order)
     {
         $this->sort_order = $sort_order;
+
         return $this;
     }
 
@@ -130,14 +155,13 @@ class CatalogProductCustomOptionListEntity
 
     /**
      * @param int $is_require
+     *
      * @return $this
      */
     public function setIs_require($is_require)
     {
         $this->is_require = $is_require;
+
         return $this;
     }
-
-
 }
-

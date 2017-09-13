@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class SalesOrderItemEntity
 {
-
     /**
      * @var string
      */
@@ -291,9 +302,9 @@ class SalesOrderItemEntity
     protected $base_weee_tax_row_disposition = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $item_id
+     * @var string
      * @var string $order_id
      * @var string $quote_item_id
      * @var string $created_at
@@ -350,6 +361,64 @@ class SalesOrderItemEntity
      * @var string $weee_tax_row_disposition
      * @var string $base_weee_tax_disposition
      * @var string $base_weee_tax_row_disposition
+     *
+     * @param mixed $item_id
+     * @param mixed $order_id
+     * @param mixed $quote_item_id
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $product_id
+     * @param mixed $product_type
+     * @param mixed $product_options
+     * @param mixed $weight
+     * @param mixed $is_virtual
+     * @param mixed $sku
+     * @param mixed $name
+     * @param mixed $applied_rule_ids
+     * @param mixed $free_shipping
+     * @param mixed $is_qty_decimal
+     * @param mixed $no_discount
+     * @param mixed $qty_canceled
+     * @param mixed $qty_invoiced
+     * @param mixed $qty_ordered
+     * @param mixed $qty_refunded
+     * @param mixed $qty_shipped
+     * @param mixed $cost
+     * @param mixed $price
+     * @param mixed $base_price
+     * @param mixed $original_price
+     * @param mixed $base_original_price
+     * @param mixed $tax_percent
+     * @param mixed $tax_amount
+     * @param mixed $base_tax_amount
+     * @param mixed $tax_invoiced
+     * @param mixed $base_tax_invoiced
+     * @param mixed $discount_percent
+     * @param mixed $discount_amount
+     * @param mixed $base_discount_amount
+     * @param mixed $discount_invoiced
+     * @param mixed $base_discount_invoiced
+     * @param mixed $amount_refunded
+     * @param mixed $base_amount_refunded
+     * @param mixed $row_total
+     * @param mixed $base_row_total
+     * @param mixed $row_invoiced
+     * @param mixed $base_row_invoiced
+     * @param mixed $row_weight
+     * @param mixed $gift_message_id
+     * @param mixed $gift_message
+     * @param mixed $gift_message_available
+     * @param mixed $base_tax_before_discount
+     * @param mixed $tax_before_discount
+     * @param mixed $weee_tax_applied
+     * @param mixed $weee_tax_applied_amount
+     * @param mixed $weee_tax_applied_row_amount
+     * @param mixed $base_weee_tax_applied_amount
+     * @param mixed $base_weee_tax_applied_row_amount
+     * @param mixed $weee_tax_disposition
+     * @param mixed $weee_tax_row_disposition
+     * @param mixed $base_weee_tax_disposition
+     * @param mixed $base_weee_tax_row_disposition
      */
     public function __construct($item_id, $order_id, $quote_item_id, $created_at, $updated_at, $product_id, $product_type, $product_options, $weight, $is_virtual, $sku, $name, $applied_rule_ids, $free_shipping, $is_qty_decimal, $no_discount, $qty_canceled, $qty_invoiced, $qty_ordered, $qty_refunded, $qty_shipped, $cost, $price, $base_price, $original_price, $base_original_price, $tax_percent, $tax_amount, $base_tax_amount, $tax_invoiced, $base_tax_invoiced, $discount_percent, $discount_amount, $base_discount_amount, $discount_invoiced, $base_discount_invoiced, $amount_refunded, $base_amount_refunded, $row_total, $base_row_total, $row_invoiced, $base_row_invoiced, $row_weight, $gift_message_id, $gift_message, $gift_message_available, $base_tax_before_discount, $tax_before_discount, $weee_tax_applied, $weee_tax_applied_amount, $weee_tax_applied_row_amount, $base_weee_tax_applied_amount, $base_weee_tax_applied_row_amount, $weee_tax_disposition, $weee_tax_row_disposition, $base_weee_tax_disposition, $base_weee_tax_row_disposition)
     {
@@ -422,11 +491,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $item_id
+     *
      * @return $this
      */
     public function setItem_id($item_id)
     {
         $this->item_id = $item_id;
+
         return $this;
     }
 
@@ -440,11 +511,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $order_id
+     *
      * @return $this
      */
     public function setOrder_id($order_id)
     {
         $this->order_id = $order_id;
+
         return $this;
     }
 
@@ -458,11 +531,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $quote_item_id
+     *
      * @return $this
      */
     public function setQuote_item_id($quote_item_id)
     {
         $this->quote_item_id = $quote_item_id;
+
         return $this;
     }
 
@@ -476,11 +551,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -494,11 +571,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -512,11 +591,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $product_id
+     *
      * @return $this
      */
     public function setProduct_id($product_id)
     {
         $this->product_id = $product_id;
+
         return $this;
     }
 
@@ -530,11 +611,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $product_type
+     *
      * @return $this
      */
     public function setProduct_type($product_type)
     {
         $this->product_type = $product_type;
+
         return $this;
     }
 
@@ -548,11 +631,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $product_options
+     *
      * @return $this
      */
     public function setProduct_options($product_options)
     {
         $this->product_options = $product_options;
+
         return $this;
     }
 
@@ -566,11 +651,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $weight
+     *
      * @return $this
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
         return $this;
     }
 
@@ -584,11 +671,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $is_virtual
+     *
      * @return $this
      */
     public function setIs_virtual($is_virtual)
     {
         $this->is_virtual = $is_virtual;
+
         return $this;
     }
 
@@ -602,11 +691,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -620,11 +711,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -638,11 +731,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $applied_rule_ids
+     *
      * @return $this
      */
     public function setApplied_rule_ids($applied_rule_ids)
     {
         $this->applied_rule_ids = $applied_rule_ids;
+
         return $this;
     }
 
@@ -656,11 +751,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $free_shipping
+     *
      * @return $this
      */
     public function setFree_shipping($free_shipping)
     {
         $this->free_shipping = $free_shipping;
+
         return $this;
     }
 
@@ -674,11 +771,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $is_qty_decimal
+     *
      * @return $this
      */
     public function setIs_qty_decimal($is_qty_decimal)
     {
         $this->is_qty_decimal = $is_qty_decimal;
+
         return $this;
     }
 
@@ -692,11 +791,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $no_discount
+     *
      * @return $this
      */
     public function setNo_discount($no_discount)
     {
         $this->no_discount = $no_discount;
+
         return $this;
     }
 
@@ -710,11 +811,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $qty_canceled
+     *
      * @return $this
      */
     public function setQty_canceled($qty_canceled)
     {
         $this->qty_canceled = $qty_canceled;
+
         return $this;
     }
 
@@ -728,11 +831,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $qty_invoiced
+     *
      * @return $this
      */
     public function setQty_invoiced($qty_invoiced)
     {
         $this->qty_invoiced = $qty_invoiced;
+
         return $this;
     }
 
@@ -746,11 +851,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $qty_ordered
+     *
      * @return $this
      */
     public function setQty_ordered($qty_ordered)
     {
         $this->qty_ordered = $qty_ordered;
+
         return $this;
     }
 
@@ -764,11 +871,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $qty_refunded
+     *
      * @return $this
      */
     public function setQty_refunded($qty_refunded)
     {
         $this->qty_refunded = $qty_refunded;
+
         return $this;
     }
 
@@ -782,11 +891,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $qty_shipped
+     *
      * @return $this
      */
     public function setQty_shipped($qty_shipped)
     {
         $this->qty_shipped = $qty_shipped;
+
         return $this;
     }
 
@@ -800,11 +911,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $cost
+     *
      * @return $this
      */
     public function setCost($cost)
     {
         $this->cost = $cost;
+
         return $this;
     }
 
@@ -818,11 +931,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $price
+     *
      * @return $this
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
 
@@ -836,11 +951,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_price
+     *
      * @return $this
      */
     public function setBase_price($base_price)
     {
         $this->base_price = $base_price;
+
         return $this;
     }
 
@@ -854,11 +971,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $original_price
+     *
      * @return $this
      */
     public function setOriginal_price($original_price)
     {
         $this->original_price = $original_price;
+
         return $this;
     }
 
@@ -872,11 +991,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_original_price
+     *
      * @return $this
      */
     public function setBase_original_price($base_original_price)
     {
         $this->base_original_price = $base_original_price;
+
         return $this;
     }
 
@@ -890,11 +1011,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $tax_percent
+     *
      * @return $this
      */
     public function setTax_percent($tax_percent)
     {
         $this->tax_percent = $tax_percent;
+
         return $this;
     }
 
@@ -908,11 +1031,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $tax_amount
+     *
      * @return $this
      */
     public function setTax_amount($tax_amount)
     {
         $this->tax_amount = $tax_amount;
+
         return $this;
     }
 
@@ -926,11 +1051,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_tax_amount
+     *
      * @return $this
      */
     public function setBase_tax_amount($base_tax_amount)
     {
         $this->base_tax_amount = $base_tax_amount;
+
         return $this;
     }
 
@@ -944,11 +1071,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $tax_invoiced
+     *
      * @return $this
      */
     public function setTax_invoiced($tax_invoiced)
     {
         $this->tax_invoiced = $tax_invoiced;
+
         return $this;
     }
 
@@ -962,11 +1091,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_tax_invoiced
+     *
      * @return $this
      */
     public function setBase_tax_invoiced($base_tax_invoiced)
     {
         $this->base_tax_invoiced = $base_tax_invoiced;
+
         return $this;
     }
 
@@ -980,11 +1111,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $discount_percent
+     *
      * @return $this
      */
     public function setDiscount_percent($discount_percent)
     {
         $this->discount_percent = $discount_percent;
+
         return $this;
     }
 
@@ -998,11 +1131,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $discount_amount
+     *
      * @return $this
      */
     public function setDiscount_amount($discount_amount)
     {
         $this->discount_amount = $discount_amount;
+
         return $this;
     }
 
@@ -1016,11 +1151,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_discount_amount
+     *
      * @return $this
      */
     public function setBase_discount_amount($base_discount_amount)
     {
         $this->base_discount_amount = $base_discount_amount;
+
         return $this;
     }
 
@@ -1034,11 +1171,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $discount_invoiced
+     *
      * @return $this
      */
     public function setDiscount_invoiced($discount_invoiced)
     {
         $this->discount_invoiced = $discount_invoiced;
+
         return $this;
     }
 
@@ -1052,11 +1191,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_discount_invoiced
+     *
      * @return $this
      */
     public function setBase_discount_invoiced($base_discount_invoiced)
     {
         $this->base_discount_invoiced = $base_discount_invoiced;
+
         return $this;
     }
 
@@ -1070,11 +1211,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $amount_refunded
+     *
      * @return $this
      */
     public function setAmount_refunded($amount_refunded)
     {
         $this->amount_refunded = $amount_refunded;
+
         return $this;
     }
 
@@ -1088,11 +1231,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_amount_refunded
+     *
      * @return $this
      */
     public function setBase_amount_refunded($base_amount_refunded)
     {
         $this->base_amount_refunded = $base_amount_refunded;
+
         return $this;
     }
 
@@ -1106,11 +1251,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $row_total
+     *
      * @return $this
      */
     public function setRow_total($row_total)
     {
         $this->row_total = $row_total;
+
         return $this;
     }
 
@@ -1124,11 +1271,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_row_total
+     *
      * @return $this
      */
     public function setBase_row_total($base_row_total)
     {
         $this->base_row_total = $base_row_total;
+
         return $this;
     }
 
@@ -1142,11 +1291,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $row_invoiced
+     *
      * @return $this
      */
     public function setRow_invoiced($row_invoiced)
     {
         $this->row_invoiced = $row_invoiced;
+
         return $this;
     }
 
@@ -1160,11 +1311,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_row_invoiced
+     *
      * @return $this
      */
     public function setBase_row_invoiced($base_row_invoiced)
     {
         $this->base_row_invoiced = $base_row_invoiced;
+
         return $this;
     }
 
@@ -1178,11 +1331,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $row_weight
+     *
      * @return $this
      */
     public function setRow_weight($row_weight)
     {
         $this->row_weight = $row_weight;
+
         return $this;
     }
 
@@ -1196,11 +1351,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $gift_message_id
+     *
      * @return $this
      */
     public function setGift_message_id($gift_message_id)
     {
         $this->gift_message_id = $gift_message_id;
+
         return $this;
     }
 
@@ -1214,11 +1371,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $gift_message
+     *
      * @return $this
      */
     public function setGift_message($gift_message)
     {
         $this->gift_message = $gift_message;
+
         return $this;
     }
 
@@ -1232,11 +1391,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $gift_message_available
+     *
      * @return $this
      */
     public function setGift_message_available($gift_message_available)
     {
         $this->gift_message_available = $gift_message_available;
+
         return $this;
     }
 
@@ -1250,11 +1411,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_tax_before_discount
+     *
      * @return $this
      */
     public function setBase_tax_before_discount($base_tax_before_discount)
     {
         $this->base_tax_before_discount = $base_tax_before_discount;
+
         return $this;
     }
 
@@ -1268,11 +1431,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $tax_before_discount
+     *
      * @return $this
      */
     public function setTax_before_discount($tax_before_discount)
     {
         $this->tax_before_discount = $tax_before_discount;
+
         return $this;
     }
 
@@ -1286,11 +1451,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $weee_tax_applied
+     *
      * @return $this
      */
     public function setWeee_tax_applied($weee_tax_applied)
     {
         $this->weee_tax_applied = $weee_tax_applied;
+
         return $this;
     }
 
@@ -1304,11 +1471,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $weee_tax_applied_amount
+     *
      * @return $this
      */
     public function setWeee_tax_applied_amount($weee_tax_applied_amount)
     {
         $this->weee_tax_applied_amount = $weee_tax_applied_amount;
+
         return $this;
     }
 
@@ -1322,11 +1491,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $weee_tax_applied_row_amount
+     *
      * @return $this
      */
     public function setWeee_tax_applied_row_amount($weee_tax_applied_row_amount)
     {
         $this->weee_tax_applied_row_amount = $weee_tax_applied_row_amount;
+
         return $this;
     }
 
@@ -1340,11 +1511,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_weee_tax_applied_amount
+     *
      * @return $this
      */
     public function setBase_weee_tax_applied_amount($base_weee_tax_applied_amount)
     {
         $this->base_weee_tax_applied_amount = $base_weee_tax_applied_amount;
+
         return $this;
     }
 
@@ -1358,11 +1531,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_weee_tax_applied_row_amount
+     *
      * @return $this
      */
     public function setBase_weee_tax_applied_row_amount($base_weee_tax_applied_row_amount)
     {
         $this->base_weee_tax_applied_row_amount = $base_weee_tax_applied_row_amount;
+
         return $this;
     }
 
@@ -1376,11 +1551,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $weee_tax_disposition
+     *
      * @return $this
      */
     public function setWeee_tax_disposition($weee_tax_disposition)
     {
         $this->weee_tax_disposition = $weee_tax_disposition;
+
         return $this;
     }
 
@@ -1394,11 +1571,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $weee_tax_row_disposition
+     *
      * @return $this
      */
     public function setWeee_tax_row_disposition($weee_tax_row_disposition)
     {
         $this->weee_tax_row_disposition = $weee_tax_row_disposition;
+
         return $this;
     }
 
@@ -1412,11 +1591,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_weee_tax_disposition
+     *
      * @return $this
      */
     public function setBase_weee_tax_disposition($base_weee_tax_disposition)
     {
         $this->base_weee_tax_disposition = $base_weee_tax_disposition;
+
         return $this;
     }
 
@@ -1430,14 +1611,13 @@ class SalesOrderItemEntity
 
     /**
      * @param string $base_weee_tax_row_disposition
+     *
      * @return $this
      */
     public function setBase_weee_tax_row_disposition($base_weee_tax_row_disposition)
     {
         $this->base_weee_tax_row_disposition = $base_weee_tax_row_disposition;
+
         return $this;
     }
-
-
 }
-

@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductAttributeMediaCreateEntity
 {
-
     /**
      * @var catalogProductImageFileEntity
      */
@@ -36,14 +47,21 @@ class CatalogProductAttributeMediaCreateEntity
     protected $remove = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var catalogProductImageFileEntity $file
-     * @var string $label
-     * @var string $position
-     * @var ArrayOfString $types
-     * @var string $exclude
-     * @var string $remove
+     * @var catalogProductImageFileEntity
+     * @var string                        $label
+     * @var string                        $position
+     * @var ArrayOfString                 $types
+     * @var string                        $exclude
+     * @var string                        $remove
+     *
+     * @param mixed $file
+     * @param mixed $label
+     * @param mixed $position
+     * @param mixed $types
+     * @param mixed $exclude
+     * @param mixed $remove
      */
     public function __construct($file, $label, $position, $types, $exclude, $remove)
     {
@@ -65,11 +83,13 @@ class CatalogProductAttributeMediaCreateEntity
 
     /**
      * @param catalogProductImageFileEntity $file
+     *
      * @return $this
      */
     public function setFile($file)
     {
         $this->file = $file;
+
         return $this;
     }
 
@@ -83,11 +103,13 @@ class CatalogProductAttributeMediaCreateEntity
 
     /**
      * @param string $label
+     *
      * @return $this
      */
     public function setLabel($label)
     {
         $this->label = $label;
+
         return $this;
     }
 
@@ -101,11 +123,13 @@ class CatalogProductAttributeMediaCreateEntity
 
     /**
      * @param string $position
+     *
      * @return $this
      */
     public function setPosition($position)
     {
         $this->position = $position;
+
         return $this;
     }
 
@@ -119,11 +143,13 @@ class CatalogProductAttributeMediaCreateEntity
 
     /**
      * @param ArrayOfString $types
+     *
      * @return $this
      */
     public function setTypes($types)
     {
         $this->types = $types;
+
         return $this;
     }
 
@@ -137,11 +163,13 @@ class CatalogProductAttributeMediaCreateEntity
 
     /**
      * @param string $exclude
+     *
      * @return $this
      */
     public function setExclude($exclude)
     {
         $this->exclude = $exclude;
+
         return $this;
     }
 
@@ -155,14 +183,13 @@ class CatalogProductAttributeMediaCreateEntity
 
     /**
      * @param string $remove
+     *
      * @return $this
      */
     public function setRemove($remove)
     {
         $this->remove = $remove;
+
         return $this;
     }
-
-
 }
-

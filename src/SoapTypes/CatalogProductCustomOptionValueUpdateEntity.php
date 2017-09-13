@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductCustomOptionValueUpdateEntity
 {
-
     /**
      * @var string
      */
@@ -31,13 +42,19 @@ class CatalogProductCustomOptionValueUpdateEntity
     protected $sort_order = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $title
+     * @var string
      * @var string $price
      * @var string $price_type
      * @var string $sku
      * @var string $sort_order
+     *
+     * @param mixed $title
+     * @param mixed $price
+     * @param mixed $price_type
+     * @param mixed $sku
+     * @param mixed $sort_order
      */
     public function __construct($title, $price, $price_type, $sku, $sort_order)
     {
@@ -58,11 +75,13 @@ class CatalogProductCustomOptionValueUpdateEntity
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -76,11 +95,13 @@ class CatalogProductCustomOptionValueUpdateEntity
 
     /**
      * @param string $price
+     *
      * @return $this
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
 
@@ -94,11 +115,13 @@ class CatalogProductCustomOptionValueUpdateEntity
 
     /**
      * @param string $price_type
+     *
      * @return $this
      */
     public function setPrice_type($price_type)
     {
         $this->price_type = $price_type;
+
         return $this;
     }
 
@@ -112,11 +135,13 @@ class CatalogProductCustomOptionValueUpdateEntity
 
     /**
      * @param string $sku
+     *
      * @return $this
      */
     public function setSku($sku)
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -130,14 +155,13 @@ class CatalogProductCustomOptionValueUpdateEntity
 
     /**
      * @param string $sort_order
+     *
      * @return $this
      */
     public function setSort_order($sort_order)
     {
         $this->sort_order = $sort_order;
+
         return $this;
     }
-
-
 }
-

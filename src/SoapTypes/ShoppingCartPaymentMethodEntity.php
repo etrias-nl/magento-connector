@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class ShoppingCartPaymentMethodEntity
 {
-
     /**
      * @var string
      */
@@ -46,9 +57,9 @@ class ShoppingCartPaymentMethodEntity
     protected $cc_exp_month = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $po_number
+     * @var string
      * @var string $method
      * @var string $cc_cid
      * @var string $cc_owner
@@ -56,6 +67,15 @@ class ShoppingCartPaymentMethodEntity
      * @var string $cc_type
      * @var string $cc_exp_year
      * @var string $cc_exp_month
+     *
+     * @param mixed $po_number
+     * @param mixed $method
+     * @param mixed $cc_cid
+     * @param mixed $cc_owner
+     * @param mixed $cc_number
+     * @param mixed $cc_type
+     * @param mixed $cc_exp_year
+     * @param mixed $cc_exp_month
      */
     public function __construct($po_number, $method, $cc_cid, $cc_owner, $cc_number, $cc_type, $cc_exp_year, $cc_exp_month)
     {
@@ -79,11 +99,13 @@ class ShoppingCartPaymentMethodEntity
 
     /**
      * @param string $po_number
+     *
      * @return $this
      */
     public function setPo_number($po_number)
     {
         $this->po_number = $po_number;
+
         return $this;
     }
 
@@ -97,11 +119,13 @@ class ShoppingCartPaymentMethodEntity
 
     /**
      * @param string $method
+     *
      * @return $this
      */
     public function setMethod($method)
     {
         $this->method = $method;
+
         return $this;
     }
 
@@ -115,11 +139,13 @@ class ShoppingCartPaymentMethodEntity
 
     /**
      * @param string $cc_cid
+     *
      * @return $this
      */
     public function setCc_cid($cc_cid)
     {
         $this->cc_cid = $cc_cid;
+
         return $this;
     }
 
@@ -133,11 +159,13 @@ class ShoppingCartPaymentMethodEntity
 
     /**
      * @param string $cc_owner
+     *
      * @return $this
      */
     public function setCc_owner($cc_owner)
     {
         $this->cc_owner = $cc_owner;
+
         return $this;
     }
 
@@ -151,11 +179,13 @@ class ShoppingCartPaymentMethodEntity
 
     /**
      * @param string $cc_number
+     *
      * @return $this
      */
     public function setCc_number($cc_number)
     {
         $this->cc_number = $cc_number;
+
         return $this;
     }
 
@@ -169,11 +199,13 @@ class ShoppingCartPaymentMethodEntity
 
     /**
      * @param string $cc_type
+     *
      * @return $this
      */
     public function setCc_type($cc_type)
     {
         $this->cc_type = $cc_type;
+
         return $this;
     }
 
@@ -187,11 +219,13 @@ class ShoppingCartPaymentMethodEntity
 
     /**
      * @param string $cc_exp_year
+     *
      * @return $this
      */
     public function setCc_exp_year($cc_exp_year)
     {
         $this->cc_exp_year = $cc_exp_year;
+
         return $this;
     }
 
@@ -205,14 +239,13 @@ class ShoppingCartPaymentMethodEntity
 
     /**
      * @param string $cc_exp_month
+     *
      * @return $this
      */
     public function setCc_exp_month($cc_exp_month)
     {
         $this->cc_exp_month = $cc_exp_month;
+
         return $this;
     }
-
-
 }
-

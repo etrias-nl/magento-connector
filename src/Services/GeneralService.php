@@ -1,32 +1,34 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: cprinse
- * Date: 4-9-17
- * Time: 15:55
+
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Etrias\MagentoConnector\Services;
 
-
-use BadMethodCallException;
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
-use Symfony\Component\Cache\Adapter\AdapterInterface;
-use Symfony\Component\Cache\Adapter\NullAdapter;
 
 class GeneralService
 {
-    /** @var MagentoAdapterInterface  */
+    /** @var MagentoAdapterInterface */
     protected $adapter;
 
-    /** @var AuthenticationService  */
+    /** @var AuthenticationService */
     protected $authenticationService;
 
     /**
      * AuthenticationService constructor.
      *
      * @param MagentoAdapterInterface $adapter
-     * @param AuthenticationService $authenticationService
+     * @param AuthenticationService   $authenticationService
      */
     public function __construct(
         MagentoAdapterInterface $adapter,
@@ -36,20 +38,18 @@ class GeneralService
         $this->authenticationService = $authenticationService;
     }
 
-
-    public function getResources() :array
+    public function getResources(): array
     {
         return $this->adapter->resources($this->authenticationService->login());
     }
 
-    public function getGlobalFaults() :array
+    public function getGlobalFaults(): array
     {
         return $this->adapter->globalFaults($this->authenticationService->login());
     }
 
-    public function getResourceFaults(string $resourceName) :array
+    public function getResourceFaults(string $resourceName): array
     {
         return $this->adapter->globalFaults($this->authenticationService->login(), $resourceName);
     }
-
 }

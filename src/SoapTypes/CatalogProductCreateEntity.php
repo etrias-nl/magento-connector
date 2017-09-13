@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductCreateEntity
 {
-
     /**
      * @var ArrayOfString
      */
@@ -161,39 +172,71 @@ class CatalogProductCreateEntity
     protected $price_changes = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var ArrayOfString $categories
-     * @var ArrayOfString $websites
-     * @var string $name
-     * @var string $description
-     * @var string $short_description
-     * @var string $weight
-     * @var string $status
-     * @var string $url_key
-     * @var string $url_path
-     * @var string $visibility
-     * @var ArrayOfString $category_ids
-     * @var ArrayOfString $website_ids
-     * @var string $has_options
-     * @var string $gift_message_available
-     * @var string $price
-     * @var string $special_price
-     * @var string $special_from_date
-     * @var string $special_to_date
-     * @var string $tax_class_id
-     * @var catalogProductTierPriceEntityArray $tier_price
-     * @var string $meta_title
-     * @var string $meta_keyword
-     * @var string $meta_description
-     * @var string $custom_design
-     * @var string $custom_layout_update
-     * @var string $options_container
-     * @var catalogProductAdditionalAttributesEntity $additional_attributes
+     * @var ArrayOfString
+     * @var ArrayOfString                              $websites
+     * @var string                                     $name
+     * @var string                                     $description
+     * @var string                                     $short_description
+     * @var string                                     $weight
+     * @var string                                     $status
+     * @var string                                     $url_key
+     * @var string                                     $url_path
+     * @var string                                     $visibility
+     * @var ArrayOfString                              $category_ids
+     * @var ArrayOfString                              $website_ids
+     * @var string                                     $has_options
+     * @var string                                     $gift_message_available
+     * @var string                                     $price
+     * @var string                                     $special_price
+     * @var string                                     $special_from_date
+     * @var string                                     $special_to_date
+     * @var string                                     $tax_class_id
+     * @var catalogProductTierPriceEntityArray         $tier_price
+     * @var string                                     $meta_title
+     * @var string                                     $meta_keyword
+     * @var string                                     $meta_description
+     * @var string                                     $custom_design
+     * @var string                                     $custom_layout_update
+     * @var string                                     $options_container
+     * @var catalogProductAdditionalAttributesEntity   $additional_attributes
      * @var catalogInventoryStockItemUp\DateTimeEntity $stock_data
-     * @var ArrayOfString $associated_skus
-     * @var ArrayOfString $configurable_attributes
-     * @var associativeArray $price_changes
+     * @var ArrayOfString                              $associated_skus
+     * @var ArrayOfString                              $configurable_attributes
+     * @var associativeArray                           $price_changes
+     *
+     * @param mixed $categories
+     * @param mixed $websites
+     * @param mixed $name
+     * @param mixed $description
+     * @param mixed $short_description
+     * @param mixed $weight
+     * @param mixed $status
+     * @param mixed $url_key
+     * @param mixed $url_path
+     * @param mixed $visibility
+     * @param mixed $category_ids
+     * @param mixed $website_ids
+     * @param mixed $has_options
+     * @param mixed $gift_message_available
+     * @param mixed $price
+     * @param mixed $special_price
+     * @param mixed $special_from_date
+     * @param mixed $special_to_date
+     * @param mixed $tax_class_id
+     * @param mixed $tier_price
+     * @param mixed $meta_title
+     * @param mixed $meta_keyword
+     * @param mixed $meta_description
+     * @param mixed $custom_design
+     * @param mixed $custom_layout_update
+     * @param mixed $options_container
+     * @param mixed $additional_attributes
+     * @param mixed $stock_data
+     * @param mixed $associated_skus
+     * @param mixed $configurable_attributes
+     * @param mixed $price_changes
      */
     public function __construct($categories, $websites, $name, $description, $short_description, $weight, $status, $url_key, $url_path, $visibility, $category_ids, $website_ids, $has_options, $gift_message_available, $price, $special_price, $special_from_date, $special_to_date, $tax_class_id, $tier_price, $meta_title, $meta_keyword, $meta_description, $custom_design, $custom_layout_update, $options_container, $additional_attributes, $stock_data, $associated_skus, $configurable_attributes, $price_changes)
     {
@@ -240,11 +283,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param ArrayOfString $categories
+     *
      * @return $this
      */
     public function setCategories($categories)
     {
         $this->categories = $categories;
+
         return $this;
     }
 
@@ -258,11 +303,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param ArrayOfString $websites
+     *
      * @return $this
      */
     public function setWebsites($websites)
     {
         $this->websites = $websites;
+
         return $this;
     }
 
@@ -276,11 +323,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -294,11 +343,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $description
+     *
      * @return $this
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -312,11 +363,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $short_description
+     *
      * @return $this
      */
     public function setShort_description($short_description)
     {
         $this->short_description = $short_description;
+
         return $this;
     }
 
@@ -330,11 +383,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $weight
+     *
      * @return $this
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
         return $this;
     }
 
@@ -348,11 +403,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $status
+     *
      * @return $this
      */
     public function setStatus($status)
     {
         $this->status = $status;
+
         return $this;
     }
 
@@ -366,11 +423,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $url_key
+     *
      * @return $this
      */
     public function setUrl_key($url_key)
     {
         $this->url_key = $url_key;
+
         return $this;
     }
 
@@ -384,11 +443,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $url_path
+     *
      * @return $this
      */
     public function setUrl_path($url_path)
     {
         $this->url_path = $url_path;
+
         return $this;
     }
 
@@ -402,11 +463,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $visibility
+     *
      * @return $this
      */
     public function setVisibility($visibility)
     {
         $this->visibility = $visibility;
+
         return $this;
     }
 
@@ -420,11 +483,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param ArrayOfString $category_ids
+     *
      * @return $this
      */
     public function setCategory_ids($category_ids)
     {
         $this->category_ids = $category_ids;
+
         return $this;
     }
 
@@ -438,11 +503,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param ArrayOfString $website_ids
+     *
      * @return $this
      */
     public function setWebsite_ids($website_ids)
     {
         $this->website_ids = $website_ids;
+
         return $this;
     }
 
@@ -456,11 +523,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $has_options
+     *
      * @return $this
      */
     public function setHas_options($has_options)
     {
         $this->has_options = $has_options;
+
         return $this;
     }
 
@@ -474,11 +543,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $gift_message_available
+     *
      * @return $this
      */
     public function setGift_message_available($gift_message_available)
     {
         $this->gift_message_available = $gift_message_available;
+
         return $this;
     }
 
@@ -492,11 +563,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $price
+     *
      * @return $this
      */
     public function setPrice($price)
     {
         $this->price = $price;
+
         return $this;
     }
 
@@ -510,11 +583,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $special_price
+     *
      * @return $this
      */
     public function setSpecial_price($special_price)
     {
         $this->special_price = $special_price;
+
         return $this;
     }
 
@@ -528,11 +603,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $special_from_date
+     *
      * @return $this
      */
     public function setSpecial_from_date($special_from_date)
     {
         $this->special_from_date = $special_from_date;
+
         return $this;
     }
 
@@ -546,11 +623,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $special_to_date
+     *
      * @return $this
      */
     public function setSpecial_to_date($special_to_date)
     {
         $this->special_to_date = $special_to_date;
+
         return $this;
     }
 
@@ -564,11 +643,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $tax_class_id
+     *
      * @return $this
      */
     public function setTax_class_id($tax_class_id)
     {
         $this->tax_class_id = $tax_class_id;
+
         return $this;
     }
 
@@ -582,11 +663,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param catalogProductTierPriceEntityArray $tier_price
+     *
      * @return $this
      */
     public function setTier_price($tier_price)
     {
         $this->tier_price = $tier_price;
+
         return $this;
     }
 
@@ -600,11 +683,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $meta_title
+     *
      * @return $this
      */
     public function setMeta_title($meta_title)
     {
         $this->meta_title = $meta_title;
+
         return $this;
     }
 
@@ -618,11 +703,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $meta_keyword
+     *
      * @return $this
      */
     public function setMeta_keyword($meta_keyword)
     {
         $this->meta_keyword = $meta_keyword;
+
         return $this;
     }
 
@@ -636,11 +723,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $meta_description
+     *
      * @return $this
      */
     public function setMeta_description($meta_description)
     {
         $this->meta_description = $meta_description;
+
         return $this;
     }
 
@@ -654,11 +743,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $custom_design
+     *
      * @return $this
      */
     public function setCustom_design($custom_design)
     {
         $this->custom_design = $custom_design;
+
         return $this;
     }
 
@@ -672,11 +763,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $custom_layout_update
+     *
      * @return $this
      */
     public function setCustom_layout_update($custom_layout_update)
     {
         $this->custom_layout_update = $custom_layout_update;
+
         return $this;
     }
 
@@ -690,11 +783,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param string $options_container
+     *
      * @return $this
      */
     public function setOptions_container($options_container)
     {
         $this->options_container = $options_container;
+
         return $this;
     }
 
@@ -708,11 +803,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param catalogProductAdditionalAttributesEntity $additional_attributes
+     *
      * @return $this
      */
     public function setAdditional_attributes($additional_attributes)
     {
         $this->additional_attributes = $additional_attributes;
+
         return $this;
     }
 
@@ -726,11 +823,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param catalogInventoryStockItemUp\DateTimeEntity $stock_data
+     *
      * @return $this
      */
     public function setStock_data($stock_data)
     {
         $this->stock_data = $stock_data;
+
         return $this;
     }
 
@@ -744,11 +843,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param ArrayOfString $associated_skus
+     *
      * @return $this
      */
     public function setAssociated_skus($associated_skus)
     {
         $this->associated_skus = $associated_skus;
+
         return $this;
     }
 
@@ -762,11 +863,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param ArrayOfString $configurable_attributes
+     *
      * @return $this
      */
     public function setConfigurable_attributes($configurable_attributes)
     {
         $this->configurable_attributes = $configurable_attributes;
+
         return $this;
     }
 
@@ -780,14 +883,13 @@ class CatalogProductCreateEntity
 
     /**
      * @param associativeArray $price_changes
+     *
      * @return $this
      */
     public function setPrice_changes($price_changes)
     {
         $this->price_changes = $price_changes;
+
         return $this;
     }
-
-
 }
-

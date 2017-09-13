@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogCategoryInfo
 {
-
     /**
      * @var string
      */
@@ -151,37 +162,67 @@ class CatalogCategoryInfo
     protected $landing_page = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $category_id
-     * @var int $is_active
-     * @var string $position
-     * @var string $level
-     * @var string $parent_id
-     * @var string $all_children
-     * @var string $children
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $name
-     * @var string $url_key
-     * @var string $description
-     * @var string $meta_title
-     * @var string $meta_keywords
-     * @var string $meta_description
-     * @var string $path
-     * @var string $url_path
-     * @var int $children_count
-     * @var string $display_mode
-     * @var int $is_anchor
+     * @var string
+     * @var int           $is_active
+     * @var string        $position
+     * @var string        $level
+     * @var string        $parent_id
+     * @var string        $all_children
+     * @var string        $children
+     * @var string        $created_at
+     * @var string        $updated_at
+     * @var string        $name
+     * @var string        $url_key
+     * @var string        $description
+     * @var string        $meta_title
+     * @var string        $meta_keywords
+     * @var string        $meta_description
+     * @var string        $path
+     * @var string        $url_path
+     * @var int           $children_count
+     * @var string        $display_mode
+     * @var int           $is_anchor
      * @var ArrayOfString $available_sort_by
-     * @var string $custom_design
-     * @var string $custom_design_apply
-     * @var string $custom_design_from
-     * @var string $custom_design_to
-     * @var string $page_layout
-     * @var string $custom_layout_update
-     * @var string $default_sort_by
-     * @var int $landing_page
+     * @var string        $custom_design
+     * @var string        $custom_design_apply
+     * @var string        $custom_design_from
+     * @var string        $custom_design_to
+     * @var string        $page_layout
+     * @var string        $custom_layout_update
+     * @var string        $default_sort_by
+     * @var int           $landing_page
+     *
+     * @param mixed $category_id
+     * @param mixed $is_active
+     * @param mixed $position
+     * @param mixed $level
+     * @param mixed $parent_id
+     * @param mixed $all_children
+     * @param mixed $children
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $name
+     * @param mixed $url_key
+     * @param mixed $description
+     * @param mixed $meta_title
+     * @param mixed $meta_keywords
+     * @param mixed $meta_description
+     * @param mixed $path
+     * @param mixed $url_path
+     * @param mixed $children_count
+     * @param mixed $display_mode
+     * @param mixed $is_anchor
+     * @param mixed $available_sort_by
+     * @param mixed $custom_design
+     * @param mixed $custom_design_apply
+     * @param mixed $custom_design_from
+     * @param mixed $custom_design_to
+     * @param mixed $page_layout
+     * @param mixed $custom_layout_update
+     * @param mixed $default_sort_by
+     * @param mixed $landing_page
      */
     public function __construct($category_id, $is_active, $position, $level, $parent_id, $all_children, $children, $created_at, $updated_at, $name, $url_key, $description, $meta_title, $meta_keywords, $meta_description, $path, $url_path, $children_count, $display_mode, $is_anchor, $available_sort_by, $custom_design, $custom_design_apply, $custom_design_from, $custom_design_to, $page_layout, $custom_layout_update, $default_sort_by, $landing_page)
     {
@@ -226,11 +267,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $category_id
+     *
      * @return $this
      */
     public function setCategory_id($category_id)
     {
         $this->category_id = $category_id;
+
         return $this;
     }
 
@@ -244,11 +287,13 @@ class CatalogCategoryInfo
 
     /**
      * @param int $is_active
+     *
      * @return $this
      */
     public function setIs_active($is_active)
     {
         $this->is_active = $is_active;
+
         return $this;
     }
 
@@ -262,11 +307,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $position
+     *
      * @return $this
      */
     public function setPosition($position)
     {
         $this->position = $position;
+
         return $this;
     }
 
@@ -280,11 +327,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $level
+     *
      * @return $this
      */
     public function setLevel($level)
     {
         $this->level = $level;
+
         return $this;
     }
 
@@ -298,11 +347,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $parent_id
+     *
      * @return $this
      */
     public function setParent_id($parent_id)
     {
         $this->parent_id = $parent_id;
+
         return $this;
     }
 
@@ -316,11 +367,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $all_children
+     *
      * @return $this
      */
     public function setAll_children($all_children)
     {
         $this->all_children = $all_children;
+
         return $this;
     }
 
@@ -334,11 +387,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $children
+     *
      * @return $this
      */
     public function setChildren($children)
     {
         $this->children = $children;
+
         return $this;
     }
 
@@ -352,11 +407,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -370,11 +427,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -388,11 +447,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -406,11 +467,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $url_key
+     *
      * @return $this
      */
     public function setUrl_key($url_key)
     {
         $this->url_key = $url_key;
+
         return $this;
     }
 
@@ -424,11 +487,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $description
+     *
      * @return $this
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -442,11 +507,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $meta_title
+     *
      * @return $this
      */
     public function setMeta_title($meta_title)
     {
         $this->meta_title = $meta_title;
+
         return $this;
     }
 
@@ -460,11 +527,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $meta_keywords
+     *
      * @return $this
      */
     public function setMeta_keywords($meta_keywords)
     {
         $this->meta_keywords = $meta_keywords;
+
         return $this;
     }
 
@@ -478,11 +547,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $meta_description
+     *
      * @return $this
      */
     public function setMeta_description($meta_description)
     {
         $this->meta_description = $meta_description;
+
         return $this;
     }
 
@@ -496,11 +567,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $path
+     *
      * @return $this
      */
     public function setPath($path)
     {
         $this->path = $path;
+
         return $this;
     }
 
@@ -514,11 +587,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $url_path
+     *
      * @return $this
      */
     public function setUrl_path($url_path)
     {
         $this->url_path = $url_path;
+
         return $this;
     }
 
@@ -532,11 +607,13 @@ class CatalogCategoryInfo
 
     /**
      * @param int $children_count
+     *
      * @return $this
      */
     public function setChildren_count($children_count)
     {
         $this->children_count = $children_count;
+
         return $this;
     }
 
@@ -550,11 +627,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $display_mode
+     *
      * @return $this
      */
     public function setDisplay_mode($display_mode)
     {
         $this->display_mode = $display_mode;
+
         return $this;
     }
 
@@ -568,11 +647,13 @@ class CatalogCategoryInfo
 
     /**
      * @param int $is_anchor
+     *
      * @return $this
      */
     public function setIs_anchor($is_anchor)
     {
         $this->is_anchor = $is_anchor;
+
         return $this;
     }
 
@@ -586,11 +667,13 @@ class CatalogCategoryInfo
 
     /**
      * @param ArrayOfString $available_sort_by
+     *
      * @return $this
      */
     public function setAvailable_sort_by($available_sort_by)
     {
         $this->available_sort_by = $available_sort_by;
+
         return $this;
     }
 
@@ -604,11 +687,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $custom_design
+     *
      * @return $this
      */
     public function setCustom_design($custom_design)
     {
         $this->custom_design = $custom_design;
+
         return $this;
     }
 
@@ -622,11 +707,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $custom_design_apply
+     *
      * @return $this
      */
     public function setCustom_design_apply($custom_design_apply)
     {
         $this->custom_design_apply = $custom_design_apply;
+
         return $this;
     }
 
@@ -640,11 +727,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $custom_design_from
+     *
      * @return $this
      */
     public function setCustom_design_from($custom_design_from)
     {
         $this->custom_design_from = $custom_design_from;
+
         return $this;
     }
 
@@ -658,11 +747,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $custom_design_to
+     *
      * @return $this
      */
     public function setCustom_design_to($custom_design_to)
     {
         $this->custom_design_to = $custom_design_to;
+
         return $this;
     }
 
@@ -676,11 +767,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $page_layout
+     *
      * @return $this
      */
     public function setPage_layout($page_layout)
     {
         $this->page_layout = $page_layout;
+
         return $this;
     }
 
@@ -694,11 +787,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $custom_layout_update
+     *
      * @return $this
      */
     public function setCustom_layout_update($custom_layout_update)
     {
         $this->custom_layout_update = $custom_layout_update;
+
         return $this;
     }
 
@@ -712,11 +807,13 @@ class CatalogCategoryInfo
 
     /**
      * @param string $default_sort_by
+     *
      * @return $this
      */
     public function setDefault_sort_by($default_sort_by)
     {
         $this->default_sort_by = $default_sort_by;
+
         return $this;
     }
 
@@ -730,14 +827,13 @@ class CatalogCategoryInfo
 
     /**
      * @param int $landing_page
+     *
      * @return $this
      */
     public function setLanding_page($landing_page)
     {
         $this->landing_page = $landing_page;
+
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of PHP CS Fixer.
  *
@@ -30,19 +32,19 @@ abstract class AbstractServiceTest extends TestCase
     /** @var MagentoClientInterface */
     protected $soapClient;
 
-    /** @var  ExceptionMap */
+    /** @var ExceptionMap */
     protected $exceptionMap;
 
     /** @var AuthenticationService */
     protected $authenticationService;
 
-    /** @var  AdapterInterface */
+    /** @var AdapterInterface */
     protected $adapter;
 
     public function setUp()
     {
         $guzzleClient = new Client([
-            'verify' => false
+            'verify' => false,
         ]);
 
         $clientFactory = new ClientFactory(MagentoClient::class);
@@ -51,9 +53,9 @@ abstract class AbstractServiceTest extends TestCase
             'trace' => true,
             'stream_context' => [
                 'ssl' => [
-                    'verify_peer'       => false
-                ]
-            ]
+                    'verify_peer' => false,
+                ],
+            ],
         ];
 
         $clientBuilder = new ClientBuilder($clientFactory, getenv('WSDL'), $soapOptions);

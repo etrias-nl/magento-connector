@@ -1,5 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
 
 namespace Etrias\MagentoConnector\Adapter;
 
@@ -27,12 +38,13 @@ class SoapV2Adapter implements AdapterInterface
         $this->exceptionMap = $exceptionMap;
     }
 
-
     /**
      * @param $functionName
      * @param RequestInterface $request
-     * @return mixed
+     *
      * @throws MagentoSoapException
+     *
+     * @return mixed
      */
     public function processRequest($functionName, RequestInterface $request)
     {
@@ -58,40 +70,39 @@ class SoapV2Adapter implements AdapterInterface
 
     /**
      * @param RequestInterface $request
-     * @param ResultInterface $response
+     * @param ResultInterface  $response
+     *
      * @return mixed
      */
     public function processResponse(RequestInterface $request, ResultInterface $response)
     {
-        /** @var MixedResult $response */
+        /* @var MixedResult $response */
         return $response->getResult();
-
     }
 
-    public function startSession() :string
+    public function startSession(): string
     {
         $request = new MultiArgumentRequest([]);
 
         return $this->processRequest(__FUNCTION__, $request);
-
     }
 
-    public function endSession(string $sessionId) :bool
+    public function endSession(string $sessionId): bool
     {
         $request = new MultiArgumentRequest([$sessionId]);
 
         return $this->processRequest(__FUNCTION__, $request);
     }
 
-    public function login(string $username, string $password) :string
+    public function login(string $username, string $password): string
     {
         $request = new MultiArgumentRequest([$username, $password]);
-        /** @var MixedResult $response */
+        /* @var MixedResult $response */
 
         return $this->processRequest(__FUNCTION__, $request);
     }
 
-    public function resources(string $sessionId) :array
+    public function resources(string $sessionId): array
     {
         $request = new MultiArgumentRequest([$sessionId]);
 
@@ -111,5 +122,4 @@ class SoapV2Adapter implements AdapterInterface
 
         return $this->processRequest(__FUNCTION__, $request);
     }
-
 }

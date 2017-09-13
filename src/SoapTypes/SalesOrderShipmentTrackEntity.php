@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class SalesOrderShipmentTrackEntity
 {
-
     /**
      * @var string
      */
@@ -56,9 +67,9 @@ class SalesOrderShipmentTrackEntity
     protected $track_id = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var string $increment_id
+     * @var string
      * @var string $parent_id
      * @var string $created_at
      * @var string $updated_at
@@ -68,6 +79,17 @@ class SalesOrderShipmentTrackEntity
      * @var string $number
      * @var string $order_id
      * @var string $track_id
+     *
+     * @param mixed $increment_id
+     * @param mixed $parent_id
+     * @param mixed $created_at
+     * @param mixed $updated_at
+     * @param mixed $is_active
+     * @param mixed $carrier_code
+     * @param mixed $title
+     * @param mixed $number
+     * @param mixed $order_id
+     * @param mixed $track_id
      */
     public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $carrier_code, $title, $number, $order_id, $track_id)
     {
@@ -93,11 +115,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $increment_id
+     *
      * @return $this
      */
     public function setIncrement_id($increment_id)
     {
         $this->increment_id = $increment_id;
+
         return $this;
     }
 
@@ -111,11 +135,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $parent_id
+     *
      * @return $this
      */
     public function setParent_id($parent_id)
     {
         $this->parent_id = $parent_id;
+
         return $this;
     }
 
@@ -129,11 +155,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $created_at
+     *
      * @return $this
      */
     public function setCreated_at($created_at)
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -147,11 +175,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $updated_at
+     *
      * @return $this
      */
     public function setUpdated_at($updated_at)
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -165,11 +195,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $is_active
+     *
      * @return $this
      */
     public function setIs_active($is_active)
     {
         $this->is_active = $is_active;
+
         return $this;
     }
 
@@ -183,11 +215,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $carrier_code
+     *
      * @return $this
      */
     public function setCarrier_code($carrier_code)
     {
         $this->carrier_code = $carrier_code;
+
         return $this;
     }
 
@@ -201,11 +235,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -219,11 +255,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $number
+     *
      * @return $this
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 
@@ -237,11 +275,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $order_id
+     *
      * @return $this
      */
     public function setOrder_id($order_id)
     {
         $this->order_id = $order_id;
+
         return $this;
     }
 
@@ -255,14 +295,13 @@ class SalesOrderShipmentTrackEntity
 
     /**
      * @param string $track_id
+     *
      * @return $this
      */
     public function setTrack_id($track_id)
     {
         $this->track_id = $track_id;
+
         return $this;
     }
-
-
 }
-

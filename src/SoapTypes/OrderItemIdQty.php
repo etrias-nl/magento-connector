@@ -1,10 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Etrias\MagentoConnector\SoapTypes;
 
 class OrderItemIdQty
 {
-
     /**
      * @var int
      */
@@ -16,10 +27,13 @@ class OrderItemIdQty
     protected $qty = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @var int $order_item_id
+     * @var int
      * @var float $qty
+     *
+     * @param mixed $order_item_id
+     * @param mixed $qty
      */
     public function __construct($order_item_id, $qty)
     {
@@ -37,11 +51,13 @@ class OrderItemIdQty
 
     /**
      * @param int $order_item_id
+     *
      * @return $this
      */
     public function setOrder_item_id($order_item_id)
     {
         $this->order_item_id = $order_item_id;
+
         return $this;
     }
 
@@ -55,14 +71,13 @@ class OrderItemIdQty
 
     /**
      * @param float $qty
+     *
      * @return $this
      */
     public function setQty($qty)
     {
         $this->qty = $qty;
+
         return $this;
     }
-
-
 }
-
