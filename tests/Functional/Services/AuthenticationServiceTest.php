@@ -12,6 +12,7 @@
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
+use BadMethodCallException;
 use Etrias\MagentoConnector\Services\AuthenticationService;
 
 /**
@@ -27,13 +28,24 @@ class AuthenticationServiceTest extends AbstractServiceTest
     public function setUp()
     {
         parent::setUp();
-        $this->authenticationService = new AuthenticationService($this->soapClient, getenv('APIUSER'), getenv('APIKEY'));
+        $this->authenticationService = new AuthenticationService($this->adapter, getenv('APIUSER'), getenv('APIKEY'));
     }
 
 
+    public function testStartSession()
+    {
+        $this->expectException(BadMethodCallException::class);
+        $this->authenticationService->startSession();
+    }
+
+    public function testEndSession()
+    {
+        $this->assertTrue($this->authenticationService->endSession());
+    }
+
     public function testLogin()
     {
-        $sessionId = $this->authenticationService->getSessionId();
+        $sessionId = $this->authenticationService->login();
         $this->assertEquals(32, strlen($sessionId));
     }
 }

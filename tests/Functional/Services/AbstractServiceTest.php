@@ -12,8 +12,11 @@
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
+use Etrias\MagentoConnector\Adapter\AdapterInterface;
+use Etrias\MagentoConnector\Adapter\SoapV2Adapter;
 use Etrias\MagentoConnector\Client\MagentoClient;
 use Etrias\MagentoConnector\Client\MagentoClientInterface;
+use Etrias\MagentoConnector\ExceptionMap;
 use Etrias\MagentoConnector\Services\AuthenticationService;
 use GuzzleHttp\Client;
 use Phpro\SoapClient\ClientBuilder;
@@ -27,8 +30,14 @@ abstract class AbstractServiceTest extends TestCase
     /** @var MagentoClientInterface */
     protected $soapClient;
 
+    /** @var  ExceptionMap */
+    protected $exceptionMap;
+
     /** @var AuthenticationService */
     protected $authenticationService;
+
+    /** @var  AdapterInterface */
+    protected $adapter;
 
     public function setUp()
     {
@@ -53,7 +62,10 @@ abstract class AbstractServiceTest extends TestCase
         $clientBuilder->withHandler(GuzzleHandle::createForClient($guzzleClient));
 
         $this->soapClient = $clientBuilder->build();
+        $this->exceptionMap = new ExceptionMap();
 
-        $this->authenticationService = new AuthenticationService($this->soapClient, getenv('APIUSER'), getenv('APIKEY'));
+        $this->adapter = new SoapV2Adapter($this->soapClient, $this->exceptionMap);
+
+        $this->authenticationService = new AuthenticationService($this->adapter, getenv('APIUSER'), getenv('APIKEY'));
     }
 }

@@ -9,7 +9,8 @@
 namespace Etrias\MagentoConnector\Services;
 
 
-use Etrias\MagentoConnector\Client\MagentoClientInterface;
+use BadMethodCallException;
+use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\Cache\Adapter\NullAdapter;
 
@@ -18,8 +19,8 @@ class AuthenticationService
     const CACHE_KEY = 'Magento-session-id-84759b92-9793-11e7-abc4-cec278b6b50a';
     const CACHE_TTL = 60 * 15;
 
-    /** @var MagentoClientInterface */
-    protected $client;
+    /** @var MagentoAdapterInterface */
+    protected $adapter;
 
     /** @var  string */
     private $username;
@@ -39,18 +40,18 @@ class AuthenticationService
     /**
      * AuthenticationService constructor.
      *
-     * @param MagentoClientInterface $client
-     * @param AdapterInterface|null $cacheAdapter
+     * @param MagentoAdapterInterface $adapter
      * @param string $username
      * @param string $apiKey
+     * @param AdapterInterface|null $cacheAdapter
      */
     public function __construct(
-        MagentoClientInterface $client,
+        MagentoAdapterInterface $adapter,
         $username,
         $apiKey,
         AdapterInterface $cacheAdapter = null
     ) {
-        $this->client = $client;
+        $this->adapter = $adapter;
         $this->username = $username;
         $this->apiKey = $apiKey;
         if ($cacheAdapter === null) {
@@ -102,24 +103,45 @@ class AuthenticationService
     }
 
     /**
-     * @return string
+     * @throws BadMethodCallException
      */
-    public function getSessionId()
+    public function startSession() :string
+    {
+        throw new BadMethodCallException('Please use the loginMethod');
+    }
+
+    /**
+     * @return bool
+     */
+    public function endSession() :bool
+    {
+        $cacheItem = $this->cacheAdapter->getItem($this->getCacheKey());
+        if ($cacheItem->isHit()) {
+            return $this->adapter->endSession($cacheItem->get());
+        }
+
+        return true;
+    }
+
+    /**
+     * @return string SessionId
+     */
+    public function login() :string
     {
         $cacheItem = $this->cacheAdapter->getItem($this->getCacheKey());
         if ($cacheItem->isHit()) {
             return $cacheItem->get();
         }
 
-        $response = $this->client->login($this->username,  $this->apiKey);
+        $response = $this->adapter->login($this->username,  $this->apiKey);
 
         $cacheItem
             ->expiresAfter($this->getCacheTtl())
-            ->set($response->getResult());
+            ->set($response);
 
         $this->cacheAdapter->save($cacheItem);
 
-        return $response->getResult();
+        return $response;
     }
 
 }

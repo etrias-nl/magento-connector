@@ -97,7 +97,10 @@ use Etrias\PaazlConnector\SoapTypes\ShippingOptionResponse;
 use Etrias\PaazlConnector\SoapTypes\UpdateOrderRequest;
 use Etrias\PaazlConnector\SoapTypes\ValidateOrderRequest;
 use Etrias\PaazlConnector\SoapTypes\ValidateOrderResponseType;
+use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\MixedResult;
+use Phpro\SoapClient\Type\RequestInterface;
+use Phpro\SoapClient\Type\ResultInterface;
 
 /**
  * Interface MagentoClientInterface.
@@ -106,9 +109,11 @@ interface MagentoClientInterface
 {
 
     /**
-     * @param string $username
-     * @param string $password
-     * @return MixedResult
+     * @param string            $method
+     * @param RequestInterface  $request
+     *
+     * @return ResultInterface
+     * @throws SoapException
      */
-    public function login($username, $password);
+    public function call($method, RequestInterface $request);
 }

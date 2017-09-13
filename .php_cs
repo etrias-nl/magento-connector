@@ -15,7 +15,8 @@ return PhpCsFixer\Config::create()
     ->setRules([
         '@PSR1' => true,
         '@PSR2' => true,
-        '@PHP70Migration' => true,
+        '@PHP71Migration' => true,
+        '@PHP71Migration:risky' => true,
         '@Symfony' => true,
         '@Symfony:risky' => true,
         'array_syntax' => ['syntax' => 'short'],
