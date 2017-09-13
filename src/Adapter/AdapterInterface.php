@@ -16,6 +16,7 @@ namespace Etrias\MagentoConnector\Adapter;
 
 use Etrias\MagentoConnector\SoapTypes\ApiEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
+use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
@@ -71,6 +72,8 @@ interface AdapterInterface
 
     public function createCategory(string $sessionId, int $parentId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): int;
 
+    public function updateCategory(string $sessionId, int $categoryId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): bool;
+
     public function deleteCategory(string $sessionId, int $categoryId): bool;
 
     public function getCategory(string $sessionId, int $categoryId, string $storeView = null, array $attributes = null): CatalogCategoryInfo;
@@ -83,4 +86,16 @@ interface AdapterInterface
      * @return CatalogCategoryEntityNoChildren[]
      */
     public function getCategoriesByParent(string $sessionId, int $parentId = null, int $websiteId = null, int $storeView = null): array;
+
+    public function moveCategory(string $sessionId, int $categoryId, int $parentId, int $afterId = null): bool;
+
+    public function removeProductFromCategory(string $sessionId, int $categoryId, int $productId, string $identifierType = 'id'): bool;
+
+    public function updateProductPosition(string $sessionId, int $categoryId, int $productId, int $position, string $identifierType = 'id'): bool;
+
+    /**
+     * @param string $sessionId
+     * @return CatalogAttributeEntity[]
+     */
+    public function getCategoryAttributes(string $sessionId): array;
 }

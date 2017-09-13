@@ -16,7 +16,7 @@ namespace Etrias\MagentoConnector\Services;
 
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
 use Etrias\MagentoConnector\Exceptions\ProductNotAssignedException;
-use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
+use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 
@@ -79,6 +79,11 @@ class CatalogService
         return $this->adapter->createCategory($this->authenticationService->login(), $parentId, $categoryData, $storeView);
     }
 
+    public function updateCategory(int $categoryId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): bool
+    {
+        return $this->adapter->updateCategory($this->authenticationService->login(), $categoryId, $categoryData, $storeView);
+    }
+
     public function deleteCategory(int $categoryId)
     {
         return $this->adapter->deleteCategory($this->authenticationService->login(), $categoryId);
@@ -92,5 +97,28 @@ class CatalogService
     public function getCategoriesByParent(int $parentId = null, int $websiteId = null, int $storeView = null)
     {
         return $this->adapter->getCategoriesByParent($this->authenticationService->login(), $parentId, $websiteId, $storeView);
+    }
+
+    public function moveCategory(int $categoryId, int $parentId, int $afterId = null): bool
+    {
+        return $this->adapter->moveCategory($this->authenticationService->login(), $categoryId, $parentId, $afterId);
+    }
+
+    public function removeProductFromCategory(int $categoryId, int $productId): bool
+    {
+        return $this->adapter->removeProductFromCategory($this->authenticationService->login(), $categoryId, $productId);
+    }
+
+    public function updateProductPosition(int $categoryId, int $productId, int $position): bool
+    {
+        return $this->adapter->updateProductPosition($this->authenticationService->login(), $categoryId, $productId, $position);
+    }
+
+    /**
+     * @return CatalogAttributeEntity[]
+     */
+    public function getCategoryAttributes(): array
+    {
+        return $this->adapter->getCategoryAttributes($this->authenticationService->login());
     }
 }

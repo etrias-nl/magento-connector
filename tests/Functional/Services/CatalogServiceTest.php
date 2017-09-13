@@ -17,6 +17,7 @@ namespace Tests\Etrias\MagentoConnector\Functional\Services;
 use Etrias\MagentoConnector\Exceptions\StoreViewNotFoundException;
 use Etrias\MagentoConnector\Services\CatalogService;
 use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
+use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
@@ -95,6 +96,18 @@ class CatalogServiceTest extends AbstractServiceTest
         $this->assertTrue($deleted);
     }
 
+    public function testUpdateCategory()
+    {
+        $categoryData = new CatalogCategoryEntityCreate(
+            'test',
+            false,
+            true
+        );
+
+        $categoryUpdated = $this->service->updateCategory(1505, $categoryData);
+        $this->assertTrue($categoryUpdated);
+    }
+
     public function testGetCategory()
     {
         $categoryInfo = $this->service->getCategory(1);
@@ -107,5 +120,38 @@ class CatalogServiceTest extends AbstractServiceTest
         $this->assertInstanceOf(CatalogCategoryEntityNoChildren::class, reset($products));
     }
 
+    public function testMoveCategory()
+    {
+        $result = $this->service->moveCategory(8421, 1506);
+        $this->assertTrue($result);
+    }
+
+    public function testRemoveProductFromCategory()
+    {
+        $categoryTree = $this->service->getCategoryTree();
+        $category = $categoryTree->getChildren()[array_rand($categoryTree->getChildren(), 1)];
+
+        $this->assertTrue ($this->service->assignProduct($category->getCategoryId(), 80025));
+
+        $this->assertTrue($this->service->removeProductFromCategory($category->getCategoryId(), 80025));
+    }
+
+    public function testUpdateProductPosition()
+    {
+        $categoryTree = $this->service->getCategoryTree();
+        $category = $categoryTree->getChildren()[array_rand($categoryTree->getChildren(), 1)];
+
+        $this->assertTrue($this->service->assignProduct($category->getCategoryId(), 80025));
+        $this->assertTrue($this->service->updateProductPosition($category->getCategoryId(), 80025, 3));
+
+        $this->service->removeProductFromCategory($category->getCategoryId(), 80025);
+    }
+
+    public function testGetCategoryAttributes()
+    {
+        $attributes = $this->service->getCategoryAttributes();
+
+        $this->assertInstanceOf(CatalogAttributeEntity::class, reset($attributes));
+    }
 
 }

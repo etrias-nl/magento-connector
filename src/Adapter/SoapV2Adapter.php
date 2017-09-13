@@ -174,6 +174,13 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('catalogCategoryCreate', $request);
     }
 
+    public function updateCategory(string $sessionId, int $categoryId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $categoryId, $categoryData, $storeView]);
+
+        return $this->processRequest('catalogCategoryUpdate', $request);
+    }
+
     public function deleteCategory(string $sessionId, int $categoryId): bool
     {
         $request = new MultiArgumentRequest([$sessionId, $categoryId]);
@@ -193,5 +200,33 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId, $websiteId, $storeView, $parentId]);
 
         return $this->processRequest('catalogCategoryLevel', $request);
+    }
+
+    public function moveCategory(string $sessionId, int $categoryId, int $parentId, int $afterId = null): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $categoryId, $parentId, $afterId]);
+
+        return $this->processRequest('catalogCategoryMove', $request);
+    }
+
+    public function removeProductFromCategory(string $sessionId, int $categoryId, int $productId, string $identifierType = 'id'): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $categoryId, $productId, $identifierType]);
+
+        return $this->processRequest('catalogCategoryRemoveProduct', $request);
+    }
+
+    public function updateProductPosition(string $sessionId, int $categoryId, int $productId, int $position, string $identifierType = 'id'): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $categoryId, $productId, $position, $identifierType]);
+
+        return $this->processRequest('catalogCategoryUpdateProduct', $request);
+    }
+
+    public function getCategoryAttributes(string $sessionId): array
+    {
+        $request = new MultiArgumentRequest([$sessionId]);
+
+        return $this->processRequest('catalogCategoryAttributeList', $request);
     }
 }
