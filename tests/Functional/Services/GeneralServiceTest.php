@@ -18,9 +18,7 @@ use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\SoapTypes\ApiEntity;
 use Etrias\MagentoConnector\SoapTypes\ExistsFaltureEntity;
 
-/**
- * @coversNothing
- */
+
 class GeneralServiceTest extends AbstractServiceTest
 {
     /**

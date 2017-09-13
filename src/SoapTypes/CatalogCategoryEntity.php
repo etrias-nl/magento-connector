@@ -47,9 +47,9 @@ class CatalogCategoryEntity
     protected $level = null;
 
     /**
-     * @var ArrayOfCatalogCategoryEntities
+     * @var CatalogCategoryEntity[]
      */
-    protected $children = null;
+    protected $children = [];
 
     /**
      * Constructor.
@@ -60,7 +60,7 @@ class CatalogCategoryEntity
      * @var int                            $is_active
      * @var int                            $position
      * @var int                            $level
-     * @var ArrayOfCatalogCategoryEntities $children
+     * @var CatalogCategoryEntity[] $children
      *
      * @param mixed $category_id
      * @param mixed $parent_id
@@ -84,7 +84,7 @@ class CatalogCategoryEntity
     /**
      * @return int
      */
-    public function getCategory_id()
+    public function getCategoryId()
     {
         return $this->category_id;
     }
@@ -94,7 +94,7 @@ class CatalogCategoryEntity
      *
      * @return $this
      */
-    public function setCategory_id($category_id)
+    public function setCategoryId($category_id)
     {
         $this->category_id = $category_id;
 
@@ -104,7 +104,7 @@ class CatalogCategoryEntity
     /**
      * @return int
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -114,7 +114,7 @@ class CatalogCategoryEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -144,7 +144,7 @@ class CatalogCategoryEntity
     /**
      * @return int
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -154,7 +154,7 @@ class CatalogCategoryEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -202,7 +202,7 @@ class CatalogCategoryEntity
     }
 
     /**
-     * @return ArrayOfCatalogCategoryEntities
+     * @return CatalogCategoryEntity[]
      */
     public function getChildren()
     {
@@ -210,11 +210,11 @@ class CatalogCategoryEntity
     }
 
     /**
-     * @param ArrayOfCatalogCategoryEntities $children
+     * @param CatalogCategoryEntity[] $children
      *
      * @return $this
      */
-    public function setChildren($children)
+    public function setChildren(array $children)
     {
         $this->children = $children;
 

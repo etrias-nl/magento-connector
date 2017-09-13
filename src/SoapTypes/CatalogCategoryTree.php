@@ -174,7 +174,7 @@ class CatalogCategoryTree
     }
 
     /**
-     * @return ArrayOfCatalogCategoryEntities
+     * @return CatalogCategoryEntity[]
      */
     public function getChildren()
     {
@@ -182,11 +182,11 @@ class CatalogCategoryTree
     }
 
     /**
-     * @param ArrayOfCatalogCategoryEntities $children
+     * @param CatalogCategoryEntity[] $children
      *
      * @return $this
      */
-    public function setChildren($children)
+    public function setChildren(array $children)
     {
         $this->children = $children;
 

@@ -17,6 +17,10 @@ namespace Etrias\MagentoConnector\Adapter;
 use Etrias\MagentoConnector\Client\MagentoClientInterface;
 use Etrias\MagentoConnector\ExceptionMap;
 use Etrias\MagentoConnector\Exceptions\MagentoSoapException;
+use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
+use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
+use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
+use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\MultiArgumentRequest;
@@ -57,7 +61,7 @@ class SoapV2Adapter implements AdapterInterface
                 $exceptionName = $this->exceptionMap->getExceptionClassName($previous->faultcode, $module);
 
                 /** @var MagentoSoapException $throwable */
-                $throwable = new $exceptionName($previous->faultstring, $previous->faultcode, $exception);
+                $throwable = new $exceptionName($previous->faultstring, $previous->faultcode + 0, $exception);
                 $throwable->setRequest($request);
 
                 throw $throwable;
@@ -121,5 +125,73 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId, $resourceName]);
 
         return $this->processRequest(__FUNCTION__, $request);
+    }
+
+    public function getCurrentStoreView(string $sessionId): int
+    {
+        $request = new MultiArgumentRequest([$sessionId]);
+
+        return $this->processRequest('catalogCategoryCurrentStore', $request);
+    }
+
+    public function setCurrentStoreView(string $sessionId, int $storeView): int
+    {
+        $request = new MultiArgumentRequest([$sessionId, $storeView]);
+
+        return $this->processRequest('catalogCategoryCurrentStore', $request);
+    }
+
+    public function getCategoryTree(string $sessionId, int $parentId = null, int $storeView = null): CatalogCategoryTree
+    {
+        $request = new MultiArgumentRequest([$sessionId, $parentId, $storeView]);
+
+        return $this->processRequest('catalogCategoryTree', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $categoryId
+     * @return CatalogAssignedProduct[]
+     */
+    public function getAssignedProducts(string $sessionId, int $categoryId): array
+    {
+        $request = new MultiArgumentRequest([$sessionId, $categoryId]);
+
+        return $this->processRequest('catalogCategoryAssignedProducts', $request);
+    }
+
+    public function assignProduct(string $sessionId, int $categoryId, int $product, int $position = null, string $identifierType = 'id'): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $categoryId, $product, $position, $identifierType]);
+
+        return $this->processRequest('catalogCategoryAssignProduct', $request);
+    }
+
+    public function createCategory(string $sessionId, int $parentId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): int
+    {
+        $request = new MultiArgumentRequest([$sessionId, $parentId, $categoryData, $storeView]);
+
+        return $this->processRequest('catalogCategoryCreate', $request);
+    }
+
+    public function deleteCategory(string $sessionId, int $categoryId): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $categoryId]);
+
+        return $this->processRequest('catalogCategoryDelete', $request);
+    }
+
+    public function getCategory(string $sessionId, int $categoryId, string $storeView = null, array $attributes = null): CatalogCategoryInfo
+    {
+        $request = new MultiArgumentRequest([$sessionId, $categoryId, $storeView, $attributes]);
+
+        return $this->processRequest('catalogCategoryInfo', $request);
+    }
+
+    public function getCategoriesByParent(string $sessionId, int $parentId = null, int $websiteId = null, int $storeView = null): array
+    {
+        $request = new MultiArgumentRequest([$sessionId, $websiteId, $storeView, $parentId]);
+
+        return $this->processRequest('catalogCategoryLevel', $request);
     }
 }

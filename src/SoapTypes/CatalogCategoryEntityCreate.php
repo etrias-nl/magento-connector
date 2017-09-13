@@ -32,9 +32,9 @@ class CatalogCategoryEntityCreate
     protected $position = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $available_sort_by = null;
+    protected $available_sort_by = ['position'];
 
     /**
      * @var string
@@ -64,7 +64,7 @@ class CatalogCategoryEntityCreate
     /**
      * @var string
      */
-    protected $default_sort_by = null;
+    protected $default_sort_by = 'position';
 
     /**
      * @var string
@@ -122,7 +122,7 @@ class CatalogCategoryEntityCreate
      * @var string
      * @var int           $is_active
      * @var int           $position
-     * @var ArrayOfString $available_sort_by
+     * @var string[] $available_sort_by
      * @var string        $custom_design
      * @var int           $custom_design_apply
      * @var string        $custom_design_from
@@ -142,46 +142,15 @@ class CatalogCategoryEntityCreate
      *
      * @param mixed $name
      * @param mixed $is_active
-     * @param mixed $position
-     * @param mixed $available_sort_by
-     * @param mixed $custom_design
-     * @param mixed $custom_design_apply
-     * @param mixed $custom_design_from
-     * @param mixed $custom_design_to
-     * @param mixed $custom_layout_update
-     * @param mixed $default_sort_by
-     * @param mixed $description
-     * @param mixed $display_mode
-     * @param mixed $is_anchor
-     * @param mixed $landing_page
-     * @param mixed $meta_description
-     * @param mixed $meta_keywords
-     * @param mixed $meta_title
-     * @param mixed $page_layout
-     * @param mixed $url_key
      * @param mixed $include_in_menu
      */
-    public function __construct($name, $is_active, $position, $available_sort_by, $custom_design, $custom_design_apply, $custom_design_from, $custom_design_to, $custom_layout_update, $default_sort_by, $description, $display_mode, $is_anchor, $landing_page, $meta_description, $meta_keywords, $meta_title, $page_layout, $url_key, $include_in_menu)
-    {
+    public function __construct(
+        string $name,
+        bool $is_active,
+        bool $include_in_menu
+    ) {
         $this->name = $name;
         $this->is_active = $is_active;
-        $this->position = $position;
-        $this->available_sort_by = $available_sort_by;
-        $this->custom_design = $custom_design;
-        $this->custom_design_apply = $custom_design_apply;
-        $this->custom_design_from = $custom_design_from;
-        $this->custom_design_to = $custom_design_to;
-        $this->custom_layout_update = $custom_layout_update;
-        $this->default_sort_by = $default_sort_by;
-        $this->description = $description;
-        $this->display_mode = $display_mode;
-        $this->is_anchor = $is_anchor;
-        $this->landing_page = $landing_page;
-        $this->meta_description = $meta_description;
-        $this->meta_keywords = $meta_keywords;
-        $this->meta_title = $meta_title;
-        $this->page_layout = $page_layout;
-        $this->url_key = $url_key;
         $this->include_in_menu = $include_in_menu;
     }
 
@@ -208,7 +177,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return int
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -218,7 +187,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -246,19 +215,19 @@ class CatalogCategoryEntityCreate
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
-    public function getAvailable_sort_by()
+    public function getAvailableSortBy()
     {
         return $this->available_sort_by;
     }
 
     /**
-     * @param ArrayOfString $available_sort_by
+     * @param string[] $available_sort_by
      *
      * @return $this
      */
-    public function setAvailable_sort_by($available_sort_by)
+    public function setAvailableSortBy($available_sort_by)
     {
         $this->available_sort_by = $available_sort_by;
 
@@ -268,7 +237,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getCustom_design()
+    public function getCustomDesign()
     {
         return $this->custom_design;
     }
@@ -278,7 +247,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setCustom_design($custom_design)
+    public function setCustomDesign($custom_design)
     {
         $this->custom_design = $custom_design;
 
@@ -288,7 +257,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return int
      */
-    public function getCustom_design_apply()
+    public function getCustomDesignApply()
     {
         return $this->custom_design_apply;
     }
@@ -298,7 +267,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setCustom_design_apply($custom_design_apply)
+    public function setCustomDesignApply($custom_design_apply)
     {
         $this->custom_design_apply = $custom_design_apply;
 
@@ -308,7 +277,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getCustom_design_from()
+    public function getCustomDesignFrom()
     {
         return $this->custom_design_from;
     }
@@ -318,7 +287,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setCustom_design_from($custom_design_from)
+    public function setCustomDesignFrom($custom_design_from)
     {
         $this->custom_design_from = $custom_design_from;
 
@@ -328,7 +297,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getCustom_design_to()
+    public function getCustomDesignTo()
     {
         return $this->custom_design_to;
     }
@@ -338,7 +307,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setCustom_design_to($custom_design_to)
+    public function setCustomDesignTo($custom_design_to)
     {
         $this->custom_design_to = $custom_design_to;
 
@@ -348,7 +317,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getCustom_layout_update()
+    public function getCustomLayoutUpdate()
     {
         return $this->custom_layout_update;
     }
@@ -358,7 +327,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setCustom_layout_update($custom_layout_update)
+    public function setCustomLayoutUpdate($custom_layout_update)
     {
         $this->custom_layout_update = $custom_layout_update;
 
@@ -368,7 +337,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getDefault_sort_by()
+    public function getDefaultSortBy()
     {
         return $this->default_sort_by;
     }
@@ -378,7 +347,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setDefault_sort_by($default_sort_by)
+    public function setDefaultSortBy($default_sort_by)
     {
         $this->default_sort_by = $default_sort_by;
 
@@ -408,7 +377,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getDisplay_mode()
+    public function getDisplayMode()
     {
         return $this->display_mode;
     }
@@ -418,7 +387,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setDisplay_mode($display_mode)
+    public function setDisplayMode($display_mode)
     {
         $this->display_mode = $display_mode;
 
@@ -428,7 +397,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return int
      */
-    public function getIs_anchor()
+    public function getIsAnchor()
     {
         return $this->is_anchor;
     }
@@ -438,7 +407,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setIs_anchor($is_anchor)
+    public function setIsAnchor($is_anchor)
     {
         $this->is_anchor = $is_anchor;
 
@@ -448,7 +417,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return int
      */
-    public function getLanding_page()
+    public function getLandingPage()
     {
         return $this->landing_page;
     }
@@ -458,7 +427,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setLanding_page($landing_page)
+    public function setLandingPage($landing_page)
     {
         $this->landing_page = $landing_page;
 
@@ -468,7 +437,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getMeta_description()
+    public function getMetaDescription()
     {
         return $this->meta_description;
     }
@@ -478,7 +447,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setMeta_description($meta_description)
+    public function setMetaDescription($meta_description)
     {
         $this->meta_description = $meta_description;
 
@@ -488,7 +457,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getMeta_keywords()
+    public function getMetaKeywords()
     {
         return $this->meta_keywords;
     }
@@ -498,7 +467,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setMeta_keywords($meta_keywords)
+    public function setMetaKeywords($meta_keywords)
     {
         $this->meta_keywords = $meta_keywords;
 
@@ -508,7 +477,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getMeta_title()
+    public function getMetaTitle()
     {
         return $this->meta_title;
     }
@@ -518,7 +487,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setMeta_title($meta_title)
+    public function setMetaTitle($meta_title)
     {
         $this->meta_title = $meta_title;
 
@@ -528,7 +497,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getPage_layout()
+    public function getPageLayout()
     {
         return $this->page_layout;
     }
@@ -538,7 +507,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setPage_layout($page_layout)
+    public function setPageLayout($page_layout)
     {
         $this->page_layout = $page_layout;
 
@@ -548,7 +517,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return string
      */
-    public function getUrl_key()
+    public function getUrlKey()
     {
         return $this->url_key;
     }
@@ -558,7 +527,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setUrl_key($url_key)
+    public function setUrlKey($url_key)
     {
         $this->url_key = $url_key;
 
@@ -568,7 +537,7 @@ class CatalogCategoryEntityCreate
     /**
      * @return int
      */
-    public function getInclude_in_menu()
+    public function getIncludeInMenu()
     {
         return $this->include_in_menu;
     }
@@ -578,7 +547,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setInclude_in_menu($include_in_menu)
+    public function setIncludeInMenu($include_in_menu)
     {
         $this->include_in_menu = $include_in_menu;
 

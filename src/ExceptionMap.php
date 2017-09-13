@@ -279,6 +279,13 @@ class ExceptionMap
             return substr($methodName, 0, $underscorePos);
         }
 
+        $array = preg_split('#([A-Z][^A-Z]*)#', $methodName, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+
+        if($array[0] !== $methodName) {
+
+            return $array[0];
+        }
+
         return '';
     }
 
