@@ -144,6 +144,26 @@ class ProductAttributeServiceTest extends AbstractServiceTest
         $this->service->removeAttributeById($attributeId);
     }
 
+    public function testUpdateAttribute()
+    {
+        $attributeId = $this->service->createAttribute(
+            new CatalogProductAttributeEntityToCreate(
+                'attribute_code',
+                Attribute::FRONTEND_TYPE_SELECT,
+                [new CatalogProductAttributeFrontendLabelEntity(0, 'frontend-label')]
+            )
+        );
+
+        $this->assertTrue( $this->service->updateAttribute($attributeId, new CatalogProductAttributeEntityToCreate(
+            'attribute_code_updated',
+            Attribute::FRONTEND_TYPE_SELECT,
+            [new CatalogProductAttributeFrontendLabelEntity(0, 'frontend-label-updated')]
+        ))
+        );
+
+        $this->service->removeAttributeById($attributeId);
+    }
+
     public function testRemoveAttribute()
     {
         $attributeId = $this->service->createAttribute(

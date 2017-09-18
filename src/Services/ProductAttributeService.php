@@ -92,6 +92,11 @@ class ProductAttributeService
         return $this->adapter->createAttribute($this->authenticationService->login(), $data);
     }
 
+    public function updateAttribute(int $attributeId, CatalogProductAttributeEntityToCreate $data)
+    {
+        return $this->adapter->updateAttribute($this->authenticationService->login(), $attributeId, $data);
+    }
+
     public function removeAttributeById(int $attributeId)
     {
         return $this->adapter->removeAttribute($this->authenticationService->login(), (string) $attributeId);

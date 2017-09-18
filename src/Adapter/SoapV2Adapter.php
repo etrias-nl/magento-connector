@@ -407,6 +407,13 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('catalogProductAttributeCreate', $request);
     }
 
+    public function updateAttribute(string $sessionId, int $attributeId, CatalogProductAttributeEntityToCreate $data): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $attributeId, $data]);
+
+        return $this->processRequest('catalogProductAttributeUpdate', $request);
+    }
+
     public function removeAttribute(string $sessionId, string $attributeId): bool
     {
         $request = new MultiArgumentRequest([$sessionId, $attributeId]);

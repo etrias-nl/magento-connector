@@ -207,6 +207,8 @@ interface AdapterInterface
 
     public function createAttribute(string $sessionId, CatalogProductAttributeEntityToCreate $data): int;
 
+    public function updateAttribute(string $sessionId, int $attributeId, CatalogProductAttributeEntityToCreate $data): bool;
+
     public function removeAttribute(string $sessionId, string $attributeId): bool;
 
     /**
