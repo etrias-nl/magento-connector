@@ -17,14 +17,14 @@ namespace Etrias\MagentoConnector\SoapTypes;
 class CatalogProductCreateEntity
 {
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $categories = null;
+    protected $categories = [];
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $websites = null;
+    protected $websites = [];
 
     /**
      * @var string
@@ -67,14 +67,14 @@ class CatalogProductCreateEntity
     protected $visibility = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $category_ids = null;
+    protected $category_ids = [];
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $website_ids = null;
+    protected $website_ids = [];
 
     /**
      * @var string
@@ -112,7 +112,7 @@ class CatalogProductCreateEntity
     protected $tax_class_id = null;
 
     /**
-     * @var catalogProductTierPriceEntityArray
+     * @var CatalogProductTierPriceEntity[]
      */
     protected $tier_price = null;
 
@@ -152,141 +152,39 @@ class CatalogProductCreateEntity
     protected $additional_attributes = null;
 
     /**
-     * @var catalogInventoryStockItemUp\DateTimeEntity
+     * @var DateTimeEntity
      */
     protected $stock_data = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $associated_skus = null;
+    protected $associated_skus = [];
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $configurable_attributes = null;
+    protected $configurable_attributes = [];
 
     /**
-     * @var associativeArray
+     * @var array
      */
     protected $price_changes = null;
 
     /**
-     * Constructor.
-     *
-     * @var ArrayOfString
-     * @var ArrayOfString                              $websites
-     * @var string                                     $name
-     * @var string                                     $description
-     * @var string                                     $short_description
-     * @var string                                     $weight
-     * @var string                                     $status
-     * @var string                                     $url_key
-     * @var string                                     $url_path
-     * @var string                                     $visibility
-     * @var ArrayOfString                              $category_ids
-     * @var ArrayOfString                              $website_ids
-     * @var string                                     $has_options
-     * @var string                                     $gift_message_available
-     * @var string                                     $price
-     * @var string                                     $special_price
-     * @var string                                     $special_from_date
-     * @var string                                     $special_to_date
-     * @var string                                     $tax_class_id
-     * @var catalogProductTierPriceEntityArray         $tier_price
-     * @var string                                     $meta_title
-     * @var string                                     $meta_keyword
-     * @var string                                     $meta_description
-     * @var string                                     $custom_design
-     * @var string                                     $custom_layout_update
-     * @var string                                     $options_container
-     * @var catalogProductAdditionalAttributesEntity   $additional_attributes
-     * @var catalogInventoryStockItemUp\DateTimeEntity $stock_data
-     * @var ArrayOfString                              $associated_skus
-     * @var ArrayOfString                              $configurable_attributes
-     * @var associativeArray                           $price_changes
-     *
-     * @param mixed $categories
-     * @param mixed $websites
-     * @param mixed $name
-     * @param mixed $description
-     * @param mixed $short_description
-     * @param mixed $weight
-     * @param mixed $status
-     * @param mixed $url_key
-     * @param mixed $url_path
-     * @param mixed $visibility
-     * @param mixed $category_ids
-     * @param mixed $website_ids
-     * @param mixed $has_options
-     * @param mixed $gift_message_available
-     * @param mixed $price
-     * @param mixed $special_price
-     * @param mixed $special_from_date
-     * @param mixed $special_to_date
-     * @param mixed $tax_class_id
-     * @param mixed $tier_price
-     * @param mixed $meta_title
-     * @param mixed $meta_keyword
-     * @param mixed $meta_description
-     * @param mixed $custom_design
-     * @param mixed $custom_layout_update
-     * @param mixed $options_container
-     * @param mixed $additional_attributes
-     * @param mixed $stock_data
-     * @param mixed $associated_skus
-     * @param mixed $configurable_attributes
-     * @param mixed $price_changes
+     * @return string[]
      */
-    public function __construct($categories, $websites, $name, $description, $short_description, $weight, $status, $url_key, $url_path, $visibility, $category_ids, $website_ids, $has_options, $gift_message_available, $price, $special_price, $special_from_date, $special_to_date, $tax_class_id, $tier_price, $meta_title, $meta_keyword, $meta_description, $custom_design, $custom_layout_update, $options_container, $additional_attributes, $stock_data, $associated_skus, $configurable_attributes, $price_changes)
-    {
-        $this->categories = $categories;
-        $this->websites = $websites;
-        $this->name = $name;
-        $this->description = $description;
-        $this->short_description = $short_description;
-        $this->weight = $weight;
-        $this->status = $status;
-        $this->url_key = $url_key;
-        $this->url_path = $url_path;
-        $this->visibility = $visibility;
-        $this->category_ids = $category_ids;
-        $this->website_ids = $website_ids;
-        $this->has_options = $has_options;
-        $this->gift_message_available = $gift_message_available;
-        $this->price = $price;
-        $this->special_price = $special_price;
-        $this->special_from_date = $special_from_date;
-        $this->special_to_date = $special_to_date;
-        $this->tax_class_id = $tax_class_id;
-        $this->tier_price = $tier_price;
-        $this->meta_title = $meta_title;
-        $this->meta_keyword = $meta_keyword;
-        $this->meta_description = $meta_description;
-        $this->custom_design = $custom_design;
-        $this->custom_layout_update = $custom_layout_update;
-        $this->options_container = $options_container;
-        $this->additional_attributes = $additional_attributes;
-        $this->stock_data = $stock_data;
-        $this->associated_skus = $associated_skus;
-        $this->configurable_attributes = $configurable_attributes;
-        $this->price_changes = $price_changes;
-    }
-
-    /**
-     * @return ArrayOfString
-     */
-    public function getCategories()
+    public function getCategories(): array
     {
         return $this->categories;
     }
 
     /**
-     * @param ArrayOfString $categories
+     * @param string[] $categories
      *
      * @return $this
      */
-    public function setCategories($categories)
+    public function setCategories(array $categories)
     {
         $this->categories = $categories;
 
@@ -294,19 +192,19 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
-    public function getWebsites()
+    public function getWebsites(): array
     {
         return $this->websites;
     }
 
     /**
-     * @param ArrayOfString $websites
+     * @param string[] $websites
      *
      * @return $this
      */
-    public function setWebsites($websites)
+    public function setWebsites(array $websites)
     {
         $this->websites = $websites;
 
@@ -474,7 +372,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getCategory_ids()
     {
@@ -482,11 +380,11 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param ArrayOfString $category_ids
+     * @param string[] $category_ids
      *
      * @return $this
      */
-    public function setCategory_ids($category_ids)
+    public function setCategory_ids(array $category_ids)
     {
         $this->category_ids = $category_ids;
 
@@ -494,7 +392,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getWebsite_ids()
     {
@@ -502,11 +400,11 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param ArrayOfString $website_ids
+     * @param string[] $website_ids
      *
      * @return $this
      */
-    public function setWebsite_ids($website_ids)
+    public function setWebsite_ids(array $website_ids)
     {
         $this->website_ids = $website_ids;
 
@@ -654,7 +552,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return catalogProductTierPriceEntityArray
+     * @return catalogProductTierPriceEntity[]
      */
     public function getTier_price()
     {
@@ -662,11 +560,11 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param catalogProductTierPriceEntityArray $tier_price
+     * @param catalogProductTierPriceEntity[] $tier_price
      *
      * @return $this
      */
-    public function setTier_price($tier_price)
+    public function setTier_price(array $tier_price)
     {
         $this->tier_price = $tier_price;
 
@@ -834,7 +732,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getAssociated_skus()
     {
@@ -842,11 +740,11 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param ArrayOfString $associated_skus
+     * @param string[] $associated_skus
      *
      * @return $this
      */
-    public function setAssociated_skus($associated_skus)
+    public function setAssociated_skus(array $associated_skus)
     {
         $this->associated_skus = $associated_skus;
 
@@ -854,7 +752,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getConfigurable_attributes()
     {
@@ -862,11 +760,11 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param ArrayOfString $configurable_attributes
+     * @param string[] $configurable_attributes
      *
      * @return $this
      */
-    public function setConfigurable_attributes($configurable_attributes)
+    public function setConfigurable_attributes(array $configurable_attributes)
     {
         $this->configurable_attributes = $configurable_attributes;
 
@@ -874,7 +772,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return associativeArray
+     * @return array
      */
     public function getPrice_changes()
     {
@@ -882,11 +780,11 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param associativeArray $price_changes
+     * @param array $price_changes
      *
      * @return $this
      */
-    public function setPrice_changes($price_changes)
+    public function setPrice_changes(array $price_changes)
     {
         $this->price_changes = $price_changes;
 

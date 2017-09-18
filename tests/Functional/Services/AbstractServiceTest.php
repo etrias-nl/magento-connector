@@ -27,7 +27,10 @@ use Phpro\SoapClient\Soap\Handler\GuzzleHandle;
 use Phpro\SoapClient\Wsdl\Provider\GuzzleWsdlProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Symfony\Component\Cache\Adapter\PhpArrayAdapter;
 use Symfony\Component\Cache\Adapter\RedisAdapter;
+use Symfony\Component\Cache\Simple\FilesystemCache;
 
 abstract class AbstractServiceTest extends TestCase
 {
@@ -70,7 +73,7 @@ abstract class AbstractServiceTest extends TestCase
 
         $this->adapter = new SoapV2Adapter($this->soapClient, $this->exceptionMap);
 
-        $cacheAdapter = new ArrayAdapter();
+        $cacheAdapter = new FilesystemAdapter();
         $this->authenticationService = new AuthenticationService($this->adapter, getenv('APIUSER'), getenv('APIKEY'), $cacheAdapter);
     }
 }

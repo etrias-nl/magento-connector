@@ -102,14 +102,14 @@ class CatalogProductReturnEntity
     protected $visibility = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $category_ids = null;
+    protected $category_ids = [];
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $website_ids = null;
+    protected $website_ids = [];
 
     /**
      * @var string
@@ -147,9 +147,9 @@ class CatalogProductReturnEntity
     protected $tax_class_id = null;
 
     /**
-     * @var catalogProductTierPriceEntityArray
+     * @var catalogProductTierPriceEntity[]
      */
-    protected $tier_price = null;
+    protected $tier_price = [];
 
     /**
      * @var string
@@ -182,9 +182,9 @@ class CatalogProductReturnEntity
     protected $options_container = null;
 
     /**
-     * @var associativeArray
+     * @var array
      */
-    protected $additional_attributes = null;
+    protected $additional_attributes = [];
 
     /**
      * @var string
@@ -198,8 +198,8 @@ class CatalogProductReturnEntity
      * @var string                             $sku
      * @var string                             $set
      * @var string                             $type
-     * @var ArrayOfString                      $categories
-     * @var ArrayOfString                      $websites
+     * @var string[]                      $categories
+     * @var string[]                      $websites
      * @var string                             $created_at
      * @var string                             $updated_at
      * @var string                             $type_id
@@ -211,8 +211,8 @@ class CatalogProductReturnEntity
      * @var string                             $url_key
      * @var string                             $url_path
      * @var string                             $visibility
-     * @var ArrayOfString                      $category_ids
-     * @var ArrayOfString                      $website_ids
+     * @var string[]                      $category_ids
+     * @var string[]                      $website_ids
      * @var string                             $has_options
      * @var string                             $gift_message_available
      * @var string                             $price
@@ -220,14 +220,14 @@ class CatalogProductReturnEntity
      * @var string                             $special_from_date
      * @var string                             $special_to_date
      * @var string                             $tax_class_id
-     * @var catalogProductTierPriceEntityArray $tier_price
+     * @var catalogProductTierPriceEntity[]    $tier_price
      * @var string                             $meta_title
      * @var string                             $meta_keyword
      * @var string                             $meta_description
      * @var string                             $custom_design
      * @var string                             $custom_layout_update
      * @var string                             $options_container
-     * @var associativeArray                   $additional_attributes
+     * @var array                   $additional_attributes
      * @var string                             $enable_googlecheckout
      *
      * @param mixed $product_id
@@ -406,7 +406,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getWebsites()
     {
@@ -414,7 +414,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @param ArrayOfString $websites
+     * @param string[] $websites
      *
      * @return $this
      */
@@ -646,7 +646,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getCategory_ids()
     {
@@ -654,7 +654,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @param ArrayOfString $category_ids
+     * @param string[] $category_ids
      *
      * @return $this
      */
@@ -666,7 +666,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getWebsite_ids()
     {
@@ -674,7 +674,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @param ArrayOfString $website_ids
+     * @param string[] $website_ids
      *
      * @return $this
      */
@@ -826,7 +826,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @return catalogProductTierPriceEntityArray
+     * @return catalogProductTierPriceEntity[]
      */
     public function getTier_price()
     {
@@ -834,7 +834,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @param catalogProductTierPriceEntityArray $tier_price
+     * @param catalogProductTierPriceEntity[] $tier_price
      *
      * @return $this
      */
@@ -966,7 +966,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @return associativeArray
+     * @return array
      */
     public function getAdditional_attributes()
     {
@@ -974,7 +974,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @param associativeArray $additional_attributes
+     * @param array $additional_attributes
      *
      * @return $this
      */

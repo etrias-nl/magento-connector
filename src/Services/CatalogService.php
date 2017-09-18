@@ -17,6 +17,7 @@ namespace Etrias\MagentoConnector\Services;
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
 use Etrias\MagentoConnector\Exceptions\ProductNotAssignedException;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogAttributeOptionEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 
@@ -120,5 +121,14 @@ class CatalogService
     public function getCategoryAttributes(): array
     {
         return $this->adapter->getCategoryAttributes($this->authenticationService->login());
+    }
+
+    /**
+     * @param int $attributeId
+     * @return CatalogAttributeOptionEntity[]
+     */
+    public function getAttributeOptions(int $attributeId): array
+    {
+        return $this->adapter->getCategoryAttributeOptions($this->authenticationService->login(), $attributeId);
     }
 }

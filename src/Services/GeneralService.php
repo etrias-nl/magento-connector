@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Etrias\MagentoConnector\Services;
 
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
+use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 
 class GeneralService
 {
@@ -50,6 +51,16 @@ class GeneralService
 
     public function getResourceFaults(string $resourceName): array
     {
-        return $this->adapter->globalFaults($this->authenticationService->login(), $resourceName);
+        return $this->adapter->resourceFaults($this->authenticationService->login(), $resourceName);
+    }
+
+    public function getStoreViews(): array
+    {
+        return $this->adapter->getStoreList($this->authenticationService->login());
+    }
+
+    public function getMagentoInfo(): MagentoInfoEntity
+    {
+        return $this->adapter->getMagentoInfo($this->authenticationService->login());
     }
 }

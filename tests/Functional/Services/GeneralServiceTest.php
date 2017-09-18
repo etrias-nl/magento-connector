@@ -17,6 +17,8 @@ namespace Tests\Etrias\MagentoConnector\Functional\Services;
 use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\SoapTypes\ApiEntity;
 use Etrias\MagentoConnector\SoapTypes\ExistsFaltureEntity;
+use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 
 class GeneralServiceTest extends AbstractServiceTest
@@ -48,5 +50,17 @@ class GeneralServiceTest extends AbstractServiceTest
     {
         $faults = $this->service->getResourceFaults('catalog');
         $this->assertInstanceOf(ExistsFaltureEntity::class, reset($faults));
+    }
+
+    public function testGetStoreViews()
+    {
+        $storeViews = $this->service->getStoreViews();
+        $this->assertInstanceOf(StoreEntity::class, reset($storeViews));
+    }
+
+    public function testGetMagentoInfo()
+    {
+        $magentoInfo = $this->service->getMagentoInfo();
+        $this->assertInstanceOf(MagentoInfoEntity::class, $magentoInfo);
     }
 }

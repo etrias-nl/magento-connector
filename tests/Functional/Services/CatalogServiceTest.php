@@ -18,6 +18,7 @@ use Etrias\MagentoConnector\Exceptions\StoreViewNotFoundException;
 use Etrias\MagentoConnector\Services\CatalogService;
 use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogAttributeOptionEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
@@ -152,6 +153,19 @@ class CatalogServiceTest extends AbstractServiceTest
         $attributes = $this->service->getCategoryAttributes();
 
         $this->assertInstanceOf(CatalogAttributeEntity::class, reset($attributes));
+    }
+
+    public function testGetAttributeOptions()
+    {
+        $attributes = $this->service->getCategoryAttributes();
+        $attributes = array_filter($attributes, function(CatalogAttributeEntity $attribute) {
+            return $attribute->getType() === 'select';
+        });
+
+        $attribute = reset($attributes);
+        $options = $this->service->getAttributeOptions($attribute->getAttributeId());
+
+        $this->assertInstanceOf(CatalogAttributeOptionEntity::class, reset($options));
     }
 
 }

@@ -17,9 +17,9 @@ namespace Etrias\MagentoConnector\SoapTypes;
 class CatalogProductAttributeOptionEntityToAdd
 {
     /**
-     * @var catalogProductAttributeOptionLabelArray
+     * @var CatalogProductAttributeOptionLabelEntity[]
      */
-    protected $label = null;
+    protected $label = [];
 
     /**
      * @var int
@@ -34,7 +34,7 @@ class CatalogProductAttributeOptionEntityToAdd
     /**
      * Constructor.
      *
-     * @var catalogProductAttributeOptionLabelArray
+     * @var CatalogProductAttributeOptionLabelEntity[]
      * @var int                                     $order
      * @var int                                     $is_default
      *
@@ -42,7 +42,7 @@ class CatalogProductAttributeOptionEntityToAdd
      * @param mixed $order
      * @param mixed $is_default
      */
-    public function __construct($label, $order, $is_default)
+    public function __construct($label, $order, $is_default = false)
     {
         $this->label = $label;
         $this->order = $order;
@@ -50,21 +50,21 @@ class CatalogProductAttributeOptionEntityToAdd
     }
 
     /**
-     * @return catalogProductAttributeOptionLabelArray
+     * @return CatalogProductAttributeOptionLabelEntity[]
      */
-    public function getLabel()
+    public function getLabels()
     {
         return $this->label;
     }
 
     /**
-     * @param catalogProductAttributeOptionLabelArray $label
+     * @param CatalogProductAttributeOptionLabelEntity[] $labels
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setLabels(array $labels)
     {
-        $this->label = $label;
+        $this->label = $labels;
 
         return $this;
     }
@@ -92,19 +92,19 @@ class CatalogProductAttributeOptionEntityToAdd
     /**
      * @return int
      */
-    public function getIs_default()
+    public function getIsDefault()
     {
         return $this->is_default;
     }
 
     /**
-     * @param int $is_default
+     * @param bool $is_default
      *
      * @return $this
      */
-    public function setIs_default($is_default)
+    public function setIsDefault(bool $is_default)
     {
-        $this->is_default = $is_default;
+        $this->is_default = (int) $is_default;
 
         return $this;
     }

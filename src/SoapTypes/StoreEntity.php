@@ -84,7 +84,7 @@ class StoreEntity
     /**
      * @return int
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -94,7 +94,7 @@ class StoreEntity
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 
@@ -124,7 +124,7 @@ class StoreEntity
     /**
      * @return int
      */
-    public function getWebsite_id()
+    public function getWebsiteId()
     {
         return $this->website_id;
     }
@@ -134,7 +134,7 @@ class StoreEntity
      *
      * @return $this
      */
-    public function setWebsite_id($website_id)
+    public function setWebsiteId($website_id)
     {
         $this->website_id = $website_id;
 
@@ -144,7 +144,7 @@ class StoreEntity
     /**
      * @return int
      */
-    public function getGroup_id()
+    public function getGroupId()
     {
         return $this->group_id;
     }
@@ -154,7 +154,7 @@ class StoreEntity
      *
      * @return $this
      */
-    public function setGroup_id($group_id)
+    public function setGroupId($group_id)
     {
         $this->group_id = $group_id;
 
@@ -184,7 +184,7 @@ class StoreEntity
     /**
      * @return int
      */
-    public function getSort_order()
+    public function getSortOrder()
     {
         return $this->sort_order;
     }
@@ -194,7 +194,7 @@ class StoreEntity
      *
      * @return $this
      */
-    public function setSort_order($sort_order)
+    public function setSortOrder($sort_order)
     {
         $this->sort_order = $sort_order;
 
@@ -204,7 +204,7 @@ class StoreEntity
     /**
      * @return int
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -214,7 +214,7 @@ class StoreEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 

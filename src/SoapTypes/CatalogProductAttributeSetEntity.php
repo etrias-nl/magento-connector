@@ -44,7 +44,7 @@ class CatalogProductAttributeSetEntity
     /**
      * @return int
      */
-    public function getSet_id()
+    public function getSetId()
     {
         return $this->set_id;
     }
@@ -54,7 +54,7 @@ class CatalogProductAttributeSetEntity
      *
      * @return $this
      */
-    public function setSet_id($set_id)
+    public function setSetId($set_id)
     {
         $this->set_id = $set_id;
 

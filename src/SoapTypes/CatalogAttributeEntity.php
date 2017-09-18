@@ -68,7 +68,7 @@ class CatalogAttributeEntity
     /**
      * @return int
      */
-    public function getAttribute_id()
+    public function getAttributeId()
     {
         return $this->attribute_id;
     }
@@ -78,7 +78,7 @@ class CatalogAttributeEntity
      *
      * @return $this
      */
-    public function setAttribute_id($attribute_id)
+    public function setAttributeId($attribute_id)
     {
         $this->attribute_id = $attribute_id;
 

@@ -17,9 +17,9 @@ namespace Etrias\MagentoConnector\SoapTypes;
 class CatalogProductAttributeOptionLabelEntity
 {
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
-    protected $store_id = null;
+    protected $store_id = [];
 
     /**
      * @var string
@@ -29,32 +29,32 @@ class CatalogProductAttributeOptionLabelEntity
     /**
      * Constructor.
      *
-     * @var ArrayOfString
+     * @var string[]
      * @var string        $value
      *
      * @param mixed $store_id
      * @param mixed $value
      */
-    public function __construct($store_id, $value)
+    public function __construct(array $store_id, $value)
     {
         $this->store_id = $store_id;
         $this->value = $value;
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
 
     /**
-     * @param ArrayOfString $store_id
+     * @param string[] $store_id
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId(array $store_id)
     {
         $this->store_id = $store_id;
 
