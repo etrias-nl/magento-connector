@@ -15,6 +15,7 @@ use Etrias\MagentoConnector\Services\ProductAttributeService;
 use Etrias\MagentoConnector\Services\ProductService;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 trait RandomizeTrait
@@ -75,5 +76,30 @@ trait RandomizeTrait
         }
 
         return $attributes[array_rand($attributes, 1)];
+    }
+
+    /**
+     * @return int entity_id
+     */
+    private function createProduct()
+    {
+        $attributeSets = $this->productService->getAttributeSetList();
+        $attributeSet = reset($attributeSets);
+
+        $productType = 'simple';
+        $sku = '1003';
+        $storeView = $this->getRandomStoreView()->getStoreId();;
+        $productData = new CatalogProductCreateEntity();
+
+        return $this->productService->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
+    }
+
+    /**
+     * @param int $entityId
+     * @return bool
+     */
+    private function deleteProduct(int $entityId)
+    {
+        return $this->productService->deleteProductById($entityId);
     }
 }

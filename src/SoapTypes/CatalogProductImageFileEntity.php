@@ -38,15 +38,13 @@ class CatalogProductImageFileEntity
      * @var string $mime
      * @var string $name
      *
-     * @param mixed $content
+     * @param mixed $content Base64 Encoded
      * @param mixed $mime
-     * @param mixed $name
      */
-    public function __construct($content, $mime, $name)
+    public function __construct($content, $mime)
     {
         $this->content = $content;
         $this->mime = $mime;
-        $this->name = $name;
     }
 
     /**

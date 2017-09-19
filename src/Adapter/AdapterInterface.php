@@ -25,9 +25,12 @@ use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaTypeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionEntityToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
@@ -216,4 +219,36 @@ interface AdapterInterface
      * @return CatalogAttributeOptionEntity[]
      */
     public function getAttributeTypes(string $sessionId): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $attributeSetId
+     * @return CatalogProductAttributeMediaTypeEntity[]
+     */
+    public function getProductMediaTypes(string $sessionId, int $attributeSetId): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $productId
+     * @param int $storeView
+     * @param string $identifierType
+     * @return CatalogProductImageEntity[]
+     */
+    public function getProductImages(string $sessionId, string $productId, string $identifierType, int $storeView = null): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $productId
+     * @param CatalogProductAttributeMediaCreateEntity $data
+     * @param string $identifierType
+     * @param int|null $storeView
+     * @return string
+     */
+    public function createProductImage(string $sessionId, string $productId, CatalogProductAttributeMediaCreateEntity $data, int $storeView = null, string $identifierType = 'id'): string;
+
+    public function updateProductImage(string $sessionId, string $productId, string $fileName, CatalogProductAttributeMediaCreateEntity $data, int $storeView = null, string $identifierType = 'id'): bool;
+
+    public function getMediaInfo(string $sessionId, string $productId, string $fileName, int $storeView = null, string $identifierType = 'id'): CatalogProductImageEntity;
+
+    public function removeProductImage(string $sessionId, string $productId, string $fileName, string $identifierType = 'id'): bool;
 }

@@ -32,7 +32,7 @@ class CatalogProductAttributeMediaCreateEntity
     protected $position = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $types = null;
 
@@ -52,25 +52,15 @@ class CatalogProductAttributeMediaCreateEntity
      * @var catalogProductImageFileEntity
      * @var string                        $label
      * @var string                        $position
-     * @var ArrayOfString                 $types
+     * @var string[]                      $types
      * @var string                        $exclude
      * @var string                        $remove
      *
-     * @param mixed $file
-     * @param mixed $label
-     * @param mixed $position
-     * @param mixed $types
-     * @param mixed $exclude
-     * @param mixed $remove
+     * @param CatalogProductImageFileEntity $file
      */
-    public function __construct($file, $label, $position, $types, $exclude, $remove)
+    public function __construct(CatalogProductImageFileEntity $file)
     {
         $this->file = $file;
-        $this->label = $label;
-        $this->position = $position;
-        $this->types = $types;
-        $this->exclude = $exclude;
-        $this->remove = $remove;
     }
 
     /**
@@ -134,7 +124,7 @@ class CatalogProductAttributeMediaCreateEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getTypes()
     {
@@ -142,7 +132,7 @@ class CatalogProductAttributeMediaCreateEntity
     }
 
     /**
-     * @param ArrayOfString $types
+     * @param string[] $types
      *
      * @return $this
      */

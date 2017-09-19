@@ -27,9 +27,11 @@ use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionEntityToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\ComplexFilter;
 use Etrias\MagentoConnector\SoapTypes\Filters;
@@ -426,5 +428,47 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId]);
 
         return $this->processRequest('catalogProductAttributeTypes', $request);
+    }
+
+    public function getProductMediaTypes(string $sessionId, int $attributeSetId): array
+    {
+        $request = new MultiArgumentRequest([$sessionId, $attributeSetId]);
+
+        return $this->processRequest('catalogProductAttributeMediaTypes', $request);
+    }
+
+    public function getProductImages(string $sessionId, string $productId, string $identifierType, int $storeView = null): array
+    {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $storeView, $identifierType ]);
+
+        return $this->processRequest('catalogProductAttributeMediaList', $request);
+    }
+
+    public function createProductImage(string $sessionId, string $productId, CatalogProductAttributeMediaCreateEntity $data, int $storeView = null, string $identifierType = 'id'): string
+    {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $data, $storeView, $identifierType ]);
+
+        return $this->processRequest('catalogProductAttributeMediaCreate', $request);
+    }
+
+    public function updateProductImage(string $sessionId, string $productId, string $fileName, CatalogProductAttributeMediaCreateEntity $data, int $storeView = null, string $identifierType = 'id'): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $fileName, $data, $storeView, $identifierType]);
+
+        return (bool) $this->processRequest('catalogProductAttributeMediaUpdate', $request);
+    }
+
+    public function getMediaInfo(string $sessionId, string $productId, string $fileName, int $storeView = null, string $identifierType = null): CatalogProductImageEntity
+    {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $fileName, $storeView, $identifierType ]);
+
+        return $this->processRequest('catalogProductAttributeMediaInfo', $request);
+    }
+
+    public function removeProductImage(string $sessionId, string $productId, string $fileName, string $identifierType = 'id'): bool
+    {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $fileName, $identifierType ]);
+
+        return (bool) $this->processRequest('catalogProductAttributeMediaRemove', $request);
     }
 }
