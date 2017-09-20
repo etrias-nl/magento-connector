@@ -34,7 +34,7 @@ class CatalogProductCustomOptionToUpdate
     /**
      * @var int
      */
-    protected $is_require = null;
+    protected $is_require = 0;
 
     /**
      * @var catalogProductCustomOptionAdditionalFieldsArray
@@ -53,15 +53,13 @@ class CatalogProductCustomOptionToUpdate
      * @param mixed $title
      * @param mixed $type
      * @param mixed $sort_order
-     * @param mixed $is_require
      * @param mixed $additional_fields
      */
-    public function __construct($title, $type, $sort_order, $is_require, $additional_fields)
+    public function __construct($title, $type, $sort_order, $additional_fields)
     {
         $this->title = $title;
         $this->type = $type;
         $this->sort_order = $sort_order;
-        $this->is_require = $is_require;
         $this->additional_fields = $additional_fields;
     }
 

@@ -84,25 +84,15 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      * @param mixed $price
      * @param mixed $price_type
      * @param mixed $sku
-     * @param mixed $max_characters
      * @param mixed $sort_order
-     * @param mixed $file_extension
-     * @param mixed $image_size_x
-     * @param mixed $image_size_y
-     * @param mixed $value_id
      */
-    public function __construct($title, $price, $price_type, $sku, $max_characters, $sort_order, $file_extension, $image_size_x, $image_size_y, $value_id)
+    public function __construct($title, $price, $price_type, $sku, $sort_order)
     {
         $this->title = $title;
         $this->price = $price;
         $this->price_type = $price_type;
         $this->sku = $sku;
-        $this->max_characters = $max_characters;
         $this->sort_order = $sort_order;
-        $this->file_extension = $file_extension;
-        $this->image_size_x = $image_size_x;
-        $this->image_size_y = $image_size_y;
-        $this->value_id = $value_id;
     }
 
     /**
@@ -148,7 +138,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     /**
      * @return string
      */
-    public function getPrice_type()
+    public function getPriceType()
     {
         return $this->price_type;
     }
@@ -158,7 +148,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      *
      * @return $this
      */
-    public function setPrice_type($price_type)
+    public function setPriceType($price_type)
     {
         $this->price_type = $price_type;
 
@@ -188,7 +178,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     /**
      * @return string
      */
-    public function getMax_characters()
+    public function getMaxCharacters()
     {
         return $this->max_characters;
     }
@@ -198,7 +188,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      *
      * @return $this
      */
-    public function setMax_characters($max_characters)
+    public function setMaxCharacters($max_characters)
     {
         $this->max_characters = $max_characters;
 
@@ -208,7 +198,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     /**
      * @return string
      */
-    public function getSort_order()
+    public function getSortOrder()
     {
         return $this->sort_order;
     }
@@ -218,7 +208,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      *
      * @return $this
      */
-    public function setSort_order($sort_order)
+    public function setSortOrder($sort_order)
     {
         $this->sort_order = $sort_order;
 
@@ -228,7 +218,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     /**
      * @return string
      */
-    public function getFile_extension()
+    public function getFileExtension()
     {
         return $this->file_extension;
     }
@@ -238,7 +228,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      *
      * @return $this
      */
-    public function setFile_extension($file_extension)
+    public function setFileExtension($file_extension)
     {
         $this->file_extension = $file_extension;
 
@@ -248,7 +238,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     /**
      * @return string
      */
-    public function getImage_size_x()
+    public function getImageSizeX()
     {
         return $this->image_size_x;
     }
@@ -258,7 +248,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      *
      * @return $this
      */
-    public function setImage_size_x($image_size_x)
+    public function setImageSizeX($image_size_x)
     {
         $this->image_size_x = $image_size_x;
 
@@ -268,7 +258,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     /**
      * @return string
      */
-    public function getImage_size_y()
+    public function getImageSizeY()
     {
         return $this->image_size_y;
     }
@@ -278,7 +268,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      *
      * @return $this
      */
-    public function setImage_size_y($image_size_y)
+    public function setImageSizeY($image_size_y)
     {
         $this->image_size_y = $image_size_y;
 
@@ -288,7 +278,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     /**
      * @return string
      */
-    public function getValue_id()
+    public function getValueId()
     {
         return $this->value_id;
     }
@@ -298,7 +288,7 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
      *
      * @return $this
      */
-    public function setValue_id($value_id)
+    public function setValueId($value_id)
     {
         $this->value_id = $value_id;
 

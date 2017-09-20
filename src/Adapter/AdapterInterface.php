@@ -30,6 +30,11 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaTypeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionEntityToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionListEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToAdd;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToUpdate;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionTypesEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
@@ -412,4 +417,57 @@ interface AdapterInterface
         string $attributeGroupId,
         string $attributeGroupName
     ): bool;
+
+    /**
+     * @param string $sessionId
+     * @return CatalogProductCustomOptionTypesEntity[]
+     */
+    public function getProductOptionTypes(
+        string $sessionId
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $productId
+     * @param string|null $storeView
+     * @return CatalogProductCustomOptionListEntity[]
+     */
+    public function getProductOptions(
+        string $sessionId,
+        string $productId,
+        string $storeView = null
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $productId
+     * @param CatalogProductCustomOptionToAdd $data
+     * @param string|null $storeView
+     * @return bool
+     */
+    public function addProductOption(
+        string $sessionId,
+        string $productId,
+        CatalogProductCustomOptionToAdd $data,
+        string $storeView = null
+    ): bool;
+
+    public function updateProductOption(
+        string $sessionId,
+        string $optionId,
+        CatalogProductCustomOptionToUpdate $data,
+        string $storeView = null
+    ): bool;
+
+    public function removeProductOption(
+        string $sessionId,
+        string $optionId
+    ): bool;
+
+    public function getProductOptionInfo(
+        string $sessionId,
+        string $optionId,
+        string $storeView = null
+    ): CatalogProductCustomOptionInfoEntity;
+
 }

@@ -30,6 +30,9 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionEntityToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToAdd;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToUpdate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\ComplexFilter;
@@ -626,5 +629,64 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId, $attributeGroupId, $attributeGroupName]);
 
         return (bool) $this->processRequest('catalogProductAttributeSetGroupRename', $request);
+    }
+
+    public function getProductOptionTypes(
+        string $sessionId
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId]);
+
+        return $this->processRequest('catalogProductCustomOptionTypes', $request);
+    }
+
+    public function getProductOptions(
+        string $sessionId,
+        string $productId,
+        string $storeView = null
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $storeView]);
+
+        return $this->processRequest('catalogProductCustomOptionList', $request);
+    }
+
+    public function addProductOption(
+        string $sessionId,
+        string $productId,
+        CatalogProductCustomOptionToAdd $data,
+        string $storeView = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $data, $storeView]);
+
+        return $this->processRequest('catalogProductCustomOptionAdd', $request);
+    }
+
+    public function updateProductOption(
+        string $sessionId,
+        string $optionId,
+        CatalogProductCustomOptionToUpdate $data,
+        string $storeView = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $optionId, $data, $storeView]);
+
+        return $this->processRequest('catalogProductCustomOptionUpdate', $request);
+    }
+
+    public function removeProductOption(
+        string $sessionId,
+        string $optionId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $optionId]);
+
+        return $this->processRequest('catalogProductCustomOptionRemove', $request);
+    }
+
+    public function getProductOptionInfo(
+        string $sessionId,
+        string $optionId,
+        string $storeView = null
+    ): CatalogProductCustomOptionInfoEntity {
+        $request = new MultiArgumentRequest([$sessionId, $optionId, $storeView]);
+
+        return $this->processRequest('catalogProductCustomOptionInfo', $request);
     }
 }

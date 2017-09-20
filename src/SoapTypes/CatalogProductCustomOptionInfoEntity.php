@@ -37,7 +37,7 @@ class CatalogProductCustomOptionInfoEntity
     protected $is_require = null;
 
     /**
-     * @var catalogProductCustomOptionAdditionalFieldsArray
+     * @var CatalogProductCustomOptionAdditionalFieldsEntity[]
      */
     protected $additional_fields = null;
 
@@ -48,7 +48,7 @@ class CatalogProductCustomOptionInfoEntity
      * @var string                                          $type
      * @var string                                          $sort_order
      * @var int                                             $is_require
-     * @var catalogProductCustomOptionAdditionalFieldsArray $additional_fields
+     * @var CatalogProductCustomOptionAdditionalFieldsEntity[] $additional_fields
      *
      * @param mixed $title
      * @param mixed $type
@@ -56,7 +56,7 @@ class CatalogProductCustomOptionInfoEntity
      * @param mixed $is_require
      * @param mixed $additional_fields
      */
-    public function __construct($title, $type, $sort_order, $is_require, $additional_fields)
+    public function __construct($title, $type, $sort_order, $is_require, array $additional_fields)
     {
         $this->title = $title;
         $this->type = $type;
@@ -108,7 +108,7 @@ class CatalogProductCustomOptionInfoEntity
     /**
      * @return string
      */
-    public function getSort_order()
+    public function getSortOrder()
     {
         return $this->sort_order;
     }
@@ -118,7 +118,7 @@ class CatalogProductCustomOptionInfoEntity
      *
      * @return $this
      */
-    public function setSort_order($sort_order)
+    public function setSortOrder($sort_order)
     {
         $this->sort_order = $sort_order;
 
@@ -128,7 +128,7 @@ class CatalogProductCustomOptionInfoEntity
     /**
      * @return int
      */
-    public function getIs_require()
+    public function getIsRequire()
     {
         return $this->is_require;
     }
@@ -138,7 +138,7 @@ class CatalogProductCustomOptionInfoEntity
      *
      * @return $this
      */
-    public function setIs_require($is_require)
+    public function setIsRequire($is_require)
     {
         $this->is_require = $is_require;
 
@@ -146,19 +146,19 @@ class CatalogProductCustomOptionInfoEntity
     }
 
     /**
-     * @return catalogProductCustomOptionAdditionalFieldsArray
+     * @return CatalogProductCustomOptionAdditionalFieldsEntity[]
      */
-    public function getAdditional_fields()
+    public function getAdditionalFields()
     {
         return $this->additional_fields;
     }
 
     /**
-     * @param catalogProductCustomOptionAdditionalFieldsArray $additional_fields
+     * @param CatalogProductCustomOptionAdditionalFieldsEntity[] $additional_fields
      *
      * @return $this
      */
-    public function setAdditional_fields($additional_fields)
+    public function setAdditionalFields($additional_fields)
     {
         $this->additional_fields = $additional_fields;
 

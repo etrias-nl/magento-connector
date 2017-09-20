@@ -66,19 +66,19 @@ class CatalogProductCustomOptionListEntity
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getOption_id()
+    public function getOptionId()
     {
-        return $this->option_id;
+        return (int) $this->option_id;
     }
 
     /**
-     * @param string $option_id
+     * @param int $option_id
      *
      * @return $this
      */
-    public function setOption_id($option_id)
+    public function setOptionId(int $option_id)
     {
         $this->option_id = $option_id;
 
@@ -128,7 +128,7 @@ class CatalogProductCustomOptionListEntity
     /**
      * @return string
      */
-    public function getSort_order()
+    public function getSortOrder()
     {
         return $this->sort_order;
     }
@@ -138,7 +138,7 @@ class CatalogProductCustomOptionListEntity
      *
      * @return $this
      */
-    public function setSort_order($sort_order)
+    public function setSortOrder($sort_order)
     {
         $this->sort_order = $sort_order;
 
@@ -148,7 +148,7 @@ class CatalogProductCustomOptionListEntity
     /**
      * @return int
      */
-    public function getIs_require()
+    public function getIsRequire()
     {
         return $this->is_require;
     }
@@ -158,7 +158,7 @@ class CatalogProductCustomOptionListEntity
      *
      * @return $this
      */
-    public function setIs_require($is_require)
+    public function setIsRequire($is_require)
     {
         $this->is_require = $is_require;
 
