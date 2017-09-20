@@ -44,7 +44,7 @@ class CustomerGroupEntity
     /**
      * @return int
      */
-    public function getCustomer_group_id()
+    public function getCustomerGroupId()
     {
         return $this->customer_group_id;
     }
@@ -54,7 +54,7 @@ class CustomerGroupEntity
      *
      * @return $this
      */
-    public function setCustomer_group_id($customer_group_id)
+    public function setCustomerGroupId($customer_group_id)
     {
         $this->customer_group_id = $customer_group_id;
 
@@ -64,7 +64,7 @@ class CustomerGroupEntity
     /**
      * @return string
      */
-    public function getCustomer_group_code()
+    public function getCustomerGroupCode()
     {
         return $this->customer_group_code;
     }
@@ -74,7 +74,7 @@ class CustomerGroupEntity
      *
      * @return $this
      */
-    public function setCustomer_group_code($customer_group_code)
+    public function setCustomerGroupCode($customer_group_code)
     {
         $this->customer_group_code = $customer_group_code;
 

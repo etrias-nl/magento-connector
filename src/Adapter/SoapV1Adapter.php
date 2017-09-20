@@ -74,7 +74,7 @@ class SoapV1Adapter implements AdapterInterface
      *
      * @return mixed
      */
-    public function processResponse(RequestInterface $request, ResultInterface $response)
+    public function processResponse(/** @scrutinizer ignore-unused */ RequestInterface $request, ResultInterface $response)
     {
         /* @var MixedResult $response */
         return $response->getResult();

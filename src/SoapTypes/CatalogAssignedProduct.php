@@ -68,7 +68,7 @@ class CatalogAssignedProduct
     /**
      * @return int
      */
-    public function getProduct_id()
+    public function getProductId()
     {
         return $this->product_id;
     }
@@ -78,7 +78,7 @@ class CatalogAssignedProduct
      *
      * @return $this
      */
-    public function setProduct_id($product_id)
+    public function setProductId($product_id)
     {
         $this->product_id = $product_id;
 

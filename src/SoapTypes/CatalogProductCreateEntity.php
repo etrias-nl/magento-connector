@@ -534,7 +534,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getTax_class_id()
+    public function getTaxClassId()
     {
         return $this->tax_class_id;
     }
@@ -544,7 +544,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setTax_class_id($tax_class_id)
+    public function setTaxClassId($tax_class_id)
     {
         $this->tax_class_id = $tax_class_id;
 
@@ -554,7 +554,7 @@ class CatalogProductCreateEntity
     /**
      * @return catalogProductTierPriceEntity[]
      */
-    public function getTier_price()
+    public function getTierPrice()
     {
         return $this->tier_price;
     }
@@ -564,7 +564,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setTier_price(array $tier_price)
+    public function setTierPrice(array $tier_price)
     {
         $this->tier_price = $tier_price;
 
@@ -574,7 +574,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getMeta_title()
+    public function getMetaTitle()
     {
         return $this->meta_title;
     }
@@ -584,7 +584,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setMeta_title($meta_title)
+    public function setMetaTitle($meta_title)
     {
         $this->meta_title = $meta_title;
 
@@ -594,7 +594,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getMeta_keyword()
+    public function getMetaKeyword()
     {
         return $this->meta_keyword;
     }
@@ -604,7 +604,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setMeta_keyword($meta_keyword)
+    public function setMetaKeyword($meta_keyword)
     {
         $this->meta_keyword = $meta_keyword;
 
@@ -614,7 +614,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getMeta_description()
+    public function getMetaDescription()
     {
         return $this->meta_description;
     }
@@ -624,7 +624,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setMeta_description($meta_description)
+    public function setMetaDescription($meta_description)
     {
         $this->meta_description = $meta_description;
 
@@ -634,7 +634,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getCustom_design()
+    public function getCustomDesign()
     {
         return $this->custom_design;
     }
@@ -644,7 +644,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setCustom_design($custom_design)
+    public function setCustomDesign($custom_design)
     {
         $this->custom_design = $custom_design;
 
@@ -654,7 +654,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getCustom_layout_update()
+    public function getCustomLayoutUpdate()
     {
         return $this->custom_layout_update;
     }
@@ -664,7 +664,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setCustom_layout_update($custom_layout_update)
+    public function setCustomLayoutUpdate($custom_layout_update)
     {
         $this->custom_layout_update = $custom_layout_update;
 
@@ -674,7 +674,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getOptions_container()
+    public function getOptionsContainer()
     {
         return $this->options_container;
     }
@@ -684,7 +684,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setOptions_container($options_container)
+    public function setOptionsContainer($options_container)
     {
         $this->options_container = $options_container;
 
@@ -694,7 +694,7 @@ class CatalogProductCreateEntity
     /**
      * @return catalogProductAdditionalAttributesEntity
      */
-    public function getAdditional_attributes()
+    public function getAdditionalAttributes()
     {
         return $this->additional_attributes;
     }
@@ -704,7 +704,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setAdditional_attributes($additional_attributes)
+    public function setAdditionalAttributes($additional_attributes)
     {
         $this->additional_attributes = $additional_attributes;
 
@@ -712,9 +712,9 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return catalogInventoryStockItemUp\DateTimeEntity
+     * @return CatalogInventoryStockItemUp\DateTimeEntity
      */
-    public function getStock_data()
+    public function getStockData()
     {
         return $this->stock_data;
     }
@@ -724,7 +724,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setStock_data($stock_data)
+    public function setStockData($stock_data)
     {
         $this->stock_data = $stock_data;
 
@@ -734,7 +734,7 @@ class CatalogProductCreateEntity
     /**
      * @return string[]
      */
-    public function getAssociated_skus()
+    public function getAssociatedSkus()
     {
         return $this->associated_skus;
     }
@@ -744,7 +744,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setAssociated_skus(array $associated_skus)
+    public function setAssociatedSkus(array $associated_skus)
     {
         $this->associated_skus = $associated_skus;
 
@@ -754,7 +754,7 @@ class CatalogProductCreateEntity
     /**
      * @return string[]
      */
-    public function getConfigurable_attributes()
+    public function getConfigurableAttributes()
     {
         return $this->configurable_attributes;
     }
@@ -764,7 +764,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setConfigurable_attributes(array $configurable_attributes)
+    public function setConfigurableAttributes(array $configurable_attributes)
     {
         $this->configurable_attributes = $configurable_attributes;
 
@@ -774,7 +774,7 @@ class CatalogProductCreateEntity
     /**
      * @return array
      */
-    public function getPrice_changes()
+    public function getPriceChanges()
     {
         return $this->price_changes;
     }
@@ -784,7 +784,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setPrice_changes(array $price_changes)
+    public function setPriceChanges(array $price_changes)
     {
         $this->price_changes = $price_changes;
 

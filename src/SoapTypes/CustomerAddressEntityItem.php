@@ -188,7 +188,7 @@ class CustomerAddressEntityItem
     /**
      * @return int
      */
-    public function getCustomer_address_id()
+    public function getCustomerAddressId()
     {
         return $this->customer_address_id;
     }
@@ -198,7 +198,7 @@ class CustomerAddressEntityItem
      *
      * @return $this
      */
-    public function setCustomer_address_id($customer_address_id)
+    public function setCustomerAddressId($customer_address_id)
     {
         $this->customer_address_id = $customer_address_id;
 
@@ -208,7 +208,7 @@ class CustomerAddressEntityItem
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -218,7 +218,7 @@ class CustomerAddressEntityItem
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -228,7 +228,7 @@ class CustomerAddressEntityItem
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -238,7 +238,7 @@ class CustomerAddressEntityItem
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -248,7 +248,7 @@ class CustomerAddressEntityItem
     /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -258,7 +258,7 @@ class CustomerAddressEntityItem
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -308,7 +308,7 @@ class CustomerAddressEntityItem
     /**
      * @return string
      */
-    public function getCountry_id()
+    public function getCountryId()
     {
         return $this->country_id;
     }
@@ -318,7 +318,7 @@ class CustomerAddressEntityItem
      *
      * @return $this
      */
-    public function setCountry_id($country_id)
+    public function setCountryId($country_id)
     {
         $this->country_id = $country_id;
 
@@ -468,7 +468,7 @@ class CustomerAddressEntityItem
     /**
      * @return int
      */
-    public function getRegion_id()
+    public function getRegionId()
     {
         return $this->region_id;
     }
@@ -478,7 +478,7 @@ class CustomerAddressEntityItem
      *
      * @return $this
      */
-    public function setRegion_id($region_id)
+    public function setRegionId($region_id)
     {
         $this->region_id = $region_id;
 
@@ -548,7 +548,7 @@ class CustomerAddressEntityItem
     /**
      * @return bool
      */
-    public function getIs_default_billing()
+    public function getIsDefaultBilling()
     {
         return $this->is_default_billing;
     }
@@ -558,7 +558,7 @@ class CustomerAddressEntityItem
      *
      * @return $this
      */
-    public function setIs_default_billing($is_default_billing)
+    public function setIsDefaultBilling($is_default_billing)
     {
         $this->is_default_billing = $is_default_billing;
 
@@ -568,7 +568,7 @@ class CustomerAddressEntityItem
     /**
      * @return bool
      */
-    public function getIs_default_shipping()
+    public function getIsDefaultShipping()
     {
         return $this->is_default_shipping;
     }
@@ -578,7 +578,7 @@ class CustomerAddressEntityItem
      *
      * @return $this
      */
-    public function setIs_default_shipping($is_default_shipping)
+    public function setIsDefaultShipping($is_default_shipping)
     {
         $this->is_default_shipping = $is_default_shipping;
 

@@ -60,7 +60,7 @@ class CatalogInventoryStockItemEntity
     /**
      * @return string
      */
-    public function getProduct_id()
+    public function getProductId()
     {
         return $this->product_id;
     }
@@ -70,7 +70,7 @@ class CatalogInventoryStockItemEntity
      *
      * @return $this
      */
-    public function setProduct_id($product_id)
+    public function setProductId($product_id)
     {
         $this->product_id = $product_id;
 

@@ -238,7 +238,7 @@ class ExceptionMap
     /**
      * Returns the mapping between the error codes and exception classes.
      *
-     * @return string[]
+     * @return array
      */
     public function getMap()
     {

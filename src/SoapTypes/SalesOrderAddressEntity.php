@@ -172,7 +172,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -182,7 +182,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -192,7 +192,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -202,7 +202,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -212,7 +212,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -222,7 +222,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -232,7 +232,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -242,7 +242,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -252,7 +252,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -262,7 +262,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -272,7 +272,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getAddress_type()
+    public function getAddressType()
     {
         return $this->address_type;
     }
@@ -282,7 +282,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setAddress_type($address_type)
+    public function setAddressType($address_type)
     {
         $this->address_type = $address_type;
 
@@ -432,7 +432,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getCountry_id()
+    public function getCountryId()
     {
         return $this->country_id;
     }
@@ -442,7 +442,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setCountry_id($country_id)
+    public function setCountryId($country_id)
     {
         $this->country_id = $country_id;
 
@@ -492,7 +492,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getRegion_id()
+    public function getRegionId()
     {
         return $this->region_id;
     }
@@ -502,7 +502,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setRegion_id($region_id)
+    public function setRegionId($region_id)
     {
         $this->region_id = $region_id;
 
@@ -512,7 +512,7 @@ class SalesOrderAddressEntity
     /**
      * @return string
      */
-    public function getAddress_id()
+    public function getAddressId()
     {
         return $this->address_id;
     }
@@ -522,7 +522,7 @@ class SalesOrderAddressEntity
      *
      * @return $this
      */
-    public function setAddress_id($address_id)
+    public function setAddressId($address_id)
     {
         $this->address_id = $address_id;
 

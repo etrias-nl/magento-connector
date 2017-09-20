@@ -308,7 +308,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getProduct_id()
+    public function getProductId()
     {
         return $this->product_id;
     }
@@ -318,7 +318,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setProduct_id($product_id)
+    public function setProductId($product_id)
     {
         $this->product_id = $product_id;
 
@@ -428,7 +428,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -438,7 +438,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -448,7 +448,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -458,7 +458,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -468,7 +468,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getType_id()
+    public function getTypeId()
     {
         return $this->type_id;
     }
@@ -478,7 +478,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setType_id($type_id)
+    public function setTypeId($type_id)
     {
         $this->type_id = $type_id;
 
@@ -528,7 +528,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getShort_description()
+    public function getShortDescription()
     {
         return $this->short_description;
     }
@@ -538,7 +538,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setShort_description($short_description)
+    public function setShortDescription($short_description)
     {
         $this->short_description = $short_description;
 
@@ -588,7 +588,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getUrl_key()
+    public function getUrlKey()
     {
         return $this->url_key;
     }
@@ -598,7 +598,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setUrl_key($url_key)
+    public function setUrlKey($url_key)
     {
         $this->url_key = $url_key;
 
@@ -608,7 +608,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getUrl_path()
+    public function getUrlPath()
     {
         return $this->url_path;
     }
@@ -618,7 +618,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setUrl_path($url_path)
+    public function setUrlPath($url_path)
     {
         $this->url_path = $url_path;
 
@@ -648,7 +648,7 @@ class CatalogProductReturnEntity
     /**
      * @return string[]
      */
-    public function getCategory_ids()
+    public function getCategoryIds()
     {
         return $this->category_ids;
     }
@@ -658,7 +658,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setCategory_ids($category_ids)
+    public function setCategoryIds($category_ids)
     {
         $this->category_ids = $category_ids;
 
@@ -668,7 +668,7 @@ class CatalogProductReturnEntity
     /**
      * @return string[]
      */
-    public function getWebsite_ids()
+    public function getWebsiteIds()
     {
         return $this->website_ids;
     }
@@ -678,7 +678,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setWebsite_ids($website_ids)
+    public function setWebsiteIds($website_ids)
     {
         $this->website_ids = $website_ids;
 
@@ -688,7 +688,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getHas_options()
+    public function getHasOptions()
     {
         return $this->has_options;
     }
@@ -698,7 +698,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setHas_options($has_options)
+    public function setHasOptions($has_options)
     {
         $this->has_options = $has_options;
 
@@ -708,7 +708,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getGift_message_available()
+    public function getGiftMessageAvailable()
     {
         return $this->gift_message_available;
     }
@@ -718,7 +718,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setGift_message_available($gift_message_available)
+    public function setGiftMessageAvailable($gift_message_available)
     {
         $this->gift_message_available = $gift_message_available;
 
@@ -748,7 +748,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getSpecial_price()
+    public function getSpecialPrice()
     {
         return $this->special_price;
     }
@@ -758,7 +758,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setSpecial_price($special_price)
+    public function setSpecialPrice($special_price)
     {
         $this->special_price = $special_price;
 
@@ -768,7 +768,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getSpecial_from_date()
+    public function getSpecialFromDate()
     {
         return $this->special_from_date;
     }
@@ -778,7 +778,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setSpecial_from_date($special_from_date)
+    public function setSpecialFromDate($special_from_date)
     {
         $this->special_from_date = $special_from_date;
 
@@ -788,7 +788,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getSpecial_to_date()
+    public function getSpecialToDate()
     {
         return $this->special_to_date;
     }
@@ -798,7 +798,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setSpecial_to_date($special_to_date)
+    public function setSpecialToDate($special_to_date)
     {
         $this->special_to_date = $special_to_date;
 
@@ -808,7 +808,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getTax_class_id()
+    public function getTaxClassId()
     {
         return $this->tax_class_id;
     }
@@ -818,7 +818,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setTax_class_id($tax_class_id)
+    public function setTaxClassId($tax_class_id)
     {
         $this->tax_class_id = $tax_class_id;
 
@@ -828,7 +828,7 @@ class CatalogProductReturnEntity
     /**
      * @return catalogProductTierPriceEntity[]
      */
-    public function getTier_price()
+    public function getTierPrice()
     {
         return $this->tier_price;
     }
@@ -838,7 +838,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setTier_price($tier_price)
+    public function setTierPrice($tier_price)
     {
         $this->tier_price = $tier_price;
 
@@ -848,7 +848,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getMeta_title()
+    public function getMetaTitle()
     {
         return $this->meta_title;
     }
@@ -858,7 +858,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setMeta_title($meta_title)
+    public function setMetaTitle($meta_title)
     {
         $this->meta_title = $meta_title;
 
@@ -868,7 +868,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getMeta_keyword()
+    public function getMetaKeyword()
     {
         return $this->meta_keyword;
     }
@@ -878,7 +878,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setMeta_keyword($meta_keyword)
+    public function setMetaKeyword($meta_keyword)
     {
         $this->meta_keyword = $meta_keyword;
 
@@ -888,7 +888,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getMeta_description()
+    public function getMetaDescription()
     {
         return $this->meta_description;
     }
@@ -898,7 +898,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setMeta_description($meta_description)
+    public function setMetaDescription($meta_description)
     {
         $this->meta_description = $meta_description;
 
@@ -908,7 +908,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getCustom_design()
+    public function getCustomDesign()
     {
         return $this->custom_design;
     }
@@ -918,7 +918,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setCustom_design($custom_design)
+    public function setCustomDesign($custom_design)
     {
         $this->custom_design = $custom_design;
 
@@ -928,7 +928,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getCustom_layout_update()
+    public function getCustomLayoutUpdate()
     {
         return $this->custom_layout_update;
     }
@@ -938,7 +938,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setCustom_layout_update($custom_layout_update)
+    public function setCustomLayoutUpdate($custom_layout_update)
     {
         $this->custom_layout_update = $custom_layout_update;
 
@@ -948,7 +948,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getOptions_container()
+    public function getOptionsContainer()
     {
         return $this->options_container;
     }
@@ -958,7 +958,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setOptions_container($options_container)
+    public function setOptionsContainer($options_container)
     {
         $this->options_container = $options_container;
 
@@ -968,7 +968,7 @@ class CatalogProductReturnEntity
     /**
      * @return array
      */
-    public function getAdditional_attributes()
+    public function getAdditionalAttributes()
     {
         return $this->additional_attributes;
     }
@@ -978,7 +978,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setAdditional_attributes($additional_attributes)
+    public function setAdditionalAttributes($additional_attributes)
     {
         $this->additional_attributes = $additional_attributes;
 
@@ -988,7 +988,7 @@ class CatalogProductReturnEntity
     /**
      * @return string
      */
-    public function getEnable_googlecheckout()
+    public function getEnableGooglecheckout()
     {
         return $this->enable_googlecheckout;
     }
@@ -998,7 +998,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setEnable_googlecheckout($enable_googlecheckout)
+    public function setEnableGooglecheckout($enable_googlecheckout)
     {
         $this->enable_googlecheckout = $enable_googlecheckout;
 

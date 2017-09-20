@@ -52,7 +52,7 @@ class DirectoryRegionEntity
     /**
      * @return string
      */
-    public function getRegion_id()
+    public function getRegionId()
     {
         return $this->region_id;
     }
@@ -62,7 +62,7 @@ class DirectoryRegionEntity
      *
      * @return $this
      */
-    public function setRegion_id($region_id)
+    public function setRegionId($region_id)
     {
         $this->region_id = $region_id;
 

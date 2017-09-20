@@ -44,7 +44,7 @@ class CatalogProductAttributeFrontendLabelEntity
     /**
      * @return string
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -54,7 +54,7 @@ class CatalogProductAttributeFrontendLabelEntity
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 

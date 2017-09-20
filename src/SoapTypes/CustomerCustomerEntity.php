@@ -172,7 +172,7 @@ class CustomerCustomerEntity
     /**
      * @return int
      */
-    public function getCustomer_id()
+    public function getCustomerId()
     {
         return $this->customer_id;
     }
@@ -182,7 +182,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setCustomer_id($customer_id)
+    public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
 
@@ -192,7 +192,7 @@ class CustomerCustomerEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -202,7 +202,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -212,7 +212,7 @@ class CustomerCustomerEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -222,7 +222,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -232,7 +232,7 @@ class CustomerCustomerEntity
     /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -242,7 +242,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -252,7 +252,7 @@ class CustomerCustomerEntity
     /**
      * @return int
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -262,7 +262,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 
@@ -272,7 +272,7 @@ class CustomerCustomerEntity
     /**
      * @return int
      */
-    public function getWebsite_id()
+    public function getWebsiteId()
     {
         return $this->website_id;
     }
@@ -282,7 +282,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setWebsite_id($website_id)
+    public function setWebsiteId($website_id)
     {
         $this->website_id = $website_id;
 
@@ -292,7 +292,7 @@ class CustomerCustomerEntity
     /**
      * @return string
      */
-    public function getCreated_in()
+    public function getCreatedIn()
     {
         return $this->created_in;
     }
@@ -302,7 +302,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setCreated_in($created_in)
+    public function setCreatedIn($created_in)
     {
         $this->created_in = $created_in;
 
@@ -392,7 +392,7 @@ class CustomerCustomerEntity
     /**
      * @return int
      */
-    public function getGroup_id()
+    public function getGroupId()
     {
         return $this->group_id;
     }
@@ -402,7 +402,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setGroup_id($group_id)
+    public function setGroupId($group_id)
     {
         $this->group_id = $group_id;
 
@@ -512,7 +512,7 @@ class CustomerCustomerEntity
     /**
      * @return string
      */
-    public function getPassword_hash()
+    public function getPasswordHash()
     {
         return $this->password_hash;
     }
@@ -522,7 +522,7 @@ class CustomerCustomerEntity
      *
      * @return $this
      */
-    public function setPassword_hash($password_hash)
+    public function setPasswordHash($password_hash)
     {
         $this->password_hash = $password_hash;
 

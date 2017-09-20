@@ -132,7 +132,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getValue_id()
+    public function getValueId()
     {
         return $this->value_id;
     }
@@ -142,7 +142,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setValue_id($value_id)
+    public function setValueId($value_id)
     {
         $this->value_id = $value_id;
 
@@ -152,7 +152,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getOption_id()
+    public function getOptionId()
     {
         return $this->option_id;
     }
@@ -162,7 +162,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setOption_id($option_id)
+    public function setOptionId($option_id)
     {
         $this->option_id = $option_id;
 
@@ -192,7 +192,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getSort_order()
+    public function getSortOrder()
     {
         return $this->sort_order;
     }
@@ -202,7 +202,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setSort_order($sort_order)
+    public function setSortOrder($sort_order)
     {
         $this->sort_order = $sort_order;
 
@@ -212,7 +212,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getDefault_price()
+    public function getDefaultPrice()
     {
         return $this->default_price;
     }
@@ -222,7 +222,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setDefault_price($default_price)
+    public function setDefaultPrice($default_price)
     {
         $this->default_price = $default_price;
 
@@ -232,7 +232,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getDefault_price_type()
+    public function getDefaultPriceType()
     {
         return $this->default_price_type;
     }
@@ -242,7 +242,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setDefault_price_type($default_price_type)
+    public function setDefaultPriceType($default_price_type)
     {
         $this->default_price_type = $default_price_type;
 
@@ -252,7 +252,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getStore_price()
+    public function getStorePrice()
     {
         return $this->store_price;
     }
@@ -262,7 +262,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setStore_price($store_price)
+    public function setStorePrice($store_price)
     {
         $this->store_price = $store_price;
 
@@ -272,7 +272,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getStore_price_type()
+    public function getStorePriceType()
     {
         return $this->store_price_type;
     }
@@ -282,7 +282,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setStore_price_type($store_price_type)
+    public function setStorePriceType($store_price_type)
     {
         $this->store_price_type = $store_price_type;
 
@@ -312,7 +312,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getPrice_type()
+    public function getPriceType()
     {
         return $this->price_type;
     }
@@ -322,7 +322,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setPrice_type($price_type)
+    public function setPriceType($price_type)
     {
         $this->price_type = $price_type;
 
@@ -332,7 +332,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getDefault_title()
+    public function getDefaultTitle()
     {
         return $this->default_title;
     }
@@ -342,7 +342,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setDefault_title($default_title)
+    public function setDefaultTitle($default_title)
     {
         $this->default_title = $default_title;
 
@@ -352,7 +352,7 @@ class CatalogProductCustomOptionValueInfoEntity
     /**
      * @return string
      */
-    public function getStore_title()
+    public function getStoreTitle()
     {
         return $this->store_title;
     }
@@ -362,7 +362,7 @@ class CatalogProductCustomOptionValueInfoEntity
      *
      * @return $this
      */
-    public function setStore_title($store_title)
+    public function setStoreTitle($store_title)
     {
         $this->store_title = $store_title;
 

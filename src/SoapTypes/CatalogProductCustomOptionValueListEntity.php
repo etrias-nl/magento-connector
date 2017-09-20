@@ -76,7 +76,7 @@ class CatalogProductCustomOptionValueListEntity
     /**
      * @return string
      */
-    public function getValue_id()
+    public function getValueId()
     {
         return $this->value_id;
     }
@@ -86,7 +86,7 @@ class CatalogProductCustomOptionValueListEntity
      *
      * @return $this
      */
-    public function setValue_id($value_id)
+    public function setValueId($value_id)
     {
         $this->value_id = $value_id;
 
@@ -136,7 +136,7 @@ class CatalogProductCustomOptionValueListEntity
     /**
      * @return string
      */
-    public function getPrice_type()
+    public function getPriceType()
     {
         return $this->price_type;
     }
@@ -146,7 +146,7 @@ class CatalogProductCustomOptionValueListEntity
      *
      * @return $this
      */
-    public function setPrice_type($price_type)
+    public function setPriceType($price_type)
     {
         $this->price_type = $price_type;
 
@@ -176,7 +176,7 @@ class CatalogProductCustomOptionValueListEntity
     /**
      * @return string
      */
-    public function getSort_order()
+    public function getSortOrder()
     {
         return $this->sort_order;
     }
@@ -186,7 +186,7 @@ class CatalogProductCustomOptionValueListEntity
      *
      * @return $this
      */
-    public function setSort_order($sort_order)
+    public function setSortOrder($sort_order)
     {
         $this->sort_order = $sort_order;
 

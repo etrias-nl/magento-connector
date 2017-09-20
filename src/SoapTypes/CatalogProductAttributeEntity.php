@@ -92,17 +92,17 @@ class CatalogProductAttributeEntity
     protected $used_in_product_listing = null;
 
     /**
-     * @var associativeArray
+     * @var array
      */
     protected $additional_fields = null;
 
     /**
-     * @var catalogAttributeOptionEntityArray
+     * @var CatalogAttributeOptionEntity[]
      */
     protected $options = null;
 
     /**
-     * @var catalogProductAttributeFrontendLabelArray
+     * @var CatalogProductAttributeFrontendLabelEntity[]
      */
     protected $frontend_label = null;
 
@@ -124,9 +124,9 @@ class CatalogProductAttributeEntity
      * @var int                                       $is_used_for_promo_rules
      * @var int                                       $is_visible_on_front
      * @var int                                       $used_in_product_listing
-     * @var associativeArray                          $additional_fields
-     * @var catalogAttributeOptionEntityArray         $options
-     * @var catalogProductAttributeFrontendLabelArray $frontend_label
+     * @var array                          $additional_fields
+     * @var CatalogAttributeOptionEntity[]         $options
+     * @var CatalogProductAttributeFrontendLabelEntity[] $frontend_label
      *
      * @param mixed $attribute_id
      * @param mixed $attribute_code
@@ -172,7 +172,7 @@ class CatalogProductAttributeEntity
     /**
      * @return string
      */
-    public function getAttribute_id()
+    public function getAttributeId()
     {
         return $this->attribute_id;
     }
@@ -182,7 +182,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setAttribute_id($attribute_id)
+    public function setAttributeId($attribute_id)
     {
         $this->attribute_id = $attribute_id;
 
@@ -192,7 +192,7 @@ class CatalogProductAttributeEntity
     /**
      * @return string
      */
-    public function getAttribute_code()
+    public function getAttributeCode()
     {
         return $this->attribute_code;
     }
@@ -202,7 +202,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setAttribute_code($attribute_code)
+    public function setAttributeCode($attribute_code)
     {
         $this->attribute_code = $attribute_code;
 
@@ -212,7 +212,7 @@ class CatalogProductAttributeEntity
     /**
      * @return string
      */
-    public function getFrontend_input()
+    public function getFrontendInput()
     {
         return $this->frontend_input;
     }
@@ -222,7 +222,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setFrontend_input($frontend_input)
+    public function setFrontendInput($frontend_input)
     {
         $this->frontend_input = $frontend_input;
 
@@ -252,7 +252,7 @@ class CatalogProductAttributeEntity
     /**
      * @return string
      */
-    public function getDefault_value()
+    public function getDefaultValue()
     {
         return $this->default_value;
     }
@@ -262,7 +262,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setDefault_value($default_value)
+    public function setDefaultValue($default_value)
     {
         $this->default_value = $default_value;
 
@@ -272,7 +272,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getIs_unique()
+    public function getIsUnique()
     {
         return $this->is_unique;
     }
@@ -282,7 +282,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setIs_unique($is_unique)
+    public function setIsUnique($is_unique)
     {
         $this->is_unique = $is_unique;
 
@@ -292,7 +292,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getIs_required()
+    public function getIsRequired()
     {
         return $this->is_required;
     }
@@ -302,7 +302,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setIs_required($is_required)
+    public function setIsRequired($is_required)
     {
         $this->is_required = $is_required;
 
@@ -312,7 +312,7 @@ class CatalogProductAttributeEntity
     /**
      * @return string[]
      */
-    public function getApply_to()
+    public function getApplyTo()
     {
         return $this->apply_to;
     }
@@ -322,7 +322,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setApply_to($apply_to)
+    public function setApplyTo($apply_to)
     {
         $this->apply_to = $apply_to;
 
@@ -332,7 +332,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getIs_configurable()
+    public function getIsConfigurable()
     {
         return $this->is_configurable;
     }
@@ -342,7 +342,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setIs_configurable($is_configurable)
+    public function setIsConfigurable($is_configurable)
     {
         $this->is_configurable = $is_configurable;
 
@@ -352,7 +352,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getIs_searchable()
+    public function getIsSearchable()
     {
         return $this->is_searchable;
     }
@@ -362,7 +362,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setIs_searchable($is_searchable)
+    public function setIsSearchable($is_searchable)
     {
         $this->is_searchable = $is_searchable;
 
@@ -372,7 +372,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getIs_visible_in_advanced_search()
+    public function getIsVisibleInAdvancedSearch()
     {
         return $this->is_visible_in_advanced_search;
     }
@@ -382,7 +382,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setIs_visible_in_advanced_search($is_visible_in_advanced_search)
+    public function setIsVisibleInAdvancedSearch($is_visible_in_advanced_search)
     {
         $this->is_visible_in_advanced_search = $is_visible_in_advanced_search;
 
@@ -392,7 +392,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getIs_comparable()
+    public function getIsComparable()
     {
         return $this->is_comparable;
     }
@@ -402,7 +402,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setIs_comparable($is_comparable)
+    public function setIsComparable($is_comparable)
     {
         $this->is_comparable = $is_comparable;
 
@@ -412,7 +412,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getIs_used_for_promo_rules()
+    public function getIsUsedForPromoRules()
     {
         return $this->is_used_for_promo_rules;
     }
@@ -422,7 +422,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setIs_used_for_promo_rules($is_used_for_promo_rules)
+    public function setIsUsedForPromoRules($is_used_for_promo_rules)
     {
         $this->is_used_for_promo_rules = $is_used_for_promo_rules;
 
@@ -432,7 +432,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getIs_visible_on_front()
+    public function getIsVisibleOnFront()
     {
         return $this->is_visible_on_front;
     }
@@ -442,7 +442,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setIs_visible_on_front($is_visible_on_front)
+    public function setIsVisibleOnFront($is_visible_on_front)
     {
         $this->is_visible_on_front = $is_visible_on_front;
 
@@ -452,7 +452,7 @@ class CatalogProductAttributeEntity
     /**
      * @return int
      */
-    public function getUsed_in_product_listing()
+    public function getUsedInProductListing()
     {
         return $this->used_in_product_listing;
     }
@@ -462,7 +462,7 @@ class CatalogProductAttributeEntity
      *
      * @return $this
      */
-    public function setUsed_in_product_listing($used_in_product_listing)
+    public function setUsedIProductListing($used_in_product_listing)
     {
         $this->used_in_product_listing = $used_in_product_listing;
 
@@ -470,19 +470,19 @@ class CatalogProductAttributeEntity
     }
 
     /**
-     * @return associativeArray
+     * @return array
      */
-    public function getAdditional_fields()
+    public function getAdditionalFields()
     {
         return $this->additional_fields;
     }
 
     /**
-     * @param associativeArray $additional_fields
+     * @param array $additional_fields
      *
      * @return $this
      */
-    public function setAdditional_fields($additional_fields)
+    public function setAdditionalFields($additional_fields)
     {
         $this->additional_fields = $additional_fields;
 
@@ -490,7 +490,7 @@ class CatalogProductAttributeEntity
     }
 
     /**
-     * @return catalogAttributeOptionEntityArray
+     * @return CatalogAttributeOptionEntity[]
      */
     public function getOptions()
     {
@@ -498,7 +498,7 @@ class CatalogProductAttributeEntity
     }
 
     /**
-     * @param catalogAttributeOptionEntityArray $options
+     * @param CatalogAttributeOptionEntity[] $options
      *
      * @return $this
      */
@@ -510,19 +510,19 @@ class CatalogProductAttributeEntity
     }
 
     /**
-     * @return catalogProductAttributeFrontendLabelArray
+     * @return CatalogProductAttributeFrontendLabelEntity[]
      */
-    public function getFrontend_label()
+    public function getFrontendLabel()
     {
         return $this->frontend_label;
     }
 
     /**
-     * @param catalogProductAttributeFrontendLabelArray $frontend_label
+     * @param CatalogProductAttributeFrontendLabelEntity[] $frontend_label
      *
      * @return $this
      */
-    public function setFrontend_label($frontend_label)
+    public function setFrontendLabel($frontend_label)
     {
         $this->frontend_label = $frontend_label;
 

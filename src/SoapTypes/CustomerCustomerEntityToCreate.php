@@ -92,7 +92,7 @@ class CustomerCustomerEntityToCreate
     /**
      * @return int
      */
-    public function getCustomer_id()
+    public function getCustomerId()
     {
         return $this->customer_id;
     }
@@ -102,7 +102,7 @@ class CustomerCustomerEntityToCreate
      *
      * @return $this
      */
-    public function setCustomer_id($customer_id)
+    public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
 
@@ -192,7 +192,7 @@ class CustomerCustomerEntityToCreate
     /**
      * @return int
      */
-    public function getWebsite_id()
+    public function getWebsiteId()
     {
         return $this->website_id;
     }
@@ -202,7 +202,7 @@ class CustomerCustomerEntityToCreate
      *
      * @return $this
      */
-    public function setWebsite_id($website_id)
+    public function setWebsiteId($website_id)
     {
         $this->website_id = $website_id;
 
@@ -212,7 +212,7 @@ class CustomerCustomerEntityToCreate
     /**
      * @return int
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -222,7 +222,7 @@ class CustomerCustomerEntityToCreate
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 
@@ -232,7 +232,7 @@ class CustomerCustomerEntityToCreate
     /**
      * @return int
      */
-    public function getGroup_id()
+    public function getGroupId()
     {
         return $this->group_id;
     }
@@ -242,7 +242,7 @@ class CustomerCustomerEntityToCreate
      *
      * @return $this
      */
-    public function setGroup_id($group_id)
+    public function setGroupId($group_id)
     {
         $this->group_id = $group_id;
 

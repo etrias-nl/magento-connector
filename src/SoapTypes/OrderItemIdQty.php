@@ -44,7 +44,7 @@ class OrderItemIdQty
     /**
      * @return int
      */
-    public function getOrder_item_id()
+    public function getOrderItemId()
     {
         return $this->order_item_id;
     }
@@ -54,7 +54,7 @@ class OrderItemIdQty
      *
      * @return $this
      */
-    public function setOrder_item_id($order_item_id)
+    public function setOrderItemId($order_item_id)
     {
         $this->order_item_id = $order_item_id;
 

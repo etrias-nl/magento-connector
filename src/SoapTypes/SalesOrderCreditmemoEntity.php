@@ -367,12 +367,12 @@ class SalesOrderCreditmemoEntity
     protected $creditmemo_id = null;
 
     /**
-     * @var salesOrderCreditmemoItemEntityArray
+     * @var SalesOrderCreditmemoItemEntity[]
      */
     protected $items = null;
 
     /**
-     * @var salesOrderCreditmemoCommentEntityArray
+     * @var SalesOrderCreditmemoCommentEntity[]
      */
     protected $comments = null;
 
@@ -644,7 +644,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -654,7 +654,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -664,7 +664,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getTransaction_id()
+    public function getTransactionId()
     {
         return $this->transaction_id;
     }
@@ -674,7 +674,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setTransaction_id($transaction_id)
+    public function setTransactionId($transaction_id)
     {
         $this->transaction_id = $transaction_id;
 
@@ -684,7 +684,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGlobal_currency_code()
+    public function getGlobalCurrencyCode()
     {
         return $this->global_currency_code;
     }
@@ -694,7 +694,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGlobal_currency_code($global_currency_code)
+    public function setGlobalCurrencyCode($global_currency_code)
     {
         $this->global_currency_code = $global_currency_code;
 
@@ -704,7 +704,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_currency_code()
+    public function getBaseCurrencyCode()
     {
         return $this->base_currency_code;
     }
@@ -714,7 +714,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_currency_code($base_currency_code)
+    public function setBaseCurrencyCode($base_currency_code)
     {
         $this->base_currency_code = $base_currency_code;
 
@@ -724,7 +724,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getOrder_currency_code()
+    public function getOrderCurrencyCode()
     {
         return $this->order_currency_code;
     }
@@ -734,7 +734,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setOrder_currency_code($order_currency_code)
+    public function setOrderCurrencyCode($order_currency_code)
     {
         $this->order_currency_code = $order_currency_code;
 
@@ -744,7 +744,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getStore_currency_code()
+    public function getStoreCurrencyCode()
     {
         return $this->store_currency_code;
     }
@@ -754,7 +754,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setStore_currency_code($store_currency_code)
+    public function setStoreCurrencyCode($store_currency_code)
     {
         $this->store_currency_code = $store_currency_code;
 
@@ -764,7 +764,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getCybersource_token()
+    public function getCybersourceToken()
     {
         return $this->cybersource_token;
     }
@@ -774,7 +774,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setCybersource_token($cybersource_token)
+    public function setCybersourceToken($cybersource_token)
     {
         $this->cybersource_token = $cybersource_token;
 
@@ -784,7 +784,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getInvoice_id()
+    public function getInvoiceId()
     {
         return $this->invoice_id;
     }
@@ -794,7 +794,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setInvoice_id($invoice_id)
+    public function setInvoiceId($invoice_id)
     {
         $this->invoice_id = $invoice_id;
 
@@ -804,7 +804,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBilling_address_id()
+    public function getBillingAddressId()
     {
         return $this->billing_address_id;
     }
@@ -814,7 +814,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBilling_address_id($billing_address_id)
+    public function setBillingAddressId($billing_address_id)
     {
         $this->billing_address_id = $billing_address_id;
 
@@ -824,7 +824,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getShipping_address_id()
+    public function getShippingAddressId()
     {
         return $this->shipping_address_id;
     }
@@ -834,7 +834,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setShipping_address_id($shipping_address_id)
+    public function setShippingAddressId($shipping_address_id)
     {
         $this->shipping_address_id = $shipping_address_id;
 
@@ -864,7 +864,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getCreditmemo_status()
+    public function getCreditmemoStatus()
     {
         return $this->creditmemo_status;
     }
@@ -874,7 +874,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setCreditmemo_status($creditmemo_status)
+    public function setCreditmemoStatus($creditmemo_status)
     {
         $this->creditmemo_status = $creditmemo_status;
 
@@ -884,7 +884,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getEmail_sent()
+    public function getEmailSent()
     {
         return $this->email_sent;
     }
@@ -894,7 +894,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setEmail_sent($email_sent)
+    public function setEmailSent($email_sent)
     {
         $this->email_sent = $email_sent;
 
@@ -904,7 +904,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getOrder_id()
+    public function getOrderId()
     {
         return $this->order_id;
     }
@@ -914,7 +914,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setOrder_id($order_id)
+    public function setOrderId($order_id)
     {
         $this->order_id = $order_id;
 
@@ -924,7 +924,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getTax_amount()
+    public function getTaxAmount()
     {
         return $this->tax_amount;
     }
@@ -934,7 +934,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setTax_amount($tax_amount)
+    public function setTaxAmount($tax_amount)
     {
         $this->tax_amount = $tax_amount;
 
@@ -944,7 +944,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getShipping_tax_amount()
+    public function getShippingTaxAmount()
     {
         return $this->shipping_tax_amount;
     }
@@ -954,7 +954,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setShipping_tax_amount($shipping_tax_amount)
+    public function setShippingTaxAmount($shipping_tax_amount)
     {
         $this->shipping_tax_amount = $shipping_tax_amount;
 
@@ -964,7 +964,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_tax_amount()
+    public function getBaseTaxAmount()
     {
         return $this->base_tax_amount;
     }
@@ -974,7 +974,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_tax_amount($base_tax_amount)
+    public function setBaseTaxAmount($base_tax_amount)
     {
         $this->base_tax_amount = $base_tax_amount;
 
@@ -984,7 +984,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_adjustment_positive()
+    public function getBaseAdjustmentPositive()
     {
         return $this->base_adjustment_positive;
     }
@@ -994,7 +994,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_adjustment_positive($base_adjustment_positive)
+    public function setBaseAdjustmentPositive($base_adjustment_positive)
     {
         $this->base_adjustment_positive = $base_adjustment_positive;
 
@@ -1004,7 +1004,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_grand_total()
+    public function getBaseGrandTotal()
     {
         return $this->base_grand_total;
     }
@@ -1014,7 +1014,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_grand_total($base_grand_total)
+    public function setBaseGrandTotal($base_grand_total)
     {
         $this->base_grand_total = $base_grand_total;
 
@@ -1064,7 +1064,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getDiscount_amount()
+    public function getDiscountAmount()
     {
         return $this->discount_amount;
     }
@@ -1074,7 +1074,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setDiscount_amount($discount_amount)
+    public function setDiscountAmount($discount_amount)
     {
         $this->discount_amount = $discount_amount;
 
@@ -1084,7 +1084,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_subtotal()
+    public function getBaseSubtotal()
     {
         return $this->base_subtotal;
     }
@@ -1094,7 +1094,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_subtotal($base_subtotal)
+    public function setBaseSubtotal($base_subtotal)
     {
         $this->base_subtotal = $base_subtotal;
 
@@ -1104,7 +1104,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_adjustment()
+    public function getBaseAdjustment()
     {
         return $this->base_adjustment;
     }
@@ -1114,7 +1114,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_adjustment($base_adjustment)
+    public function setBaseAdjustment($base_adjustment)
     {
         $this->base_adjustment = $base_adjustment;
 
@@ -1124,7 +1124,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_to_global_rate()
+    public function getBaseToGlobalRate()
     {
         return $this->base_to_global_rate;
     }
@@ -1134,7 +1134,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_to_global_rate($base_to_global_rate)
+    public function setBaseToGlobalRate($base_to_global_rate)
     {
         $this->base_to_global_rate = $base_to_global_rate;
 
@@ -1144,7 +1144,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getStore_to_base_rate()
+    public function getStoreToBaseRate()
     {
         return $this->store_to_base_rate;
     }
@@ -1154,7 +1154,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setStore_to_base_rate($store_to_base_rate)
+    public function setStoreToBaseRate($store_to_base_rate)
     {
         $this->store_to_base_rate = $store_to_base_rate;
 
@@ -1164,7 +1164,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_shipping_amount()
+    public function getBaseShippingAmount()
     {
         return $this->base_shipping_amount;
     }
@@ -1174,7 +1174,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_shipping_amount($base_shipping_amount)
+    public function setBaseShippingAmount($base_shipping_amount)
     {
         $this->base_shipping_amount = $base_shipping_amount;
 
@@ -1184,7 +1184,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getAdjustment_negative()
+    public function getAdjustmentNegative()
     {
         return $this->adjustment_negative;
     }
@@ -1194,7 +1194,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setAdjustment_negative($adjustment_negative)
+    public function setAdjustmentNegative($adjustment_negative)
     {
         $this->adjustment_negative = $adjustment_negative;
 
@@ -1204,7 +1204,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getSubtotal_incl_tax()
+    public function getSubtotalInclTax()
     {
         return $this->subtotal_incl_tax;
     }
@@ -1214,7 +1214,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setSubtotal_incl_tax($subtotal_incl_tax)
+    public function setSubtotalInclTax($subtotal_incl_tax)
     {
         $this->subtotal_incl_tax = $subtotal_incl_tax;
 
@@ -1224,7 +1224,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getShipping_amount()
+    public function getShippingAmount()
     {
         return $this->shipping_amount;
     }
@@ -1234,7 +1234,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setShipping_amount($shipping_amount)
+    public function setShippingAmount($shipping_amount)
     {
         $this->shipping_amount = $shipping_amount;
 
@@ -1244,7 +1244,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_subtotal_incl_tax()
+    public function getBaseSubtotalInclTax()
     {
         return $this->base_subtotal_incl_tax;
     }
@@ -1254,7 +1254,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_subtotal_incl_tax($base_subtotal_incl_tax)
+    public function setBaseSubtotalInclTax($base_subtotal_incl_tax)
     {
         $this->base_subtotal_incl_tax = $base_subtotal_incl_tax;
 
@@ -1264,7 +1264,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_adjustment_negative()
+    public function getBaseAdjustmentNegative()
     {
         return $this->base_adjustment_negative;
     }
@@ -1274,7 +1274,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_adjustment_negative($base_adjustment_negative)
+    public function setBaseAdjustmentNegative($base_adjustment_negative)
     {
         $this->base_adjustment_negative = $base_adjustment_negative;
 
@@ -1284,7 +1284,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGrand_total()
+    public function getGrandTotal()
     {
         return $this->grand_total;
     }
@@ -1294,7 +1294,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGrand_total($grand_total)
+    public function setGrandTotal($grand_total)
     {
         $this->grand_total = $grand_total;
 
@@ -1304,7 +1304,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_discount_amount()
+    public function getBaseDiscountAmount()
     {
         return $this->base_discount_amount;
     }
@@ -1314,7 +1314,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_discount_amount($base_discount_amount)
+    public function setBaseDiscountAmount($base_discount_amount)
     {
         $this->base_discount_amount = $base_discount_amount;
 
@@ -1324,7 +1324,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_to_order_rate()
+    public function getBaseToOrderRate()
     {
         return $this->base_to_order_rate;
     }
@@ -1334,7 +1334,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_to_order_rate($base_to_order_rate)
+    public function setBaseToOrderRate($base_to_order_rate)
     {
         $this->base_to_order_rate = $base_to_order_rate;
 
@@ -1344,7 +1344,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getStore_to_order_rate()
+    public function getStoreToOrderRate()
     {
         return $this->store_to_order_rate;
     }
@@ -1354,7 +1354,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setStore_to_order_rate($store_to_order_rate)
+    public function setStoreToOrderRate($store_to_order_rate)
     {
         $this->store_to_order_rate = $store_to_order_rate;
 
@@ -1364,7 +1364,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_shipping_tax_amount()
+    public function getBaseShippingTaxAmount()
     {
         return $this->base_shipping_tax_amount;
     }
@@ -1374,7 +1374,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_shipping_tax_amount($base_shipping_tax_amount)
+    public function setBaseShippingTaxAmount($base_shipping_tax_amount)
     {
         $this->base_shipping_tax_amount = $base_shipping_tax_amount;
 
@@ -1384,7 +1384,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getAdjustment_positive()
+    public function getAdjustmentPositive()
     {
         return $this->adjustment_positive;
     }
@@ -1394,7 +1394,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setAdjustment_positive($adjustment_positive)
+    public function setAdjustmentPositive($adjustment_positive)
     {
         $this->adjustment_positive = $adjustment_positive;
 
@@ -1404,7 +1404,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -1414,7 +1414,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 
@@ -1424,7 +1424,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getHidden_tax_amount()
+    public function getHiddenTaxAmount()
     {
         return $this->hidden_tax_amount;
     }
@@ -1434,7 +1434,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setHidden_tax_amount($hidden_tax_amount)
+    public function setHiddenTaxAmount($hidden_tax_amount)
     {
         $this->hidden_tax_amount = $hidden_tax_amount;
 
@@ -1444,7 +1444,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_hidden_tax_amount()
+    public function getBaseHiddenTaxAmount()
     {
         return $this->base_hidden_tax_amount;
     }
@@ -1454,7 +1454,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_hidden_tax_amount($base_hidden_tax_amount)
+    public function setBaseHiddenTaxAmount($base_hidden_tax_amount)
     {
         $this->base_hidden_tax_amount = $base_hidden_tax_amount;
 
@@ -1464,7 +1464,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getShipping_hidden_tax_amount()
+    public function getShippingHiddenTaxAmount()
     {
         return $this->shipping_hidden_tax_amount;
     }
@@ -1474,7 +1474,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setShipping_hidden_tax_amount($shipping_hidden_tax_amount)
+    public function setShippingHiddenTaxAmount($shipping_hidden_tax_amount)
     {
         $this->shipping_hidden_tax_amount = $shipping_hidden_tax_amount;
 
@@ -1484,7 +1484,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_shipping_hidden_tax_amnt()
+    public function getBaseShippingHiddenTaxAmount()
     {
         return $this->base_shipping_hidden_tax_amnt;
     }
@@ -1494,7 +1494,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_shipping_hidden_tax_amnt($base_shipping_hidden_tax_amnt)
+    public function setBaseShippingHiddenTaxAmount($base_shipping_hidden_tax_amnt)
     {
         $this->base_shipping_hidden_tax_amnt = $base_shipping_hidden_tax_amnt;
 
@@ -1504,7 +1504,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getShipping_incl_tax()
+    public function getShippingInclTax()
     {
         return $this->shipping_incl_tax;
     }
@@ -1514,7 +1514,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setShipping_incl_tax($shipping_incl_tax)
+    public function setShippingInclTax($shipping_incl_tax)
     {
         $this->shipping_incl_tax = $shipping_incl_tax;
 
@@ -1524,7 +1524,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_shipping_incl_tax()
+    public function getBaseShippingInclTax()
     {
         return $this->base_shipping_incl_tax;
     }
@@ -1534,7 +1534,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_shipping_incl_tax($base_shipping_incl_tax)
+    public function setBaseShippingInclTax($base_shipping_incl_tax)
     {
         $this->base_shipping_incl_tax = $base_shipping_incl_tax;
 
@@ -1544,7 +1544,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_customer_balance_amount()
+    public function getBaseCustomerBalanceAmount()
     {
         return $this->base_customer_balance_amount;
     }
@@ -1554,7 +1554,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_customer_balance_amount($base_customer_balance_amount)
+    public function setBaseCustomerBalanceAmount($base_customer_balance_amount)
     {
         $this->base_customer_balance_amount = $base_customer_balance_amount;
 
@@ -1564,7 +1564,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getCustomer_balance_amount()
+    public function getCustomerBalanceAmount()
     {
         return $this->customer_balance_amount;
     }
@@ -1574,7 +1574,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setCustomer_balance_amount($customer_balance_amount)
+    public function setCustomerBalanceAmount($customer_balance_amount)
     {
         $this->customer_balance_amount = $customer_balance_amount;
 
@@ -1584,7 +1584,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBs_customer_bal_total_refunded()
+    public function getBsCustomerBalTotalRefunded()
     {
         return $this->bs_customer_bal_total_refunded;
     }
@@ -1594,7 +1594,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBs_customer_bal_total_refunded($bs_customer_bal_total_refunded)
+    public function setBsCustomerBalTotalRefunded($bs_customer_bal_total_refunded)
     {
         $this->bs_customer_bal_total_refunded = $bs_customer_bal_total_refunded;
 
@@ -1604,7 +1604,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getCustomer_bal_total_refunded()
+    public function getCustomerBalTotalRefunded()
     {
         return $this->customer_bal_total_refunded;
     }
@@ -1614,7 +1614,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setCustomer_bal_total_refunded($customer_bal_total_refunded)
+    public function setCustomerBalTotalRefunded($customer_bal_total_refunded)
     {
         $this->customer_bal_total_refunded = $customer_bal_total_refunded;
 
@@ -1624,7 +1624,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_gift_cards_amount()
+    public function getBaseGiftCardsAmount()
     {
         return $this->base_gift_cards_amount;
     }
@@ -1634,7 +1634,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_gift_cards_amount($base_gift_cards_amount)
+    public function setBaseGiftCardsAmount($base_gift_cards_amount)
     {
         $this->base_gift_cards_amount = $base_gift_cards_amount;
 
@@ -1644,7 +1644,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGift_cards_amount()
+    public function getGiftCardsAmount()
     {
         return $this->gift_cards_amount;
     }
@@ -1654,7 +1654,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGift_cards_amount($gift_cards_amount)
+    public function setGiftCardsAmount($gift_cards_amount)
     {
         $this->gift_cards_amount = $gift_cards_amount;
 
@@ -1664,7 +1664,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_base_price()
+    public function getGwBasePrice()
     {
         return $this->gw_base_price;
     }
@@ -1674,7 +1674,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_base_price($gw_base_price)
+    public function setGwBasePrice($gw_base_price)
     {
         $this->gw_base_price = $gw_base_price;
 
@@ -1684,7 +1684,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_price()
+    public function getGwPrice()
     {
         return $this->gw_price;
     }
@@ -1694,7 +1694,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_price($gw_price)
+    public function setGwPrice($gw_price)
     {
         $this->gw_price = $gw_price;
 
@@ -1704,7 +1704,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_items_base_price()
+    public function getGwItemsBasePrice()
     {
         return $this->gw_items_base_price;
     }
@@ -1714,7 +1714,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_items_base_price($gw_items_base_price)
+    public function setGwItemsBasePrice($gw_items_base_price)
     {
         $this->gw_items_base_price = $gw_items_base_price;
 
@@ -1724,7 +1724,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_items_price()
+    public function getGwItemsPrice()
     {
         return $this->gw_items_price;
     }
@@ -1734,7 +1734,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_items_price($gw_items_price)
+    public function setGwItemsPrice($gw_items_price)
     {
         $this->gw_items_price = $gw_items_price;
 
@@ -1744,7 +1744,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_card_base_price()
+    public function getGwCardBasePrice()
     {
         return $this->gw_card_base_price;
     }
@@ -1754,7 +1754,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_card_base_price($gw_card_base_price)
+    public function setGwCardBasePrice($gw_card_base_price)
     {
         $this->gw_card_base_price = $gw_card_base_price;
 
@@ -1764,7 +1764,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_card_price()
+    public function getGwCardPrice()
     {
         return $this->gw_card_price;
     }
@@ -1774,7 +1774,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_card_price($gw_card_price)
+    public function setGwCardPrice($gw_card_price)
     {
         $this->gw_card_price = $gw_card_price;
 
@@ -1784,7 +1784,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_base_tax_amount()
+    public function getGwBaseTaxAmount()
     {
         return $this->gw_base_tax_amount;
     }
@@ -1794,7 +1794,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_base_tax_amount($gw_base_tax_amount)
+    public function setGwBaseTaxAmount($gw_base_tax_amount)
     {
         $this->gw_base_tax_amount = $gw_base_tax_amount;
 
@@ -1804,7 +1804,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_tax_amount()
+    public function getGwTaxAmount()
     {
         return $this->gw_tax_amount;
     }
@@ -1814,7 +1814,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_tax_amount($gw_tax_amount)
+    public function setGwTaxAmount($gw_tax_amount)
     {
         $this->gw_tax_amount = $gw_tax_amount;
 
@@ -1824,7 +1824,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_items_base_tax_amount()
+    public function getGwItemsBaseTaxAmount()
     {
         return $this->gw_items_base_tax_amount;
     }
@@ -1834,7 +1834,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_items_base_tax_amount($gw_items_base_tax_amount)
+    public function setGwItemsBaseTaxAmount($gw_items_base_tax_amount)
     {
         $this->gw_items_base_tax_amount = $gw_items_base_tax_amount;
 
@@ -1844,7 +1844,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_items_tax_amount()
+    public function getGwItemsTaxAmount()
     {
         return $this->gw_items_tax_amount;
     }
@@ -1854,7 +1854,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_items_tax_amount($gw_items_tax_amount)
+    public function setGwItemsTaxAmount($gw_items_tax_amount)
     {
         $this->gw_items_tax_amount = $gw_items_tax_amount;
 
@@ -1864,7 +1864,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_card_base_tax_amount()
+    public function getGwCardBaseTaxAmount()
     {
         return $this->gw_card_base_tax_amount;
     }
@@ -1874,7 +1874,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_card_base_tax_amount($gw_card_base_tax_amount)
+    public function setGwCardBaseTaxAmount($gw_card_base_tax_amount)
     {
         $this->gw_card_base_tax_amount = $gw_card_base_tax_amount;
 
@@ -1884,7 +1884,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getGw_card_tax_amount()
+    public function getGwCardTaxAmount()
     {
         return $this->gw_card_tax_amount;
     }
@@ -1894,7 +1894,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setGw_card_tax_amount($gw_card_tax_amount)
+    public function setGwCardTaxAmount($gw_card_tax_amount)
     {
         $this->gw_card_tax_amount = $gw_card_tax_amount;
 
@@ -1904,7 +1904,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getBase_reward_currency_amount()
+    public function getBaseRewardCurrencyAmount()
     {
         return $this->base_reward_currency_amount;
     }
@@ -1914,7 +1914,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setBase_reward_currency_amount($base_reward_currency_amount)
+    public function setBaseRewardCurrencyAmount($base_reward_currency_amount)
     {
         $this->base_reward_currency_amount = $base_reward_currency_amount;
 
@@ -1924,7 +1924,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getReward_currency_amount()
+    public function getRewardCurrencyAmount()
     {
         return $this->reward_currency_amount;
     }
@@ -1934,7 +1934,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setReward_currency_amount($reward_currency_amount)
+    public function setRewardCurrencyAmount($reward_currency_amount)
     {
         $this->reward_currency_amount = $reward_currency_amount;
 
@@ -1944,7 +1944,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getReward_points_balance()
+    public function getRewardPointsBalance()
     {
         return $this->reward_points_balance;
     }
@@ -1954,7 +1954,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setReward_points_balance($reward_points_balance)
+    public function setRewardPointsBalance($reward_points_balance)
     {
         $this->reward_points_balance = $reward_points_balance;
 
@@ -1964,7 +1964,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getReward_points_balance_refund()
+    public function getRewardPointsBalanceRefund()
     {
         return $this->reward_points_balance_refund;
     }
@@ -1974,7 +1974,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setReward_points_balance_refund($reward_points_balance_refund)
+    public function setRewardPointsBalanceRefund($reward_points_balance_refund)
     {
         $this->reward_points_balance_refund = $reward_points_balance_refund;
 
@@ -1984,7 +1984,7 @@ class SalesOrderCreditmemoEntity
     /**
      * @return string
      */
-    public function getCreditmemo_id()
+    public function getCreditmemoId()
     {
         return $this->creditmemo_id;
     }
@@ -1994,7 +1994,7 @@ class SalesOrderCreditmemoEntity
      *
      * @return $this
      */
-    public function setCreditmemo_id($creditmemo_id)
+    public function setCreditmemoId($creditmemo_id)
     {
         $this->creditmemo_id = $creditmemo_id;
 
@@ -2002,7 +2002,7 @@ class SalesOrderCreditmemoEntity
     }
 
     /**
-     * @return salesOrderCreditmemoItemEntityArray
+     * @return SalesOrderCreditmemoItemEntity[]
      */
     public function getItems()
     {
@@ -2010,7 +2010,7 @@ class SalesOrderCreditmemoEntity
     }
 
     /**
-     * @param salesOrderCreditmemoItemEntityArray $items
+     * @param SalesOrderCreditmemoItemEntity[] $items
      *
      * @return $this
      */
@@ -2022,7 +2022,7 @@ class SalesOrderCreditmemoEntity
     }
 
     /**
-     * @return salesOrderCreditmemoCommentEntityArray
+     * @return SalesOrderCreditmemoItemEntity[]
      */
     public function getComments()
     {
@@ -2030,7 +2030,7 @@ class SalesOrderCreditmemoEntity
     }
 
     /**
-     * @param salesOrderCreditmemoCommentEntityArray $comments
+     * @param SalesOrderCreditmemoItemEntity[] $comments
      *
      * @return $this
      */

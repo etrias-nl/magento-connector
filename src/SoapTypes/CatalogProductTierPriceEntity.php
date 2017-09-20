@@ -60,7 +60,7 @@ class CatalogProductTierPriceEntity
     /**
      * @return string
      */
-    public function getCustomer_group_id()
+    public function getCustomerGroupId()
     {
         return $this->customer_group_id;
     }
@@ -70,7 +70,7 @@ class CatalogProductTierPriceEntity
      *
      * @return $this
      */
-    public function setCustomer_group_id($customer_group_id)
+    public function setCustomerGroupId($customer_group_id)
     {
         $this->customer_group_id = $customer_group_id;
 

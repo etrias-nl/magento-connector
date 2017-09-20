@@ -76,7 +76,7 @@ class SalesOrderCreditmemoCommentEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -86,7 +86,7 @@ class SalesOrderCreditmemoCommentEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -96,7 +96,7 @@ class SalesOrderCreditmemoCommentEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -106,7 +106,7 @@ class SalesOrderCreditmemoCommentEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -136,7 +136,7 @@ class SalesOrderCreditmemoCommentEntity
     /**
      * @return string
      */
-    public function getIs_customer_notified()
+    public function getIsCustomerNotified()
     {
         return $this->is_customer_notified;
     }
@@ -146,7 +146,7 @@ class SalesOrderCreditmemoCommentEntity
      *
      * @return $this
      */
-    public function setIs_customer_notified($is_customer_notified)
+    public function setIsCustomerNotified($is_customer_notified)
     {
         $this->is_customer_notified = $is_customer_notified;
 
@@ -156,7 +156,7 @@ class SalesOrderCreditmemoCommentEntity
     /**
      * @return string
      */
-    public function getComment_id()
+    public function getCommentId()
     {
         return $this->comment_id;
     }
@@ -166,7 +166,7 @@ class SalesOrderCreditmemoCommentEntity
      *
      * @return $this
      */
-    public function setComment_id($comment_id)
+    public function setCommentId($comment_id)
     {
         $this->comment_id = $comment_id;
 
@@ -176,7 +176,7 @@ class SalesOrderCreditmemoCommentEntity
     /**
      * @return string
      */
-    public function getIs_visible_on_front()
+    public function getIsVisibleOnFront()
     {
         return $this->is_visible_on_front;
     }
@@ -186,7 +186,7 @@ class SalesOrderCreditmemoCommentEntity
      *
      * @return $this
      */
-    public function setIs_visible_on_front($is_visible_on_front)
+    public function setIsVisibleOnFront($is_visible_on_front)
     {
         $this->is_visible_on_front = $is_visible_on_front;
 

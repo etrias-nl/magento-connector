@@ -76,7 +76,7 @@ class CatalogCategoryEntityNoChildren
     /**
      * @return int
      */
-    public function getCategory_id()
+    public function getCategoryId()
     {
         return $this->category_id;
     }
@@ -86,7 +86,7 @@ class CatalogCategoryEntityNoChildren
      *
      * @return $this
      */
-    public function setCategory_id($category_id)
+    public function setCategoryId($category_id)
     {
         $this->category_id = $category_id;
 
@@ -96,7 +96,7 @@ class CatalogCategoryEntityNoChildren
     /**
      * @return int
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -106,7 +106,7 @@ class CatalogCategoryEntityNoChildren
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 

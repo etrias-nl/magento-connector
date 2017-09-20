@@ -60,7 +60,7 @@ class DirectoryCountryEntity
     /**
      * @return string
      */
-    public function getCountry_id()
+    public function getCountryId()
     {
         return $this->country_id;
     }
@@ -70,7 +70,7 @@ class DirectoryCountryEntity
      *
      * @return $this
      */
-    public function setCountry_id($country_id)
+    public function setCountryId($country_id)
     {
         $this->country_id = $country_id;
 
@@ -80,7 +80,7 @@ class DirectoryCountryEntity
     /**
      * @return string
      */
-    public function getIso2_code()
+    public function getIso2Code()
     {
         return $this->iso2_code;
     }
@@ -90,7 +90,7 @@ class DirectoryCountryEntity
      *
      * @return $this
      */
-    public function setIso2_code($iso2_code)
+    public function setIso2Code($iso2_code)
     {
         $this->iso2_code = $iso2_code;
 
@@ -100,7 +100,7 @@ class DirectoryCountryEntity
     /**
      * @return string
      */
-    public function getIso3_code()
+    public function getIso3Code()
     {
         return $this->iso3_code;
     }
@@ -110,7 +110,7 @@ class DirectoryCountryEntity
      *
      * @return $this
      */
-    public function setIso3_code($iso3_code)
+    public function setIso3Code($iso3_code)
     {
         $this->iso3_code = $iso3_code;
 

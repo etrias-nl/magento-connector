@@ -97,7 +97,7 @@ class OppcwTransactionEntity
     protected $currency = null;
 
     /**
-     * @var associativeArray
+     * @var array
      */
     protected $data = null;
 
@@ -164,7 +164,7 @@ class OppcwTransactionEntity
     /**
      * @return int
      */
-    public function getTransaction_id()
+    public function getTransactionId()
     {
         return $this->transaction_id;
     }
@@ -174,7 +174,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setTransaction_id($transaction_id)
+    public function setTransactionId($transaction_id)
     {
         $this->transaction_id = $transaction_id;
 
@@ -184,7 +184,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getTransaction_external_id()
+    public function getTransactionExternalId()
     {
         return $this->transaction_external_id;
     }
@@ -194,7 +194,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setTransaction_external_id($transaction_external_id)
+    public function setTransactionExternalId($transaction_external_id)
     {
         $this->transaction_external_id = $transaction_external_id;
 
@@ -204,7 +204,7 @@ class OppcwTransactionEntity
     /**
      * @return int
      */
-    public function getOrder_id()
+    public function getOrderId()
     {
         return $this->order_id;
     }
@@ -214,7 +214,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setOrder_id($order_id)
+    public function setOrderId($order_id)
     {
         $this->order_id = $order_id;
 
@@ -224,7 +224,7 @@ class OppcwTransactionEntity
     /**
      * @return int
      */
-    public function getOrder_payment_id()
+    public function getOrderPaymentId()
     {
         return $this->order_payment_id;
     }
@@ -234,7 +234,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setOrder_payment_id($order_payment_id)
+    public function setOrderPaymentId($order_payment_id)
     {
         $this->order_payment_id = $order_payment_id;
 
@@ -244,7 +244,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getAlias_for_display()
+    public function getAliasForDisplay()
     {
         return $this->alias_for_display;
     }
@@ -254,7 +254,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setAlias_for_display($alias_for_display)
+    public function setAliasForDisplay($alias_for_display)
     {
         $this->alias_for_display = $alias_for_display;
 
@@ -264,7 +264,7 @@ class OppcwTransactionEntity
     /**
      * @return bool
      */
-    public function getAlias_active()
+    public function getAliasActive()
     {
         return $this->alias_active;
     }
@@ -274,7 +274,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setAlias_active($alias_active)
+    public function setAliasActive($alias_active)
     {
         $this->alias_active = $alias_active;
 
@@ -284,7 +284,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getPayment_method()
+    public function getPaymentMethod()
     {
         return $this->payment_method;
     }
@@ -294,7 +294,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setPayment_method($payment_method)
+    public function setPaymentMethod($payment_method)
     {
         $this->payment_method = $payment_method;
 
@@ -304,7 +304,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getAuthorization_type()
+    public function getAuthorizationType()
     {
         return $this->authorization_type;
     }
@@ -314,7 +314,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setAuthorization_type($authorization_type)
+    public function setAuthorizationType($authorization_type)
     {
         $this->authorization_type = $authorization_type;
 
@@ -324,7 +324,7 @@ class OppcwTransactionEntity
     /**
      * @return int
      */
-    public function getCustomer_id()
+    public function getCustomerId()
     {
         return $this->customer_id;
     }
@@ -334,7 +334,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setCustomer_id($customer_id)
+    public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
 
@@ -344,7 +344,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getUpdated_on()
+    public function getUpdatedOn()
     {
         return $this->updated_on;
     }
@@ -354,7 +354,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setUpdated_on($updated_on)
+    public function setUpdatedOn($updated_on)
     {
         $this->updated_on = $updated_on;
 
@@ -364,7 +364,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getCreated_on()
+    public function getCreatedOn()
     {
         return $this->created_on;
     }
@@ -374,7 +374,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setCreated_on($created_on)
+    public function setCreatedOn($created_on)
     {
         $this->created_on = $created_on;
 
@@ -384,7 +384,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getPayment_id()
+    public function getPaymentId()
     {
         return $this->payment_id;
     }
@@ -394,7 +394,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setPayment_id($payment_id)
+    public function setPaymentId($payment_id)
     {
         $this->payment_id = $payment_id;
 
@@ -404,7 +404,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getAuthorization_amount()
+    public function getAuthorizationAmount()
     {
         return $this->authorization_amount;
     }
@@ -414,7 +414,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setAuthorization_amount($authorization_amount)
+    public function setAuthorizationAmount($authorization_amount)
     {
         $this->authorization_amount = $authorization_amount;
 
@@ -424,7 +424,7 @@ class OppcwTransactionEntity
     /**
      * @return string
      */
-    public function getAuthorization_status()
+    public function getAuthorizationStatus()
     {
         return $this->authorization_status;
     }
@@ -434,7 +434,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setAuthorization_status($authorization_status)
+    public function setAuthorizationStatus($authorization_status)
     {
         $this->authorization_status = $authorization_status;
 
@@ -482,7 +482,7 @@ class OppcwTransactionEntity
     }
 
     /**
-     * @return associativeArray
+     * @return array
      */
     public function getData()
     {
@@ -490,7 +490,7 @@ class OppcwTransactionEntity
     }
 
     /**
-     * @param associativeArray $data
+     * @param array $data
      *
      * @return $this
      */
