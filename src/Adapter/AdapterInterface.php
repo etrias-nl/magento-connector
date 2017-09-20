@@ -68,6 +68,7 @@ interface AdapterInterface
 
     /**
      * @param string $sessionId
+     *
      * @return storeEntity[]
      */
     public function getStoreList(string $sessionId): array;
@@ -80,42 +81,86 @@ interface AdapterInterface
 
     public function setCurrentStoreView(string $sessionId, int $storeView): int;
 
-    public function getCategoryTree(string $sessionId, int $parentId = null, int $storeView = null): CatalogCategoryTree;
+    public function getCategoryTree(
+        string $sessionId,
+        int $parentId = null,
+        int $storeView = null
+    ): CatalogCategoryTree;
 
     /**
      * @param string $sessionId
-     * @param int $categoryId
+     * @param int    $categoryId
+     *
      * @return CatalogAssignedProduct[]
      */
     public function getAssignedProducts(string $sessionId, int $categoryId): array;
 
-    public function assignProduct(string $sessionId, int $categoryId, int $product, int $position = null, string $identifierType = 'id'): bool;
+    public function assignProduct(
+        string $sessionId,
+        int $categoryId,
+        int $product,
+        int $position = null,
+        string $identifierType = 'id'
+    ): bool;
 
-    public function createCategory(string $sessionId, int $parentId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): int;
+    public function createCategory(
+        string $sessionId,
+        int $parentId,
+        CatalogCategoryEntityCreate $categoryData,
+        string $storeView = null
+    ): int;
 
-    public function updateCategory(string $sessionId, int $categoryId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): bool;
+    public function updateCategory(
+        string $sessionId,
+        int $categoryId,
+        CatalogCategoryEntityCreate $categoryData,
+        string $storeView = null
+    ): bool;
 
     public function deleteCategory(string $sessionId, int $categoryId): bool;
 
-    public function getCategory(string $sessionId, int $categoryId, string $storeView = null, array $attributes = null): CatalogCategoryInfo;
+    public function getCategory(
+        string $sessionId,
+        int $categoryId,
+        string $storeView = null,
+        array $attributes = null
+    ): CatalogCategoryInfo;
 
     /**
-     * @param string $sessionId
+     * @param string   $sessionId
      * @param int|null $parentId
      * @param int|null $websiteId
      * @param int|null $storeView
+     *
      * @return CatalogCategoryEntityNoChildren[]
      */
-    public function getCategoriesByParent(string $sessionId, int $parentId = null, int $websiteId = null, int $storeView = null): array;
+    public function getCategoriesByParent(
+        string $sessionId,
+        int $parentId = null,
+        int $websiteId = null,
+        int $storeView = null
+    ): array;
 
     public function moveCategory(string $sessionId, int $categoryId, int $parentId, int $afterId = null): bool;
 
-    public function removeProductFromCategory(string $sessionId, int $categoryId, int $productId, string $identifierType = 'id'): bool;
+    public function removeProductFromCategory(
+        string $sessionId,
+        int $categoryId,
+        int $productId,
+        string $identifierType = 'id'
+    ): bool;
 
-    public function updateProductPosition(string $sessionId, int $categoryId, int $productId, int $position, string $identifierType = 'id'): bool;
+    public function updateProductPosition(
+        string $sessionId,
+        int $categoryId,
+        int $productId,
+        int $position,
+        string $identifierType = 'id'
+    ): bool;
 
     /**
      * @param string $sessionId
+     *
      * @return CatalogAttributeEntity[]
      */
     public function getCategoryAttributes(string $sessionId): array;
@@ -123,36 +168,57 @@ interface AdapterInterface
     public function getCategoryAttributeOptions(string $sessionId, int $attributeId): array;
 
     /**
-     * @param string $sessionId
-     * @param array $filters
+     * @param string   $sessionId
+     * @param array    $filters
      * @param int|null $storeView
+     *
      * @return array
      */
     public function getProducts(string $sessionId, array $filters, int $storeView = null): array;
 
-    public function createProduct(string $sessionId, string $productType, int $attributeSet, string $sku, CatalogProductCreateEntity $productData, int $storeView): int;
+    public function createProduct(
+        string $sessionId,
+        string $productType,
+        int $attributeSet,
+        string $sku,
+        CatalogProductCreateEntity $productData,
+        int $storeView
+    ): int;
 
-    public function updateProduct(string $sessionId, string $productId, CatalogProductCreateEntity $productData, int $storeView, string $identifierType = 'id'): bool;
+    public function updateProduct(
+        string $sessionId,
+        string $productId,
+        CatalogProductCreateEntity $productData,
+        int $storeView,
+        string $identifierType = 'id'
+    ): bool;
 
     public function deleteProduct(string $sessionId, string $productId, string $identifierType = 'id'): bool;
 
     /**
      * @param string $sessionId
      * @param string $productId
-     * @param int $storeView
+     * @param int    $storeView
      * @param string $identifierType
+     *
      * @return CatalogProductReturnEntity
      */
-    public function getSpecialPrice(string $sessionId, string $productId, int $storeView, string $identifierType = 'id'): CatalogProductReturnEntity;
+    public function getSpecialPrice(
+        string $sessionId,
+        string $productId,
+        int $storeView,
+        string $identifierType = 'id'
+    ): CatalogProductReturnEntity;
 
     /**
-     * @param string $sessionId
-     * @param string $productId
-     * @param float $specialPrice
+     * @param string   $sessionId
+     * @param string   $productId
+     * @param float    $specialPrice
      * @param DateTime $fromDate
      * @param DateTime $toDate
-     * @param int $storeView
-     * @param string $identifierType
+     * @param int      $storeView
+     * @param string   $identifierType
+     *
      * @return bool
      */
     public function setSpecialPrice(
@@ -167,23 +233,32 @@ interface AdapterInterface
 
     /**
      * @param string $sessionId
+     *
      * @return CatalogProductAttributeSetEntity[]
      */
     public function getAttributeSetList(string $sessionId): array;
 
-    public function getProductInfo(string $sessionId, string $productId, array $attributes = null, string $storeView = null, string $identifierType = ' id'): CatalogProductReturnEntity;
+    public function getProductInfo(
+        string $sessionId,
+        string $productId,
+        array $attributes = null,
+        string $storeView = null,
+        string $identifierType = ' id'
+    ): CatalogProductReturnEntity;
 
     /**
      * @param string $sessionId
      * @param string $productType
-     * @param int $attributeSetId
+     * @param int    $attributeSetId
+     *
      * @return CatalogAttributeEntity[]
      */
     public function getListOfAdditionalAttributes(string $sessionId, string $productType, int $attributeSetId): array;
 
     /**
      * @param string $sessionId
-     * @param int $attributeSetId
+     * @param int    $attributeSetId
+     *
      * @return CatalogAttributeEntity[]
      */
     public function getAttributeList(string $sessionId, int $attributeSetId): array;
@@ -191,38 +266,50 @@ interface AdapterInterface
     public function getAttributeInfo(string $sessionId, string $attributeId): CatalogProductAttributeEntity;
 
     /**
-     * @param string $sessionId
-     * @param int $attributeId
+     * @param string   $sessionId
+     * @param int      $attributeId
      * @param int|null $storeView
+     *
      * @return CatalogAttributeOptionEntity[]
      */
     public function getProductAttributeOptions(string $sessionId, int $attributeId, int $storeView = null): array;
 
     /**
-     * @param string $sessionId
-     * @param int $attributeId
+     * @param string                                   $sessionId
+     * @param int                                      $attributeId
      * @param CatalogProductAttributeOptionEntityToAdd $data
+     *
      * @return bool
      */
-    public function addAttributeOption(string $sessionId, int $attributeId, CatalogProductAttributeOptionEntityToAdd $data): bool;
+    public function addAttributeOption(
+        string $sessionId,
+        int $attributeId,
+        CatalogProductAttributeOptionEntityToAdd $data
+    ): bool;
 
     public function removeAttributeOption(string $sessionId, string $attribute, string $optionId): bool;
 
     public function createAttribute(string $sessionId, CatalogProductAttributeEntityToCreate $data): int;
 
-    public function updateAttribute(string $sessionId, int $attributeId, CatalogProductAttributeEntityToCreate $data): bool;
+    public function updateAttribute(
+        string $sessionId,
+        int $attributeId,
+        CatalogProductAttributeEntityToCreate $data
+    ): bool;
 
     public function removeAttribute(string $sessionId, string $attributeId): bool;
 
     /**
      * @param string $sessionId
+     *
      * @return CatalogAttributeOptionEntity[]
      */
     public function getAttributeTypes(string $sessionId): array;
 
     /**
      * @param string $sessionId
-     * @param int $attributeSetId
+     * @param int    $attributeSetId
+     *
      * @return CatalogProductAttributeMediaTypeEntity[]
      */
     public function getProductMediaTypes(string $sessionId, int $attributeSetId): array;
@@ -230,25 +317,99 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $productId
-     * @param int $storeView
+     * @param int    $storeView
      * @param string $identifierType
+     *
      * @return CatalogProductImageEntity[]
      */
-    public function getProductImages(string $sessionId, string $productId, string $identifierType, int $storeView = null): array;
+    public function getProductImages(
+        string $sessionId,
+        string $productId,
+        string $identifierType,
+        int $storeView = null
+    ): array;
 
     /**
-     * @param string $sessionId
-     * @param string $productId
+     * @param string                                   $sessionId
+     * @param string                                   $productId
      * @param CatalogProductAttributeMediaCreateEntity $data
-     * @param string $identifierType
-     * @param int|null $storeView
+     * @param string                                   $identifierType
+     * @param int|null                                 $storeView
+     *
      * @return string
      */
-    public function createProductImage(string $sessionId, string $productId, CatalogProductAttributeMediaCreateEntity $data, int $storeView = null, string $identifierType = 'id'): string;
+    public function createProductImage(
+        string $sessionId,
+        string $productId,
+        CatalogProductAttributeMediaCreateEntity $data,
+        int $storeView = null,
+        string $identifierType = 'id'
+    ): string;
 
-    public function updateProductImage(string $sessionId, string $productId, string $fileName, CatalogProductAttributeMediaCreateEntity $data, int $storeView = null, string $identifierType = 'id'): bool;
+    public function updateProductImage(
+        string $sessionId,
+        string $productId,
+        string $fileName,
+        CatalogProductAttributeMediaCreateEntity $data,
+        int $storeView = null,
+        string $identifierType = 'id'
+    ): bool;
 
-    public function getMediaInfo(string $sessionId, string $productId, string $fileName, int $storeView = null, string $identifierType = 'id'): CatalogProductImageEntity;
+    public function getMediaInfo(
+        string $sessionId,
+        string $productId,
+        string $fileName,
+        int $storeView = null,
+        string $identifierType = 'id'
+    ): CatalogProductImageEntity;
 
-    public function removeProductImage(string $sessionId, string $productId, string $fileName, string $identifierType = 'id'): bool;
+    public function removeProductImage(
+        string $sessionId,
+        string $productId,
+        string $fileName,
+        string $identifierType = 'id'
+    ): bool;
+
+    public function createAttributeSet(
+        string $sessionId,
+        string $attributeSetName,
+        string $skeletonSetId
+    ): int;
+
+    public function removeAttributeSet(
+        string $sessionId,
+        string $attributeSetId,
+        bool $forceProductsRemove
+    ): bool;
+
+    public function addAttributeToSet(
+        string $sessionId,
+        string $attributeId,
+        string $attributeSetId,
+        string $attributeGroupId = null,
+        int $sortOrder = null
+    ): bool;
+
+    public function removeAttributeFromSet(
+        string $sessionId,
+        string $attributeId,
+        string $attributeSetId
+    ): bool;
+
+    public function addAttributeGroup(
+        string $sessionId,
+        string $attributeSetId,
+        string $groupName
+    ): int;
+
+    public function removeAttributeGroup(
+        string $sessionId,
+        string $attributeGroupId
+    ): bool;
+
+    public function renameAttributeGroup(
+        string $sessionId,
+        string $attributeGroupId,
+        string $attributeGroupName
+    ): bool;
 }

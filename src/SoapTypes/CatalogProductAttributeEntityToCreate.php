@@ -16,7 +16,6 @@ namespace Etrias\MagentoConnector\SoapTypes;
 
 class CatalogProductAttributeEntityToCreate
 {
-
     const APPLY_TO_ALL = null;
     const APPLY_TO_SIMPLE = 'simple';
     const APPLY_TO_GROUPED = 'grouped';
@@ -110,20 +109,20 @@ class CatalogProductAttributeEntityToCreate
      * Constructor.
      *
      * @var string
-     * @var string                                    $frontend_input
-     * @var string                                    $scope
-     * @var string                                    $default_value
-     * @var int                                       $is_unique
-     * @var int                                       $is_required
-     * @var ArrayOfString                             $apply_to
-     * @var int                                       $is_configurable
-     * @var int                                       $is_searchable
-     * @var int                                       $is_visible_in_advanced_search
-     * @var int                                       $is_comparable
-     * @var int                                       $is_used_for_promo_rules
-     * @var int                                       $is_visible_on_front
-     * @var int                                       $used_in_product_listing
-     * @var array                          $additional_fields
+     * @var string                                       $frontend_input
+     * @var string                                       $scope
+     * @var string                                       $default_value
+     * @var int                                          $is_unique
+     * @var int                                          $is_required
+     * @var ArrayOfString                                $apply_to
+     * @var int                                          $is_configurable
+     * @var int                                          $is_searchable
+     * @var int                                          $is_visible_in_advanced_search
+     * @var int                                          $is_comparable
+     * @var int                                          $is_used_for_promo_rules
+     * @var int                                          $is_visible_on_front
+     * @var int                                          $used_in_product_listing
+     * @var array                                        $additional_fields
      * @var CatalogProductAttributeFrontendLabelEntity[] $frontend_label
      *
      * @param mixed $attribute_code
@@ -133,8 +132,7 @@ class CatalogProductAttributeEntityToCreate
         $attribute_code,
         $frontend_input,
         array $frontend_label
-    )
-    {
+    ) {
         $this->attribute_code = $attribute_code;
         $this->frontend_input = $frontend_input;
         $this->frontend_label = $frontend_label;

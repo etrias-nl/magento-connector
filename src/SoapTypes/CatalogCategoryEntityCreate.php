@@ -120,25 +120,25 @@ class CatalogCategoryEntityCreate
      * Constructor.
      *
      * @var string
-     * @var int           $is_active
-     * @var int           $position
+     * @var int      $is_active
+     * @var int      $position
      * @var string[] $available_sort_by
-     * @var string        $custom_design
-     * @var int           $custom_design_apply
-     * @var string        $custom_design_from
-     * @var string        $custom_design_to
-     * @var string        $custom_layout_update
-     * @var string        $default_sort_by
-     * @var string        $description
-     * @var string        $display_mode
-     * @var int           $is_anchor
-     * @var int           $landing_page
-     * @var string        $meta_description
-     * @var string        $meta_keywords
-     * @var string        $meta_title
-     * @var string        $page_layout
-     * @var string        $url_key
-     * @var int           $include_in_menu
+     * @var string   $custom_design
+     * @var int      $custom_design_apply
+     * @var string   $custom_design_from
+     * @var string   $custom_design_to
+     * @var string   $custom_layout_update
+     * @var string   $default_sort_by
+     * @var string   $description
+     * @var string   $display_mode
+     * @var int      $is_anchor
+     * @var int      $landing_page
+     * @var string   $meta_description
+     * @var string   $meta_keywords
+     * @var string   $meta_title
+     * @var string   $page_layout
+     * @var string   $url_key
+     * @var int      $include_in_menu
      *
      * @param mixed $name
      * @param mixed $is_active

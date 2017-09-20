@@ -30,7 +30,7 @@ class CatalogProductAttributeOptionLabelEntity
      * Constructor.
      *
      * @var string[]
-     * @var string        $value
+     * @var string   $value
      *
      * @param mixed $store_id
      * @param mixed $value

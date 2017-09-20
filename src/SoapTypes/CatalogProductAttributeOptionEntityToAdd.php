@@ -35,8 +35,8 @@ class CatalogProductAttributeOptionEntityToAdd
      * Constructor.
      *
      * @var CatalogProductAttributeOptionLabelEntity[]
-     * @var int                                     $order
-     * @var int                                     $is_default
+     * @var int                                        $order
+     * @var int                                        $is_default
      *
      * @param mixed $label
      * @param mixed $order

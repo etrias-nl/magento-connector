@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Etrias\MagentoConnector\Adapter;
 
-use BadMethodCallException;
 use DateTime;
 use Etrias\MagentoConnector\Client\MagentoClientInterface;
 use Etrias\MagentoConnector\ExceptionMap;
@@ -23,8 +22,8 @@ use Etrias\MagentoConnector\SoapTypes\AssociativeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
+use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
@@ -116,6 +115,7 @@ class SoapV2Adapter implements AdapterInterface
     public function login(string $username, string $password): string
     {
         $request = new MultiArgumentRequest([$username, $password]);
+
         /* @var MixedResult $response */
 
         return $this->processRequest(__FUNCTION__, $request);
@@ -141,12 +141,12 @@ class SoapV2Adapter implements AdapterInterface
 
         return $this->processRequest('storeList', $request);
     }
+
     public function getMagentoInfo(string $sessionId): MagentoInfoEntity
     {
         $request = new MultiArgumentRequest([$sessionId]);
 
         return $this->processRequest('magentoInfo', $request);
-
     }
 
     public function resourceFaults(string $sessionId, string $resourceName): array
@@ -179,7 +179,8 @@ class SoapV2Adapter implements AdapterInterface
 
     /**
      * @param string $sessionId
-     * @param int $categoryId
+     * @param int    $categoryId
+     *
      * @return CatalogAssignedProduct[]
      */
     public function getAssignedProducts(string $sessionId, int $categoryId): array
@@ -189,22 +190,35 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('catalogCategoryAssignedProducts', $request);
     }
 
-    public function assignProduct(string $sessionId, int $categoryId, int $product, int $position = null, string $identifierType = 'id'): bool
-    {
+    public function assignProduct(
+        string $sessionId,
+        int $categoryId,
+        int $product,
+        int $position = null,
+        string $identifierType = 'id'
+    ): bool {
         $request = new MultiArgumentRequest([$sessionId, $categoryId, $product, $position, $identifierType]);
 
         return $this->processRequest('catalogCategoryAssignProduct', $request);
     }
 
-    public function createCategory(string $sessionId, int $parentId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): int
-    {
+    public function createCategory(
+        string $sessionId,
+        int $parentId,
+        CatalogCategoryEntityCreate $categoryData,
+        string $storeView = null
+    ): int {
         $request = new MultiArgumentRequest([$sessionId, $parentId, $categoryData, $storeView]);
 
         return $this->processRequest('catalogCategoryCreate', $request);
     }
 
-    public function updateCategory(string $sessionId, int $categoryId, CatalogCategoryEntityCreate $categoryData, string $storeView = null): bool
-    {
+    public function updateCategory(
+        string $sessionId,
+        int $categoryId,
+        CatalogCategoryEntityCreate $categoryData,
+        string $storeView = null
+    ): bool {
         $request = new MultiArgumentRequest([$sessionId, $categoryId, $categoryData, $storeView]);
 
         return $this->processRequest('catalogCategoryUpdate', $request);
@@ -217,15 +231,23 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('catalogCategoryDelete', $request);
     }
 
-    public function getCategory(string $sessionId, int $categoryId, string $storeView = null, array $attributes = null): CatalogCategoryInfo
-    {
+    public function getCategory(
+        string $sessionId,
+        int $categoryId,
+        string $storeView = null,
+        array $attributes = null
+    ): CatalogCategoryInfo {
         $request = new MultiArgumentRequest([$sessionId, $categoryId, $storeView, $attributes]);
 
         return $this->processRequest('catalogCategoryInfo', $request);
     }
 
-    public function getCategoriesByParent(string $sessionId, int $parentId = null, int $websiteId = null, int $storeView = null): array
-    {
+    public function getCategoriesByParent(
+        string $sessionId,
+        int $parentId = null,
+        int $websiteId = null,
+        int $storeView = null
+    ): array {
         $request = new MultiArgumentRequest([$sessionId, $websiteId, $storeView, $parentId]);
 
         return $this->processRequest('catalogCategoryLevel', $request);
@@ -238,15 +260,24 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('catalogCategoryMove', $request);
     }
 
-    public function removeProductFromCategory(string $sessionId, int $categoryId, int $productId, string $identifierType = 'id'): bool
-    {
+    public function removeProductFromCategory(
+        string $sessionId,
+        int $categoryId,
+        int $productId,
+        string $identifierType = 'id'
+    ): bool {
         $request = new MultiArgumentRequest([$sessionId, $categoryId, $productId, $identifierType]);
 
         return $this->processRequest('catalogCategoryRemoveProduct', $request);
     }
 
-    public function updateProductPosition(string $sessionId, int $categoryId, int $productId, int $position, string $identifierType = 'id'): bool
-    {
+    public function updateProductPosition(
+        string $sessionId,
+        int $categoryId,
+        int $productId,
+        int $position,
+        string $identifierType = 'id'
+    ): bool {
         $request = new MultiArgumentRequest([$sessionId, $categoryId, $productId, $position, $identifierType]);
 
         return $this->processRequest('catalogCategoryUpdateProduct', $request);
@@ -268,29 +299,40 @@ class SoapV2Adapter implements AdapterInterface
 
     public function getProducts(string $sessionId, array $filters = null, int $storeView = null): array
     {
-        $filters = new Filters(null,
-        [new ComplexFilter(' sku' , new AssociativeEntity('eq', '1003'))]
-            );
+        $filters = new Filters(
+            null,
+            [new ComplexFilter(' sku', new AssociativeEntity('eq', '1003'))]
+        );
         $storeView = 0;
         $request = new MultiArgumentRequest([$sessionId, $filters, $storeView]);
 
         return $this->processRequest('catalogProductList', $request);
     }
 
-    public function createProduct(string $sessionId, string $productType, int $attributeSet, string $sku, CatalogProductCreateEntity $productData, int $storeView): int
-    {
+    public function createProduct(
+        string $sessionId,
+        string $productType,
+        int $attributeSet,
+        string $sku,
+        CatalogProductCreateEntity $productData,
+        int $storeView
+    ): int {
         $request = new MultiArgumentRequest([$sessionId, $productType, $attributeSet, $sku, $productData, $storeView]);
 
         return $this->processRequest('catalogProductCreate', $request);
     }
 
-    public function updateProduct(string $sessionId, string $productId, CatalogProductCreateEntity $productData, int $storeView, string $identifierType = 'id'): bool
-    {
+    public function updateProduct(
+        string $sessionId,
+        string $productId,
+        CatalogProductCreateEntity $productData,
+        int $storeView,
+        string $identifierType = 'id'
+    ): bool {
         $request = new MultiArgumentRequest([$sessionId, $productId, $productData, $storeView, $identifierType]);
 
         return $this->processRequest('catalogProductUpdate', $request);
     }
-
 
     public function deleteProduct(string $sessionId, string $productId, string $identifierType = 'id'): bool
     {
@@ -299,11 +341,15 @@ class SoapV2Adapter implements AdapterInterface
         return (bool) $this->processRequest('catalogProductDelete', $request);
     }
 
-    public function getSpecialPrice(string $sessionId, string $productId, int $storeView, string $identifierType = 'id'): CatalogProductReturnEntity
-    {
+    public function getSpecialPrice(
+        string $sessionId,
+        string $productId,
+        int $storeView,
+        string $identifierType = 'id'
+    ): CatalogProductReturnEntity {
         $request = new MultiArgumentRequest([$sessionId, $productId, $storeView, $identifierType]);
 
-        return  $this->processRequest('catalogProductGetSpecialPrice', $request);
+        return $this->processRequest('catalogProductGetSpecialPrice', $request);
     }
 
     public function setSpecialPrice(
@@ -314,23 +360,25 @@ class SoapV2Adapter implements AdapterInterface
         DateTime $toDate,
         int $storeView,
         string $identifierType = 'id'
-    ): bool
-    {
-        $request = new MultiArgumentRequest([
-            $sessionId,
-            $productId,
-            $specialPrice,
-            $fromDate->format('Y-m-d H:i:s'),
-            $toDate->format('Y-m-d H:i:s'),
-            $storeView,
-            $identifierType
-        ]);
+    ): bool {
+        $request = new MultiArgumentRequest(
+            [
+                $sessionId,
+                $productId,
+                $specialPrice,
+                $fromDate->format('Y-m-d H:i:s'),
+                $toDate->format('Y-m-d H:i:s'),
+                $storeView,
+                $identifierType,
+            ]
+        );
 
         return (bool) $this->processRequest('catalogProductSetSpecialPrice', $request);
     }
 
     /**
      * @param string $sessionId
+     *
      * @return CatalogProductAttributeSetEntity[]
      */
     public function getAttributeSetList(string $sessionId): array
@@ -341,15 +389,21 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param string $productId
-     * @param array|null $attributes
+     * @param string      $sessionId
+     * @param string      $productId
+     * @param array|null  $attributes
      * @param string|null $storeView
-     * @param string $identifierType
+     * @param string      $identifierType
+     *
      * @return CatalogProductReturnEntity
      */
-    public function getProductInfo(string $sessionId, string $productId, array $attributes = null, string $storeView = null, string $identifierType = ' id'): CatalogProductReturnEntity
-    {
+    public function getProductInfo(
+        string $sessionId,
+        string $productId,
+        array $attributes = null,
+        string $storeView = null,
+        string $identifierType = ' id'
+    ): CatalogProductReturnEntity {
         $request = new MultiArgumentRequest([$sessionId, $productId, $storeView, $attributes, $identifierType]);
 
         return $this->processRequest('catalogProductInfo', $request);
@@ -364,7 +418,8 @@ class SoapV2Adapter implements AdapterInterface
 
     /**
      * @param string $sessionId
-     * @param int $attributeSetId
+     * @param int    $attributeSetId
+     *
      * @return CatalogAttributeEntity[]
      */
     public function getAttributeList(string $sessionId, int $attributeSetId): array
@@ -388,8 +443,11 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('catalogProductAttributeOptions', $request);
     }
 
-    public function addAttributeOption(string $sessionId, int $attributeId, CatalogProductAttributeOptionEntityToAdd $data): bool
-    {
+    public function addAttributeOption(
+        string $sessionId,
+        int $attributeId,
+        CatalogProductAttributeOptionEntityToAdd $data
+    ): bool {
         $request = new MultiArgumentRequest([$sessionId, $attributeId, $data]);
 
         return $this->processRequest('catalogProductAttributeAddOption', $request);
@@ -409,8 +467,11 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('catalogProductAttributeCreate', $request);
     }
 
-    public function updateAttribute(string $sessionId, int $attributeId, CatalogProductAttributeEntityToCreate $data): bool
-    {
+    public function updateAttribute(
+        string $sessionId,
+        int $attributeId,
+        CatalogProductAttributeEntityToCreate $data
+    ): bool {
         $request = new MultiArgumentRequest([$sessionId, $attributeId, $data]);
 
         return $this->processRequest('catalogProductAttributeUpdate', $request);
@@ -437,38 +498,133 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('catalogProductAttributeMediaTypes', $request);
     }
 
-    public function getProductImages(string $sessionId, string $productId, string $identifierType, int $storeView = null): array
-    {
-        $request = new MultiArgumentRequest([$sessionId, $productId, $storeView, $identifierType ]);
+    public function getProductImages(
+        string $sessionId,
+        string $productId,
+        string $identifierType,
+        int $storeView = null
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $storeView, $identifierType]);
 
         return $this->processRequest('catalogProductAttributeMediaList', $request);
     }
 
-    public function createProductImage(string $sessionId, string $productId, CatalogProductAttributeMediaCreateEntity $data, int $storeView = null, string $identifierType = 'id'): string
-    {
-        $request = new MultiArgumentRequest([$sessionId, $productId, $data, $storeView, $identifierType ]);
+    public function createProductImage(
+        string $sessionId,
+        string $productId,
+        CatalogProductAttributeMediaCreateEntity $data,
+        int $storeView = null,
+        string $identifierType = 'id'
+    ): string {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $data, $storeView, $identifierType]);
 
         return $this->processRequest('catalogProductAttributeMediaCreate', $request);
     }
 
-    public function updateProductImage(string $sessionId, string $productId, string $fileName, CatalogProductAttributeMediaCreateEntity $data, int $storeView = null, string $identifierType = 'id'): bool
-    {
+    public function updateProductImage(
+        string $sessionId,
+        string $productId,
+        string $fileName,
+        CatalogProductAttributeMediaCreateEntity $data,
+        int $storeView = null,
+        string $identifierType = 'id'
+    ): bool {
         $request = new MultiArgumentRequest([$sessionId, $productId, $fileName, $data, $storeView, $identifierType]);
 
         return (bool) $this->processRequest('catalogProductAttributeMediaUpdate', $request);
     }
 
-    public function getMediaInfo(string $sessionId, string $productId, string $fileName, int $storeView = null, string $identifierType = null): CatalogProductImageEntity
-    {
-        $request = new MultiArgumentRequest([$sessionId, $productId, $fileName, $storeView, $identifierType ]);
+    public function getMediaInfo(
+        string $sessionId,
+        string $productId,
+        string $fileName,
+        int $storeView = null,
+        string $identifierType = null
+    ): CatalogProductImageEntity {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $fileName, $storeView, $identifierType]);
 
         return $this->processRequest('catalogProductAttributeMediaInfo', $request);
     }
 
-    public function removeProductImage(string $sessionId, string $productId, string $fileName, string $identifierType = 'id'): bool
-    {
-        $request = new MultiArgumentRequest([$sessionId, $productId, $fileName, $identifierType ]);
+    public function removeProductImage(
+        string $sessionId,
+        string $productId,
+        string $fileName,
+        string $identifierType = 'id'
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $productId, $fileName, $identifierType]);
 
         return (bool) $this->processRequest('catalogProductAttributeMediaRemove', $request);
+    }
+
+    public function createAttributeSet(
+        string $sessionId,
+        string $attributeSetName,
+        string $skeletonSetId
+    ): int {
+        $request = new MultiArgumentRequest([$sessionId, $attributeSetName, $skeletonSetId]);
+
+        return $this->processRequest('catalogProductAttributeSetCreate', $request);
+    }
+
+    public function removeAttributeSet(
+        string $sessionId,
+        string $attributeSetId,
+        bool $forceProductsRemove
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $attributeSetId, $forceProductsRemove]);
+
+        return $this->processRequest('catalogProductAttributeSetRemove', $request);
+    }
+
+    public function addAttributeToSet(
+        string $sessionId,
+        string $attributeId,
+        string $attributeSetId,
+        string $attributeGroupId = null,
+        int $sortOrder = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $attributeId, $attributeSetId, $attributeGroupId, $sortOrder]);
+
+        return (bool) $this->processRequest('catalogProductAttributeSetAttributeAdd', $request);
+    }
+
+    public function removeAttributeFromSet(
+        string $sessionId,
+        string $attributeId,
+        string $attributeSetId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $attributeId, $attributeSetId]);
+
+        return (bool) $this->processRequest('catalogProductAttributeSetAttributeRemove', $request);
+    }
+
+    public function addAttributeGroup(
+        string $sessionId,
+        string $attributeSetId,
+        string $groupName
+    ): int {
+        $request = new MultiArgumentRequest([$sessionId, $attributeSetId, $groupName]);
+
+        return $this->processRequest('catalogProductAttributeSetGroupAdd', $request);
+    }
+
+    public function removeAttributeGroup(
+        string $sessionId,
+        string $attributeGroupId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $attributeGroupId]);
+
+        return (bool) $this->processRequest('catalogProductAttributeSetGroupRemove', $request);
+    }
+
+    public function renameAttributeGroup(
+        string $sessionId,
+        string $attributeGroupId,
+        string $attributeGroupName
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $attributeGroupId, $attributeGroupName]);
+
+        return (bool) $this->processRequest('catalogProductAttributeSetGroupRename', $request);
     }
 }

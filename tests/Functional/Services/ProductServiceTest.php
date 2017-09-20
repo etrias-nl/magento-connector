@@ -15,26 +15,18 @@ declare(strict_types=1);
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
 use DateTime;
-use Etrias\MagentoConnector\Exceptions\StoreViewNotFoundException;
-use Etrias\MagentoConnector\Services\CatalogService;
 use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\ProductService;
-use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogAttributeOptionEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
-use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
-
+/**
+ * @coversNothing
+ */
 class ProductServiceTest extends AbstractServiceTest
 {
-
     use RandomizeTrait;
     /**
      * @var ProductService
@@ -52,14 +44,14 @@ class ProductServiceTest extends AbstractServiceTest
     public function testGetCurrentStoreView()
     {
         $storeview = $this->service->getCurrentStoreView();
-        $this->assertEquals(0, $storeview);
+        $this->assertSame(0, $storeview);
     }
 
     public function testSetCurrentStoreView()
     {
         $storeView = $this->getRandomStoreView()->getStoreId();
         $selectedStoreView = $this->service->setCurrentStoreView($storeView);
-        $this->assertEquals($storeView, $selectedStoreView);
+        $this->assertSame($storeView, $selectedStoreView);
     }
 
     public function testGetAttributeSetList()
@@ -82,12 +74,12 @@ class ProductServiceTest extends AbstractServiceTest
 
         $entityId = $this->service->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
 
-        $this->assertTrue(is_numeric($entityId));
+        $this->assertInternalType('numeric', $entityId);
 
         $products = $this->service->getProducts([
             [
-                'sku' => ['eq' => '1003']
-            ]
+                'sku' => ['eq' => '1003'],
+            ],
         ]);
 
         $this->assertTrue($this->service->deleteProductById($entityId));
@@ -95,18 +87,17 @@ class ProductServiceTest extends AbstractServiceTest
 
     public function testCreateProduct()
     {
-
         $attributeSets = $this->service->getAttributeSetList();
         $attributeSet = reset($attributeSets);
 
         $productType = 'simple';
         $sku = '1003';
-        $storeView = $this->getRandomStoreView()->getStoreId();;
+        $storeView = $this->getRandomStoreView()->getStoreId();
         $productData = new CatalogProductCreateEntity();
 
         $entityId = $this->service->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
 
-        $this->assertTrue(is_numeric($entityId));
+        $this->assertInternalType('numeric', $entityId);
 
         $this->assertTrue($this->service->deleteProductById($entityId));
     }
@@ -124,7 +115,6 @@ class ProductServiceTest extends AbstractServiceTest
         $entityId = $this->service->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
 
         $this->assertTrue($this->service->updateProductById($entityId, $productData->setName($productData->getName().'-updated'), $storeView));
-
 
         $this->service->deleteProductById($entityId);
     }
@@ -146,7 +136,6 @@ class ProductServiceTest extends AbstractServiceTest
         $this->service->deleteProductById($entityId);
     }
 
-
     public function testDeleteProductById()
     {
         $attributeSets = $this->service->getAttributeSetList();
@@ -159,7 +148,7 @@ class ProductServiceTest extends AbstractServiceTest
 
         $entityId = $this->service->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
 
-        $this->assertTrue(is_numeric($entityId));
+        $this->assertInternalType('numeric', $entityId);
 
         $this->assertTrue($this->service->deleteProductById($entityId));
     }
@@ -176,12 +165,13 @@ class ProductServiceTest extends AbstractServiceTest
 
         $entityId = $this->service->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
 
-        $this->assertTrue(is_numeric($entityId));
+        $this->assertInternalType('numeric', $entityId);
 
         $this->assertTrue($this->service->deleteProductBySku($sku));
     }
 
-    public function testSetAndGetSpecialPriceById() {
+    public function testSetAndGetSpecialPriceById()
+    {
         $productType = 'simple';
         $sku = '1003';
 
@@ -190,12 +180,11 @@ class ProductServiceTest extends AbstractServiceTest
         $attributeSets = $this->service->getAttributeSetList();
         $attributeSet = reset($attributeSets);
 
-
         $productData = new CatalogProductCreateEntity();
 
         $entityId = $this->service->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
 
-        $specialPrice = random_int(0,9999)/100;
+        $specialPrice = random_int(0, 9999) / 100;
         $specialPriceFrom = $this->getRandomDate(new DateTime('now'), new DateTime('+ 1 week'));
         $specialPriceTo = $this->getRandomDate($specialPriceFrom, new DateTime('+ 1 week'));
 
@@ -210,7 +199,8 @@ class ProductServiceTest extends AbstractServiceTest
         $this->service->deleteProductBySku($sku);
     }
 
-    public function testSetAndGetSpecialPriceBySku() {
+    public function testSetAndGetSpecialPriceBySku()
+    {
         $productType = 'simple';
         $sku = '1003';
 
@@ -219,12 +209,11 @@ class ProductServiceTest extends AbstractServiceTest
         $attributeSets = $this->service->getAttributeSetList();
         $attributeSet = reset($attributeSets);
 
-
         $productData = new CatalogProductCreateEntity();
 
         $this->service->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
 
-        $specialPrice = random_int(0,9999)/100;
+        $specialPrice = random_int(0, 9999) / 100;
         $specialPriceFrom = $this->getRandomDate(new DateTime('now'), new DateTime('+ 1 week'));
         $specialPriceTo = $this->getRandomDate($specialPriceFrom, new DateTime('+ 1 week'));
 
@@ -248,7 +237,6 @@ class ProductServiceTest extends AbstractServiceTest
 
         $attributeSets = $this->service->getAttributeSetList();
         $attributeSet = reset($attributeSets);
-
 
         $productData = new CatalogProductCreateEntity();
 

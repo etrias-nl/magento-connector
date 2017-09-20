@@ -20,7 +20,9 @@ use Etrias\MagentoConnector\SoapTypes\ExistsFaltureEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
-
+/**
+ * @coversNothing
+ */
 class GeneralServiceTest extends AbstractServiceTest
 {
     /**

@@ -1,13 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: cprinse
- * Date: 18-9-17
- * Time: 13:42
+
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
-
 
 use DateTime;
 use Etrias\MagentoConnector\Services\GeneralService;
@@ -20,18 +25,19 @@ use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 trait RandomizeTrait
 {
-    /** @var  GeneralService */
+    /** @var GeneralService */
     private $generalService;
 
-    /** @var  ProductService */
+    /** @var ProductService */
     private $productService;
 
-    /** @var  ProductAttributeService */
+    /** @var ProductAttributeService */
     private $productAttributeService;
 
     /**
      * @param DateTime $min
      * @param DateTime $max
+     *
      * @return DateTime
      */
     private function getRandomDate(DateTime $min, DateTime $max)
@@ -62,6 +68,8 @@ trait RandomizeTrait
     }
 
     /**
+     * @param null|mixed $type
+     *
      * @return CatalogAttributeEntity
      */
     private function getRandomAttribute($type = null)
@@ -88,7 +96,7 @@ trait RandomizeTrait
 
         $productType = 'simple';
         $sku = '1003';
-        $storeView = $this->getRandomStoreView()->getStoreId();;
+        $storeView = $this->getRandomStoreView()->getStoreId();
         $productData = new CatalogProductCreateEntity();
 
         return $this->productService->createProduct($productType, $attributeSet->getSetId(), $sku, $productData, $storeView);
@@ -96,6 +104,7 @@ trait RandomizeTrait
 
     /**
      * @param int $entityId
+     *
      * @return bool
      */
     private function deleteProduct(int $entityId)

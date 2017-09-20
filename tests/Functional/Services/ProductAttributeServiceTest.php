@@ -14,32 +14,21 @@ declare(strict_types=1);
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
-use DateTime;
-use Etrias\MagentoConnector\Exceptions\StoreViewNotFoundException;
-use Etrias\MagentoConnector\Services\CatalogService;
 use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\ProductAttributeService;
 use Etrias\MagentoConnector\Services\ProductService;
 use Etrias\MagentoConnector\SoapTypes\Attribute;
-use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeOptionEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeFrontendLabelEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionEntityToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionLabelEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
-use Etrias\MagentoConnector\SoapTypes\Scope;
-use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
-
+/**
+ * @coversNothing
+ */
 class ProductAttributeServiceTest extends AbstractServiceTest
 {
     use RandomizeTrait;
@@ -61,14 +50,14 @@ class ProductAttributeServiceTest extends AbstractServiceTest
     public function testGetCurrentStoreView()
     {
         $storeview = $this->service->getCurrentStoreView();
-        $this->assertEquals(0, $storeview);
+        $this->assertSame(0, $storeview);
     }
 
     public function testSetCurrentStoreView()
     {
         $storeView = $this->getRandomStoreView()->getStoreId();
         $selectedStoreView = $this->service->setCurrentStoreView($storeView);
-        $this->assertEquals($storeView, $selectedStoreView);
+        $this->assertSame($storeView, $selectedStoreView);
     }
 
     public function testGetAttributeList()
@@ -104,7 +93,7 @@ class ProductAttributeServiceTest extends AbstractServiceTest
         $this->assertTrue(
             $this->service->addAttributeOption($attribute->getAttributeId(),
            new CatalogProductAttributeOptionEntityToAdd([
-               new CatalogProductAttributeOptionLabelEntity([0], 'labelValue')
+               new CatalogProductAttributeOptionLabelEntity([0], 'labelValue'),
            ],
            0)
         )
@@ -139,7 +128,7 @@ class ProductAttributeServiceTest extends AbstractServiceTest
             )
         );
 
-        $this->assertTrue(is_numeric($attributeId));
+        $this->assertInternalType('numeric', $attributeId);
 
         $this->service->removeAttributeById($attributeId);
     }
@@ -154,7 +143,7 @@ class ProductAttributeServiceTest extends AbstractServiceTest
             )
         );
 
-        $this->assertTrue( $this->service->updateAttribute($attributeId, new CatalogProductAttributeEntityToCreate(
+        $this->assertTrue($this->service->updateAttribute($attributeId, new CatalogProductAttributeEntityToCreate(
             'attribute_code_updated',
             Attribute::FRONTEND_TYPE_SELECT,
             [new CatalogProductAttributeFrontendLabelEntity(0, 'frontend-label-updated')]

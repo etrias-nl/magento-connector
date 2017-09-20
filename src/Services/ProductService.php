@@ -16,10 +16,7 @@ namespace Etrias\MagentoConnector\Services;
 
 use DateTime;
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
-use Etrias\MagentoConnector\Exceptions\ProductNotAssignedException;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
@@ -149,7 +146,8 @@ class ProductService
 
     /**
      * @param string $productType
-     * @param int $attributeSetId
+     * @param int    $attributeSetId
+     *
      * @return CatalogAttributeEntity[]
      */
     public function getListOfAdditionalAttributes(string $productType, int $attributeSetId): array

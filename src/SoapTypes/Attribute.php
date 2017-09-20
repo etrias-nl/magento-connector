@@ -1,13 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: cprinse
- * Date: 18-9-17
- * Time: 15:23
+
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Etrias\MagentoConnector\SoapTypes;
-
 
 class Attribute
 {
@@ -24,5 +29,4 @@ class Attribute
     const FRONTEND_TYPE_WEIGHT = 'weight';
     const FRONTEND_TYPE_MEDIA_IMAGE = 'media_image';
     const FRONTEND_TYPE_GALLERY = 'gallery';
-
 }

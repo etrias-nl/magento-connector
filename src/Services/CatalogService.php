@@ -64,11 +64,13 @@ class CatalogService
     }
 
     /**
-     * @param int $categoryId
-     * @param int $productId
+     * @param int      $categoryId
+     * @param int      $productId
      * @param int|null $position
-     * @return bool
+     *
      * @throws ProductNotAssignedException
+     *
+     * @return bool
      */
     public function assignProduct(int $categoryId, int $productId, int $position = null): bool
     {
@@ -125,6 +127,7 @@ class CatalogService
 
     /**
      * @param int $attributeId
+     *
      * @return CatalogAttributeOptionEntity[]
      */
     public function getAttributeOptions(int $attributeId): array

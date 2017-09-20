@@ -55,11 +55,11 @@ class CatalogCategoryEntity
      * Constructor.
      *
      * @var int
-     * @var int                            $parent_id
-     * @var string                         $name
-     * @var int                            $is_active
-     * @var int                            $position
-     * @var int                            $level
+     * @var int                     $parent_id
+     * @var string                  $name
+     * @var int                     $is_active
+     * @var int                     $position
+     * @var int                     $level
      * @var CatalogCategoryEntity[] $children
      *
      * @param mixed $category_id

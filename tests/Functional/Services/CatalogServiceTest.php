@@ -24,7 +24,9 @@ use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 
-
+/**
+ * @coversNothing
+ */
 class CatalogServiceTest extends AbstractServiceTest
 {
     /**
@@ -41,14 +43,14 @@ class CatalogServiceTest extends AbstractServiceTest
     public function testGetCurrentStoreView()
     {
         $storeview = $this->service->getCurrentStoreView();
-        $this->assertEquals(0, $storeview);
+        $this->assertSame(0, $storeview);
     }
 
     public function testSetCurrentStoreView()
     {
         $storeView = 0;
         $selectedStoreView = $this->service->setCurrentStoreView($storeView);
-        $this->assertEquals($storeView, $selectedStoreView);
+        $this->assertSame($storeView, $selectedStoreView);
     }
 
     public function testSetInvalidStoreView()
@@ -78,9 +80,8 @@ class CatalogServiceTest extends AbstractServiceTest
         $categoryTree = $this->service->getCategoryTree();
         $category = $categoryTree->getChildren()[array_rand($categoryTree->getChildren(), 1)];
 
-        $this->assertTrue ($this->service->assignProduct($category->getCategoryId(), 80025));
+        $this->assertTrue($this->service->assignProduct($category->getCategoryId(), 80025));
     }
-
 
     public function testCreateAndDeleteCategory()
     {
@@ -91,7 +92,7 @@ class CatalogServiceTest extends AbstractServiceTest
         );
 
         $categoryId = $this->service->createCategory(1505, $categoryData);
-        $this->assertTrue(is_numeric($categoryId));
+        $this->assertInternalType('numeric', $categoryId);
 
         $deleted = $this->service->deleteCategory($categoryId);
         $this->assertTrue($deleted);
@@ -132,7 +133,7 @@ class CatalogServiceTest extends AbstractServiceTest
         $categoryTree = $this->service->getCategoryTree();
         $category = $categoryTree->getChildren()[array_rand($categoryTree->getChildren(), 1)];
 
-        $this->assertTrue ($this->service->assignProduct($category->getCategoryId(), 80025));
+        $this->assertTrue($this->service->assignProduct($category->getCategoryId(), 80025));
 
         $this->assertTrue($this->service->removeProductFromCategory($category->getCategoryId(), 80025));
     }
@@ -158,7 +159,7 @@ class CatalogServiceTest extends AbstractServiceTest
     public function testGetAttributeOptions()
     {
         $attributes = $this->service->getCategoryAttributes();
-        $attributes = array_filter($attributes, function(CatalogAttributeEntity $attribute) {
+        $attributes = array_filter($attributes, function (CatalogAttributeEntity $attribute) {
             return $attribute->getType() === 'select';
         });
 
@@ -167,5 +168,4 @@ class CatalogServiceTest extends AbstractServiceTest
 
         $this->assertInstanceOf(CatalogAttributeOptionEntity::class, reset($options));
     }
-
 }

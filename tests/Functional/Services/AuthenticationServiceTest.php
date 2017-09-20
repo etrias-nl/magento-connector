@@ -17,7 +17,9 @@ namespace Tests\Etrias\MagentoConnector\Functional\Services;
 use BadMethodCallException;
 use Etrias\MagentoConnector\Services\AuthenticationService;
 
-
+/**
+ * @coversNothing
+ */
 class AuthenticationServiceTest extends AbstractServiceTest
 {
     /**

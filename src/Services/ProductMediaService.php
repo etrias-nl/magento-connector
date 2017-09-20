@@ -14,20 +14,9 @@ declare(strict_types=1);
 
 namespace Etrias\MagentoConnector\Services;
 
-use DateTime;
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
-use Etrias\MagentoConnector\Exceptions\ProductNotAssignedException;
-use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaTypeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionEntityToAdd;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 
 class ProductMediaService
 {
@@ -63,6 +52,7 @@ class ProductMediaService
 
     /**
      * @param int $attributeSetId
+     *
      * @return CatalogProductAttributeMediaTypeEntity[]
      */
     public function getMediaTypes(int $attributeSetId): array
@@ -71,8 +61,9 @@ class ProductMediaService
     }
 
     /**
-     * @param int $productId
+     * @param int      $productId
      * @param int|null $storeView
+     *
      * @return array
      */
     public function getProductImagesById(int $productId, int $storeView = null): array
@@ -99,5 +90,4 @@ class ProductMediaService
     {
         return $this->adapter->updateProductImage($this->authenticationService->login(), (string) $productId, $fileName, $data, $storeView);
     }
-
 }

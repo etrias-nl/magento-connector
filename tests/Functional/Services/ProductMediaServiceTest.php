@@ -14,36 +14,17 @@ declare(strict_types=1);
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
-use DateTime;
-use Etrias\MagentoConnector\Exceptions\StoreViewNotFoundException;
-use Etrias\MagentoConnector\Services\CatalogService;
 use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\ProductAttributeService;
 use Etrias\MagentoConnector\Services\ProductMediaService;
 use Etrias\MagentoConnector\Services\ProductService;
-use Etrias\MagentoConnector\SoapTypes\Attribute;
-use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
-use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogAttributeOptionEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeFrontendLabelEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaTypeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionEntityToAdd;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeOptionLabelEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductImageFileEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
-use Etrias\MagentoConnector\SoapTypes\Scope;
-use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
-
+/**
+ * @coversNothing
+ */
 class ProductMediaServiceTest extends AbstractServiceTest
 {
     use RandomizeTrait;
@@ -57,7 +38,7 @@ class ProductMediaServiceTest extends AbstractServiceTest
     {
         parent::setUp();
         $this->service = new ProductMediaService($this->adapter, $this->authenticationService);
-        $this->productAttributeService = new ProductAttributeService($this->adapter, $this->authenticationService);;
+        $this->productAttributeService = new ProductAttributeService($this->adapter, $this->authenticationService);
         $this->productService = new ProductService($this->adapter, $this->authenticationService);
         $this->generalService = new GeneralService($this->adapter, $this->authenticationService);
     }
@@ -65,14 +46,14 @@ class ProductMediaServiceTest extends AbstractServiceTest
     public function testGetCurrentStoreView()
     {
         $storeview = $this->service->getCurrentStoreView();
-        $this->assertEquals(0, $storeview);
+        $this->assertSame(0, $storeview);
     }
 
     public function testSetCurrentStoreView()
     {
         $storeView = $this->getRandomStoreView()->getStoreId();
         $selectedStoreView = $this->service->setCurrentStoreView($storeView);
-        $this->assertEquals($storeView, $selectedStoreView);
+        $this->assertSame($storeView, $selectedStoreView);
     }
 
     public function testGetMediaTypes()
@@ -99,8 +80,7 @@ class ProductMediaServiceTest extends AbstractServiceTest
         $productImages = $this->service->getProductImagesById($entityId);
         $image = $productImages[0];
 
-        $this->assertEquals($imageFile, $image->getFile());
-
+        $this->assertSame($imageFile, $image->getFile());
 
         $this->deleteProduct($entityId);
     }
@@ -120,7 +100,7 @@ class ProductMediaServiceTest extends AbstractServiceTest
 
         $mediaInfo = $this->service->getMediaInfo($entityId, $imageFile);
 
-        $this->assertEquals($imageFile, $mediaInfo->getFile());
+        $this->assertSame($imageFile, $mediaInfo->getFile());
 
         $this->deleteProduct($entityId);
     }

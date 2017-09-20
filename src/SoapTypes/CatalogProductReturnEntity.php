@@ -195,40 +195,40 @@ class CatalogProductReturnEntity
      * Constructor.
      *
      * @var string
-     * @var string                             $sku
-     * @var string                             $set
-     * @var string                             $type
-     * @var string[]                      $categories
-     * @var string[]                      $websites
-     * @var string                             $created_at
-     * @var string                             $updated_at
-     * @var string                             $type_id
-     * @var string                             $name
-     * @var string                             $description
-     * @var string                             $short_description
-     * @var string                             $weight
-     * @var string                             $status
-     * @var string                             $url_key
-     * @var string                             $url_path
-     * @var string                             $visibility
-     * @var string[]                      $category_ids
-     * @var string[]                      $website_ids
-     * @var string                             $has_options
-     * @var string                             $gift_message_available
-     * @var string                             $price
-     * @var string                             $special_price
-     * @var string                             $special_from_date
-     * @var string                             $special_to_date
-     * @var string                             $tax_class_id
-     * @var catalogProductTierPriceEntity[]    $tier_price
-     * @var string                             $meta_title
-     * @var string                             $meta_keyword
-     * @var string                             $meta_description
-     * @var string                             $custom_design
-     * @var string                             $custom_layout_update
-     * @var string                             $options_container
-     * @var array                   $additional_attributes
-     * @var string                             $enable_googlecheckout
+     * @var string                          $sku
+     * @var string                          $set
+     * @var string                          $type
+     * @var string[]                        $categories
+     * @var string[]                        $websites
+     * @var string                          $created_at
+     * @var string                          $updated_at
+     * @var string                          $type_id
+     * @var string                          $name
+     * @var string                          $description
+     * @var string                          $short_description
+     * @var string                          $weight
+     * @var string                          $status
+     * @var string                          $url_key
+     * @var string                          $url_path
+     * @var string                          $visibility
+     * @var string[]                        $category_ids
+     * @var string[]                        $website_ids
+     * @var string                          $has_options
+     * @var string                          $gift_message_available
+     * @var string                          $price
+     * @var string                          $special_price
+     * @var string                          $special_from_date
+     * @var string                          $special_to_date
+     * @var string                          $tax_class_id
+     * @var catalogProductTierPriceEntity[] $tier_price
+     * @var string                          $meta_title
+     * @var string                          $meta_keyword
+     * @var string                          $meta_description
+     * @var string                          $custom_design
+     * @var string                          $custom_layout_update
+     * @var string                          $options_container
+     * @var array                           $additional_attributes
+     * @var string                          $enable_googlecheckout
      *
      * @param mixed $product_id
      * @param mixed $sku
