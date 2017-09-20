@@ -72,7 +72,7 @@ class CustomerAddressEntityCreate
     protected $region = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $street = null;
 
@@ -100,21 +100,21 @@ class CustomerAddressEntityCreate
      * Constructor.
      *
      * @var string
-     * @var string        $company
-     * @var string        $country_id
-     * @var string        $fax
-     * @var string        $firstname
-     * @var string        $lastname
-     * @var string        $middlename
-     * @var string        $postcode
-     * @var string        $prefix
-     * @var int           $region_id
-     * @var string        $region
-     * @var ArrayOfString $street
-     * @var string        $suffix
-     * @var string        $telephone
-     * @var bool          $is_default_billing
-     * @var bool          $is_default_shipping
+     * @var string   $company
+     * @var string   $country_id
+     * @var string   $fax
+     * @var string   $firstname
+     * @var string   $lastname
+     * @var string   $middlename
+     * @var string   $postcode
+     * @var string   $prefix
+     * @var int      $region_id
+     * @var string   $region
+     * @var string[] $street
+     * @var string   $suffix
+     * @var string   $telephone
+     * @var bool     $is_default_billing
+     * @var bool     $is_default_shipping
      *
      * @param mixed $city
      * @param mixed $company
@@ -374,7 +374,7 @@ class CustomerAddressEntityCreate
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getStreet()
     {
@@ -382,7 +382,7 @@ class CustomerAddressEntityCreate
     }
 
     /**
-     * @param ArrayOfString $street
+     * @param string[] $street
      *
      * @return $this
      */

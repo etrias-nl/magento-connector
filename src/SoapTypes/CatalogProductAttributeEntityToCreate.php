@@ -114,7 +114,7 @@ class CatalogProductAttributeEntityToCreate
      * @var string                                       $default_value
      * @var int                                          $is_unique
      * @var int                                          $is_required
-     * @var ArrayOfString                                $apply_to
+     * @var string[]                                     $apply_to
      * @var int                                          $is_configurable
      * @var int                                          $is_searchable
      * @var int                                          $is_visible_in_advanced_search

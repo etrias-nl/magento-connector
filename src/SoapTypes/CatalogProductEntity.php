@@ -42,12 +42,12 @@ class CatalogProductEntity
     protected $type = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $category_ids = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $website_ids = null;
 
@@ -55,12 +55,12 @@ class CatalogProductEntity
      * Constructor.
      *
      * @var string
-     * @var string        $sku
-     * @var string        $name
-     * @var string        $set
-     * @var string        $type
-     * @var ArrayOfString $category_ids
-     * @var ArrayOfString $website_ids
+     * @var string   $sku
+     * @var string   $name
+     * @var string   $set
+     * @var string   $type
+     * @var string[] $category_ids
+     * @var string[] $website_ids
      *
      * @param mixed $product_id
      * @param mixed $sku
@@ -182,7 +182,7 @@ class CatalogProductEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getCategory_ids()
     {
@@ -190,7 +190,7 @@ class CatalogProductEntity
     }
 
     /**
-     * @param ArrayOfString $category_ids
+     * @param string[] $category_ids
      *
      * @return $this
      */
@@ -202,7 +202,7 @@ class CatalogProductEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getWebsite_ids()
     {
@@ -210,7 +210,7 @@ class CatalogProductEntity
     }
 
     /**
-     * @param ArrayOfString $website_ids
+     * @param string[] $website_ids
      *
      * @return $this
      */

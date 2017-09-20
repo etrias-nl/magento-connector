@@ -37,7 +37,7 @@ class CatalogProductAttributeEntityToUpdate
     protected $is_required = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $apply_to = null;
 
@@ -93,7 +93,7 @@ class CatalogProductAttributeEntityToUpdate
      * @var string                                    $default_value
      * @var int                                       $is_unique
      * @var int                                       $is_required
-     * @var ArrayOfString                             $apply_to
+     * @var string[]                                  $apply_to
      * @var int                                       $is_configurable
      * @var int                                       $is_searchable
      * @var int                                       $is_visible_in_advanced_search
@@ -218,7 +218,7 @@ class CatalogProductAttributeEntityToUpdate
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getApply_to()
     {
@@ -226,7 +226,7 @@ class CatalogProductAttributeEntityToUpdate
     }
 
     /**
-     * @param ArrayOfString $apply_to
+     * @param string[] $apply_to
      *
      * @return $this
      */

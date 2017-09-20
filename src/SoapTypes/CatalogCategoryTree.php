@@ -42,7 +42,7 @@ class CatalogCategoryTree
     protected $level = null;
 
     /**
-     * @var ArrayOfCatalogCategoryEntities
+     * @var CatalogCategoryEntity[]
      */
     protected $children = null;
 
@@ -50,11 +50,11 @@ class CatalogCategoryTree
      * Constructor.
      *
      * @var int
-     * @var int                            $parent_id
-     * @var string                         $name
-     * @var int                            $position
-     * @var int                            $level
-     * @var ArrayOfCatalogCategoryEntities $children
+     * @var int                     $parent_id
+     * @var string                  $name
+     * @var int                     $position
+     * @var int                     $level
+     * @var CatalogCategoryEntity[] $children
      *
      * @param mixed $category_id
      * @param mixed $parent_id

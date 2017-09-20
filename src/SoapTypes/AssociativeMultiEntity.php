@@ -22,7 +22,7 @@ class AssociativeMultiEntity
     protected $key = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $value = null;
 
@@ -30,7 +30,7 @@ class AssociativeMultiEntity
      * Constructor.
      *
      * @var string
-     * @var ArrayOfString $value
+     * @var string[] $value
      *
      * @param mixed $key
      * @param mixed $value
@@ -62,7 +62,7 @@ class AssociativeMultiEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getValue()
     {
@@ -70,7 +70,7 @@ class AssociativeMultiEntity
     }
 
     /**
-     * @param ArrayOfString $value
+     * @param string[] $value
      *
      * @return $this
      */

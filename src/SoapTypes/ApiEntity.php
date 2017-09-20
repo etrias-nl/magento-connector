@@ -27,12 +27,12 @@ class ApiEntity
     protected $name = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $aliases = null;
 
     /**
-     * @var ArrayOfApiMethods
+     * @var ApiMethodEntity[]
      */
     protected $methods = null;
 
@@ -41,8 +41,8 @@ class ApiEntity
      *
      * @var string
      * @var string            $name
-     * @var ArrayOfString     $aliases
-     * @var ArrayOfApiMethods $methods
+     * @var string[]          $aliases
+     * @var ApiMethodEntity[] $methods
      *
      * @param mixed $title
      * @param mixed $name
@@ -98,7 +98,7 @@ class ApiEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getAliases()
     {
@@ -106,7 +106,7 @@ class ApiEntity
     }
 
     /**
-     * @param ArrayOfString $aliases
+     * @param string[] $aliases
      *
      * @return $this
      */
@@ -118,7 +118,7 @@ class ApiEntity
     }
 
     /**
-     * @return ArrayOfApiMethods
+     * @return ApiMethodEntity[]
      */
     public function getMethods()
     {
@@ -126,7 +126,7 @@ class ApiEntity
     }
 
     /**
-     * @param ArrayOfApiMethods $methods
+     * @param ApiMethodEntity[] $methods
      *
      * @return $this
      */

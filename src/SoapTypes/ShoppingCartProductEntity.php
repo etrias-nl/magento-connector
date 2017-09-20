@@ -47,7 +47,7 @@ class ShoppingCartProductEntity
     protected $bundle_option_qty = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $links = null;
 
@@ -60,7 +60,7 @@ class ShoppingCartProductEntity
      * @var associativeArray $options
      * @var associativeArray $bundle_option
      * @var associativeArray $bundle_option_qty
-     * @var ArrayOfString    $links
+     * @var string[]         $links
      *
      * @param mixed $product_id
      * @param mixed $sku
@@ -202,7 +202,7 @@ class ShoppingCartProductEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getLinks()
     {
@@ -210,7 +210,7 @@ class ShoppingCartProductEntity
     }
 
     /**
-     * @param ArrayOfString $links
+     * @param string[] $links
      *
      * @return $this
      */

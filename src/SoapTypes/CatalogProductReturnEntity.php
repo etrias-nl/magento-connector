@@ -37,12 +37,12 @@ class CatalogProductReturnEntity
     protected $type = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $categories = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $websites = null;
 
@@ -386,7 +386,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getCategories()
     {
@@ -394,7 +394,7 @@ class CatalogProductReturnEntity
     }
 
     /**
-     * @param ArrayOfString $categories
+     * @param string[] $categories
      *
      * @return $this
      */

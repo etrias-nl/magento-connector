@@ -42,7 +42,7 @@ class CatalogProductImageEntity
     protected $url = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $types = null;
 
@@ -50,11 +50,11 @@ class CatalogProductImageEntity
      * Constructor.
      *
      * @var string
-     * @var string        $label
-     * @var string        $position
-     * @var string        $exclude
-     * @var string        $url
-     * @var ArrayOfString $types
+     * @var string   $label
+     * @var string   $position
+     * @var string   $exclude
+     * @var string   $url
+     * @var string[] $types
      *
      * @param mixed $file
      * @param mixed $label
@@ -174,7 +174,7 @@ class CatalogProductImageEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getTypes()
     {
@@ -182,7 +182,7 @@ class CatalogProductImageEntity
     }
 
     /**
-     * @param ArrayOfString $types
+     * @param string[] $types
      *
      * @return $this
      */

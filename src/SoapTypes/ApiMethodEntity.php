@@ -32,7 +32,7 @@ class ApiMethodEntity
     protected $name = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $aliases = null;
 
@@ -40,9 +40,9 @@ class ApiMethodEntity
      * Constructor.
      *
      * @var string
-     * @var string        $path
-     * @var string        $name
-     * @var ArrayOfString $aliases
+     * @var string   $path
+     * @var string   $name
+     * @var string[] $aliases
      *
      * @param mixed $title
      * @param mixed $path
@@ -118,7 +118,7 @@ class ApiMethodEntity
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getAliases()
     {
@@ -126,7 +126,7 @@ class ApiMethodEntity
     }
 
     /**
-     * @param ArrayOfString $aliases
+     * @param string[] $aliases
      *
      * @return $this
      */

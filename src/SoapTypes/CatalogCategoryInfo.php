@@ -117,7 +117,7 @@ class CatalogCategoryInfo
     protected $is_anchor = null;
 
     /**
-     * @var ArrayOfString
+     * @var string[]
      */
     protected $available_sort_by = null;
 
@@ -165,34 +165,34 @@ class CatalogCategoryInfo
      * Constructor.
      *
      * @var string
-     * @var int           $is_active
-     * @var string        $position
-     * @var string        $level
-     * @var string        $parent_id
-     * @var string        $all_children
-     * @var string        $children
-     * @var string        $created_at
-     * @var string        $updated_at
-     * @var string        $name
-     * @var string        $url_key
-     * @var string        $description
-     * @var string        $meta_title
-     * @var string        $meta_keywords
-     * @var string        $meta_description
-     * @var string        $path
-     * @var string        $url_path
-     * @var int           $children_count
-     * @var string        $display_mode
-     * @var int           $is_anchor
-     * @var ArrayOfString $available_sort_by
-     * @var string        $custom_design
-     * @var string        $custom_design_apply
-     * @var string        $custom_design_from
-     * @var string        $custom_design_to
-     * @var string        $page_layout
-     * @var string        $custom_layout_update
-     * @var string        $default_sort_by
-     * @var int           $landing_page
+     * @var int      $is_active
+     * @var string   $position
+     * @var string   $level
+     * @var string   $parent_id
+     * @var string   $all_children
+     * @var string   $children
+     * @var string   $created_at
+     * @var string   $updated_at
+     * @var string   $name
+     * @var string   $url_key
+     * @var string   $description
+     * @var string   $meta_title
+     * @var string   $meta_keywords
+     * @var string   $meta_description
+     * @var string   $path
+     * @var string   $url_path
+     * @var int      $children_count
+     * @var string   $display_mode
+     * @var int      $is_anchor
+     * @var string[] $available_sort_by
+     * @var string   $custom_design
+     * @var string   $custom_design_apply
+     * @var string   $custom_design_from
+     * @var string   $custom_design_to
+     * @var string   $page_layout
+     * @var string   $custom_layout_update
+     * @var string   $default_sort_by
+     * @var int      $landing_page
      *
      * @param mixed $category_id
      * @param mixed $is_active
@@ -658,7 +658,7 @@ class CatalogCategoryInfo
     }
 
     /**
-     * @return ArrayOfString
+     * @return string[]
      */
     public function getAvailable_sort_by()
     {
@@ -666,7 +666,7 @@ class CatalogCategoryInfo
     }
 
     /**
-     * @param ArrayOfString $available_sort_by
+     * @param string[] $available_sort_by
      *
      * @return $this
      */
