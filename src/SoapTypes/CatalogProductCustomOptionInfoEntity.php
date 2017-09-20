@@ -45,9 +45,9 @@ class CatalogProductCustomOptionInfoEntity
      * Constructor.
      *
      * @var string
-     * @var string                                          $type
-     * @var string                                          $sort_order
-     * @var int                                             $is_require
+     * @var string                                             $type
+     * @var string                                             $sort_order
+     * @var int                                                $is_require
      * @var CatalogProductCustomOptionAdditionalFieldsEntity[] $additional_fields
      *
      * @param mixed $title

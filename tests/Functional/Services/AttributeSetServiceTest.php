@@ -71,7 +71,7 @@ class AttributeSetServiceTest extends AbstractServiceTest
 
         $attributeSetId = $this->service->createAttributeSet('test-attribute-set', $attributeSet->getSetId());
 
-        $this->assertTrue(is_numeric($attributeSetId));
+        $this->assertInternalType('numeric', $attributeSetId);
 
         $this->assertTrue(
             $this->service->removeAttributeSet($attributeSetId)
@@ -124,7 +124,7 @@ class AttributeSetServiceTest extends AbstractServiceTest
         $attributeSet = $this->getRandomAttributeSet();
 
         $groupId = $this->service->addAttributeGroup($attributeSet->getSetId(), 'new-attribute-group');
-        $this->assertTrue(is_numeric($groupId));
+        $this->assertInternalType('numeric', $groupId);
 
         $this->assertTrue(
             $this->service->removeAttributeGroup($groupId)
@@ -140,6 +140,5 @@ class AttributeSetServiceTest extends AbstractServiceTest
             $this->service->renameAttributeGroup($groupId, 'new-group-name')
         );
         $this->service->removeAttributeGroup($groupId);
-
     }
 }

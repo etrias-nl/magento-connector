@@ -15,8 +15,6 @@ declare(strict_types=1);
 namespace Etrias\MagentoConnector\Services;
 
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionAdditionalFieldsEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToUpdate;
 
@@ -55,9 +53,10 @@ class ProductOptionService
     }
 
     /**
-     * @param int $productId
+     * @param int                             $productId
      * @param CatalogProductCustomOptionToAdd $data
-     * @param int|null $storeViewId
+     * @param int|null                        $storeViewId
+     *
      * @return bool
      */
     public function addProductOption(

@@ -420,6 +420,7 @@ interface AdapterInterface
 
     /**
      * @param string $sessionId
+     *
      * @return CatalogProductCustomOptionTypesEntity[]
      */
     public function getProductOptionTypes(
@@ -427,9 +428,10 @@ interface AdapterInterface
     ): array;
 
     /**
-     * @param string $sessionId
-     * @param string $productId
+     * @param string      $sessionId
+     * @param string      $productId
      * @param string|null $storeView
+     *
      * @return CatalogProductCustomOptionListEntity[]
      */
     public function getProductOptions(
@@ -439,10 +441,11 @@ interface AdapterInterface
     ): array;
 
     /**
-     * @param string $sessionId
-     * @param string $productId
+     * @param string                          $sessionId
+     * @param string                          $productId
      * @param CatalogProductCustomOptionToAdd $data
-     * @param string|null $storeView
+     * @param string|null                     $storeView
+     *
      * @return bool
      */
     public function addProductOption(
@@ -469,5 +472,4 @@ interface AdapterInterface
         string $optionId,
         string $storeView = null
     ): CatalogProductCustomOptionInfoEntity;
-
 }

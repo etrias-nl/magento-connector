@@ -14,15 +14,10 @@ declare(strict_types=1);
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
-use Etrias\MagentoConnector\Services\AttributeSetService;
 use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\ProductAttributeService;
 use Etrias\MagentoConnector\Services\ProductOptionService;
 use Etrias\MagentoConnector\Services\ProductService;
-use Etrias\MagentoConnector\SoapTypes\Attribute;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeFrontendLabelEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionAdditionalFieldsEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionListEntity;
@@ -33,7 +28,7 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionTypesEntity;
 /**
  * @coversNothing
  */
-class AttributeSetServiceTest extends AbstractServiceTest
+class ProductOptionServiceTest extends AbstractServiceTest
 {
     use RandomizeTrait;
     /**
@@ -76,7 +71,7 @@ class AttributeSetServiceTest extends AbstractServiceTest
                     $type,
                     0,
                     [
-                        $additionalField
+                        $additionalField,
                     ]
                 )
             )
@@ -84,15 +79,15 @@ class AttributeSetServiceTest extends AbstractServiceTest
 
         $options = $this->service->getOptions($productId);
         /**
-         * @var CatalogProductCustomOptionListEntity $option
+         * @var CatalogProductCustomOptionListEntity
          */
         $option = reset($options);
 
         $this->assertInstanceOf(CatalogProductCustomOptionListEntity::class, $option);
 
-        $this->assertEquals($additionalField->getTitle(), $option->getTitle());
-        $this->assertEquals($additionalField->getSortOrder(), $option->getSortOrder());
-        $this->assertEquals($type, $option->getType());
+        $this->assertSame($additionalField->getTitle(), $option->getTitle());
+        $this->assertSame($additionalField->getSortOrder(), $option->getSortOrder());
+        $this->assertSame($type, $option->getType());
 
         $this->assertTrue(
             $this->service->removeProductOption($option->getOptionId())
@@ -120,14 +115,14 @@ class AttributeSetServiceTest extends AbstractServiceTest
                 $type,
                 0,
                 [
-                    $additionalField
+                    $additionalField,
                 ]
             )
         );
 
         $options = $this->service->getOptions($productId);
         /**
-         * @var CatalogProductCustomOptionListEntity $option
+         * @var CatalogProductCustomOptionListEntity
          */
         $option = reset($options);
 
@@ -142,13 +137,12 @@ class AttributeSetServiceTest extends AbstractServiceTest
                     $type,
                     '0',
                     [
-                        $additionalField
+                        $additionalField,
                     ]
                 )
             )
         );
 
         $this->deleteProduct($productId);
-
     }
 }
