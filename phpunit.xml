@@ -17,9 +17,9 @@
             verbose="false"
     >
     <php>
-        <env name="WSDL" value=""/>
-        <env name="APIUSER" value=""/>
-        <env name="APIKEY" value=""/>
+        <env name="WSDL" value="https://bedsupply.eu.staging.etrias.nl/index.php/api/v2_soap?wsdl=1"/>
+        <env name="APIUSER" value="invoicecall"/>
+        <env name="APIKEY" value="101m9elfWuZigvE3rc3Tq3ePnQQ60LfM"/>
     </php>
 
     <testsuites>
