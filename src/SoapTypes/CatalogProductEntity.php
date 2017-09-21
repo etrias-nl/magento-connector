@@ -67,10 +67,10 @@ class CatalogProductEntity
      * @param mixed $name
      * @param mixed $set
      * @param mixed $type
-     * @param mixed $category_ids
-     * @param mixed $website_ids
+     * @param string[] $category_ids
+     * @param string[] $website_ids
      */
-    public function __construct($product_id, $sku, $name, $set, $type, $category_ids, $website_ids)
+    public function __construct($product_id, $sku, $name, $set, $type, array $category_ids, array $website_ids)
     {
         $this->product_id = $product_id;
         $this->sku = $sku;
@@ -184,7 +184,7 @@ class CatalogProductEntity
     /**
      * @return string[]
      */
-    public function getCategory_ids()
+    public function getCategoryIds()
     {
         return $this->category_ids;
     }
@@ -194,7 +194,7 @@ class CatalogProductEntity
      *
      * @return $this
      */
-    public function setCategory_ids($category_ids)
+    public function setCategoryIds(array $category_ids)
     {
         $this->category_ids = $category_ids;
 
@@ -204,7 +204,7 @@ class CatalogProductEntity
     /**
      * @return string[]
      */
-    public function getWebsite_ids()
+    public function getWebsiteIds()
     {
         return $this->website_ids;
     }
@@ -214,7 +214,7 @@ class CatalogProductEntity
      *
      * @return $this
      */
-    public function setWebsite_ids($website_ids)
+    public function setWebsiteIds(array $website_ids)
     {
         $this->website_ids = $website_ids;
 

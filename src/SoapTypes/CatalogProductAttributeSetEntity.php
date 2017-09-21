@@ -27,21 +27,6 @@ class CatalogProductAttributeSetEntity
     protected $name = null;
 
     /**
-     * Constructor.
-     *
-     * @var int
-     * @var string $name
-     *
-     * @param mixed $set_id
-     * @param mixed $name
-     */
-    public function __construct($set_id, $name)
-    {
-        $this->set_id = $set_id;
-        $this->name = $name;
-    }
-
-    /**
      * @return int
      */
     public function getSetId()

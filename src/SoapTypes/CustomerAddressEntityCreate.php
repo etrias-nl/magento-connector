@@ -97,63 +97,6 @@ class CustomerAddressEntityCreate
     protected $is_default_shipping = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string   $company
-     * @var string   $country_id
-     * @var string   $fax
-     * @var string   $firstname
-     * @var string   $lastname
-     * @var string   $middlename
-     * @var string   $postcode
-     * @var string   $prefix
-     * @var int      $region_id
-     * @var string   $region
-     * @var string[] $street
-     * @var string   $suffix
-     * @var string   $telephone
-     * @var bool     $is_default_billing
-     * @var bool     $is_default_shipping
-     *
-     * @param mixed $city
-     * @param mixed $company
-     * @param mixed $country_id
-     * @param mixed $fax
-     * @param mixed $firstname
-     * @param mixed $lastname
-     * @param mixed $middlename
-     * @param mixed $postcode
-     * @param mixed $prefix
-     * @param mixed $region_id
-     * @param mixed $region
-     * @param mixed $street
-     * @param mixed $suffix
-     * @param mixed $telephone
-     * @param mixed $is_default_billing
-     * @param mixed $is_default_shipping
-     */
-    public function __construct($city, $company, $country_id, $fax, $firstname, $lastname, $middlename, $postcode, $prefix, $region_id, $region, $street, $suffix, $telephone, $is_default_billing, $is_default_shipping)
-    {
-        $this->city = $city;
-        $this->company = $company;
-        $this->country_id = $country_id;
-        $this->fax = $fax;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->middlename = $middlename;
-        $this->postcode = $postcode;
-        $this->prefix = $prefix;
-        $this->region_id = $region_id;
-        $this->region = $region;
-        $this->street = $street;
-        $this->suffix = $suffix;
-        $this->telephone = $telephone;
-        $this->is_default_billing = $is_default_billing;
-        $this->is_default_shipping = $is_default_shipping;
-    }
-
-    /**
      * @return string
      */
     public function getCity()

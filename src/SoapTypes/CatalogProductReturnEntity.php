@@ -192,120 +192,6 @@ class CatalogProductReturnEntity
     protected $enable_googlecheckout = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string                          $sku
-     * @var string                          $set
-     * @var string                          $type
-     * @var string[]                        $categories
-     * @var string[]                        $websites
-     * @var string                          $created_at
-     * @var string                          $updated_at
-     * @var string                          $type_id
-     * @var string                          $name
-     * @var string                          $description
-     * @var string                          $short_description
-     * @var string                          $weight
-     * @var string                          $status
-     * @var string                          $url_key
-     * @var string                          $url_path
-     * @var string                          $visibility
-     * @var string[]                        $category_ids
-     * @var string[]                        $website_ids
-     * @var string                          $has_options
-     * @var string                          $gift_message_available
-     * @var string                          $price
-     * @var string                          $special_price
-     * @var string                          $special_from_date
-     * @var string                          $special_to_date
-     * @var string                          $tax_class_id
-     * @var catalogProductTierPriceEntity[] $tier_price
-     * @var string                          $meta_title
-     * @var string                          $meta_keyword
-     * @var string                          $meta_description
-     * @var string                          $custom_design
-     * @var string                          $custom_layout_update
-     * @var string                          $options_container
-     * @var array                           $additional_attributes
-     * @var string                          $enable_googlecheckout
-     *
-     * @param mixed $product_id
-     * @param mixed $sku
-     * @param mixed $set
-     * @param mixed $type
-     * @param mixed $categories
-     * @param mixed $websites
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $type_id
-     * @param mixed $name
-     * @param mixed $description
-     * @param mixed $short_description
-     * @param mixed $weight
-     * @param mixed $status
-     * @param mixed $url_key
-     * @param mixed $url_path
-     * @param mixed $visibility
-     * @param mixed $category_ids
-     * @param mixed $website_ids
-     * @param mixed $has_options
-     * @param mixed $gift_message_available
-     * @param mixed $price
-     * @param mixed $special_price
-     * @param mixed $special_from_date
-     * @param mixed $special_to_date
-     * @param mixed $tax_class_id
-     * @param mixed $tier_price
-     * @param mixed $meta_title
-     * @param mixed $meta_keyword
-     * @param mixed $meta_description
-     * @param mixed $custom_design
-     * @param mixed $custom_layout_update
-     * @param mixed $options_container
-     * @param mixed $additional_attributes
-     * @param mixed $enable_googlecheckout
-     */
-    public function __construct($product_id, $sku, $set, $type, $categories, $websites, $created_at, $updated_at, $type_id, $name, $description, $short_description, $weight, $status, $url_key, $url_path, $visibility, $category_ids, $website_ids, $has_options, $gift_message_available, $price, $special_price, $special_from_date, $special_to_date, $tax_class_id, $tier_price, $meta_title, $meta_keyword, $meta_description, $custom_design, $custom_layout_update, $options_container, $additional_attributes, $enable_googlecheckout)
-    {
-        $this->product_id = $product_id;
-        $this->sku = $sku;
-        $this->set = $set;
-        $this->type = $type;
-        $this->categories = $categories;
-        $this->websites = $websites;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->type_id = $type_id;
-        $this->name = $name;
-        $this->description = $description;
-        $this->short_description = $short_description;
-        $this->weight = $weight;
-        $this->status = $status;
-        $this->url_key = $url_key;
-        $this->url_path = $url_path;
-        $this->visibility = $visibility;
-        $this->category_ids = $category_ids;
-        $this->website_ids = $website_ids;
-        $this->has_options = $has_options;
-        $this->gift_message_available = $gift_message_available;
-        $this->price = $price;
-        $this->special_price = $special_price;
-        $this->special_from_date = $special_from_date;
-        $this->special_to_date = $special_to_date;
-        $this->tax_class_id = $tax_class_id;
-        $this->tier_price = $tier_price;
-        $this->meta_title = $meta_title;
-        $this->meta_keyword = $meta_keyword;
-        $this->meta_description = $meta_description;
-        $this->custom_design = $custom_design;
-        $this->custom_layout_update = $custom_layout_update;
-        $this->options_container = $options_container;
-        $this->additional_attributes = $additional_attributes;
-        $this->enable_googlecheckout = $enable_googlecheckout;
-    }
-
-    /**
      * @return string
      */
     public function getProductId()
@@ -398,7 +284,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setCategories($categories)
+    public function setCategories(array $categories)
     {
         $this->categories = $categories;
 
@@ -418,7 +304,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setWebsites($websites)
+    public function setWebsites(array $websites)
     {
         $this->websites = $websites;
 
@@ -658,7 +544,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setCategoryIds($category_ids)
+    public function setCategoryIds(array $category_ids)
     {
         $this->category_ids = $category_ids;
 
@@ -678,7 +564,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setWebsiteIds($website_ids)
+    public function setWebsiteIds(array $website_ids)
     {
         $this->website_ids = $website_ids;
 
@@ -838,7 +724,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setTierPrice($tier_price)
+    public function setTierPrice(array $tier_price)
     {
         $this->tier_price = $tier_price;
 
@@ -978,7 +864,7 @@ class CatalogProductReturnEntity
      *
      * @return $this
      */
-    public function setAdditionalAttributes($additional_attributes)
+    public function setAdditionalAttributes(array $additional_attributes)
     {
         $this->additional_attributes = $additional_attributes;
 

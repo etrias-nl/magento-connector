@@ -108,25 +108,13 @@ class CatalogProductAttributeEntityToCreate
     /**
      * Constructor.
      *
-     * @var string
+     * @var string                                       $attribute_code
      * @var string                                       $frontend_input
-     * @var string                                       $scope
-     * @var string                                       $default_value
-     * @var int                                          $is_unique
-     * @var int                                          $is_required
-     * @var string[]                                     $apply_to
-     * @var int                                          $is_configurable
-     * @var int                                          $is_searchable
-     * @var int                                          $is_visible_in_advanced_search
-     * @var int                                          $is_comparable
-     * @var int                                          $is_used_for_promo_rules
-     * @var int                                          $is_visible_on_front
-     * @var int                                          $used_in_product_listing
-     * @var array                                        $additional_fields
      * @var CatalogProductAttributeFrontendLabelEntity[] $frontend_label
      *
-     * @param mixed $attribute_code
-     * @param mixed $frontend_input
+     * @param string $attribute_code
+     * @param string $frontend_input
+     * @param array  $frontend_label
      */
     public function __construct(
         $attribute_code,
@@ -451,7 +439,7 @@ class CatalogProductAttributeEntityToCreate
      *
      * @return $this
      */
-    public function setFrontendLabel($frontend_label)
+    public function setFrontendLabel(array $frontend_label)
     {
         $this->frontend_label = $frontend_label;
 

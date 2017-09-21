@@ -67,35 +67,6 @@ class CatalogProductCustomOptionAdditionalFieldsEntity
     protected $value_id = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $price
-     * @var string $price_type
-     * @var string $sku
-     * @var string $max_characters
-     * @var string $sort_order
-     * @var string $file_extension
-     * @var string $image_size_x
-     * @var string $image_size_y
-     * @var string $value_id
-     *
-     * @param mixed $title
-     * @param mixed $price
-     * @param mixed $price_type
-     * @param mixed $sku
-     * @param mixed $sort_order
-     */
-    public function __construct($title, $price, $price_type, $sku, $sort_order)
-    {
-        $this->title = $title;
-        $this->price = $price;
-        $this->price_type = $price_type;
-        $this->sku = $sku;
-        $this->sort_order = $sort_order;
-    }
-
-    /**
      * @return string
      */
     public function getTitle()

@@ -47,23 +47,6 @@ class CatalogProductAttributeMediaCreateEntity
     protected $remove = null;
 
     /**
-     * Constructor.
-     *
-     * @var catalogProductImageFileEntity
-     * @var string                        $label
-     * @var string                        $position
-     * @var string[]                      $types
-     * @var string                        $exclude
-     * @var string                        $remove
-     *
-     * @param CatalogProductImageFileEntity $file
-     */
-    public function __construct(CatalogProductImageFileEntity $file)
-    {
-        $this->file = $file;
-    }
-
-    /**
      * @return catalogProductImageFileEntity
      */
     public function getFile()

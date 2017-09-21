@@ -254,7 +254,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getShort_description()
+    public function getShortDescription()
     {
         return $this->short_description;
     }
@@ -264,7 +264,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setShort_description($short_description)
+    public function setShortDescription($short_description)
     {
         $this->short_description = $short_description;
 
@@ -314,7 +314,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getUrl_key()
+    public function getUrlKey()
     {
         return $this->url_key;
     }
@@ -324,7 +324,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setUrl_key($url_key)
+    public function setUrlKey($url_key)
     {
         $this->url_key = $url_key;
 
@@ -334,7 +334,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getUrl_path()
+    public function getUrlPath()
     {
         return $this->url_path;
     }
@@ -344,7 +344,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setUrl_path($url_path)
+    public function setUrlPath($url_path)
     {
         $this->url_path = $url_path;
 
@@ -374,7 +374,7 @@ class CatalogProductCreateEntity
     /**
      * @return string[]
      */
-    public function getCategory_ids()
+    public function getCategoryIds()
     {
         return $this->category_ids;
     }
@@ -384,7 +384,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setCategory_ids(array $category_ids)
+    public function setCategoryIds(array $category_ids)
     {
         $this->category_ids = $category_ids;
 
@@ -394,7 +394,7 @@ class CatalogProductCreateEntity
     /**
      * @return string[]
      */
-    public function getWebsite_ids()
+    public function getWebsiteIds()
     {
         return $this->website_ids;
     }
@@ -404,7 +404,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setWebsite_ids(array $website_ids)
+    public function setWebsiteIds(array $website_ids)
     {
         $this->website_ids = $website_ids;
 
@@ -414,7 +414,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getHas_options()
+    public function getHasOptions()
     {
         return $this->has_options;
     }
@@ -424,7 +424,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setHas_options($has_options)
+    public function setHasOptions($has_options)
     {
         $this->has_options = $has_options;
 
@@ -434,7 +434,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getGift_message_available()
+    public function getGiftMessageAvailable()
     {
         return $this->gift_message_available;
     }

@@ -44,7 +44,7 @@ class MagentoInfoEntity
     /**
      * @return string
      */
-    public function getMagento_version()
+    public function getMagentoVersion()
     {
         return $this->magento_version;
     }
@@ -54,7 +54,7 @@ class MagentoInfoEntity
      *
      * @return $this
      */
-    public function setMagento_version($magento_version)
+    public function setMagentoVersion($magento_version)
     {
         $this->magento_version = $magento_version;
 
@@ -64,7 +64,7 @@ class MagentoInfoEntity
     /**
      * @return string
      */
-    public function getMagento_edition()
+    public function getMagentoEdition()
     {
         return $this->magento_edition;
     }
@@ -74,7 +74,7 @@ class MagentoInfoEntity
      *
      * @return $this
      */
-    public function setMagento_edition($magento_edition)
+    public function setMagentoEdition($magento_edition)
     {
         $this->magento_edition = $magento_edition;
 

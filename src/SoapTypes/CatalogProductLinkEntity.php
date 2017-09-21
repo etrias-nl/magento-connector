@@ -47,33 +47,6 @@ class CatalogProductLinkEntity
     protected $qty = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $type
-     * @var string $set
-     * @var string $sku
-     * @var string $position
-     * @var string $qty
-     *
-     * @param mixed $product_id
-     * @param mixed $type
-     * @param mixed $set
-     * @param mixed $sku
-     * @param mixed $position
-     * @param mixed $qty
-     */
-    public function __construct($product_id, $type, $set, $sku, $position, $qty)
-    {
-        $this->product_id = $product_id;
-        $this->type = $type;
-        $this->set = $set;
-        $this->sku = $sku;
-        $this->position = $position;
-        $this->qty = $qty;
-    }
-
-    /**
      * @return string
      */
     public function getProductId()

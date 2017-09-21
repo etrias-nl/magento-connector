@@ -70,7 +70,7 @@ class CatalogCategoryEntity
      * @param mixed $level
      * @param mixed $children
      */
-    public function __construct($category_id, $parent_id, $name, $is_active, $position, $level, $children)
+    public function __construct($category_id, $parent_id, $name, $is_active, $position, $level, array $children)
     {
         $this->category_id = $category_id;
         $this->parent_id = $parent_id;
