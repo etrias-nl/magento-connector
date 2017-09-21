@@ -152,7 +152,7 @@ class CatalogProductCreateEntity
     protected $additional_attributes = null;
 
     /**
-     * @var DateTimeEntity
+     * @var CatalogInventoryStockItemUpdateEntity
      */
     protected $stock_data = null;
 
@@ -712,7 +712,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return CatalogInventoryStockItemUp\DateTimeEntity
+     * @return CatalogInventoryStockItemUpDateEntity
      */
     public function getStockData()
     {
@@ -720,11 +720,11 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param catalogInventoryStockItemUp\DateTimeEntity $stock_data
+     * @param CatalogInventoryStockItemUpdateEntity $stock_data
      *
      * @return $this
      */
-    public function setStockData($stock_data)
+    public function setStockData(CatalogInventoryStockItemUpdateEntity $stock_data)
     {
         $this->stock_data = $stock_data;
 
