@@ -17,44 +17,29 @@ namespace Etrias\MagentoConnector\SoapTypes;
 class CatalogProductAdditionalAttributesEntity
 {
     /**
-     * @var associativeMultiArray
+     * @var array
      */
     protected $multi_data = null;
 
     /**
-     * @var associativeArray
+     * @var array
      */
     protected $single_data = null;
 
     /**
-     * Constructor.
-     *
-     * @var associativeMultiArray
-     * @var associativeArray      $single_data
-     *
-     * @param mixed $multi_data
-     * @param mixed $single_data
+     * @return array
      */
-    public function __construct($multi_data, $single_data)
-    {
-        $this->multi_data = $multi_data;
-        $this->single_data = $single_data;
-    }
-
-    /**
-     * @return associativeMultiArray
-     */
-    public function getMulti_data()
+    public function getMultiData()
     {
         return $this->multi_data;
     }
 
     /**
-     * @param associativeMultiArray $multi_data
+     * @param array $multi_data
      *
      * @return $this
      */
-    public function setMulti_data($multi_data)
+    public function setMultiData(array $multi_data)
     {
         $this->multi_data = $multi_data;
 
@@ -62,19 +47,19 @@ class CatalogProductAdditionalAttributesEntity
     }
 
     /**
-     * @return associativeArray
+     * @return array
      */
-    public function getSingle_data()
+    public function getSingleData()
     {
         return $this->single_data;
     }
 
     /**
-     * @param associativeArray $single_data
+     * @param array $single_data
      *
      * @return $this
      */
-    public function setSingle_data($single_data)
+    public function setSingleData(array $single_data)
     {
         $this->single_data = $single_data;
 

@@ -49,7 +49,7 @@ class ApiEntity
      * @param mixed $aliases
      * @param mixed $methods
      */
-    public function __construct($title, $name, $aliases, $methods)
+    public function __construct($title, $name, array $aliases, array $methods)
     {
         $this->title = $title;
         $this->name = $name;
@@ -110,7 +110,7 @@ class ApiEntity
      *
      * @return $this
      */
-    public function setAliases($aliases)
+    public function setAliases(array $aliases)
     {
         $this->aliases = $aliases;
 
@@ -130,7 +130,7 @@ class ApiEntity
      *
      * @return $this
      */
-    public function setMethods($methods)
+    public function setMethods(array $methods)
     {
         $this->methods = $methods;
 

@@ -42,7 +42,7 @@ class CatalogProductAttributeOptionEntityToAdd
      * @param mixed $order
      * @param mixed $is_default
      */
-    public function __construct($label, $order, $is_default = false)
+    public function __construct(array $label, $order, $is_default = false)
     {
         $this->label = $label;
         $this->order = $order;

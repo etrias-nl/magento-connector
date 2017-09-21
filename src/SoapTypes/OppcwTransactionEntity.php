@@ -120,7 +120,7 @@ class OppcwTransactionEntity
      * @var string           $authorization_status
      * @var bool             $paid
      * @var string           $currency
-     * @var associativeArray $data
+     * @var array $data
      *
      * @param mixed $transaction_id
      * @param mixed $transaction_external_id

@@ -56,13 +56,12 @@ class CatalogProductCustomOptionValueUpdateEntity
      * @param mixed $sku
      * @param mixed $sort_order
      */
-    public function __construct($title, $price, $price_type, $sku, $sort_order)
+    public function __construct($title, $price, $price_type, $sku)
     {
         $this->title = $title;
         $this->price = $price;
         $this->price_type = $price_type;
         $this->sku = $sku;
-        $this->sort_order = $sort_order;
     }
 
     /**
@@ -108,7 +107,7 @@ class CatalogProductCustomOptionValueUpdateEntity
     /**
      * @return string
      */
-    public function getPrice_type()
+    public function getPriceType()
     {
         return $this->price_type;
     }
@@ -118,7 +117,7 @@ class CatalogProductCustomOptionValueUpdateEntity
      *
      * @return $this
      */
-    public function setPrice_type($price_type)
+    public function setPriceType($price_type)
     {
         $this->price_type = $price_type;
 
@@ -148,7 +147,7 @@ class CatalogProductCustomOptionValueUpdateEntity
     /**
      * @return string
      */
-    public function getSort_order()
+    public function getSortOrder()
     {
         return $this->sort_order;
     }
@@ -158,7 +157,7 @@ class CatalogProductCustomOptionValueUpdateEntity
      *
      * @return $this
      */
-    public function setSort_order($sort_order)
+    public function setSortOrder($sort_order)
     {
         $this->sort_order = $sort_order;
 

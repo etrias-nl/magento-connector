@@ -27,21 +27,6 @@ class CatalogProductRequestAttributes
     protected $additional_attributes = null;
 
     /**
-     * Constructor.
-     *
-     * @var string[]
-     * @var string[] $additional_attributes
-     *
-     * @param mixed $attributes
-     * @param mixed $additional_attributes
-     */
-    public function __construct($attributes, $additional_attributes)
-    {
-        $this->attributes = $attributes;
-        $this->additional_attributes = $additional_attributes;
-    }
-
-    /**
      * @return string[]
      */
     public function getAttributes()
@@ -54,7 +39,7 @@ class CatalogProductRequestAttributes
      *
      * @return $this
      */
-    public function setAttributes($attributes)
+    public function setAttributes(array $attributes)
     {
         $this->attributes = $attributes;
 
@@ -64,7 +49,7 @@ class CatalogProductRequestAttributes
     /**
      * @return string[]
      */
-    public function getAdditional_attributes()
+    public function getAdditionalAttributes()
     {
         return $this->additional_attributes;
     }
@@ -74,7 +59,7 @@ class CatalogProductRequestAttributes
      *
      * @return $this
      */
-    public function setAdditional_attributes($additional_attributes)
+    public function setAdditionalAttributes(array $additional_attributes)
     {
         $this->additional_attributes = $additional_attributes;
 

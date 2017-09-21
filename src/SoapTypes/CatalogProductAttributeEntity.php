@@ -147,25 +147,11 @@ class CatalogProductAttributeEntity
      * @param mixed $options
      * @param mixed $frontend_label
      */
-    public function __construct($attribute_id, $attribute_code, $frontend_input, $scope, $default_value, $is_unique, $is_required, $apply_to, $is_configurable, $is_searchable, $is_visible_in_advanced_search, $is_comparable, $is_used_for_promo_rules, $is_visible_on_front, $used_in_product_listing, $additional_fields, $options, $frontend_label)
+    public function __construct($attribute_id, $attribute_code, $frontend_input, $frontend_label)
     {
         $this->attribute_id = $attribute_id;
         $this->attribute_code = $attribute_code;
         $this->frontend_input = $frontend_input;
-        $this->scope = $scope;
-        $this->default_value = $default_value;
-        $this->is_unique = $is_unique;
-        $this->is_required = $is_required;
-        $this->apply_to = $apply_to;
-        $this->is_configurable = $is_configurable;
-        $this->is_searchable = $is_searchable;
-        $this->is_visible_in_advanced_search = $is_visible_in_advanced_search;
-        $this->is_comparable = $is_comparable;
-        $this->is_used_for_promo_rules = $is_used_for_promo_rules;
-        $this->is_visible_on_front = $is_visible_on_front;
-        $this->used_in_product_listing = $used_in_product_listing;
-        $this->additional_fields = $additional_fields;
-        $this->options = $options;
         $this->frontend_label = $frontend_label;
     }
 

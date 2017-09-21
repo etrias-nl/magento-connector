@@ -117,44 +117,6 @@ class CatalogCategoryEntityCreate
     protected $include_in_menu = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var int      $is_active
-     * @var int      $position
-     * @var string[] $available_sort_by
-     * @var string   $custom_design
-     * @var int      $custom_design_apply
-     * @var string   $custom_design_from
-     * @var string   $custom_design_to
-     * @var string   $custom_layout_update
-     * @var string   $default_sort_by
-     * @var string   $description
-     * @var string   $display_mode
-     * @var int      $is_anchor
-     * @var int      $landing_page
-     * @var string   $meta_description
-     * @var string   $meta_keywords
-     * @var string   $meta_title
-     * @var string   $page_layout
-     * @var string   $url_key
-     * @var int      $include_in_menu
-     *
-     * @param mixed $name
-     * @param mixed $is_active
-     * @param mixed $include_in_menu
-     */
-    public function __construct(
-        string $name,
-        bool $is_active,
-        bool $include_in_menu
-    ) {
-        $this->name = $name;
-        $this->is_active = $is_active;
-        $this->include_in_menu = $include_in_menu;
-    }
-
-    /**
      * @return string
      */
     public function getName()
@@ -227,7 +189,7 @@ class CatalogCategoryEntityCreate
      *
      * @return $this
      */
-    public function setAvailableSortBy($available_sort_by)
+    public function setAvailableSortBy(array $available_sort_by)
     {
         $this->available_sort_by = $available_sort_by;
 

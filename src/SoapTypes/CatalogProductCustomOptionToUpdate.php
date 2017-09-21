@@ -42,28 +42,6 @@ class CatalogProductCustomOptionToUpdate
     protected $additional_fields = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string                                          $type
-     * @var string                                          $sort_order
-     * @var int                                             $is_require
-     * @var catalogProductCustomOptionAdditionalFieldsArray $additional_fields
-     *
-     * @param mixed $title
-     * @param mixed $type
-     * @param mixed $sort_order
-     * @param mixed $additional_fields
-     */
-    public function __construct($title, $type, $sort_order, $additional_fields)
-    {
-        $this->title = $title;
-        $this->type = $type;
-        $this->sort_order = $sort_order;
-        $this->additional_fields = $additional_fields;
-    }
-
-    /**
      * @return string
      */
     public function getTitle()
@@ -106,7 +84,7 @@ class CatalogProductCustomOptionToUpdate
     /**
      * @return string
      */
-    public function getSort_order()
+    public function getSortOrder()
     {
         return $this->sort_order;
     }
@@ -116,7 +94,7 @@ class CatalogProductCustomOptionToUpdate
      *
      * @return $this
      */
-    public function setSort_order($sort_order)
+    public function setSortOrder($sort_order)
     {
         $this->sort_order = $sort_order;
 
@@ -126,7 +104,7 @@ class CatalogProductCustomOptionToUpdate
     /**
      * @return int
      */
-    public function getIs_require()
+    public function getIsRequire()
     {
         return $this->is_require;
     }
@@ -136,7 +114,7 @@ class CatalogProductCustomOptionToUpdate
      *
      * @return $this
      */
-    public function setIs_require($is_require)
+    public function setIsRequire($is_require)
     {
         $this->is_require = $is_require;
 
@@ -146,7 +124,7 @@ class CatalogProductCustomOptionToUpdate
     /**
      * @return catalogProductCustomOptionAdditionalFieldsArray
      */
-    public function getAdditional_fields()
+    public function getAdditionalFields()
     {
         return $this->additional_fields;
     }
@@ -156,7 +134,7 @@ class CatalogProductCustomOptionToUpdate
      *
      * @return $this
      */
-    public function setAdditional_fields($additional_fields)
+    public function setAdditionalFields(array $additional_fields)
     {
         $this->additional_fields = $additional_fields;
 

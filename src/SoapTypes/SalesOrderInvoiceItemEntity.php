@@ -244,7 +244,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -254,7 +254,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
