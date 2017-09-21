@@ -2,7 +2,7 @@
     "name": "etrias/magento-connector",
     "description": "",
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.0",
         "ext-soap": "*",
         "phpro/soap-client": "^0.5.0",
         "http-interop/http-factory": "^0.2.0",
