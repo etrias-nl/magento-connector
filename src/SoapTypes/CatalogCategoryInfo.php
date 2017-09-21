@@ -164,13 +164,13 @@ class CatalogCategoryInfo
     /**
      * Constructor.
      *
-     * @var string   $category_id
-     * @var int      $is_active
-     * @var string   $position
-     * @var string   $level
-     * @var string   $parent_id
-     * @var string   $all_children
-     * @var string   $children
+     * @var string
+     * @var int    $is_active
+     * @var string $position
+     * @var string $level
+     * @var string $parent_id
+     * @var string $all_children
+     * @var string $children
      *
      * @param mixed $category_id
      * @param mixed $is_active

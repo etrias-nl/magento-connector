@@ -108,7 +108,7 @@ class CatalogProductAttributeEntityToCreate
     /**
      * Constructor.
      *
-     * @var string                                       $attribute_code
+     * @var string
      * @var string                                       $frontend_input
      * @var CatalogProductAttributeFrontendLabelEntity[] $frontend_label
      *
