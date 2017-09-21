@@ -444,7 +444,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setGift_message_available($gift_message_available)
+    public function setGiftMessageAvailable($gift_message_available)
     {
         $this->gift_message_available = $gift_message_available;
 
@@ -474,7 +474,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getSpecial_price()
+    public function getSpecialPrice()
     {
         return $this->special_price;
     }
@@ -484,7 +484,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setSpecial_price($special_price)
+    public function setSpecialPrice($special_price)
     {
         $this->special_price = $special_price;
 
@@ -494,7 +494,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getSpecial_from_date()
+    public function getSpecialFromDate()
     {
         return $this->special_from_date;
     }
@@ -504,7 +504,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setSpecial_from_date($special_from_date)
+    public function setSpecialFromDate($special_from_date)
     {
         $this->special_from_date = $special_from_date;
 
@@ -514,7 +514,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getSpecial_to_date()
+    public function getSpecialToDate()
     {
         return $this->special_to_date;
     }
@@ -524,7 +524,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setSpecial_to_date($special_to_date)
+    public function setSpecialToDate($special_to_date)
     {
         $this->special_to_date = $special_to_date;
 

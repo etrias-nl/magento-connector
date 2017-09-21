@@ -89,7 +89,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * Constructor.
      *
-     * @var catalogProductAttributeFrontendLabelArray $frontend_label
+     * @var catalogProductAttributeFrontendLabelArray
      *
      * @param string[] $frontend_label
      */

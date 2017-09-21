@@ -872,531 +872,9 @@ class SalesOrderListEntity
     protected $postcode = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $store_id
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $customer_id
-     * @var string $tax_amount
-     * @var string $shipping_amount
-     * @var string $discount_amount
-     * @var string $subtotal
-     * @var string $grand_total
-     * @var string $total_paid
-     * @var string $total_refunded
-     * @var string $total_qty_ordered
-     * @var string $total_canceled
-     * @var string $total_invoiced
-     * @var string $total_online_refunded
-     * @var string $total_offline_refunded
-     * @var string $base_tax_amount
-     * @var string $base_shipping_amount
-     * @var string $base_discount_amount
-     * @var string $base_subtotal
-     * @var string $base_grand_total
-     * @var string $base_total_paid
-     * @var string $base_total_refunded
-     * @var string $base_total_qty_ordered
-     * @var string $base_total_canceled
-     * @var string $base_total_invoiced
-     * @var string $base_total_online_refunded
-     * @var string $base_total_offline_refunded
-     * @var string $billing_address_id
-     * @var string $billing_firstname
-     * @var string $billing_lastname
-     * @var string $shipping_address_id
-     * @var string $shipping_firstname
-     * @var string $shipping_lastname
-     * @var string $billing_name
-     * @var string $shipping_name
-     * @var string $store_to_base_rate
-     * @var string $store_to_order_rate
-     * @var string $base_to_global_rate
-     * @var string $base_to_order_rate
-     * @var string $weight
-     * @var string $store_name
-     * @var string $remote_ip
-     * @var string $status
-     * @var string $state
-     * @var string $applied_rule_ids
-     * @var string $global_currency_code
-     * @var string $base_currency_code
-     * @var string $store_currency_code
-     * @var string $order_currency_code
-     * @var string $shipping_method
-     * @var string $shipping_description
-     * @var string $customer_email
-     * @var string $customer_firstname
-     * @var string $customer_lastname
-     * @var string $quote_id
-     * @var string $is_virtual
-     * @var string $customer_group_id
-     * @var string $customer_note_notify
-     * @var string $customer_is_guest
-     * @var string $email_sent
-     * @var string $order_id
-     * @var string $gift_message_id
-     * @var string $coupon_code
-     * @var string $protect_code
-     * @var string $base_discount_canceled
-     * @var string $base_discount_invoiced
-     * @var string $base_discount_refunded
-     * @var string $base_shipping_canceled
-     * @var string $base_shipping_invoiced
-     * @var string $base_shipping_refunded
-     * @var string $base_shipping_tax_amount
-     * @var string $base_shipping_tax_refunded
-     * @var string $base_subtotal_canceled
-     * @var string $base_subtotal_invoiced
-     * @var string $base_subtotal_refunded
-     * @var string $base_tax_canceled
-     * @var string $base_tax_invoiced
-     * @var string $base_tax_refunded
-     * @var string $base_total_invoiced_cost
-     * @var string $discount_canceled
-     * @var string $discount_invoiced
-     * @var string $discount_refunded
-     * @var string $shipping_canceled
-     * @var string $shipping_invoiced
-     * @var string $shipping_refunded
-     * @var string $shipping_tax_amount
-     * @var string $shipping_tax_refunded
-     * @var string $subtotal_canceled
-     * @var string $subtotal_invoiced
-     * @var string $subtotal_refunded
-     * @var string $tax_canceled
-     * @var string $tax_invoiced
-     * @var string $tax_refunded
-     * @var string $can_ship_partially
-     * @var string $can_ship_partially_item
-     * @var string $edit_increment
-     * @var string $forced_do_shipment_with_invoice
-     * @var string $payment_authorization_expiration
-     * @var string $paypal_ipn_customer_notified
-     * @var string $quote_address_id
-     * @var string $adjustment_negative
-     * @var string $adjustment_positive
-     * @var string $base_adjustment_negative
-     * @var string $base_adjustment_positive
-     * @var string $base_shipping_discount_amount
-     * @var string $base_subtotal_incl_tax
-     * @var string $base_total_due
-     * @var string $payment_authorization_amount
-     * @var string $shipping_discount_amount
-     * @var string $subtotal_incl_tax
-     * @var string $total_due
-     * @var string $customer_dob
-     * @var string $customer_middlename
-     * @var string $customer_prefix
-     * @var string $customer_suffix
-     * @var string $customer_taxvat
-     * @var string $discount_description
-     * @var string $ext_customer_id
-     * @var string $ext_order_id
-     * @var string $hold_before_state
-     * @var string $hold_before_status
-     * @var string $original_increment_id
-     * @var string $relation_child_id
-     * @var string $relation_child_real_id
-     * @var string $relation_parent_id
-     * @var string $relation_parent_real_id
-     * @var string $x_forwarded_for
-     * @var string $customer_note
-     * @var string $total_item_count
-     * @var string $customer_gender
-     * @var string $hidden_tax_amount
-     * @var string $base_hidden_tax_amount
-     * @var string $shipping_hidden_tax_amount
-     * @var string $base_shipping_hidden_tax_amount
-     * @var string $hidden_tax_invoiced
-     * @var string $base_hidden_tax_invoiced
-     * @var string $hidden_tax_refunded
-     * @var string $base_hidden_tax_refunded
-     * @var string $shipping_incl_tax
-     * @var string $base_shipping_incl_tax
-     * @var string $base_customer_balance_amount
-     * @var string $customer_balance_amount
-     * @var string $base_customer_balance_invoiced
-     * @var string $customer_balance_invoiced
-     * @var string $base_customer_balance_refunded
-     * @var string $customer_balance_refunded
-     * @var string $base_customer_balance_total_refunded
-     * @var string $customer_balance_total_refunded
-     * @var string $gift_cards
-     * @var string $base_gift_cards_amount
-     * @var string $gift_cards_amount
-     * @var string $base_gift_cards_invoiced
-     * @var string $gift_cards_invoiced
-     * @var string $base_gift_cards_refunded
-     * @var string $gift_cards_refunded
-     * @var string $reward_points_balance
-     * @var string $base_reward_currency_amount
-     * @var string $reward_currency_amount
-     * @var string $base_reward_currency_amount_invoiced
-     * @var string $reward_currency_amount_invoiced
-     * @var string $base_reward_currency_amount_refunded
-     * @var string $reward_currency_amount_refunded
-     * @var string $reward_points_balance_refunded
-     * @var string $reward_points_balance_to_refund
-     * @var string $reward_salesrule_points
-     * @var string $firstname
-     * @var string $lastname
-     * @var string $telephone
-     * @var string $postcode
-     *
-     * @param mixed $increment_id
-     * @param mixed $store_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $customer_id
-     * @param mixed $tax_amount
-     * @param mixed $shipping_amount
-     * @param mixed $discount_amount
-     * @param mixed $subtotal
-     * @param mixed $grand_total
-     * @param mixed $total_paid
-     * @param mixed $total_refunded
-     * @param mixed $total_qty_ordered
-     * @param mixed $total_canceled
-     * @param mixed $total_invoiced
-     * @param mixed $total_online_refunded
-     * @param mixed $total_offline_refunded
-     * @param mixed $base_tax_amount
-     * @param mixed $base_shipping_amount
-     * @param mixed $base_discount_amount
-     * @param mixed $base_subtotal
-     * @param mixed $base_grand_total
-     * @param mixed $base_total_paid
-     * @param mixed $base_total_refunded
-     * @param mixed $base_total_qty_ordered
-     * @param mixed $base_total_canceled
-     * @param mixed $base_total_invoiced
-     * @param mixed $base_total_online_refunded
-     * @param mixed $base_total_offline_refunded
-     * @param mixed $billing_address_id
-     * @param mixed $billing_firstname
-     * @param mixed $billing_lastname
-     * @param mixed $shipping_address_id
-     * @param mixed $shipping_firstname
-     * @param mixed $shipping_lastname
-     * @param mixed $billing_name
-     * @param mixed $shipping_name
-     * @param mixed $store_to_base_rate
-     * @param mixed $store_to_order_rate
-     * @param mixed $base_to_global_rate
-     * @param mixed $base_to_order_rate
-     * @param mixed $weight
-     * @param mixed $store_name
-     * @param mixed $remote_ip
-     * @param mixed $status
-     * @param mixed $state
-     * @param mixed $applied_rule_ids
-     * @param mixed $global_currency_code
-     * @param mixed $base_currency_code
-     * @param mixed $store_currency_code
-     * @param mixed $order_currency_code
-     * @param mixed $shipping_method
-     * @param mixed $shipping_description
-     * @param mixed $customer_email
-     * @param mixed $customer_firstname
-     * @param mixed $customer_lastname
-     * @param mixed $quote_id
-     * @param mixed $is_virtual
-     * @param mixed $customer_group_id
-     * @param mixed $customer_note_notify
-     * @param mixed $customer_is_guest
-     * @param mixed $email_sent
-     * @param mixed $order_id
-     * @param mixed $gift_message_id
-     * @param mixed $coupon_code
-     * @param mixed $protect_code
-     * @param mixed $base_discount_canceled
-     * @param mixed $base_discount_invoiced
-     * @param mixed $base_discount_refunded
-     * @param mixed $base_shipping_canceled
-     * @param mixed $base_shipping_invoiced
-     * @param mixed $base_shipping_refunded
-     * @param mixed $base_shipping_tax_amount
-     * @param mixed $base_shipping_tax_refunded
-     * @param mixed $base_subtotal_canceled
-     * @param mixed $base_subtotal_invoiced
-     * @param mixed $base_subtotal_refunded
-     * @param mixed $base_tax_canceled
-     * @param mixed $base_tax_invoiced
-     * @param mixed $base_tax_refunded
-     * @param mixed $base_total_invoiced_cost
-     * @param mixed $discount_canceled
-     * @param mixed $discount_invoiced
-     * @param mixed $discount_refunded
-     * @param mixed $shipping_canceled
-     * @param mixed $shipping_invoiced
-     * @param mixed $shipping_refunded
-     * @param mixed $shipping_tax_amount
-     * @param mixed $shipping_tax_refunded
-     * @param mixed $subtotal_canceled
-     * @param mixed $subtotal_invoiced
-     * @param mixed $subtotal_refunded
-     * @param mixed $tax_canceled
-     * @param mixed $tax_invoiced
-     * @param mixed $tax_refunded
-     * @param mixed $can_ship_partially
-     * @param mixed $can_ship_partially_item
-     * @param mixed $edit_increment
-     * @param mixed $forced_do_shipment_with_invoice
-     * @param mixed $payment_authorization_expiration
-     * @param mixed $paypal_ipn_customer_notified
-     * @param mixed $quote_address_id
-     * @param mixed $adjustment_negative
-     * @param mixed $adjustment_positive
-     * @param mixed $base_adjustment_negative
-     * @param mixed $base_adjustment_positive
-     * @param mixed $base_shipping_discount_amount
-     * @param mixed $base_subtotal_incl_tax
-     * @param mixed $base_total_due
-     * @param mixed $payment_authorization_amount
-     * @param mixed $shipping_discount_amount
-     * @param mixed $subtotal_incl_tax
-     * @param mixed $total_due
-     * @param mixed $customer_dob
-     * @param mixed $customer_middlename
-     * @param mixed $customer_prefix
-     * @param mixed $customer_suffix
-     * @param mixed $customer_taxvat
-     * @param mixed $discount_description
-     * @param mixed $ext_customer_id
-     * @param mixed $ext_order_id
-     * @param mixed $hold_before_state
-     * @param mixed $hold_before_status
-     * @param mixed $original_increment_id
-     * @param mixed $relation_child_id
-     * @param mixed $relation_child_real_id
-     * @param mixed $relation_parent_id
-     * @param mixed $relation_parent_real_id
-     * @param mixed $x_forwarded_for
-     * @param mixed $customer_note
-     * @param mixed $total_item_count
-     * @param mixed $customer_gender
-     * @param mixed $hidden_tax_amount
-     * @param mixed $base_hidden_tax_amount
-     * @param mixed $shipping_hidden_tax_amount
-     * @param mixed $base_shipping_hidden_tax_amount
-     * @param mixed $hidden_tax_invoiced
-     * @param mixed $base_hidden_tax_invoiced
-     * @param mixed $hidden_tax_refunded
-     * @param mixed $base_hidden_tax_refunded
-     * @param mixed $shipping_incl_tax
-     * @param mixed $base_shipping_incl_tax
-     * @param mixed $base_customer_balance_amount
-     * @param mixed $customer_balance_amount
-     * @param mixed $base_customer_balance_invoiced
-     * @param mixed $customer_balance_invoiced
-     * @param mixed $base_customer_balance_refunded
-     * @param mixed $customer_balance_refunded
-     * @param mixed $base_customer_balance_total_refunded
-     * @param mixed $customer_balance_total_refunded
-     * @param mixed $gift_cards
-     * @param mixed $base_gift_cards_amount
-     * @param mixed $gift_cards_amount
-     * @param mixed $base_gift_cards_invoiced
-     * @param mixed $gift_cards_invoiced
-     * @param mixed $base_gift_cards_refunded
-     * @param mixed $gift_cards_refunded
-     * @param mixed $reward_points_balance
-     * @param mixed $base_reward_currency_amount
-     * @param mixed $reward_currency_amount
-     * @param mixed $base_reward_currency_amount_invoiced
-     * @param mixed $reward_currency_amount_invoiced
-     * @param mixed $base_reward_currency_amount_refunded
-     * @param mixed $reward_currency_amount_refunded
-     * @param mixed $reward_points_balance_refunded
-     * @param mixed $reward_points_balance_to_refund
-     * @param mixed $reward_salesrule_points
-     * @param mixed $firstname
-     * @param mixed $lastname
-     * @param mixed $telephone
-     * @param mixed $postcode
-     */
-    public function __construct($increment_id, $store_id, $created_at, $updated_at, $customer_id, $tax_amount, $shipping_amount, $discount_amount, $subtotal, $grand_total, $total_paid, $total_refunded, $total_qty_ordered, $total_canceled, $total_invoiced, $total_online_refunded, $total_offline_refunded, $base_tax_amount, $base_shipping_amount, $base_discount_amount, $base_subtotal, $base_grand_total, $base_total_paid, $base_total_refunded, $base_total_qty_ordered, $base_total_canceled, $base_total_invoiced, $base_total_online_refunded, $base_total_offline_refunded, $billing_address_id, $billing_firstname, $billing_lastname, $shipping_address_id, $shipping_firstname, $shipping_lastname, $billing_name, $shipping_name, $store_to_base_rate, $store_to_order_rate, $base_to_global_rate, $base_to_order_rate, $weight, $store_name, $remote_ip, $status, $state, $applied_rule_ids, $global_currency_code, $base_currency_code, $store_currency_code, $order_currency_code, $shipping_method, $shipping_description, $customer_email, $customer_firstname, $customer_lastname, $quote_id, $is_virtual, $customer_group_id, $customer_note_notify, $customer_is_guest, $email_sent, $order_id, $gift_message_id, $coupon_code, $protect_code, $base_discount_canceled, $base_discount_invoiced, $base_discount_refunded, $base_shipping_canceled, $base_shipping_invoiced, $base_shipping_refunded, $base_shipping_tax_amount, $base_shipping_tax_refunded, $base_subtotal_canceled, $base_subtotal_invoiced, $base_subtotal_refunded, $base_tax_canceled, $base_tax_invoiced, $base_tax_refunded, $base_total_invoiced_cost, $discount_canceled, $discount_invoiced, $discount_refunded, $shipping_canceled, $shipping_invoiced, $shipping_refunded, $shipping_tax_amount, $shipping_tax_refunded, $subtotal_canceled, $subtotal_invoiced, $subtotal_refunded, $tax_canceled, $tax_invoiced, $tax_refunded, $can_ship_partially, $can_ship_partially_item, $edit_increment, $forced_do_shipment_with_invoice, $payment_authorization_expiration, $paypal_ipn_customer_notified, $quote_address_id, $adjustment_negative, $adjustment_positive, $base_adjustment_negative, $base_adjustment_positive, $base_shipping_discount_amount, $base_subtotal_incl_tax, $base_total_due, $payment_authorization_amount, $shipping_discount_amount, $subtotal_incl_tax, $total_due, $customer_dob, $customer_middlename, $customer_prefix, $customer_suffix, $customer_taxvat, $discount_description, $ext_customer_id, $ext_order_id, $hold_before_state, $hold_before_status, $original_increment_id, $relation_child_id, $relation_child_real_id, $relation_parent_id, $relation_parent_real_id, $x_forwarded_for, $customer_note, $total_item_count, $customer_gender, $hidden_tax_amount, $base_hidden_tax_amount, $shipping_hidden_tax_amount, $base_shipping_hidden_tax_amount, $hidden_tax_invoiced, $base_hidden_tax_invoiced, $hidden_tax_refunded, $base_hidden_tax_refunded, $shipping_incl_tax, $base_shipping_incl_tax, $base_customer_balance_amount, $customer_balance_amount, $base_customer_balance_invoiced, $customer_balance_invoiced, $base_customer_balance_refunded, $customer_balance_refunded, $base_customer_balance_total_refunded, $customer_balance_total_refunded, $gift_cards, $base_gift_cards_amount, $gift_cards_amount, $base_gift_cards_invoiced, $gift_cards_invoiced, $base_gift_cards_refunded, $gift_cards_refunded, $reward_points_balance, $base_reward_currency_amount, $reward_currency_amount, $base_reward_currency_amount_invoiced, $reward_currency_amount_invoiced, $base_reward_currency_amount_refunded, $reward_currency_amount_refunded, $reward_points_balance_refunded, $reward_points_balance_to_refund, $reward_salesrule_points, $firstname, $lastname, $telephone, $postcode)
-    {
-        $this->increment_id = $increment_id;
-        $this->store_id = $store_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->customer_id = $customer_id;
-        $this->tax_amount = $tax_amount;
-        $this->shipping_amount = $shipping_amount;
-        $this->discount_amount = $discount_amount;
-        $this->subtotal = $subtotal;
-        $this->grand_total = $grand_total;
-        $this->total_paid = $total_paid;
-        $this->total_refunded = $total_refunded;
-        $this->total_qty_ordered = $total_qty_ordered;
-        $this->total_canceled = $total_canceled;
-        $this->total_invoiced = $total_invoiced;
-        $this->total_online_refunded = $total_online_refunded;
-        $this->total_offline_refunded = $total_offline_refunded;
-        $this->base_tax_amount = $base_tax_amount;
-        $this->base_shipping_amount = $base_shipping_amount;
-        $this->base_discount_amount = $base_discount_amount;
-        $this->base_subtotal = $base_subtotal;
-        $this->base_grand_total = $base_grand_total;
-        $this->base_total_paid = $base_total_paid;
-        $this->base_total_refunded = $base_total_refunded;
-        $this->base_total_qty_ordered = $base_total_qty_ordered;
-        $this->base_total_canceled = $base_total_canceled;
-        $this->base_total_invoiced = $base_total_invoiced;
-        $this->base_total_online_refunded = $base_total_online_refunded;
-        $this->base_total_offline_refunded = $base_total_offline_refunded;
-        $this->billing_address_id = $billing_address_id;
-        $this->billing_firstname = $billing_firstname;
-        $this->billing_lastname = $billing_lastname;
-        $this->shipping_address_id = $shipping_address_id;
-        $this->shipping_firstname = $shipping_firstname;
-        $this->shipping_lastname = $shipping_lastname;
-        $this->billing_name = $billing_name;
-        $this->shipping_name = $shipping_name;
-        $this->store_to_base_rate = $store_to_base_rate;
-        $this->store_to_order_rate = $store_to_order_rate;
-        $this->base_to_global_rate = $base_to_global_rate;
-        $this->base_to_order_rate = $base_to_order_rate;
-        $this->weight = $weight;
-        $this->store_name = $store_name;
-        $this->remote_ip = $remote_ip;
-        $this->status = $status;
-        $this->state = $state;
-        $this->applied_rule_ids = $applied_rule_ids;
-        $this->global_currency_code = $global_currency_code;
-        $this->base_currency_code = $base_currency_code;
-        $this->store_currency_code = $store_currency_code;
-        $this->order_currency_code = $order_currency_code;
-        $this->shipping_method = $shipping_method;
-        $this->shipping_description = $shipping_description;
-        $this->customer_email = $customer_email;
-        $this->customer_firstname = $customer_firstname;
-        $this->customer_lastname = $customer_lastname;
-        $this->quote_id = $quote_id;
-        $this->is_virtual = $is_virtual;
-        $this->customer_group_id = $customer_group_id;
-        $this->customer_note_notify = $customer_note_notify;
-        $this->customer_is_guest = $customer_is_guest;
-        $this->email_sent = $email_sent;
-        $this->order_id = $order_id;
-        $this->gift_message_id = $gift_message_id;
-        $this->coupon_code = $coupon_code;
-        $this->protect_code = $protect_code;
-        $this->base_discount_canceled = $base_discount_canceled;
-        $this->base_discount_invoiced = $base_discount_invoiced;
-        $this->base_discount_refunded = $base_discount_refunded;
-        $this->base_shipping_canceled = $base_shipping_canceled;
-        $this->base_shipping_invoiced = $base_shipping_invoiced;
-        $this->base_shipping_refunded = $base_shipping_refunded;
-        $this->base_shipping_tax_amount = $base_shipping_tax_amount;
-        $this->base_shipping_tax_refunded = $base_shipping_tax_refunded;
-        $this->base_subtotal_canceled = $base_subtotal_canceled;
-        $this->base_subtotal_invoiced = $base_subtotal_invoiced;
-        $this->base_subtotal_refunded = $base_subtotal_refunded;
-        $this->base_tax_canceled = $base_tax_canceled;
-        $this->base_tax_invoiced = $base_tax_invoiced;
-        $this->base_tax_refunded = $base_tax_refunded;
-        $this->base_total_invoiced_cost = $base_total_invoiced_cost;
-        $this->discount_canceled = $discount_canceled;
-        $this->discount_invoiced = $discount_invoiced;
-        $this->discount_refunded = $discount_refunded;
-        $this->shipping_canceled = $shipping_canceled;
-        $this->shipping_invoiced = $shipping_invoiced;
-        $this->shipping_refunded = $shipping_refunded;
-        $this->shipping_tax_amount = $shipping_tax_amount;
-        $this->shipping_tax_refunded = $shipping_tax_refunded;
-        $this->subtotal_canceled = $subtotal_canceled;
-        $this->subtotal_invoiced = $subtotal_invoiced;
-        $this->subtotal_refunded = $subtotal_refunded;
-        $this->tax_canceled = $tax_canceled;
-        $this->tax_invoiced = $tax_invoiced;
-        $this->tax_refunded = $tax_refunded;
-        $this->can_ship_partially = $can_ship_partially;
-        $this->can_ship_partially_item = $can_ship_partially_item;
-        $this->edit_increment = $edit_increment;
-        $this->forced_do_shipment_with_invoice = $forced_do_shipment_with_invoice;
-        $this->payment_authorization_expiration = $payment_authorization_expiration;
-        $this->paypal_ipn_customer_notified = $paypal_ipn_customer_notified;
-        $this->quote_address_id = $quote_address_id;
-        $this->adjustment_negative = $adjustment_negative;
-        $this->adjustment_positive = $adjustment_positive;
-        $this->base_adjustment_negative = $base_adjustment_negative;
-        $this->base_adjustment_positive = $base_adjustment_positive;
-        $this->base_shipping_discount_amount = $base_shipping_discount_amount;
-        $this->base_subtotal_incl_tax = $base_subtotal_incl_tax;
-        $this->base_total_due = $base_total_due;
-        $this->payment_authorization_amount = $payment_authorization_amount;
-        $this->shipping_discount_amount = $shipping_discount_amount;
-        $this->subtotal_incl_tax = $subtotal_incl_tax;
-        $this->total_due = $total_due;
-        $this->customer_dob = $customer_dob;
-        $this->customer_middlename = $customer_middlename;
-        $this->customer_prefix = $customer_prefix;
-        $this->customer_suffix = $customer_suffix;
-        $this->customer_taxvat = $customer_taxvat;
-        $this->discount_description = $discount_description;
-        $this->ext_customer_id = $ext_customer_id;
-        $this->ext_order_id = $ext_order_id;
-        $this->hold_before_state = $hold_before_state;
-        $this->hold_before_status = $hold_before_status;
-        $this->original_increment_id = $original_increment_id;
-        $this->relation_child_id = $relation_child_id;
-        $this->relation_child_real_id = $relation_child_real_id;
-        $this->relation_parent_id = $relation_parent_id;
-        $this->relation_parent_real_id = $relation_parent_real_id;
-        $this->x_forwarded_for = $x_forwarded_for;
-        $this->customer_note = $customer_note;
-        $this->total_item_count = $total_item_count;
-        $this->customer_gender = $customer_gender;
-        $this->hidden_tax_amount = $hidden_tax_amount;
-        $this->base_hidden_tax_amount = $base_hidden_tax_amount;
-        $this->shipping_hidden_tax_amount = $shipping_hidden_tax_amount;
-        $this->base_shipping_hidden_tax_amount = $base_shipping_hidden_tax_amount;
-        $this->hidden_tax_invoiced = $hidden_tax_invoiced;
-        $this->base_hidden_tax_invoiced = $base_hidden_tax_invoiced;
-        $this->hidden_tax_refunded = $hidden_tax_refunded;
-        $this->base_hidden_tax_refunded = $base_hidden_tax_refunded;
-        $this->shipping_incl_tax = $shipping_incl_tax;
-        $this->base_shipping_incl_tax = $base_shipping_incl_tax;
-        $this->base_customer_balance_amount = $base_customer_balance_amount;
-        $this->customer_balance_amount = $customer_balance_amount;
-        $this->base_customer_balance_invoiced = $base_customer_balance_invoiced;
-        $this->customer_balance_invoiced = $customer_balance_invoiced;
-        $this->base_customer_balance_refunded = $base_customer_balance_refunded;
-        $this->customer_balance_refunded = $customer_balance_refunded;
-        $this->base_customer_balance_total_refunded = $base_customer_balance_total_refunded;
-        $this->customer_balance_total_refunded = $customer_balance_total_refunded;
-        $this->gift_cards = $gift_cards;
-        $this->base_gift_cards_amount = $base_gift_cards_amount;
-        $this->gift_cards_amount = $gift_cards_amount;
-        $this->base_gift_cards_invoiced = $base_gift_cards_invoiced;
-        $this->gift_cards_invoiced = $gift_cards_invoiced;
-        $this->base_gift_cards_refunded = $base_gift_cards_refunded;
-        $this->gift_cards_refunded = $gift_cards_refunded;
-        $this->reward_points_balance = $reward_points_balance;
-        $this->base_reward_currency_amount = $base_reward_currency_amount;
-        $this->reward_currency_amount = $reward_currency_amount;
-        $this->base_reward_currency_amount_invoiced = $base_reward_currency_amount_invoiced;
-        $this->reward_currency_amount_invoiced = $reward_currency_amount_invoiced;
-        $this->base_reward_currency_amount_refunded = $base_reward_currency_amount_refunded;
-        $this->reward_currency_amount_refunded = $reward_currency_amount_refunded;
-        $this->reward_points_balance_refunded = $reward_points_balance_refunded;
-        $this->reward_points_balance_to_refund = $reward_points_balance_to_refund;
-        $this->reward_salesrule_points = $reward_salesrule_points;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->telephone = $telephone;
-        $this->postcode = $postcode;
-    }
-
-    /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -1406,7 +884,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -1416,7 +894,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -1426,7 +904,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 
@@ -1436,7 +914,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -1446,7 +924,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -1456,7 +934,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -1466,7 +944,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -1476,7 +954,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_id()
+    public function getCustomerId()
     {
         return $this->customer_id;
     }
@@ -1486,7 +964,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_id($customer_id)
+    public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
 
@@ -1496,7 +974,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTax_amount()
+    public function getTaxAmount()
     {
         return $this->tax_amount;
     }
@@ -1506,7 +984,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTax_amount($tax_amount)
+    public function setTaxAmount($tax_amount)
     {
         $this->tax_amount = $tax_amount;
 
@@ -1516,7 +994,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_amount()
+    public function getShippingAmount()
     {
         return $this->shipping_amount;
     }
@@ -1526,7 +1004,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_amount($shipping_amount)
+    public function setShippingAmount($shipping_amount)
     {
         $this->shipping_amount = $shipping_amount;
 
@@ -1536,7 +1014,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getDiscount_amount()
+    public function getDiscountAmount()
     {
         return $this->discount_amount;
     }
@@ -1546,7 +1024,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setDiscount_amount($discount_amount)
+    public function setDiscountAmount($discount_amount)
     {
         $this->discount_amount = $discount_amount;
 
@@ -1576,7 +1054,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getGrand_total()
+    public function getGrandTotal()
     {
         return $this->grand_total;
     }
@@ -1586,7 +1064,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setGrand_total($grand_total)
+    public function setGrandTotal($grand_total)
     {
         $this->grand_total = $grand_total;
 
@@ -1596,7 +1074,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_paid()
+    public function getTotalPaid()
     {
         return $this->total_paid;
     }
@@ -1606,7 +1084,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_paid($total_paid)
+    public function setTotalPaid($total_paid)
     {
         $this->total_paid = $total_paid;
 
@@ -1616,7 +1094,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_refunded()
+    public function getTotalRefunded()
     {
         return $this->total_refunded;
     }
@@ -1626,7 +1104,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_refunded($total_refunded)
+    public function setTotalRefunded($total_refunded)
     {
         $this->total_refunded = $total_refunded;
 
@@ -1636,7 +1114,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_qty_ordered()
+    public function getTotalQtyOrdered()
     {
         return $this->total_qty_ordered;
     }
@@ -1646,7 +1124,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_qty_ordered($total_qty_ordered)
+    public function setTotalQtyOrdered($total_qty_ordered)
     {
         $this->total_qty_ordered = $total_qty_ordered;
 
@@ -1656,7 +1134,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_canceled()
+    public function getTotalCanceled()
     {
         return $this->total_canceled;
     }
@@ -1666,7 +1144,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_canceled($total_canceled)
+    public function setTotalCanceled($total_canceled)
     {
         $this->total_canceled = $total_canceled;
 
@@ -1676,7 +1154,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_invoiced()
+    public function getTotalInvoiced()
     {
         return $this->total_invoiced;
     }
@@ -1686,7 +1164,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_invoiced($total_invoiced)
+    public function setTotalInvoiced($total_invoiced)
     {
         $this->total_invoiced = $total_invoiced;
 
@@ -1696,7 +1174,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_online_refunded()
+    public function getTotalOnlineRefunded()
     {
         return $this->total_online_refunded;
     }
@@ -1706,7 +1184,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_online_refunded($total_online_refunded)
+    public function setTotalOnlineRefunded($total_online_refunded)
     {
         $this->total_online_refunded = $total_online_refunded;
 
@@ -1716,7 +1194,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_offline_refunded()
+    public function getTotalOfflineRefunded()
     {
         return $this->total_offline_refunded;
     }
@@ -1726,7 +1204,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_offline_refunded($total_offline_refunded)
+    public function setTotalOfflineRefunded($total_offline_refunded)
     {
         $this->total_offline_refunded = $total_offline_refunded;
 
@@ -1736,7 +1214,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_tax_amount()
+    public function getBaseTaxAmount()
     {
         return $this->base_tax_amount;
     }
@@ -1746,7 +1224,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_tax_amount($base_tax_amount)
+    public function setBaseTaxAmount($base_tax_amount)
     {
         $this->base_tax_amount = $base_tax_amount;
 
@@ -1756,7 +1234,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_amount()
+    public function getBaseShippingAmount()
     {
         return $this->base_shipping_amount;
     }
@@ -1766,7 +1244,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_amount($base_shipping_amount)
+    public function setBaseShippingAmount($base_shipping_amount)
     {
         $this->base_shipping_amount = $base_shipping_amount;
 
@@ -1776,7 +1254,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_discount_amount()
+    public function getBaseDiscountAmount()
     {
         return $this->base_discount_amount;
     }
@@ -1786,7 +1264,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_discount_amount($base_discount_amount)
+    public function setBaseDiscountAmount($base_discount_amount)
     {
         $this->base_discount_amount = $base_discount_amount;
 
@@ -1796,7 +1274,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_subtotal()
+    public function getBaseSubtotal()
     {
         return $this->base_subtotal;
     }
@@ -1806,7 +1284,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_subtotal($base_subtotal)
+    public function setBaseSubtotal($base_subtotal)
     {
         $this->base_subtotal = $base_subtotal;
 
@@ -1816,7 +1294,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_grand_total()
+    public function getBaseGrandTotal()
     {
         return $this->base_grand_total;
     }
@@ -1826,7 +1304,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_grand_total($base_grand_total)
+    public function setBaseGrandTotal($base_grand_total)
     {
         $this->base_grand_total = $base_grand_total;
 
@@ -1836,7 +1314,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_paid()
+    public function getBaseTotalPaid()
     {
         return $this->base_total_paid;
     }
@@ -1846,7 +1324,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_paid($base_total_paid)
+    public function setBaseTotalPaid($base_total_paid)
     {
         $this->base_total_paid = $base_total_paid;
 
@@ -1856,7 +1334,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_refunded()
+    public function getBaseTotalRefunded()
     {
         return $this->base_total_refunded;
     }
@@ -1866,7 +1344,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_refunded($base_total_refunded)
+    public function setBaseTotalRefunded($base_total_refunded)
     {
         $this->base_total_refunded = $base_total_refunded;
 
@@ -1876,7 +1354,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_qty_ordered()
+    public function getBaseTotalQtyOrdered()
     {
         return $this->base_total_qty_ordered;
     }
@@ -1886,7 +1364,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_qty_ordered($base_total_qty_ordered)
+    public function setBaseTotalQtyOrdered($base_total_qty_ordered)
     {
         $this->base_total_qty_ordered = $base_total_qty_ordered;
 
@@ -1896,7 +1374,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_canceled()
+    public function getBaseTotalCanceled()
     {
         return $this->base_total_canceled;
     }
@@ -1906,7 +1384,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_canceled($base_total_canceled)
+    public function setBaseTotalCanceled($base_total_canceled)
     {
         $this->base_total_canceled = $base_total_canceled;
 
@@ -1916,7 +1394,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_invoiced()
+    public function getBaseTotalInvoiced()
     {
         return $this->base_total_invoiced;
     }
@@ -1926,7 +1404,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_invoiced($base_total_invoiced)
+    public function setBaseTotalInvoiced($base_total_invoiced)
     {
         $this->base_total_invoiced = $base_total_invoiced;
 
@@ -1936,7 +1414,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_online_refunded()
+    public function getBaseTotalOnlineRefunded()
     {
         return $this->base_total_online_refunded;
     }
@@ -1946,7 +1424,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_online_refunded($base_total_online_refunded)
+    public function setBaseTotalOnlineRefunded($base_total_online_refunded)
     {
         $this->base_total_online_refunded = $base_total_online_refunded;
 
@@ -1956,7 +1434,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_offline_refunded()
+    public function getBaseTotalOfflineRefunded()
     {
         return $this->base_total_offline_refunded;
     }
@@ -1966,7 +1444,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_offline_refunded($base_total_offline_refunded)
+    public function setBaseTotalOfflineRefunded($base_total_offline_refunded)
     {
         $this->base_total_offline_refunded = $base_total_offline_refunded;
 
@@ -1976,7 +1454,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBilling_address_id()
+    public function getBillingAddressId()
     {
         return $this->billing_address_id;
     }
@@ -1986,7 +1464,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBilling_address_id($billing_address_id)
+    public function setBillingAddressId($billing_address_id)
     {
         $this->billing_address_id = $billing_address_id;
 
@@ -1996,7 +1474,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBilling_firstname()
+    public function getBillingFirstname()
     {
         return $this->billing_firstname;
     }
@@ -2006,7 +1484,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBilling_firstname($billing_firstname)
+    public function setBillingFirstname($billing_firstname)
     {
         $this->billing_firstname = $billing_firstname;
 
@@ -2016,7 +1494,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBilling_lastname()
+    public function getBillingLastname()
     {
         return $this->billing_lastname;
     }
@@ -2026,7 +1504,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBilling_lastname($billing_lastname)
+    public function setBillingLastname($billing_lastname)
     {
         $this->billing_lastname = $billing_lastname;
 
@@ -2036,7 +1514,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_address_id()
+    public function getShippingAddressId()
     {
         return $this->shipping_address_id;
     }
@@ -2046,7 +1524,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_address_id($shipping_address_id)
+    public function setShippingAddressId($shipping_address_id)
     {
         $this->shipping_address_id = $shipping_address_id;
 
@@ -2056,7 +1534,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_firstname()
+    public function getShippingFirstname()
     {
         return $this->shipping_firstname;
     }
@@ -2066,7 +1544,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_firstname($shipping_firstname)
+    public function setShippingFirstname($shipping_firstname)
     {
         $this->shipping_firstname = $shipping_firstname;
 
@@ -2076,7 +1554,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_lastname()
+    public function getShippingLastname()
     {
         return $this->shipping_lastname;
     }
@@ -2086,7 +1564,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_lastname($shipping_lastname)
+    public function setShippingLastname($shipping_lastname)
     {
         $this->shipping_lastname = $shipping_lastname;
 
@@ -2096,7 +1574,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBilling_name()
+    public function getBillingName()
     {
         return $this->billing_name;
     }
@@ -2106,7 +1584,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBilling_name($billing_name)
+    public function setBillingName($billing_name)
     {
         $this->billing_name = $billing_name;
 
@@ -2116,7 +1594,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_name()
+    public function getShippingName()
     {
         return $this->shipping_name;
     }
@@ -2126,7 +1604,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_name($shipping_name)
+    public function setShippingName($shipping_name)
     {
         $this->shipping_name = $shipping_name;
 
@@ -2136,7 +1614,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getStore_to_base_rate()
+    public function getStoreToBaseRate()
     {
         return $this->store_to_base_rate;
     }
@@ -2146,7 +1624,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setStore_to_base_rate($store_to_base_rate)
+    public function setStoreToBaseRate($store_to_base_rate)
     {
         $this->store_to_base_rate = $store_to_base_rate;
 
@@ -2156,7 +1634,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getStore_to_order_rate()
+    public function getStoreToOrderRate()
     {
         return $this->store_to_order_rate;
     }
@@ -2166,7 +1644,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setStore_to_order_rate($store_to_order_rate)
+    public function setStoreToOrderRate($store_to_order_rate)
     {
         $this->store_to_order_rate = $store_to_order_rate;
 
@@ -2176,7 +1654,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_to_global_rate()
+    public function getBaseToGlobalRate()
     {
         return $this->base_to_global_rate;
     }
@@ -2186,7 +1664,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_to_global_rate($base_to_global_rate)
+    public function setBaseToGlobalRate($base_to_global_rate)
     {
         $this->base_to_global_rate = $base_to_global_rate;
 
@@ -2196,7 +1674,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_to_order_rate()
+    public function getBaseToOrderRate()
     {
         return $this->base_to_order_rate;
     }
@@ -2206,7 +1684,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_to_order_rate($base_to_order_rate)
+    public function setBaseToOrderRate($base_to_order_rate)
     {
         $this->base_to_order_rate = $base_to_order_rate;
 
@@ -2236,7 +1714,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getStore_name()
+    public function getStoreName()
     {
         return $this->store_name;
     }
@@ -2246,7 +1724,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setStore_name($store_name)
+    public function setStoreName($store_name)
     {
         $this->store_name = $store_name;
 
@@ -2256,7 +1734,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getRemote_ip()
+    public function getRemoteIp()
     {
         return $this->remote_ip;
     }
@@ -2266,7 +1744,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setRemote_ip($remote_ip)
+    public function setRemoteIp($remote_ip)
     {
         $this->remote_ip = $remote_ip;
 
@@ -2316,7 +1794,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getApplied_rule_ids()
+    public function getAppliedRuleIds()
     {
         return $this->applied_rule_ids;
     }
@@ -2326,7 +1804,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setApplied_rule_ids($applied_rule_ids)
+    public function setAppliedRuleIds($applied_rule_ids)
     {
         $this->applied_rule_ids = $applied_rule_ids;
 
@@ -2336,7 +1814,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getGlobal_currency_code()
+    public function getGlobalCurrencyCode()
     {
         return $this->global_currency_code;
     }
@@ -2346,7 +1824,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setGlobal_currency_code($global_currency_code)
+    public function setGlobalCurrencyCode($global_currency_code)
     {
         $this->global_currency_code = $global_currency_code;
 
@@ -2356,7 +1834,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_currency_code()
+    public function getBaseCurrencyCode()
     {
         return $this->base_currency_code;
     }
@@ -2366,7 +1844,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_currency_code($base_currency_code)
+    public function setBaseCurrencyCode($base_currency_code)
     {
         $this->base_currency_code = $base_currency_code;
 
@@ -2376,7 +1854,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getStore_currency_code()
+    public function getStoreCurrencyCode()
     {
         return $this->store_currency_code;
     }
@@ -2386,7 +1864,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setStore_currency_code($store_currency_code)
+    public function setStoreCurrencyCode($store_currency_code)
     {
         $this->store_currency_code = $store_currency_code;
 
@@ -2396,7 +1874,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getOrder_currency_code()
+    public function getOrderCurrencyCode()
     {
         return $this->order_currency_code;
     }
@@ -2406,7 +1884,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setOrder_currency_code($order_currency_code)
+    public function setOrderCurrencyCode($order_currency_code)
     {
         $this->order_currency_code = $order_currency_code;
 
@@ -2416,7 +1894,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_method()
+    public function getShippingMethod()
     {
         return $this->shipping_method;
     }
@@ -2426,7 +1904,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_method($shipping_method)
+    public function setShippingMethod($shipping_method)
     {
         $this->shipping_method = $shipping_method;
 
@@ -2436,7 +1914,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_description()
+    public function getShippingDescription()
     {
         return $this->shipping_description;
     }
@@ -2446,7 +1924,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_description($shipping_description)
+    public function setShippingDescription($shipping_description)
     {
         $this->shipping_description = $shipping_description;
 
@@ -2456,7 +1934,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_email()
+    public function getCustomerEmail()
     {
         return $this->customer_email;
     }
@@ -2466,7 +1944,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_email($customer_email)
+    public function setCustomerEmail($customer_email)
     {
         $this->customer_email = $customer_email;
 
@@ -2476,7 +1954,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_firstname()
+    public function getCustomerFirstname()
     {
         return $this->customer_firstname;
     }
@@ -2486,7 +1964,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_firstname($customer_firstname)
+    public function setCustomerFirstname($customer_firstname)
     {
         $this->customer_firstname = $customer_firstname;
 
@@ -2496,7 +1974,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_lastname()
+    public function getCustomerLastname()
     {
         return $this->customer_lastname;
     }
@@ -2506,7 +1984,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_lastname($customer_lastname)
+    public function setCustomerLastname($customer_lastname)
     {
         $this->customer_lastname = $customer_lastname;
 
@@ -2516,7 +1994,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getQuote_id()
+    public function getQuoteId()
     {
         return $this->quote_id;
     }
@@ -2526,7 +2004,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setQuote_id($quote_id)
+    public function setQuoteId($quote_id)
     {
         $this->quote_id = $quote_id;
 
@@ -2536,7 +2014,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getIs_virtual()
+    public function getIsVirtual()
     {
         return $this->is_virtual;
     }
@@ -2546,7 +2024,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setIs_virtual($is_virtual)
+    public function setIsVirtual($is_virtual)
     {
         $this->is_virtual = $is_virtual;
 
@@ -2556,7 +2034,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_group_id()
+    public function getCustomerGroupId()
     {
         return $this->customer_group_id;
     }
@@ -2566,7 +2044,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_group_id($customer_group_id)
+    public function setCustomerGroupId($customer_group_id)
     {
         $this->customer_group_id = $customer_group_id;
 
@@ -2576,7 +2054,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_note_notify()
+    public function getCustomerNoteNotify()
     {
         return $this->customer_note_notify;
     }
@@ -2586,7 +2064,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_note_notify($customer_note_notify)
+    public function setCustomerNoteNotify($customer_note_notify)
     {
         $this->customer_note_notify = $customer_note_notify;
 
@@ -2596,7 +2074,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_is_guest()
+    public function getCustomerIsGuest()
     {
         return $this->customer_is_guest;
     }
@@ -2606,7 +2084,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_is_guest($customer_is_guest)
+    public function setCustomerIsGuest($customer_is_guest)
     {
         $this->customer_is_guest = $customer_is_guest;
 
@@ -2616,7 +2094,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getEmail_sent()
+    public function getEmailSent()
     {
         return $this->email_sent;
     }
@@ -2626,7 +2104,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setEmail_sent($email_sent)
+    public function setEmailSent($email_sent)
     {
         $this->email_sent = $email_sent;
 
@@ -2636,7 +2114,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getOrder_id()
+    public function getOrderId()
     {
         return $this->order_id;
     }
@@ -2646,7 +2124,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setOrder_id($order_id)
+    public function setOrderId($order_id)
     {
         $this->order_id = $order_id;
 
@@ -2656,7 +2134,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getGift_message_id()
+    public function getGiftMessageId()
     {
         return $this->gift_message_id;
     }
@@ -2666,7 +2144,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setGift_message_id($gift_message_id)
+    public function setGiftMessageId($gift_message_id)
     {
         $this->gift_message_id = $gift_message_id;
 
@@ -2676,7 +2154,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCoupon_code()
+    public function getCouponCode()
     {
         return $this->coupon_code;
     }
@@ -2686,7 +2164,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCoupon_code($coupon_code)
+    public function setCouponCode($coupon_code)
     {
         $this->coupon_code = $coupon_code;
 
@@ -2696,7 +2174,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getProtect_code()
+    public function getProtectCode()
     {
         return $this->protect_code;
     }
@@ -2706,7 +2184,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setProtect_code($protect_code)
+    public function setProtectCode($protect_code)
     {
         $this->protect_code = $protect_code;
 
@@ -2716,7 +2194,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_discount_canceled()
+    public function getBaseDiscountCanceled()
     {
         return $this->base_discount_canceled;
     }
@@ -2726,7 +2204,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_discount_canceled($base_discount_canceled)
+    public function setBaseDiscountCanceled($base_discount_canceled)
     {
         $this->base_discount_canceled = $base_discount_canceled;
 
@@ -2736,7 +2214,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_discount_invoiced()
+    public function getBaseDiscountInvoiced()
     {
         return $this->base_discount_invoiced;
     }
@@ -2746,7 +2224,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_discount_invoiced($base_discount_invoiced)
+    public function setBaseDiscountInvoiced($base_discount_invoiced)
     {
         $this->base_discount_invoiced = $base_discount_invoiced;
 
@@ -2756,7 +2234,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_discount_refunded()
+    public function getBaseDiscountRefunded()
     {
         return $this->base_discount_refunded;
     }
@@ -2766,7 +2244,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_discount_refunded($base_discount_refunded)
+    public function setBaseDiscountRefunded($base_discount_refunded)
     {
         $this->base_discount_refunded = $base_discount_refunded;
 
@@ -2776,7 +2254,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_canceled()
+    public function getBaseShippingCanceled()
     {
         return $this->base_shipping_canceled;
     }
@@ -2786,7 +2264,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_canceled($base_shipping_canceled)
+    public function setBaseShippingCanceled($base_shipping_canceled)
     {
         $this->base_shipping_canceled = $base_shipping_canceled;
 
@@ -2796,7 +2274,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_invoiced()
+    public function getBaseShippingInvoiced()
     {
         return $this->base_shipping_invoiced;
     }
@@ -2806,7 +2284,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_invoiced($base_shipping_invoiced)
+    public function setBaseShippingInvoiced($base_shipping_invoiced)
     {
         $this->base_shipping_invoiced = $base_shipping_invoiced;
 
@@ -2816,7 +2294,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_refunded()
+    public function getBaseShippingRefunded()
     {
         return $this->base_shipping_refunded;
     }
@@ -2826,7 +2304,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_refunded($base_shipping_refunded)
+    public function setBaseShippingRefunded($base_shipping_refunded)
     {
         $this->base_shipping_refunded = $base_shipping_refunded;
 
@@ -2836,7 +2314,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_tax_amount()
+    public function getBaseShippingTaxAmount()
     {
         return $this->base_shipping_tax_amount;
     }
@@ -2846,7 +2324,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_tax_amount($base_shipping_tax_amount)
+    public function setBaseShippingTaxAmount($base_shipping_tax_amount)
     {
         $this->base_shipping_tax_amount = $base_shipping_tax_amount;
 
@@ -2856,7 +2334,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_tax_refunded()
+    public function getBaseShippingTaxRefunded()
     {
         return $this->base_shipping_tax_refunded;
     }
@@ -2866,7 +2344,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_tax_refunded($base_shipping_tax_refunded)
+    public function setBaseShippingTaxRefunded($base_shipping_tax_refunded)
     {
         $this->base_shipping_tax_refunded = $base_shipping_tax_refunded;
 
@@ -2876,7 +2354,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_subtotal_canceled()
+    public function getBaseSubtotalCanceled()
     {
         return $this->base_subtotal_canceled;
     }
@@ -2886,7 +2364,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_subtotal_canceled($base_subtotal_canceled)
+    public function setBaseSubtotalCanceled($base_subtotal_canceled)
     {
         $this->base_subtotal_canceled = $base_subtotal_canceled;
 
@@ -2896,7 +2374,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_subtotal_invoiced()
+    public function getBaseSubtotalInvoiced()
     {
         return $this->base_subtotal_invoiced;
     }
@@ -2906,7 +2384,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_subtotal_invoiced($base_subtotal_invoiced)
+    public function setBaseSubtotalInvoiced($base_subtotal_invoiced)
     {
         $this->base_subtotal_invoiced = $base_subtotal_invoiced;
 
@@ -2916,7 +2394,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_subtotal_refunded()
+    public function getBaseSubtotalRefunded()
     {
         return $this->base_subtotal_refunded;
     }
@@ -2926,7 +2404,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_subtotal_refunded($base_subtotal_refunded)
+    public function setBaseSubtotalRefunded($base_subtotal_refunded)
     {
         $this->base_subtotal_refunded = $base_subtotal_refunded;
 
@@ -2936,7 +2414,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_tax_canceled()
+    public function getBaseTaxCanceled()
     {
         return $this->base_tax_canceled;
     }
@@ -2946,7 +2424,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_tax_canceled($base_tax_canceled)
+    public function setBaseTaxCanceled($base_tax_canceled)
     {
         $this->base_tax_canceled = $base_tax_canceled;
 
@@ -2956,7 +2434,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_tax_invoiced()
+    public function getBaseTaxInvoiced()
     {
         return $this->base_tax_invoiced;
     }
@@ -2966,7 +2444,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_tax_invoiced($base_tax_invoiced)
+    public function setBaseTaxInvoiced($base_tax_invoiced)
     {
         $this->base_tax_invoiced = $base_tax_invoiced;
 
@@ -2976,7 +2454,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_tax_refunded()
+    public function getBaseTaxRefunded()
     {
         return $this->base_tax_refunded;
     }
@@ -2986,7 +2464,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_tax_refunded($base_tax_refunded)
+    public function setBaseTaxRefunded($base_tax_refunded)
     {
         $this->base_tax_refunded = $base_tax_refunded;
 
@@ -2996,7 +2474,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_invoiced_cost()
+    public function getBaseTotalInvoicedCost()
     {
         return $this->base_total_invoiced_cost;
     }
@@ -3006,7 +2484,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_invoiced_cost($base_total_invoiced_cost)
+    public function setBaseTotalInvoicedCost($base_total_invoiced_cost)
     {
         $this->base_total_invoiced_cost = $base_total_invoiced_cost;
 
@@ -3016,7 +2494,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getDiscount_canceled()
+    public function getDiscountCanceled()
     {
         return $this->discount_canceled;
     }
@@ -3026,7 +2504,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setDiscount_canceled($discount_canceled)
+    public function setDiscountCanceled($discount_canceled)
     {
         $this->discount_canceled = $discount_canceled;
 
@@ -3036,7 +2514,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getDiscount_invoiced()
+    public function getDiscountInvoiced()
     {
         return $this->discount_invoiced;
     }
@@ -3046,7 +2524,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setDiscount_invoiced($discount_invoiced)
+    public function setDiscountInvoiced($discount_invoiced)
     {
         $this->discount_invoiced = $discount_invoiced;
 
@@ -3056,7 +2534,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getDiscount_refunded()
+    public function getDiscountRefunded()
     {
         return $this->discount_refunded;
     }
@@ -3066,7 +2544,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setDiscount_refunded($discount_refunded)
+    public function setDiscountRefunded($discount_refunded)
     {
         $this->discount_refunded = $discount_refunded;
 
@@ -3076,7 +2554,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_canceled()
+    public function getShippingCanceled()
     {
         return $this->shipping_canceled;
     }
@@ -3086,7 +2564,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_canceled($shipping_canceled)
+    public function setShippingCanceled($shipping_canceled)
     {
         $this->shipping_canceled = $shipping_canceled;
 
@@ -3096,7 +2574,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_invoiced()
+    public function getShippingInvoiced()
     {
         return $this->shipping_invoiced;
     }
@@ -3106,7 +2584,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_invoiced($shipping_invoiced)
+    public function setShippingInvoiced($shipping_invoiced)
     {
         $this->shipping_invoiced = $shipping_invoiced;
 
@@ -3116,7 +2594,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_refunded()
+    public function getShippingRefunded()
     {
         return $this->shipping_refunded;
     }
@@ -3126,7 +2604,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_refunded($shipping_refunded)
+    public function setShippingRefunded($shipping_refunded)
     {
         $this->shipping_refunded = $shipping_refunded;
 
@@ -3136,7 +2614,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_tax_amount()
+    public function getShippingTaxAmount()
     {
         return $this->shipping_tax_amount;
     }
@@ -3146,7 +2624,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_tax_amount($shipping_tax_amount)
+    public function setShippingTaxAmount($shipping_tax_amount)
     {
         $this->shipping_tax_amount = $shipping_tax_amount;
 
@@ -3156,7 +2634,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_tax_refunded()
+    public function getShippingTaxRefunded()
     {
         return $this->shipping_tax_refunded;
     }
@@ -3166,7 +2644,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_tax_refunded($shipping_tax_refunded)
+    public function setShippingTaxRefunded($shipping_tax_refunded)
     {
         $this->shipping_tax_refunded = $shipping_tax_refunded;
 
@@ -3176,7 +2654,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getSubtotal_canceled()
+    public function getSubtotalCanceled()
     {
         return $this->subtotal_canceled;
     }
@@ -3186,7 +2664,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setSubtotal_canceled($subtotal_canceled)
+    public function setSubtotalCanceled($subtotal_canceled)
     {
         $this->subtotal_canceled = $subtotal_canceled;
 
@@ -3196,7 +2674,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getSubtotal_invoiced()
+    public function getSubtotalInvoiced()
     {
         return $this->subtotal_invoiced;
     }
@@ -3206,7 +2684,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setSubtotal_invoiced($subtotal_invoiced)
+    public function setSubtotalInvoiced($subtotal_invoiced)
     {
         $this->subtotal_invoiced = $subtotal_invoiced;
 
@@ -3216,7 +2694,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getSubtotal_refunded()
+    public function getSubtotalRefunded()
     {
         return $this->subtotal_refunded;
     }
@@ -3226,7 +2704,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setSubtotal_refunded($subtotal_refunded)
+    public function setSubtotalRefunded($subtotal_refunded)
     {
         $this->subtotal_refunded = $subtotal_refunded;
 
@@ -3236,7 +2714,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTax_canceled()
+    public function getTaxCanceled()
     {
         return $this->tax_canceled;
     }
@@ -3246,7 +2724,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTax_canceled($tax_canceled)
+    public function setTaxCanceled($tax_canceled)
     {
         $this->tax_canceled = $tax_canceled;
 
@@ -3256,7 +2734,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTax_invoiced()
+    public function getTaxInvoiced()
     {
         return $this->tax_invoiced;
     }
@@ -3266,7 +2744,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTax_invoiced($tax_invoiced)
+    public function setTaxInvoiced($tax_invoiced)
     {
         $this->tax_invoiced = $tax_invoiced;
 
@@ -3276,7 +2754,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTax_refunded()
+    public function getTaxRefunded()
     {
         return $this->tax_refunded;
     }
@@ -3286,7 +2764,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTax_refunded($tax_refunded)
+    public function setTaxRefunded($tax_refunded)
     {
         $this->tax_refunded = $tax_refunded;
 
@@ -3296,7 +2774,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCan_ship_partially()
+    public function getCanShipPartially()
     {
         return $this->can_ship_partially;
     }
@@ -3306,7 +2784,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCan_ship_partially($can_ship_partially)
+    public function setCanShipPartially($can_ship_partially)
     {
         $this->can_ship_partially = $can_ship_partially;
 
@@ -3316,7 +2794,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCan_ship_partially_item()
+    public function getCanShipPartiallyItem()
     {
         return $this->can_ship_partially_item;
     }
@@ -3326,7 +2804,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCan_ship_partially_item($can_ship_partially_item)
+    public function setCanShipPartiallyItem($can_ship_partially_item)
     {
         $this->can_ship_partially_item = $can_ship_partially_item;
 
@@ -3336,7 +2814,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getEdit_increment()
+    public function getEditIncrement()
     {
         return $this->edit_increment;
     }
@@ -3346,7 +2824,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setEdit_increment($edit_increment)
+    public function setEditIncrement($edit_increment)
     {
         $this->edit_increment = $edit_increment;
 
@@ -3356,7 +2834,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getForced_do_shipment_with_invoice()
+    public function getForcedDoShipmentWithInvoice()
     {
         return $this->forced_do_shipment_with_invoice;
     }
@@ -3366,7 +2844,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setForced_do_shipment_with_invoice($forced_do_shipment_with_invoice)
+    public function setForcedDoShipmentWithInvoice($forced_do_shipment_with_invoice)
     {
         $this->forced_do_shipment_with_invoice = $forced_do_shipment_with_invoice;
 
@@ -3376,7 +2854,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getPayment_authorization_expiration()
+    public function getPaymentAuthorizationExpiration()
     {
         return $this->payment_authorization_expiration;
     }
@@ -3386,7 +2864,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setPayment_authorization_expiration($payment_authorization_expiration)
+    public function setPaymentAuthorization_expiration($payment_authorization_expiration)
     {
         $this->payment_authorization_expiration = $payment_authorization_expiration;
 
@@ -3396,7 +2874,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getPaypal_ipn_customer_notified()
+    public function getPaypalIpnCustomerNotified()
     {
         return $this->paypal_ipn_customer_notified;
     }
@@ -3406,7 +2884,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setPaypal_ipn_customer_notified($paypal_ipn_customer_notified)
+    public function setPaypalIpnCustomerNotified($paypal_ipn_customer_notified)
     {
         $this->paypal_ipn_customer_notified = $paypal_ipn_customer_notified;
 
@@ -3416,7 +2894,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getQuote_address_id()
+    public function getQuoteAddressId()
     {
         return $this->quote_address_id;
     }
@@ -3426,7 +2904,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setQuote_address_id($quote_address_id)
+    public function setQuoteAddressId($quote_address_id)
     {
         $this->quote_address_id = $quote_address_id;
 
@@ -3436,7 +2914,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getAdjustment_negative()
+    public function getAdjustmentNegative()
     {
         return $this->adjustment_negative;
     }
@@ -3446,7 +2924,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setAdjustment_negative($adjustment_negative)
+    public function setAdjustmentNegative($adjustment_negative)
     {
         $this->adjustment_negative = $adjustment_negative;
 
@@ -3456,7 +2934,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getAdjustment_positive()
+    public function getAdjustmentPositive()
     {
         return $this->adjustment_positive;
     }
@@ -3466,7 +2944,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setAdjustment_positive($adjustment_positive)
+    public function setAdjustmentPositive($adjustment_positive)
     {
         $this->adjustment_positive = $adjustment_positive;
 
@@ -3476,7 +2954,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_adjustment_negative()
+    public function getBaseAdjustmentNegative()
     {
         return $this->base_adjustment_negative;
     }
@@ -3486,7 +2964,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_adjustment_negative($base_adjustment_negative)
+    public function setBaseAdjustmentNegative($base_adjustment_negative)
     {
         $this->base_adjustment_negative = $base_adjustment_negative;
 
@@ -3496,7 +2974,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_adjustment_positive()
+    public function getBaseAdjustmentPositive()
     {
         return $this->base_adjustment_positive;
     }
@@ -3506,7 +2984,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_adjustment_positive($base_adjustment_positive)
+    public function setBaseAdjustmentPositive($base_adjustment_positive)
     {
         $this->base_adjustment_positive = $base_adjustment_positive;
 
@@ -3516,7 +2994,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_discount_amount()
+    public function getBaseShippingDiscountAmount()
     {
         return $this->base_shipping_discount_amount;
     }
@@ -3526,7 +3004,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_discount_amount($base_shipping_discount_amount)
+    public function setBaseShippingDiscountAmount($base_shipping_discount_amount)
     {
         $this->base_shipping_discount_amount = $base_shipping_discount_amount;
 
@@ -3536,7 +3014,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_subtotal_incl_tax()
+    public function getBaseSubtotalInclTax()
     {
         return $this->base_subtotal_incl_tax;
     }
@@ -3546,7 +3024,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_subtotal_incl_tax($base_subtotal_incl_tax)
+    public function setBaseSubtotalInclTax($base_subtotal_incl_tax)
     {
         $this->base_subtotal_incl_tax = $base_subtotal_incl_tax;
 
@@ -3556,7 +3034,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_total_due()
+    public function getBaseTotalDue()
     {
         return $this->base_total_due;
     }
@@ -3566,7 +3044,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_total_due($base_total_due)
+    public function setBaseTotalDue($base_total_due)
     {
         $this->base_total_due = $base_total_due;
 
@@ -3576,7 +3054,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getPayment_authorization_amount()
+    public function getPaymentAuthorizationAmount()
     {
         return $this->payment_authorization_amount;
     }
@@ -3586,7 +3064,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setPayment_authorization_amount($payment_authorization_amount)
+    public function setPaymentAuthorizationAmount($payment_authorization_amount)
     {
         $this->payment_authorization_amount = $payment_authorization_amount;
 
@@ -3596,7 +3074,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_discount_amount()
+    public function getShippingDiscountAmount()
     {
         return $this->shipping_discount_amount;
     }
@@ -3606,7 +3084,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_discount_amount($shipping_discount_amount)
+    public function setShippingDiscountAmount($shipping_discount_amount)
     {
         $this->shipping_discount_amount = $shipping_discount_amount;
 
@@ -3616,7 +3094,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getSubtotal_incl_tax()
+    public function getSubtotalInclTax()
     {
         return $this->subtotal_incl_tax;
     }
@@ -3626,7 +3104,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setSubtotal_incl_tax($subtotal_incl_tax)
+    public function setSubtotalInclTax($subtotal_incl_tax)
     {
         $this->subtotal_incl_tax = $subtotal_incl_tax;
 
@@ -3636,7 +3114,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_due()
+    public function getTotalDue()
     {
         return $this->total_due;
     }
@@ -3646,7 +3124,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_due($total_due)
+    public function setTotalDue($total_due)
     {
         $this->total_due = $total_due;
 
@@ -3656,7 +3134,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_dob()
+    public function getCustomerDob()
     {
         return $this->customer_dob;
     }
@@ -3666,7 +3144,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_dob($customer_dob)
+    public function setCustomerDob($customer_dob)
     {
         $this->customer_dob = $customer_dob;
 
@@ -3676,7 +3154,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_middlename()
+    public function getCustomerMiddlename()
     {
         return $this->customer_middlename;
     }
@@ -3686,7 +3164,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_middlename($customer_middlename)
+    public function setCustomerMiddlename($customer_middlename)
     {
         $this->customer_middlename = $customer_middlename;
 
@@ -3696,7 +3174,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_prefix()
+    public function getCustomerPrefix()
     {
         return $this->customer_prefix;
     }
@@ -3706,7 +3184,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_prefix($customer_prefix)
+    public function setCustomerPrefix($customer_prefix)
     {
         $this->customer_prefix = $customer_prefix;
 
@@ -3716,7 +3194,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_suffix()
+    public function getCustomerSuffix()
     {
         return $this->customer_suffix;
     }
@@ -3726,7 +3204,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_suffix($customer_suffix)
+    public function setCustomerSuffix($customer_suffix)
     {
         $this->customer_suffix = $customer_suffix;
 
@@ -3736,7 +3214,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_taxvat()
+    public function getCustomerTaxvat()
     {
         return $this->customer_taxvat;
     }
@@ -3746,7 +3224,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_taxvat($customer_taxvat)
+    public function setCustomerTaxvat($customer_taxvat)
     {
         $this->customer_taxvat = $customer_taxvat;
 
@@ -3756,7 +3234,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getDiscount_description()
+    public function getDiscountDescription()
     {
         return $this->discount_description;
     }
@@ -3766,7 +3244,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setDiscount_description($discount_description)
+    public function setDiscountDescription($discount_description)
     {
         $this->discount_description = $discount_description;
 
@@ -3776,7 +3254,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getExt_customer_id()
+    public function getExtCustomerId()
     {
         return $this->ext_customer_id;
     }
@@ -3786,7 +3264,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setExt_customer_id($ext_customer_id)
+    public function setExtCustomerId($ext_customer_id)
     {
         $this->ext_customer_id = $ext_customer_id;
 
@@ -3796,7 +3274,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getExt_order_id()
+    public function getExtOrderId()
     {
         return $this->ext_order_id;
     }
@@ -3806,7 +3284,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setExt_order_id($ext_order_id)
+    public function setExtOrderId($ext_order_id)
     {
         $this->ext_order_id = $ext_order_id;
 
@@ -3816,7 +3294,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getHold_before_state()
+    public function getHoldBeforeState()
     {
         return $this->hold_before_state;
     }
@@ -3826,7 +3304,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setHold_before_state($hold_before_state)
+    public function setHoldBeforeState($hold_before_state)
     {
         $this->hold_before_state = $hold_before_state;
 
@@ -3836,7 +3314,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getHold_before_status()
+    public function getHoldBeforeStatus()
     {
         return $this->hold_before_status;
     }
@@ -3846,7 +3324,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setHold_before_status($hold_before_status)
+    public function setHoldBeforeStatus($hold_before_status)
     {
         $this->hold_before_status = $hold_before_status;
 
@@ -3856,7 +3334,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getOriginal_increment_id()
+    public function getOriginalIncrementId()
     {
         return $this->original_increment_id;
     }
@@ -3866,7 +3344,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setOriginal_increment_id($original_increment_id)
+    public function setOriginalIncrementId($original_increment_id)
     {
         $this->original_increment_id = $original_increment_id;
 
@@ -3876,7 +3354,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getRelation_child_id()
+    public function getRelationChildId()
     {
         return $this->relation_child_id;
     }
@@ -3886,7 +3364,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setRelation_child_id($relation_child_id)
+    public function setRelationChildId($relation_child_id)
     {
         $this->relation_child_id = $relation_child_id;
 
@@ -3896,7 +3374,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getRelation_child_real_id()
+    public function getRelationChildRealId()
     {
         return $this->relation_child_real_id;
     }
@@ -3906,7 +3384,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setRelation_child_real_id($relation_child_real_id)
+    public function setRelationChildRealId($relation_child_real_id)
     {
         $this->relation_child_real_id = $relation_child_real_id;
 
@@ -3916,7 +3394,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getRelation_parent_id()
+    public function getRelationParentId()
     {
         return $this->relation_parent_id;
     }
@@ -3926,7 +3404,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setRelation_parent_id($relation_parent_id)
+    public function setRelationParentId($relation_parent_id)
     {
         $this->relation_parent_id = $relation_parent_id;
 
@@ -3936,7 +3414,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getRelation_parent_real_id()
+    public function getRelationParentRealId()
     {
         return $this->relation_parent_real_id;
     }
@@ -3946,7 +3424,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setRelation_parent_real_id($relation_parent_real_id)
+    public function setRelationParentRealId($relation_parent_real_id)
     {
         $this->relation_parent_real_id = $relation_parent_real_id;
 
@@ -3956,7 +3434,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getX_forwarded_for()
+    public function getXForwardedFor()
     {
         return $this->x_forwarded_for;
     }
@@ -3966,7 +3444,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setX_forwarded_for($x_forwarded_for)
+    public function setXForwardedFor($x_forwarded_for)
     {
         $this->x_forwarded_for = $x_forwarded_for;
 
@@ -3976,7 +3454,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_note()
+    public function getCustomerNote()
     {
         return $this->customer_note;
     }
@@ -3986,7 +3464,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_note($customer_note)
+    public function setCustomerNote($customer_note)
     {
         $this->customer_note = $customer_note;
 
@@ -3996,7 +3474,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getTotal_item_count()
+    public function getTotalItemCount()
     {
         return $this->total_item_count;
     }
@@ -4006,7 +3484,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setTotal_item_count($total_item_count)
+    public function setTotalItemCount($total_item_count)
     {
         $this->total_item_count = $total_item_count;
 
@@ -4016,7 +3494,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_gender()
+    public function getCustomerGender()
     {
         return $this->customer_gender;
     }
@@ -4026,7 +3504,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_gender($customer_gender)
+    public function setCustomerGender($customer_gender)
     {
         $this->customer_gender = $customer_gender;
 
@@ -4036,7 +3514,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getHidden_tax_amount()
+    public function getHiddenTaxAmount()
     {
         return $this->hidden_tax_amount;
     }
@@ -4046,7 +3524,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setHidden_tax_amount($hidden_tax_amount)
+    public function setHiddenTaxAmount($hidden_tax_amount)
     {
         $this->hidden_tax_amount = $hidden_tax_amount;
 
@@ -4056,7 +3534,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_hidden_tax_amount()
+    public function getBaseHiddenTaxAmount()
     {
         return $this->base_hidden_tax_amount;
     }
@@ -4066,7 +3544,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_hidden_tax_amount($base_hidden_tax_amount)
+    public function setBaseHiddenTaxAmount($base_hidden_tax_amount)
     {
         $this->base_hidden_tax_amount = $base_hidden_tax_amount;
 
@@ -4076,7 +3554,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_hidden_tax_amount()
+    public function getShippingHiddenTaxAmount()
     {
         return $this->shipping_hidden_tax_amount;
     }
@@ -4086,7 +3564,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_hidden_tax_amount($shipping_hidden_tax_amount)
+    public function setShippingHiddenTaxAmount($shipping_hidden_tax_amount)
     {
         $this->shipping_hidden_tax_amount = $shipping_hidden_tax_amount;
 
@@ -4096,7 +3574,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_hidden_tax_amount()
+    public function getBaseShippingHiddenTaxAmount()
     {
         return $this->base_shipping_hidden_tax_amount;
     }
@@ -4106,7 +3584,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_hidden_tax_amount($base_shipping_hidden_tax_amount)
+    public function setBaseShippingHiddenTaxAmount($base_shipping_hidden_tax_amount)
     {
         $this->base_shipping_hidden_tax_amount = $base_shipping_hidden_tax_amount;
 
@@ -4116,7 +3594,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getHidden_tax_invoiced()
+    public function getHiddenTaxInvoiced()
     {
         return $this->hidden_tax_invoiced;
     }
@@ -4126,7 +3604,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setHidden_tax_invoiced($hidden_tax_invoiced)
+    public function setHiddenTaxInvoiced($hidden_tax_invoiced)
     {
         $this->hidden_tax_invoiced = $hidden_tax_invoiced;
 
@@ -4136,7 +3614,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_hidden_tax_invoiced()
+    public function getBaseHiddenTaxInvoiced()
     {
         return $this->base_hidden_tax_invoiced;
     }
@@ -4146,7 +3624,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_hidden_tax_invoiced($base_hidden_tax_invoiced)
+    public function setBaseHiddenTaxInvoiced($base_hidden_tax_invoiced)
     {
         $this->base_hidden_tax_invoiced = $base_hidden_tax_invoiced;
 
@@ -4156,7 +3634,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getHidden_tax_refunded()
+    public function getHiddenTaxRefunded()
     {
         return $this->hidden_tax_refunded;
     }
@@ -4166,7 +3644,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setHidden_tax_refunded($hidden_tax_refunded)
+    public function setHiddenTaxRefunded($hidden_tax_refunded)
     {
         $this->hidden_tax_refunded = $hidden_tax_refunded;
 
@@ -4176,7 +3654,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_hidden_tax_refunded()
+    public function getBaseHiddenTaxRefunded()
     {
         return $this->base_hidden_tax_refunded;
     }
@@ -4186,7 +3664,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_hidden_tax_refunded($base_hidden_tax_refunded)
+    public function setBaseHiddenTaxRefunded($base_hidden_tax_refunded)
     {
         $this->base_hidden_tax_refunded = $base_hidden_tax_refunded;
 
@@ -4196,7 +3674,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getShipping_incl_tax()
+    public function getShippingInclTax()
     {
         return $this->shipping_incl_tax;
     }
@@ -4206,7 +3684,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setShipping_incl_tax($shipping_incl_tax)
+    public function setShippingInclTax($shipping_incl_tax)
     {
         $this->shipping_incl_tax = $shipping_incl_tax;
 
@@ -4216,7 +3694,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_shipping_incl_tax()
+    public function getBaseShippingInclTax()
     {
         return $this->base_shipping_incl_tax;
     }
@@ -4226,7 +3704,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_shipping_incl_tax($base_shipping_incl_tax)
+    public function setBaseShippingInclTax($base_shipping_incl_tax)
     {
         $this->base_shipping_incl_tax = $base_shipping_incl_tax;
 
@@ -4236,7 +3714,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_customer_balance_amount()
+    public function getBaseCustomerBalanceAmount()
     {
         return $this->base_customer_balance_amount;
     }
@@ -4246,7 +3724,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_customer_balance_amount($base_customer_balance_amount)
+    public function setBaseCustomerBalanceAmount($base_customer_balance_amount)
     {
         $this->base_customer_balance_amount = $base_customer_balance_amount;
 
@@ -4256,7 +3734,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_balance_amount()
+    public function getCustomerBalanceAmount()
     {
         return $this->customer_balance_amount;
     }
@@ -4266,7 +3744,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_balance_amount($customer_balance_amount)
+    public function setCustomerBalanceAmount($customer_balance_amount)
     {
         $this->customer_balance_amount = $customer_balance_amount;
 
@@ -4276,7 +3754,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_customer_balance_invoiced()
+    public function getBaseCustomerBalanceInvoiced()
     {
         return $this->base_customer_balance_invoiced;
     }
@@ -4286,7 +3764,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_customer_balance_invoiced($base_customer_balance_invoiced)
+    public function setBaseCustomerBalanceInvoiced($base_customer_balance_invoiced)
     {
         $this->base_customer_balance_invoiced = $base_customer_balance_invoiced;
 
@@ -4296,7 +3774,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_balance_invoiced()
+    public function getCustomerBalanceInvoiced()
     {
         return $this->customer_balance_invoiced;
     }
@@ -4306,7 +3784,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_balance_invoiced($customer_balance_invoiced)
+    public function setCustomerBalanceInvoiced($customer_balance_invoiced)
     {
         $this->customer_balance_invoiced = $customer_balance_invoiced;
 
@@ -4316,7 +3794,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_customer_balance_refunded()
+    public function getBaseCustomerBalanceRefunded()
     {
         return $this->base_customer_balance_refunded;
     }
@@ -4326,7 +3804,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_customer_balance_refunded($base_customer_balance_refunded)
+    public function setBaseCustomerBalanceRefunded($base_customer_balance_refunded)
     {
         $this->base_customer_balance_refunded = $base_customer_balance_refunded;
 
@@ -4336,7 +3814,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_balance_refunded()
+    public function getCustomerBalanceRefunded()
     {
         return $this->customer_balance_refunded;
     }
@@ -4346,7 +3824,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_balance_refunded($customer_balance_refunded)
+    public function setCustomerBalanceRefunded($customer_balance_refunded)
     {
         $this->customer_balance_refunded = $customer_balance_refunded;
 
@@ -4356,7 +3834,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_customer_balance_total_refunded()
+    public function getBaseCustomerBalanceTotalRefunded()
     {
         return $this->base_customer_balance_total_refunded;
     }
@@ -4366,7 +3844,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_customer_balance_total_refunded($base_customer_balance_total_refunded)
+    public function setBaseCustomerBalanceTotalRefunded($base_customer_balance_total_refunded)
     {
         $this->base_customer_balance_total_refunded = $base_customer_balance_total_refunded;
 
@@ -4376,7 +3854,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getCustomer_balance_total_refunded()
+    public function getCustomerBalanceTotalRefunded()
     {
         return $this->customer_balance_total_refunded;
     }
@@ -4386,7 +3864,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setCustomer_balance_total_refunded($customer_balance_total_refunded)
+    public function setCustomerBalanceTotalRefunded($customer_balance_total_refunded)
     {
         $this->customer_balance_total_refunded = $customer_balance_total_refunded;
 
@@ -4396,7 +3874,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getGift_cards()
+    public function getGiftCards()
     {
         return $this->gift_cards;
     }
@@ -4406,7 +3884,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setGift_cards($gift_cards)
+    public function setGiftCards($gift_cards)
     {
         $this->gift_cards = $gift_cards;
 
@@ -4416,7 +3894,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_gift_cards_amount()
+    public function getBaseGiftCardsAmount()
     {
         return $this->base_gift_cards_amount;
     }
@@ -4426,7 +3904,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_gift_cards_amount($base_gift_cards_amount)
+    public function setBaseGiftCardsAmount($base_gift_cards_amount)
     {
         $this->base_gift_cards_amount = $base_gift_cards_amount;
 
@@ -4436,7 +3914,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getGift_cards_amount()
+    public function getGiftCardsAmount()
     {
         return $this->gift_cards_amount;
     }
@@ -4446,7 +3924,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setGift_cards_amount($gift_cards_amount)
+    public function setGiftCardsAmount($gift_cards_amount)
     {
         $this->gift_cards_amount = $gift_cards_amount;
 
@@ -4456,7 +3934,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_gift_cards_invoiced()
+    public function getBaseGiftCardsInvoiced()
     {
         return $this->base_gift_cards_invoiced;
     }
@@ -4466,7 +3944,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_gift_cards_invoiced($base_gift_cards_invoiced)
+    public function setBaseGiftCardsInvoiced($base_gift_cards_invoiced)
     {
         $this->base_gift_cards_invoiced = $base_gift_cards_invoiced;
 
@@ -4476,7 +3954,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getGift_cards_invoiced()
+    public function getGiftCardsInvoiced()
     {
         return $this->gift_cards_invoiced;
     }
@@ -4486,7 +3964,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setGift_cards_invoiced($gift_cards_invoiced)
+    public function setGiftCardsInvoiced($gift_cards_invoiced)
     {
         $this->gift_cards_invoiced = $gift_cards_invoiced;
 
@@ -4496,7 +3974,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_gift_cards_refunded()
+    public function getBaseGiftCardsRefunded()
     {
         return $this->base_gift_cards_refunded;
     }
@@ -4506,7 +3984,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_gift_cards_refunded($base_gift_cards_refunded)
+    public function setBaseGiftCardsRefunded($base_gift_cards_refunded)
     {
         $this->base_gift_cards_refunded = $base_gift_cards_refunded;
 
@@ -4516,7 +3994,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getGift_cards_refunded()
+    public function getGiftCardsRefunded()
     {
         return $this->gift_cards_refunded;
     }
@@ -4526,7 +4004,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setGift_cards_refunded($gift_cards_refunded)
+    public function setGiftCardsRefunded($gift_cards_refunded)
     {
         $this->gift_cards_refunded = $gift_cards_refunded;
 
@@ -4536,7 +4014,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getReward_points_balance()
+    public function getRewardPointsBalance()
     {
         return $this->reward_points_balance;
     }
@@ -4546,7 +4024,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setReward_points_balance($reward_points_balance)
+    public function setRewardPointsBalance($reward_points_balance)
     {
         $this->reward_points_balance = $reward_points_balance;
 
@@ -4556,7 +4034,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_reward_currency_amount()
+    public function getBaseRewardCurrencyAmount()
     {
         return $this->base_reward_currency_amount;
     }
@@ -4566,7 +4044,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_reward_currency_amount($base_reward_currency_amount)
+    public function setBaseRewardCurrencyAmount($base_reward_currency_amount)
     {
         $this->base_reward_currency_amount = $base_reward_currency_amount;
 
@@ -4576,7 +4054,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getReward_currency_amount()
+    public function getRewardCurrencyAmount()
     {
         return $this->reward_currency_amount;
     }
@@ -4586,7 +4064,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setReward_currency_amount($reward_currency_amount)
+    public function setRewardCurrencyAmount($reward_currency_amount)
     {
         $this->reward_currency_amount = $reward_currency_amount;
 
@@ -4596,7 +4074,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_reward_currency_amount_invoiced()
+    public function getBaseRewardCurrencyAmountInvoiced()
     {
         return $this->base_reward_currency_amount_invoiced;
     }
@@ -4606,7 +4084,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_reward_currency_amount_invoiced($base_reward_currency_amount_invoiced)
+    public function setBaseRewardCurrencyAmountInvoiced($base_reward_currency_amount_invoiced)
     {
         $this->base_reward_currency_amount_invoiced = $base_reward_currency_amount_invoiced;
 
@@ -4616,7 +4094,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getReward_currency_amount_invoiced()
+    public function getRewardCurrencyAmountInvoiced()
     {
         return $this->reward_currency_amount_invoiced;
     }
@@ -4626,7 +4104,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setReward_currency_amount_invoiced($reward_currency_amount_invoiced)
+    public function setRewardCurrencyAmountInvoiced($reward_currency_amount_invoiced)
     {
         $this->reward_currency_amount_invoiced = $reward_currency_amount_invoiced;
 
@@ -4636,7 +4114,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getBase_reward_currency_amount_refunded()
+    public function getBaseRewardCurrencyAmountRefunded()
     {
         return $this->base_reward_currency_amount_refunded;
     }
@@ -4646,7 +4124,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setBase_reward_currency_amount_refunded($base_reward_currency_amount_refunded)
+    public function setBaseRewardCurrencyAmountRefunded($base_reward_currency_amount_refunded)
     {
         $this->base_reward_currency_amount_refunded = $base_reward_currency_amount_refunded;
 
@@ -4656,7 +4134,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getReward_currency_amount_refunded()
+    public function getRewardCurrencyAmountRefunded()
     {
         return $this->reward_currency_amount_refunded;
     }
@@ -4666,7 +4144,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setReward_currency_amount_refunded($reward_currency_amount_refunded)
+    public function setRewardCurrencyAmountRefunded($reward_currency_amount_refunded)
     {
         $this->reward_currency_amount_refunded = $reward_currency_amount_refunded;
 
@@ -4676,7 +4154,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getReward_points_balance_refunded()
+    public function getRewardPointsBalanceRefunded()
     {
         return $this->reward_points_balance_refunded;
     }
@@ -4686,7 +4164,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setReward_points_balance_refunded($reward_points_balance_refunded)
+    public function setRewardPointsBalanceRefunded($reward_points_balance_refunded)
     {
         $this->reward_points_balance_refunded = $reward_points_balance_refunded;
 
@@ -4696,7 +4174,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getReward_points_balance_to_refund()
+    public function getRewardPointsBalanceToRefund()
     {
         return $this->reward_points_balance_to_refund;
     }
@@ -4706,7 +4184,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setReward_points_balance_to_refund($reward_points_balance_to_refund)
+    public function setRewardPointsBalanceToRefund($reward_points_balance_to_refund)
     {
         $this->reward_points_balance_to_refund = $reward_points_balance_to_refund;
 
@@ -4716,7 +4194,7 @@ class SalesOrderListEntity
     /**
      * @return string
      */
-    public function getReward_salesrule_points()
+    public function getRewardSalesrulePoints()
     {
         return $this->reward_salesrule_points;
     }
@@ -4726,7 +4204,7 @@ class SalesOrderListEntity
      *
      * @return $this
      */
-    public function setReward_salesrule_points($reward_salesrule_points)
+    public function setRewardSalesrulePoints($reward_salesrule_points)
     {
         $this->reward_salesrule_points = $reward_salesrule_points;
 

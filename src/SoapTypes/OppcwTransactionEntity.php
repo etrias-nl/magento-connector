@@ -105,22 +105,22 @@ class OppcwTransactionEntity
      * Constructor.
      *
      * @var int
-     * @var string           $transaction_external_id
-     * @var int              $order_id
-     * @var int              $order_payment_id
-     * @var string           $alias_for_display
-     * @var bool             $alias_active
-     * @var string           $payment_method
-     * @var string           $authorization_type
-     * @var int              $customer_id
-     * @var string           $updated_on
-     * @var string           $created_on
-     * @var string           $payment_id
-     * @var string           $authorization_amount
-     * @var string           $authorization_status
-     * @var bool             $paid
-     * @var string           $currency
-     * @var array $data
+     * @var string $transaction_external_id
+     * @var int    $order_id
+     * @var int    $order_payment_id
+     * @var string $alias_for_display
+     * @var bool   $alias_active
+     * @var string $payment_method
+     * @var string $authorization_type
+     * @var int    $customer_id
+     * @var string $updated_on
+     * @var string $created_on
+     * @var string $payment_id
+     * @var string $authorization_amount
+     * @var string $authorization_status
+     * @var bool   $paid
+     * @var string $currency
+     * @var array  $data
      *
      * @param mixed $transaction_id
      * @param mixed $transaction_external_id

@@ -62,11 +62,11 @@ class CatalogProductEntity
      * @var string[] $category_ids
      * @var string[] $website_ids
      *
-     * @param mixed $product_id
-     * @param mixed $sku
-     * @param mixed $name
-     * @param mixed $set
-     * @param mixed $type
+     * @param mixed    $product_id
+     * @param mixed    $sku
+     * @param mixed    $name
+     * @param mixed    $set
+     * @param mixed    $type
      * @param string[] $category_ids
      * @param string[] $website_ids
      */

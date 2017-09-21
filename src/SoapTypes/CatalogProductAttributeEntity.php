@@ -110,22 +110,22 @@ class CatalogProductAttributeEntity
      * Constructor.
      *
      * @var string
-     * @var string                                    $attribute_code
-     * @var string                                    $frontend_input
-     * @var string                                    $scope
-     * @var string                                    $default_value
-     * @var int                                       $is_unique
-     * @var int                                       $is_required
-     * @var string[]                                  $apply_to
-     * @var int                                       $is_configurable
-     * @var int                                       $is_searchable
-     * @var int                                       $is_visible_in_advanced_search
-     * @var int                                       $is_comparable
-     * @var int                                       $is_used_for_promo_rules
-     * @var int                                       $is_visible_on_front
-     * @var int                                       $used_in_product_listing
-     * @var array                          $additional_fields
-     * @var CatalogAttributeOptionEntity[]         $options
+     * @var string                                       $attribute_code
+     * @var string                                       $frontend_input
+     * @var string                                       $scope
+     * @var string                                       $default_value
+     * @var int                                          $is_unique
+     * @var int                                          $is_required
+     * @var string[]                                     $apply_to
+     * @var int                                          $is_configurable
+     * @var int                                          $is_searchable
+     * @var int                                          $is_visible_in_advanced_search
+     * @var int                                          $is_comparable
+     * @var int                                          $is_used_for_promo_rules
+     * @var int                                          $is_visible_on_front
+     * @var int                                          $used_in_product_listing
+     * @var array                                        $additional_fields
+     * @var CatalogAttributeOptionEntity[]               $options
      * @var CatalogProductAttributeFrontendLabelEntity[] $frontend_label
      *
      * @param mixed $attribute_id
