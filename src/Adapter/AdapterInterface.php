@@ -23,6 +23,8 @@ use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
+use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemUpdateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
@@ -472,4 +474,26 @@ interface AdapterInterface
         string $optionId,
         string $storeView = null
     ): CatalogProductCustomOptionInfoEntity;
+
+    /**
+     * @param string $sessionId
+     * @param array $productIds
+     * @return CatalogInventoryStockItemEntity[]
+     */
+    public function getCatalogInventoryStockItems(
+        string $sessionId,
+        array $productIds
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $product
+     * @param CatalogInventoryStockItemUpdateEntity $data
+     * @return mixed
+     */
+    public function updateCatalogInventoryStockData(
+        string $sessionId,
+        string $product,
+        CatalogInventoryStockItemUpdateEntity $data
+    ): bool;
 }

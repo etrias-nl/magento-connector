@@ -24,6 +24,7 @@ use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
+use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemUpdateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
@@ -688,5 +689,30 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId, $optionId, $storeView]);
 
         return $this->processRequest('catalogProductCustomOptionInfo', $request);
+    }
+
+    public function getCatalogInventoryStockItems(
+        string $sessionId,
+        array $productIds
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $productIds]);
+
+        return $this->processRequest('catalogInventoryStockItemList', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param string $product
+     * @param CatalogInventoryStockItemUpdateEntity $data
+     * @return mixed
+     */
+    public function updateCatalogInventoryStockData(
+        string $sessionId,
+        string $product,
+        CatalogInventoryStockItemUpdateEntity $data
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $product, $data]);
+
+        return (bool) $this->processRequest('catalogInventoryStockItemUpdate', $request);
     }
 }
