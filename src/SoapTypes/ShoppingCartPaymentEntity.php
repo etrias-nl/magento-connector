@@ -107,72 +107,9 @@ class ShoppingCartPaymentEntity
     protected $additional_information = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $method
-     * @var string $cc_type
-     * @var string $cc_number_enc
-     * @var string $cc_last4
-     * @var string $cc_cid_enc
-     * @var string $cc_owner
-     * @var string $cc_exp_month
-     * @var string $cc_exp_year
-     * @var string $cc_ss_owner
-     * @var string $cc_ss_start_month
-     * @var string $cc_ss_start_year
-     * @var string $cc_ss_issue
-     * @var string $po_number
-     * @var string $additional_data
-     * @var string $additional_information
-     *
-     * @param mixed $payment_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $method
-     * @param mixed $cc_type
-     * @param mixed $cc_number_enc
-     * @param mixed $cc_last4
-     * @param mixed $cc_cid_enc
-     * @param mixed $cc_owner
-     * @param mixed $cc_exp_month
-     * @param mixed $cc_exp_year
-     * @param mixed $cc_ss_owner
-     * @param mixed $cc_ss_start_month
-     * @param mixed $cc_ss_start_year
-     * @param mixed $cc_ss_issue
-     * @param mixed $po_number
-     * @param mixed $additional_data
-     * @param mixed $additional_information
-     */
-    public function __construct($payment_id, $created_at, $updated_at, $method, $cc_type, $cc_number_enc, $cc_last4, $cc_cid_enc, $cc_owner, $cc_exp_month, $cc_exp_year, $cc_ss_owner, $cc_ss_start_month, $cc_ss_start_year, $cc_ss_issue, $po_number, $additional_data, $additional_information)
-    {
-        $this->payment_id = $payment_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->method = $method;
-        $this->cc_type = $cc_type;
-        $this->cc_number_enc = $cc_number_enc;
-        $this->cc_last4 = $cc_last4;
-        $this->cc_cid_enc = $cc_cid_enc;
-        $this->cc_owner = $cc_owner;
-        $this->cc_exp_month = $cc_exp_month;
-        $this->cc_exp_year = $cc_exp_year;
-        $this->cc_ss_owner = $cc_ss_owner;
-        $this->cc_ss_start_month = $cc_ss_start_month;
-        $this->cc_ss_start_year = $cc_ss_start_year;
-        $this->cc_ss_issue = $cc_ss_issue;
-        $this->po_number = $po_number;
-        $this->additional_data = $additional_data;
-        $this->additional_information = $additional_information;
-    }
-
-    /**
      * @return string
      */
-    public function getPayment_id()
+    public function getPaymentId()
     {
         return $this->payment_id;
     }
@@ -182,7 +119,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setPayment_id($payment_id)
+    public function setPaymentId($payment_id)
     {
         $this->payment_id = $payment_id;
 
@@ -192,7 +129,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -202,7 +139,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -212,7 +149,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -222,7 +159,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -252,7 +189,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_type()
+    public function getCcType()
     {
         return $this->cc_type;
     }
@@ -262,7 +199,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_type($cc_type)
+    public function setCcType($cc_type)
     {
         $this->cc_type = $cc_type;
 
@@ -272,7 +209,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_number_enc()
+    public function getCcNumberEnc()
     {
         return $this->cc_number_enc;
     }
@@ -282,7 +219,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_number_enc($cc_number_enc)
+    public function setCcNumberEnc($cc_number_enc)
     {
         $this->cc_number_enc = $cc_number_enc;
 
@@ -292,7 +229,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_last4()
+    public function getCcLast4()
     {
         return $this->cc_last4;
     }
@@ -302,7 +239,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_last4($cc_last4)
+    public function setCcLast4($cc_last4)
     {
         $this->cc_last4 = $cc_last4;
 
@@ -312,7 +249,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_cid_enc()
+    public function getCcCidEnc()
     {
         return $this->cc_cid_enc;
     }
@@ -322,7 +259,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_cid_enc($cc_cid_enc)
+    public function setCcCidEnc($cc_cid_enc)
     {
         $this->cc_cid_enc = $cc_cid_enc;
 
@@ -332,7 +269,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_owner()
+    public function getCcOwner()
     {
         return $this->cc_owner;
     }
@@ -342,7 +279,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_owner($cc_owner)
+    public function setCcOwner($cc_owner)
     {
         $this->cc_owner = $cc_owner;
 
@@ -352,7 +289,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_exp_month()
+    public function getCcExpMonth()
     {
         return $this->cc_exp_month;
     }
@@ -362,7 +299,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_exp_month($cc_exp_month)
+    public function setCcExpMonth($cc_exp_month)
     {
         $this->cc_exp_month = $cc_exp_month;
 
@@ -372,7 +309,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_exp_year()
+    public function getCcExpYear()
     {
         return $this->cc_exp_year;
     }
@@ -382,7 +319,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_exp_year($cc_exp_year)
+    public function setCcExpYear($cc_exp_year)
     {
         $this->cc_exp_year = $cc_exp_year;
 
@@ -392,7 +329,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_ss_owner()
+    public function getCcSsOwner()
     {
         return $this->cc_ss_owner;
     }
@@ -402,7 +339,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_ss_owner($cc_ss_owner)
+    public function setCcSsOwner($cc_ss_owner)
     {
         $this->cc_ss_owner = $cc_ss_owner;
 
@@ -412,7 +349,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_ss_start_month()
+    public function getCcSsStartMonth()
     {
         return $this->cc_ss_start_month;
     }
@@ -422,7 +359,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_ss_start_month($cc_ss_start_month)
+    public function setCcSsStartMonth($cc_ss_start_month)
     {
         $this->cc_ss_start_month = $cc_ss_start_month;
 
@@ -432,7 +369,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_ss_start_year()
+    public function getCcSsStartYear()
     {
         return $this->cc_ss_start_year;
     }
@@ -442,7 +379,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_ss_start_year($cc_ss_start_year)
+    public function setCcSsStartYear($cc_ss_start_year)
     {
         $this->cc_ss_start_year = $cc_ss_start_year;
 
@@ -452,7 +389,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getCc_ss_issue()
+    public function getCcSsIssue()
     {
         return $this->cc_ss_issue;
     }
@@ -462,7 +399,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setCc_ss_issue($cc_ss_issue)
+    public function setCcSsIssue($cc_ss_issue)
     {
         $this->cc_ss_issue = $cc_ss_issue;
 
@@ -472,7 +409,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getPo_number()
+    public function getPoNumber()
     {
         return $this->po_number;
     }
@@ -482,7 +419,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setPo_number($po_number)
+    public function setPoNumber($po_number)
     {
         $this->po_number = $po_number;
 
@@ -492,7 +429,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getAdditional_data()
+    public function getAdditionalData()
     {
         return $this->additional_data;
     }
@@ -502,7 +439,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setAdditional_data($additional_data)
+    public function setAdditionalData($additional_data)
     {
         $this->additional_data = $additional_data;
 
@@ -512,7 +449,7 @@ class ShoppingCartPaymentEntity
     /**
      * @return string
      */
-    public function getAdditional_information()
+    public function getAdditionalInformation()
     {
         return $this->additional_information;
     }
@@ -522,7 +459,7 @@ class ShoppingCartPaymentEntity
      *
      * @return $this
      */
-    public function setAdditional_information($additional_information)
+    public function setAdditionalInformation($additional_information)
     {
         $this->additional_information = $additional_information;
 
