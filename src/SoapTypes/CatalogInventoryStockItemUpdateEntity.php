@@ -92,60 +92,6 @@ class CatalogInventoryStockItemUpdateEntity
     protected $use_config_notify_stock_qty = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var int    $is_in_stock
-     * @var int    $manage_stock
-     * @var int    $use_config_manage_stock
-     * @var int    $min_qty
-     * @var int    $use_config_min_qty
-     * @var int    $min_sale_qty
-     * @var int    $use_config_min_sale_qty
-     * @var int    $max_sale_qty
-     * @var int    $use_config_max_sale_qty
-     * @var int    $is_qty_decimal
-     * @var int    $backorders
-     * @var int    $use_config_backorders
-     * @var int    $notify_stock_qty
-     * @var int    $use_config_notify_stock_qty
-     *
-     * @param mixed $qty
-     * @param mixed $is_in_stock
-     * @param mixed $manage_stock
-     * @param mixed $use_config_manage_stock
-     * @param mixed $min_qty
-     * @param mixed $use_config_min_qty
-     * @param mixed $min_sale_qty
-     * @param mixed $use_config_min_sale_qty
-     * @param mixed $max_sale_qty
-     * @param mixed $use_config_max_sale_qty
-     * @param mixed $is_qty_decimal
-     * @param mixed $backorders
-     * @param mixed $use_config_backorders
-     * @param mixed $notify_stock_qty
-     * @param mixed $use_config_notify_stock_qty
-     */
-    public function __construct($qty, $is_in_stock, $manage_stock, $use_config_manage_stock, $min_qty, $use_config_min_qty, $min_sale_qty, $use_config_min_sale_qty, $max_sale_qty, $use_config_max_sale_qty, $is_qty_decimal, $backorders, $use_config_backorders, $notify_stock_qty, $use_config_notify_stock_qty)
-    {
-        $this->qty = $qty;
-        $this->is_in_stock = $is_in_stock;
-        $this->manage_stock = $manage_stock;
-        $this->use_config_manage_stock = $use_config_manage_stock;
-        $this->min_qty = $min_qty;
-        $this->use_config_min_qty = $use_config_min_qty;
-        $this->min_sale_qty = $min_sale_qty;
-        $this->use_config_min_sale_qty = $use_config_min_sale_qty;
-        $this->max_sale_qty = $max_sale_qty;
-        $this->use_config_max_sale_qty = $use_config_max_sale_qty;
-        $this->is_qty_decimal = $is_qty_decimal;
-        $this->backorders = $backorders;
-        $this->use_config_backorders = $use_config_backorders;
-        $this->notify_stock_qty = $notify_stock_qty;
-        $this->use_config_notify_stock_qty = $use_config_notify_stock_qty;
-    }
-
-    /**
      * @return string
      */
     public function getQty()
@@ -168,7 +114,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getIs_in_stock()
+    public function getIsInStock()
     {
         return $this->is_in_stock;
     }
@@ -178,7 +124,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setIs_in_stock($is_in_stock)
+    public function setIsInStock($is_in_stock)
     {
         $this->is_in_stock = $is_in_stock;
 
@@ -188,7 +134,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getManage_stock()
+    public function getManageStock()
     {
         return $this->manage_stock;
     }
@@ -198,7 +144,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setManage_stock($manage_stock)
+    public function setManageStock($manage_stock)
     {
         $this->manage_stock = $manage_stock;
 
@@ -208,7 +154,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getUse_config_manage_stock()
+    public function getUseConfigManageStock()
     {
         return $this->use_config_manage_stock;
     }
@@ -218,7 +164,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setUse_config_manage_stock($use_config_manage_stock)
+    public function setUseConfigManageStock($use_config_manage_stock)
     {
         $this->use_config_manage_stock = $use_config_manage_stock;
 
@@ -228,7 +174,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getMin_qty()
+    public function getMinQty()
     {
         return $this->min_qty;
     }
@@ -238,7 +184,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setMin_qty($min_qty)
+    public function setMinQty($min_qty)
     {
         $this->min_qty = $min_qty;
 
@@ -248,7 +194,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getUse_config_min_qty()
+    public function getUseConfigMinQty()
     {
         return $this->use_config_min_qty;
     }
@@ -258,7 +204,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setUse_config_min_qty($use_config_min_qty)
+    public function setUseConfigMinQty($use_config_min_qty)
     {
         $this->use_config_min_qty = $use_config_min_qty;
 
@@ -268,7 +214,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getMin_sale_qty()
+    public function getMinSaleQty()
     {
         return $this->min_sale_qty;
     }
@@ -278,7 +224,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setMin_sale_qty($min_sale_qty)
+    public function setMinSaleQty($min_sale_qty)
     {
         $this->min_sale_qty = $min_sale_qty;
 
@@ -288,7 +234,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getUse_config_min_sale_qty()
+    public function getUseConfigMinSaleQty()
     {
         return $this->use_config_min_sale_qty;
     }
@@ -298,7 +244,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setUse_config_min_sale_qty($use_config_min_sale_qty)
+    public function setUseConfigMinSaleQty($use_config_min_sale_qty)
     {
         $this->use_config_min_sale_qty = $use_config_min_sale_qty;
 
@@ -308,7 +254,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getMax_sale_qty()
+    public function getMaxSaleQty()
     {
         return $this->max_sale_qty;
     }
@@ -318,7 +264,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setMax_sale_qty($max_sale_qty)
+    public function setMaxSaleQty($max_sale_qty)
     {
         $this->max_sale_qty = $max_sale_qty;
 
@@ -328,7 +274,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getUse_config_max_sale_qty()
+    public function getUseConfigMaxSaleQty()
     {
         return $this->use_config_max_sale_qty;
     }
@@ -338,7 +284,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setUse_config_max_sale_qty($use_config_max_sale_qty)
+    public function setUseConfigMaxSaleQty($use_config_max_sale_qty)
     {
         $this->use_config_max_sale_qty = $use_config_max_sale_qty;
 
@@ -348,7 +294,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getIs_qty_decimal()
+    public function getIsQtyDecimal()
     {
         return $this->is_qty_decimal;
     }
@@ -358,7 +304,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setIs_qty_decimal($is_qty_decimal)
+    public function setIsQtyDecimal($is_qty_decimal)
     {
         $this->is_qty_decimal = $is_qty_decimal;
 
@@ -388,7 +334,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getUse_config_backorders()
+    public function getUseConfigBackorders()
     {
         return $this->use_config_backorders;
     }
@@ -398,7 +344,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setUse_config_backorders($use_config_backorders)
+    public function setUseConfigBackorders($use_config_backorders)
     {
         $this->use_config_backorders = $use_config_backorders;
 
@@ -408,7 +354,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getNotify_stock_qty()
+    public function getNotifyStockQty()
     {
         return $this->notify_stock_qty;
     }
@@ -418,7 +364,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setNotify_stock_qty($notify_stock_qty)
+    public function setNotifyStockQty($notify_stock_qty)
     {
         $this->notify_stock_qty = $notify_stock_qty;
 
@@ -428,7 +374,7 @@ class CatalogInventoryStockItemUpdateEntity
     /**
      * @return int
      */
-    public function getUse_config_notify_stock_qty()
+    public function getUseConfigNotifyStockQty()
     {
         return $this->use_config_notify_stock_qty;
     }
@@ -438,7 +384,7 @@ class CatalogInventoryStockItemUpdateEntity
      *
      * @return $this
      */
-    public function setUse_config_notify_stock_qty($use_config_notify_stock_qty)
+    public function setUseConfigNotifyStockQty($use_config_notify_stock_qty)
     {
         $this->use_config_notify_stock_qty = $use_config_notify_stock_qty;
 
