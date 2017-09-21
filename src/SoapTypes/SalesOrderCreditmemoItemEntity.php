@@ -182,117 +182,9 @@ class SalesOrderCreditmemoItemEntity
     protected $base_hidden_tax_amount = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $parent_id
-     * @var string $weee_tax_applied_row_amount
-     * @var string $base_price
-     * @var string $base_weee_tax_row_disposition
-     * @var string $tax_amount
-     * @var string $base_weee_tax_applied_amount
-     * @var string $weee_tax_row_disposition
-     * @var string $base_row_total
-     * @var string $discount_amount
-     * @var string $row_total
-     * @var string $weee_tax_applied_amount
-     * @var string $base_discount_amount
-     * @var string $base_weee_tax_disposition
-     * @var string $price_incl_tax
-     * @var string $base_tax_amount
-     * @var string $weee_tax_disposition
-     * @var string $base_price_incl_tax
-     * @var string $qty
-     * @var string $base_cost
-     * @var string $base_weee_tax_applied_row_amount
-     * @var string $price
-     * @var string $base_row_total_incl_tax
-     * @var string $row_total_incl_tax
-     * @var string $product_id
-     * @var string $order_item_id
-     * @var string $additional_data
-     * @var string $description
-     * @var string $weee_tax_applied
-     * @var string $sku
-     * @var string $name
-     * @var string $hidden_tax_amount
-     * @var string $base_hidden_tax_amount
-     *
-     * @param mixed $item_id
-     * @param mixed $parent_id
-     * @param mixed $weee_tax_applied_row_amount
-     * @param mixed $base_price
-     * @param mixed $base_weee_tax_row_disposition
-     * @param mixed $tax_amount
-     * @param mixed $base_weee_tax_applied_amount
-     * @param mixed $weee_tax_row_disposition
-     * @param mixed $base_row_total
-     * @param mixed $discount_amount
-     * @param mixed $row_total
-     * @param mixed $weee_tax_applied_amount
-     * @param mixed $base_discount_amount
-     * @param mixed $base_weee_tax_disposition
-     * @param mixed $price_incl_tax
-     * @param mixed $base_tax_amount
-     * @param mixed $weee_tax_disposition
-     * @param mixed $base_price_incl_tax
-     * @param mixed $qty
-     * @param mixed $base_cost
-     * @param mixed $base_weee_tax_applied_row_amount
-     * @param mixed $price
-     * @param mixed $base_row_total_incl_tax
-     * @param mixed $row_total_incl_tax
-     * @param mixed $product_id
-     * @param mixed $order_item_id
-     * @param mixed $additional_data
-     * @param mixed $description
-     * @param mixed $weee_tax_applied
-     * @param mixed $sku
-     * @param mixed $name
-     * @param mixed $hidden_tax_amount
-     * @param mixed $base_hidden_tax_amount
-     */
-    public function __construct($item_id, $parent_id, $weee_tax_applied_row_amount, $base_price, $base_weee_tax_row_disposition, $tax_amount, $base_weee_tax_applied_amount, $weee_tax_row_disposition, $base_row_total, $discount_amount, $row_total, $weee_tax_applied_amount, $base_discount_amount, $base_weee_tax_disposition, $price_incl_tax, $base_tax_amount, $weee_tax_disposition, $base_price_incl_tax, $qty, $base_cost, $base_weee_tax_applied_row_amount, $price, $base_row_total_incl_tax, $row_total_incl_tax, $product_id, $order_item_id, $additional_data, $description, $weee_tax_applied, $sku, $name, $hidden_tax_amount, $base_hidden_tax_amount)
-    {
-        $this->item_id = $item_id;
-        $this->parent_id = $parent_id;
-        $this->weee_tax_applied_row_amount = $weee_tax_applied_row_amount;
-        $this->base_price = $base_price;
-        $this->base_weee_tax_row_disposition = $base_weee_tax_row_disposition;
-        $this->tax_amount = $tax_amount;
-        $this->base_weee_tax_applied_amount = $base_weee_tax_applied_amount;
-        $this->weee_tax_row_disposition = $weee_tax_row_disposition;
-        $this->base_row_total = $base_row_total;
-        $this->discount_amount = $discount_amount;
-        $this->row_total = $row_total;
-        $this->weee_tax_applied_amount = $weee_tax_applied_amount;
-        $this->base_discount_amount = $base_discount_amount;
-        $this->base_weee_tax_disposition = $base_weee_tax_disposition;
-        $this->price_incl_tax = $price_incl_tax;
-        $this->base_tax_amount = $base_tax_amount;
-        $this->weee_tax_disposition = $weee_tax_disposition;
-        $this->base_price_incl_tax = $base_price_incl_tax;
-        $this->qty = $qty;
-        $this->base_cost = $base_cost;
-        $this->base_weee_tax_applied_row_amount = $base_weee_tax_applied_row_amount;
-        $this->price = $price;
-        $this->base_row_total_incl_tax = $base_row_total_incl_tax;
-        $this->row_total_incl_tax = $row_total_incl_tax;
-        $this->product_id = $product_id;
-        $this->order_item_id = $order_item_id;
-        $this->additional_data = $additional_data;
-        $this->description = $description;
-        $this->weee_tax_applied = $weee_tax_applied;
-        $this->sku = $sku;
-        $this->name = $name;
-        $this->hidden_tax_amount = $hidden_tax_amount;
-        $this->base_hidden_tax_amount = $base_hidden_tax_amount;
-    }
-
-    /**
      * @return string
      */
-    public function getItem_id()
+    public function getItemId()
     {
         return $this->item_id;
     }
@@ -302,7 +194,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setItem_id($item_id)
+    public function setItemId($item_id)
     {
         $this->item_id = $item_id;
 
@@ -312,7 +204,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -322,7 +214,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -332,7 +224,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_applied_row_amount()
+    public function getWeeeTaxAppliedRowAmount()
     {
         return $this->weee_tax_applied_row_amount;
     }
@@ -342,7 +234,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied_row_amount($weee_tax_applied_row_amount)
+    public function setWeeeTaxAppliedRowAmount($weee_tax_applied_row_amount)
     {
         $this->weee_tax_applied_row_amount = $weee_tax_applied_row_amount;
 
@@ -352,7 +244,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_price()
+    public function getBasePrice()
     {
         return $this->base_price;
     }
@@ -362,7 +254,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_price($base_price)
+    public function setBasePrice($base_price)
     {
         $this->base_price = $base_price;
 
@@ -372,7 +264,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_weee_tax_row_disposition()
+    public function getBaseWeeeTaxRowDisposition()
     {
         return $this->base_weee_tax_row_disposition;
     }
@@ -382,7 +274,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_row_disposition($base_weee_tax_row_disposition)
+    public function setBaseWeeeTaxRowDisposition($base_weee_tax_row_disposition)
     {
         $this->base_weee_tax_row_disposition = $base_weee_tax_row_disposition;
 
@@ -392,7 +284,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getTax_amount()
+    public function getTaxAmount()
     {
         return $this->tax_amount;
     }
@@ -402,7 +294,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setTax_amount($tax_amount)
+    public function setTaxAmount($tax_amount)
     {
         $this->tax_amount = $tax_amount;
 
@@ -412,7 +304,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_weee_tax_applied_amount()
+    public function getBaseWeeeTaxAppliedAmount()
     {
         return $this->base_weee_tax_applied_amount;
     }
@@ -422,7 +314,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_applied_amount($base_weee_tax_applied_amount)
+    public function setBaseWeeeTaxAppliedAmount($base_weee_tax_applied_amount)
     {
         $this->base_weee_tax_applied_amount = $base_weee_tax_applied_amount;
 
@@ -432,7 +324,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_row_disposition()
+    public function getWeeeTaxRowDisposition()
     {
         return $this->weee_tax_row_disposition;
     }
@@ -442,7 +334,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_row_disposition($weee_tax_row_disposition)
+    public function setWeeeTaxRowDisposition($weee_tax_row_disposition)
     {
         $this->weee_tax_row_disposition = $weee_tax_row_disposition;
 
@@ -452,7 +344,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_row_total()
+    public function getBaseRowTotal()
     {
         return $this->base_row_total;
     }
@@ -462,7 +354,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_row_total($base_row_total)
+    public function setBaseRowTotal($base_row_total)
     {
         $this->base_row_total = $base_row_total;
 
@@ -472,7 +364,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getDiscount_amount()
+    public function getDiscountAmount()
     {
         return $this->discount_amount;
     }
@@ -482,7 +374,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setDiscount_amount($discount_amount)
+    public function setDiscountAmount($discount_amount)
     {
         $this->discount_amount = $discount_amount;
 
@@ -492,7 +384,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getRow_total()
+    public function getRowTotal()
     {
         return $this->row_total;
     }
@@ -502,7 +394,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setRow_total($row_total)
+    public function setRowTotal($row_total)
     {
         $this->row_total = $row_total;
 
@@ -512,7 +404,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_applied_amount()
+    public function getWeeeTaxAppliedAmount()
     {
         return $this->weee_tax_applied_amount;
     }
@@ -522,7 +414,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied_amount($weee_tax_applied_amount)
+    public function setWeeeTaxAppliedAmount($weee_tax_applied_amount)
     {
         $this->weee_tax_applied_amount = $weee_tax_applied_amount;
 
@@ -532,7 +424,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_discount_amount()
+    public function getBaseDiscountAmount()
     {
         return $this->base_discount_amount;
     }
@@ -542,7 +434,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_discount_amount($base_discount_amount)
+    public function setBaseDiscountAmount($base_discount_amount)
     {
         $this->base_discount_amount = $base_discount_amount;
 
@@ -552,7 +444,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_weee_tax_disposition()
+    public function getBaseWeeeTaxDisposition()
     {
         return $this->base_weee_tax_disposition;
     }
@@ -562,7 +454,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_disposition($base_weee_tax_disposition)
+    public function setBaseWeeeTaxDisposition($base_weee_tax_disposition)
     {
         $this->base_weee_tax_disposition = $base_weee_tax_disposition;
 
@@ -572,7 +464,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getPrice_incl_tax()
+    public function getPriceInclTax()
     {
         return $this->price_incl_tax;
     }
@@ -582,7 +474,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setPrice_incl_tax($price_incl_tax)
+    public function setPriceInclTax($price_incl_tax)
     {
         $this->price_incl_tax = $price_incl_tax;
 
@@ -592,7 +484,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_tax_amount()
+    public function getBaseTaxAmount()
     {
         return $this->base_tax_amount;
     }
@@ -602,7 +494,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_tax_amount($base_tax_amount)
+    public function setBaseTaxAmount($base_tax_amount)
     {
         $this->base_tax_amount = $base_tax_amount;
 
@@ -612,7 +504,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_disposition()
+    public function getWeeeTaxDisposition()
     {
         return $this->weee_tax_disposition;
     }
@@ -622,7 +514,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_disposition($weee_tax_disposition)
+    public function setWeeeTaxDisposition($weee_tax_disposition)
     {
         $this->weee_tax_disposition = $weee_tax_disposition;
 
@@ -632,7 +524,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_price_incl_tax()
+    public function getBasePriceInclTax()
     {
         return $this->base_price_incl_tax;
     }
@@ -642,7 +534,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_price_incl_tax($base_price_incl_tax)
+    public function setBasePriceInclTax($base_price_incl_tax)
     {
         $this->base_price_incl_tax = $base_price_incl_tax;
 
@@ -672,7 +564,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_cost()
+    public function getBaseCost()
     {
         return $this->base_cost;
     }
@@ -682,7 +574,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_cost($base_cost)
+    public function setBaseCost($base_cost)
     {
         $this->base_cost = $base_cost;
 
@@ -692,7 +584,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_weee_tax_applied_row_amount()
+    public function getBaseWeeeTaxAppliedRowAmount()
     {
         return $this->base_weee_tax_applied_row_amount;
     }
@@ -702,7 +594,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_applied_row_amount($base_weee_tax_applied_row_amount)
+    public function setBaseWeeeTaxAppliedRowAmount($base_weee_tax_applied_row_amount)
     {
         $this->base_weee_tax_applied_row_amount = $base_weee_tax_applied_row_amount;
 
@@ -732,7 +624,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_row_total_incl_tax()
+    public function getBaseRowTotalInclTax()
     {
         return $this->base_row_total_incl_tax;
     }
@@ -742,7 +634,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_row_total_incl_tax($base_row_total_incl_tax)
+    public function setBaseRowTotalInclTax($base_row_total_incl_tax)
     {
         $this->base_row_total_incl_tax = $base_row_total_incl_tax;
 
@@ -752,7 +644,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getRow_total_incl_tax()
+    public function getRowTotalInclTax()
     {
         return $this->row_total_incl_tax;
     }
@@ -762,7 +654,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setRow_total_incl_tax($row_total_incl_tax)
+    public function setRowTotalInclTax($row_total_incl_tax)
     {
         $this->row_total_incl_tax = $row_total_incl_tax;
 
@@ -772,7 +664,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getProduct_id()
+    public function getProductId()
     {
         return $this->product_id;
     }
@@ -782,7 +674,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setProduct_id($product_id)
+    public function setProductId($product_id)
     {
         $this->product_id = $product_id;
 
@@ -792,7 +684,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getOrder_item_id()
+    public function getOrderItemId()
     {
         return $this->order_item_id;
     }
@@ -802,7 +694,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setOrder_item_id($order_item_id)
+    public function setOrderItemId($order_item_id)
     {
         $this->order_item_id = $order_item_id;
 
@@ -812,7 +704,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getAdditional_data()
+    public function getAdditionalData()
     {
         return $this->additional_data;
     }
@@ -822,7 +714,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setAdditional_data($additional_data)
+    public function setAdditionalData($additional_data)
     {
         $this->additional_data = $additional_data;
 
@@ -852,7 +744,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_applied()
+    public function getWeeeTaxApplied()
     {
         return $this->weee_tax_applied;
     }
@@ -862,7 +754,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied($weee_tax_applied)
+    public function setWeeeTaxApplied($weee_tax_applied)
     {
         $this->weee_tax_applied = $weee_tax_applied;
 
@@ -912,7 +804,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getHidden_tax_amount()
+    public function getHiddenTaxAmount()
     {
         return $this->hidden_tax_amount;
     }
@@ -922,7 +814,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setHidden_tax_amount($hidden_tax_amount)
+    public function setHiddenTaxAmount($hidden_tax_amount)
     {
         $this->hidden_tax_amount = $hidden_tax_amount;
 
@@ -932,7 +824,7 @@ class SalesOrderCreditmemoItemEntity
     /**
      * @return string
      */
-    public function getBase_hidden_tax_amount()
+    public function getBaseHiddenTaxAmount()
     {
         return $this->base_hidden_tax_amount;
     }
@@ -942,7 +834,7 @@ class SalesOrderCreditmemoItemEntity
      *
      * @return $this
      */
-    public function setBase_hidden_tax_amount($base_hidden_tax_amount)
+    public function setBaseHiddenTaxAmount($base_hidden_tax_amount)
     {
         $this->base_hidden_tax_amount = $base_hidden_tax_amount;
 
