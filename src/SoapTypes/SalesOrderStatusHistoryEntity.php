@@ -57,42 +57,9 @@ class SalesOrderStatusHistoryEntity
     protected $comment = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $parent_id
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $is_active
-     * @var string $is_customer_notified
-     * @var string $status
-     * @var string $comment
-     *
-     * @param mixed $increment_id
-     * @param mixed $parent_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $is_active
-     * @param mixed $is_customer_notified
-     * @param mixed $status
-     * @param mixed $comment
-     */
-    public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $is_customer_notified, $status, $comment)
-    {
-        $this->increment_id = $increment_id;
-        $this->parent_id = $parent_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->is_active = $is_active;
-        $this->is_customer_notified = $is_customer_notified;
-        $this->status = $status;
-        $this->comment = $comment;
-    }
-
-    /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -102,7 +69,7 @@ class SalesOrderStatusHistoryEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -112,7 +79,7 @@ class SalesOrderStatusHistoryEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -122,7 +89,7 @@ class SalesOrderStatusHistoryEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -132,7 +99,7 @@ class SalesOrderStatusHistoryEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -142,7 +109,7 @@ class SalesOrderStatusHistoryEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -152,7 +119,7 @@ class SalesOrderStatusHistoryEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -162,7 +129,7 @@ class SalesOrderStatusHistoryEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -172,7 +139,7 @@ class SalesOrderStatusHistoryEntity
     /**
      * @return string
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -182,7 +149,7 @@ class SalesOrderStatusHistoryEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -192,7 +159,7 @@ class SalesOrderStatusHistoryEntity
     /**
      * @return string
      */
-    public function getIs_customer_notified()
+    public function getIsCustomerNotified()
     {
         return $this->is_customer_notified;
     }
@@ -202,7 +169,7 @@ class SalesOrderStatusHistoryEntity
      *
      * @return $this
      */
-    public function setIs_customer_notified($is_customer_notified)
+    public function setIsCustomerNotified($is_customer_notified)
     {
         $this->is_customer_notified = $is_customer_notified;
 

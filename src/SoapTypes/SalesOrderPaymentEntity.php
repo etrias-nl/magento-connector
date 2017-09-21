@@ -117,78 +117,9 @@ class SalesOrderPaymentEntity
     protected $payment_id = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $parent_id
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $is_active
-     * @var string $amount_ordered
-     * @var string $shipping_amount
-     * @var string $base_amount_ordered
-     * @var string $base_shipping_amount
-     * @var string $method
-     * @var string $po_number
-     * @var string $cc_type
-     * @var string $cc_number_enc
-     * @var string $cc_last4
-     * @var string $cc_owner
-     * @var string $cc_exp_month
-     * @var string $cc_exp_year
-     * @var string $cc_ss_start_month
-     * @var string $cc_ss_start_year
-     * @var string $payment_id
-     *
-     * @param mixed $increment_id
-     * @param mixed $parent_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $is_active
-     * @param mixed $amount_ordered
-     * @param mixed $shipping_amount
-     * @param mixed $base_amount_ordered
-     * @param mixed $base_shipping_amount
-     * @param mixed $method
-     * @param mixed $po_number
-     * @param mixed $cc_type
-     * @param mixed $cc_number_enc
-     * @param mixed $cc_last4
-     * @param mixed $cc_owner
-     * @param mixed $cc_exp_month
-     * @param mixed $cc_exp_year
-     * @param mixed $cc_ss_start_month
-     * @param mixed $cc_ss_start_year
-     * @param mixed $payment_id
-     */
-    public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $amount_ordered, $shipping_amount, $base_amount_ordered, $base_shipping_amount, $method, $po_number, $cc_type, $cc_number_enc, $cc_last4, $cc_owner, $cc_exp_month, $cc_exp_year, $cc_ss_start_month, $cc_ss_start_year, $payment_id)
-    {
-        $this->increment_id = $increment_id;
-        $this->parent_id = $parent_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->is_active = $is_active;
-        $this->amount_ordered = $amount_ordered;
-        $this->shipping_amount = $shipping_amount;
-        $this->base_amount_ordered = $base_amount_ordered;
-        $this->base_shipping_amount = $base_shipping_amount;
-        $this->method = $method;
-        $this->po_number = $po_number;
-        $this->cc_type = $cc_type;
-        $this->cc_number_enc = $cc_number_enc;
-        $this->cc_last4 = $cc_last4;
-        $this->cc_owner = $cc_owner;
-        $this->cc_exp_month = $cc_exp_month;
-        $this->cc_exp_year = $cc_exp_year;
-        $this->cc_ss_start_month = $cc_ss_start_month;
-        $this->cc_ss_start_year = $cc_ss_start_year;
-        $this->payment_id = $payment_id;
-    }
-
-    /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -198,7 +129,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -208,7 +139,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -218,7 +149,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -228,7 +159,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -238,7 +169,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -248,7 +179,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -258,7 +189,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -268,7 +199,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -278,7 +209,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -288,7 +219,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getAmount_ordered()
+    public function getAmountOrdered()
     {
         return $this->amount_ordered;
     }
@@ -298,7 +229,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setAmount_ordered($amount_ordered)
+    public function setAmountOrdered($amount_ordered)
     {
         $this->amount_ordered = $amount_ordered;
 
@@ -308,7 +239,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getShipping_amount()
+    public function getShippingAmount()
     {
         return $this->shipping_amount;
     }
@@ -318,7 +249,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setShipping_amount($shipping_amount)
+    public function setShippingAmount($shipping_amount)
     {
         $this->shipping_amount = $shipping_amount;
 
@@ -328,7 +259,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getBase_amount_ordered()
+    public function getBaseAmountOrdered()
     {
         return $this->base_amount_ordered;
     }
@@ -338,7 +269,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setBase_amount_ordered($base_amount_ordered)
+    public function setBaseAmountOrdered($base_amount_ordered)
     {
         $this->base_amount_ordered = $base_amount_ordered;
 
@@ -348,7 +279,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getBase_shipping_amount()
+    public function getBaseShippingAmount()
     {
         return $this->base_shipping_amount;
     }
@@ -358,7 +289,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setBase_shipping_amount($base_shipping_amount)
+    public function setBaseShippingAmount($base_shipping_amount)
     {
         $this->base_shipping_amount = $base_shipping_amount;
 
@@ -388,7 +319,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getPo_number()
+    public function getPoNumber()
     {
         return $this->po_number;
     }
@@ -398,7 +329,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setPo_number($po_number)
+    public function setPoNumber($po_number)
     {
         $this->po_number = $po_number;
 
@@ -408,7 +339,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCc_type()
+    public function getCcType()
     {
         return $this->cc_type;
     }
@@ -418,7 +349,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCc_type($cc_type)
+    public function setCcType($cc_type)
     {
         $this->cc_type = $cc_type;
 
@@ -428,7 +359,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCc_number_enc()
+    public function getCcNumberEnc()
     {
         return $this->cc_number_enc;
     }
@@ -438,7 +369,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCc_number_enc($cc_number_enc)
+    public function setCcNumberEnc($cc_number_enc)
     {
         $this->cc_number_enc = $cc_number_enc;
 
@@ -448,7 +379,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCc_last4()
+    public function getCcLast4()
     {
         return $this->cc_last4;
     }
@@ -458,7 +389,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCc_last4($cc_last4)
+    public function setCcLast4($cc_last4)
     {
         $this->cc_last4 = $cc_last4;
 
@@ -468,7 +399,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCc_owner()
+    public function getCcOwner()
     {
         return $this->cc_owner;
     }
@@ -478,7 +409,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCc_owner($cc_owner)
+    public function setCcOwner($cc_owner)
     {
         $this->cc_owner = $cc_owner;
 
@@ -488,7 +419,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCc_exp_month()
+    public function getCcExpMonth()
     {
         return $this->cc_exp_month;
     }
@@ -498,7 +429,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCc_exp_month($cc_exp_month)
+    public function setCcExpMonth($cc_exp_month)
     {
         $this->cc_exp_month = $cc_exp_month;
 
@@ -508,7 +439,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCc_exp_year()
+    public function getCcExpYear()
     {
         return $this->cc_exp_year;
     }
@@ -518,7 +449,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCc_exp_year($cc_exp_year)
+    public function setCcExpYear($cc_exp_year)
     {
         $this->cc_exp_year = $cc_exp_year;
 
@@ -528,7 +459,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCc_ss_start_month()
+    public function getCcSsStartMonth()
     {
         return $this->cc_ss_start_month;
     }
@@ -538,7 +469,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCc_ss_start_month($cc_ss_start_month)
+    public function setCcSsStartMonth($cc_ss_start_month)
     {
         $this->cc_ss_start_month = $cc_ss_start_month;
 
@@ -548,7 +479,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getCc_ss_start_year()
+    public function getCcSsStartYear()
     {
         return $this->cc_ss_start_year;
     }
@@ -558,7 +489,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setCc_ss_start_year($cc_ss_start_year)
+    public function setCcSsStartYear($cc_ss_start_year)
     {
         $this->cc_ss_start_year = $cc_ss_start_year;
 
@@ -568,7 +499,7 @@ class SalesOrderPaymentEntity
     /**
      * @return string
      */
-    public function getPayment_id()
+    public function getPaymentId()
     {
         return $this->payment_id;
     }
@@ -578,7 +509,7 @@ class SalesOrderPaymentEntity
      *
      * @return $this
      */
-    public function setPayment_id($payment_id)
+    public function setPaymentId($payment_id)
     {
         $this->payment_id = $payment_id;
 
