@@ -318,7 +318,7 @@ class SoapV2Adapter implements AdapterInterface
         int $attributeSet,
         string $sku,
         CatalogProductCreateEntity $productData,
-        int $storeView
+        int $storeView = null
     ): int {
         $request = new MultiArgumentRequest([$sessionId, $productType, $attributeSet, $sku, $productData, $storeView]);
 
@@ -329,7 +329,7 @@ class SoapV2Adapter implements AdapterInterface
         string $sessionId,
         string $productId,
         CatalogProductCreateEntity $productData,
-        int $storeView,
+        int $storeView = null,
         string $identifierType = 'id'
     ): bool {
         $request = new MultiArgumentRequest([$sessionId, $productId, $productData, $storeView, $identifierType]);

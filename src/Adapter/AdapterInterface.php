@@ -187,14 +187,14 @@ interface AdapterInterface
         int $attributeSet,
         string $sku,
         CatalogProductCreateEntity $productData,
-        int $storeView
+        int $storeView = null
     ): int;
 
     public function updateProduct(
         string $sessionId,
         string $productId,
         CatalogProductCreateEntity $productData,
-        int $storeView,
+        int $storeView = null,
         string $identifierType = 'id'
     ): bool;
 

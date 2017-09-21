@@ -66,17 +66,17 @@ class ProductService
         return $this->adapter->getAttributeSetList($this->authenticationService->login());
     }
 
-    public function createProduct(string $productType, int $attributeSet, string $sku, CatalogProductCreateEntity $productData, int $storeView): int
+    public function createProduct(string $productType, int $attributeSet, string $sku, CatalogProductCreateEntity $productData, int $storeView = null): int
     {
         return $this->adapter->createProduct($this->authenticationService->login(), $productType, $attributeSet, $sku, $productData, $storeView);
     }
 
-    public function updateProductById(int $productId, CatalogProductCreateEntity $productData, int $storeView): bool
+    public function updateProductById(int $productId, CatalogProductCreateEntity $productData, int $storeView = null): bool
     {
         return $this->adapter->updateProduct($this->authenticationService->login(), (string) $productId, $productData, $storeView);
     }
 
-    public function updateProductBySku(string $sku, CatalogProductCreateEntity $productData, int $storeView): bool
+    public function updateProductBySku(string $sku, CatalogProductCreateEntity $productData, int $storeView = null): bool
     {
         return $this->adapter->updateProduct($this->authenticationService->login(), $sku, $productData, $storeView, 'sku');
     }
