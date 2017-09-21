@@ -55,7 +55,7 @@ class SalesOrderShipmentCommentEntity
      * @var string
      */
     protected $comment_id = null;
-    
+
     /**
      * @return string
      */
