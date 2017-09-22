@@ -923,7 +923,7 @@ class CatalogProductReturnEntity
         $additionalAttribute = $this->getAdditionalAttributeByKey($attribute_code);
 
         if (empty($additionalAttribute)) {
-            throw new AttributeNotExistsException();
+            return null;
         }
 
         return $additionalAttribute->getValue();
