@@ -19,12 +19,12 @@ class CatalogProductRequestAttributes
     /**
      * @var string[]
      */
-    protected $attributes = null;
+    protected $attributes = [];
 
     /**
      * @var string[]
      */
-    protected $additional_attributes = null;
+    protected $additional_attributes = [];
 
     /**
      * @return string[]

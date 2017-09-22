@@ -38,6 +38,7 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToUpdate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionTypesEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
@@ -248,7 +249,7 @@ interface AdapterInterface
     public function getProductInfo(
         string $sessionId,
         string $productId,
-        array $attributes = null,
+        CatalogProductRequestAttributes $attributes = null,
         string $storeView = null,
         string $identifierType = ' id'
     ): CatalogProductReturnEntity;

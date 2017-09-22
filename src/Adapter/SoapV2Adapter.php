@@ -35,6 +35,7 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToUpdate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\ComplexFilter;
 use Etrias\MagentoConnector\SoapTypes\Filters;
@@ -395,7 +396,7 @@ class SoapV2Adapter implements AdapterInterface
     /**
      * @param string      $sessionId
      * @param string      $productId
-     * @param array|null  $attributes
+     * @param CatalogProductRequestAttributes|null  $attributes
      * @param string|null $storeView
      * @param string      $identifierType
      *
@@ -404,7 +405,7 @@ class SoapV2Adapter implements AdapterInterface
     public function getProductInfo(
         string $sessionId,
         string $productId,
-        array $attributes = null,
+        CatalogProductRequestAttributes $attributes = null,
         string $storeView = null,
         string $identifierType = ' id'
     ): CatalogProductReturnEntity {
