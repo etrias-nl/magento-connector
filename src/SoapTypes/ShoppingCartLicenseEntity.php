@@ -42,33 +42,9 @@ class ShoppingCartLicenseEntity
     protected $is_html = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $name
-     * @var string $content
-     * @var int    $is_active
-     * @var int    $is_html
-     *
-     * @param mixed $agreement_id
-     * @param mixed $name
-     * @param mixed $content
-     * @param mixed $is_active
-     * @param mixed $is_html
-     */
-    public function __construct($agreement_id, $name, $content, $is_active, $is_html)
-    {
-        $this->agreement_id = $agreement_id;
-        $this->name = $name;
-        $this->content = $content;
-        $this->is_active = $is_active;
-        $this->is_html = $is_html;
-    }
-
-    /**
      * @return string
      */
-    public function getAgreement_id()
+    public function getAgreementId()
     {
         return $this->agreement_id;
     }
@@ -78,7 +54,7 @@ class ShoppingCartLicenseEntity
      *
      * @return $this
      */
-    public function setAgreement_id($agreement_id)
+    public function setAgreementId($agreement_id)
     {
         $this->agreement_id = $agreement_id;
 
@@ -128,7 +104,7 @@ class ShoppingCartLicenseEntity
     /**
      * @return int
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -138,7 +114,7 @@ class ShoppingCartLicenseEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -148,7 +124,7 @@ class ShoppingCartLicenseEntity
     /**
      * @return int
      */
-    public function getIs_html()
+    public function getIsHtml()
     {
         return $this->is_html;
     }
@@ -158,7 +134,7 @@ class ShoppingCartLicenseEntity
      *
      * @return $this
      */
-    public function setIs_html($is_html)
+    public function setIsHtml($is_html)
     {
         $this->is_html = $is_html;
 

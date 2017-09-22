@@ -52,36 +52,6 @@ class ShoppingCartShippingMethodEntity
     protected $price = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $carrier
-     * @var string $carrier_title
-     * @var string $method
-     * @var string $method_title
-     * @var string $method_description
-     * @var float  $price
-     *
-     * @param mixed $code
-     * @param mixed $carrier
-     * @param mixed $carrier_title
-     * @param mixed $method
-     * @param mixed $method_title
-     * @param mixed $method_description
-     * @param mixed $price
-     */
-    public function __construct($code, $carrier, $carrier_title, $method, $method_title, $method_description, $price)
-    {
-        $this->code = $code;
-        $this->carrier = $carrier;
-        $this->carrier_title = $carrier_title;
-        $this->method = $method;
-        $this->method_title = $method_title;
-        $this->method_description = $method_description;
-        $this->price = $price;
-    }
-
-    /**
      * @return string
      */
     public function getCode()
@@ -124,7 +94,7 @@ class ShoppingCartShippingMethodEntity
     /**
      * @return string
      */
-    public function getCarrier_title()
+    public function getCarrierTitle()
     {
         return $this->carrier_title;
     }
@@ -134,7 +104,7 @@ class ShoppingCartShippingMethodEntity
      *
      * @return $this
      */
-    public function setCarrier_title($carrier_title)
+    public function setCarrierTitle($carrier_title)
     {
         $this->carrier_title = $carrier_title;
 
@@ -164,7 +134,7 @@ class ShoppingCartShippingMethodEntity
     /**
      * @return string
      */
-    public function getMethod_title()
+    public function getMethodTitle()
     {
         return $this->method_title;
     }
@@ -174,7 +144,7 @@ class ShoppingCartShippingMethodEntity
      *
      * @return $this
      */
-    public function setMethod_title($method_title)
+    public function setMethodTitle($method_title)
     {
         $this->method_title = $method_title;
 
@@ -184,7 +154,7 @@ class ShoppingCartShippingMethodEntity
     /**
      * @return string
      */
-    public function getMethod_description()
+    public function getMethodDescription()
     {
         return $this->method_description;
     }
@@ -194,7 +164,7 @@ class ShoppingCartShippingMethodEntity
      *
      * @return $this
      */
-    public function setMethod_description($method_description)
+    public function setMethodDescription($method_description)
     {
         $this->method_description = $method_description;
 

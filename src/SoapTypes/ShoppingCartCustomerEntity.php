@@ -67,45 +67,6 @@ class ShoppingCartCustomerEntity
     protected $group_id = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var int    $customer_id
-     * @var string $email
-     * @var string $firstname
-     * @var string $lastname
-     * @var string $password
-     * @var string $confirmation
-     * @var int    $website_id
-     * @var int    $store_id
-     * @var int    $group_id
-     *
-     * @param mixed $mode
-     * @param mixed $customer_id
-     * @param mixed $email
-     * @param mixed $firstname
-     * @param mixed $lastname
-     * @param mixed $password
-     * @param mixed $confirmation
-     * @param mixed $website_id
-     * @param mixed $store_id
-     * @param mixed $group_id
-     */
-    public function __construct($mode, $customer_id, $email, $firstname, $lastname, $password, $confirmation, $website_id, $store_id, $group_id)
-    {
-        $this->mode = $mode;
-        $this->customer_id = $customer_id;
-        $this->email = $email;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->password = $password;
-        $this->confirmation = $confirmation;
-        $this->website_id = $website_id;
-        $this->store_id = $store_id;
-        $this->group_id = $group_id;
-    }
-
-    /**
      * @return string
      */
     public function getMode()
@@ -128,7 +89,7 @@ class ShoppingCartCustomerEntity
     /**
      * @return int
      */
-    public function getCustomer_id()
+    public function getCustomerId()
     {
         return $this->customer_id;
     }
@@ -138,7 +99,7 @@ class ShoppingCartCustomerEntity
      *
      * @return $this
      */
-    public function setCustomer_id($customer_id)
+    public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
 
@@ -248,7 +209,7 @@ class ShoppingCartCustomerEntity
     /**
      * @return int
      */
-    public function getWebsite_id()
+    public function getWebsiteId()
     {
         return $this->website_id;
     }
@@ -258,7 +219,7 @@ class ShoppingCartCustomerEntity
      *
      * @return $this
      */
-    public function setWebsite_id($website_id)
+    public function setWebsiteId($website_id)
     {
         $this->website_id = $website_id;
 
@@ -268,7 +229,7 @@ class ShoppingCartCustomerEntity
     /**
      * @return int
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -278,7 +239,7 @@ class ShoppingCartCustomerEntity
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 
@@ -288,7 +249,7 @@ class ShoppingCartCustomerEntity
     /**
      * @return int
      */
-    public function getGroup_id()
+    public function getGroupId()
     {
         return $this->group_id;
     }
@@ -298,7 +259,7 @@ class ShoppingCartCustomerEntity
      *
      * @return $this
      */
-    public function setGroup_id($group_id)
+    public function setGroupId($group_id)
     {
         $this->group_id = $group_id;
 
