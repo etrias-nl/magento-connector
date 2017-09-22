@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Etrias\MagentoConnector\SoapTypes;
 
+use Etrias\MagentoConnector\Exceptions\AttributeNotExistsException;
+
 class CatalogProductReturnEntity
 {
     /**
@@ -869,6 +871,62 @@ class CatalogProductReturnEntity
         $this->additional_attributes = $additional_attributes;
 
         return $this;
+    }
+
+
+    /**
+     * @param string $key
+     * @return AssociativeEntity|null
+     */
+    protected function getAdditionalAttributeByKey(string $key)
+    {
+        $additionalAttributes = array_filter($this->additional_attributes, function(AssociativeEntity $entity) use ($key) {
+            return $entity->getKey() === $key;
+        });
+
+        if (!empty($additionalAttributes)) {
+            return reset($additionalAttributes);
+        }
+
+        return null;
+    }
+
+    /**
+     * @param string $attribute_code
+     * @return bool
+     */
+    public function hasAttribute(string $attribute_code)
+    {
+        if (property_exists($this, $attribute_code)) {
+            return true;
+        }
+
+        $additionalAttribute = $this->getAdditionalAttributeByKey($attribute_code);
+
+        if (!empty($additionalAttribute))
+            return false;
+
+        return true;
+    }
+
+    /**
+     * @param string $attribute_code
+     * @return mixed
+     * @throws AttributeNotExistsException
+     */
+    public function getAttribute(string $attribute_code)
+    {
+        if (property_exists($this, $attribute_code)) {
+            return $this->$attribute_code;
+        }
+
+        $additionalAttribute = $this->getAdditionalAttributeByKey($attribute_code);
+
+        if (empty($additionalAttribute)) {
+            throw new AttributeNotExistsException();
+        }
+
+        return $additionalAttribute->getValue();
     }
 
     /**
