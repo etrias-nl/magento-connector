@@ -57,42 +57,9 @@ class SalesOrderInvoiceCommentEntity
     protected $comment_id = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $parent_id
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $is_active
-     * @var string $comment
-     * @var string $is_customer_notified
-     * @var string $comment_id
-     *
-     * @param mixed $increment_id
-     * @param mixed $parent_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $is_active
-     * @param mixed $comment
-     * @param mixed $is_customer_notified
-     * @param mixed $comment_id
-     */
-    public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $comment, $is_customer_notified, $comment_id)
-    {
-        $this->increment_id = $increment_id;
-        $this->parent_id = $parent_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->is_active = $is_active;
-        $this->comment = $comment;
-        $this->is_customer_notified = $is_customer_notified;
-        $this->comment_id = $comment_id;
-    }
-
-    /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -102,7 +69,7 @@ class SalesOrderInvoiceCommentEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -112,7 +79,7 @@ class SalesOrderInvoiceCommentEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -122,7 +89,7 @@ class SalesOrderInvoiceCommentEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -132,7 +99,7 @@ class SalesOrderInvoiceCommentEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -142,7 +109,7 @@ class SalesOrderInvoiceCommentEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -152,7 +119,7 @@ class SalesOrderInvoiceCommentEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -162,7 +129,7 @@ class SalesOrderInvoiceCommentEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -172,7 +139,7 @@ class SalesOrderInvoiceCommentEntity
     /**
      * @return string
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -182,7 +149,7 @@ class SalesOrderInvoiceCommentEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -212,7 +179,7 @@ class SalesOrderInvoiceCommentEntity
     /**
      * @return string
      */
-    public function getIs_customer_notified()
+    public function getIsCustomerNotified()
     {
         return $this->is_customer_notified;
     }
@@ -222,7 +189,7 @@ class SalesOrderInvoiceCommentEntity
      *
      * @return $this
      */
-    public function setIs_customer_notified($is_customer_notified)
+    public function setIsCustomerNotified($is_customer_notified)
     {
         $this->is_customer_notified = $is_customer_notified;
 
@@ -232,7 +199,7 @@ class SalesOrderInvoiceCommentEntity
     /**
      * @return string
      */
-    public function getComment_id()
+    public function getCommentId()
     {
         return $this->comment_id;
     }
@@ -242,7 +209,7 @@ class SalesOrderInvoiceCommentEntity
      *
      * @return $this
      */
-    public function setComment_id($comment_id)
+    public function setCommentId($comment_id)
     {
         $this->comment_id = $comment_id;
 

@@ -34,24 +34,6 @@ class GiftMessageResponse implements ResultInterface
     protected $error = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var bool   $result
-     * @var string $error
-     *
-     * @param mixed $entityId
-     * @param mixed $result
-     * @param mixed $error
-     */
-    public function __construct($entityId, $result, $error)
-    {
-        $this->entityId = $entityId;
-        $this->result = $result;
-        $this->error = $error;
-    }
-
-    /**
      * @return string
      */
     public function getEntityId()

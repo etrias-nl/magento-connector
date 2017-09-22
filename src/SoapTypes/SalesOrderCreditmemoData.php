@@ -37,27 +37,6 @@ class SalesOrderCreditmemoData
     protected $adjustment_negative = null;
 
     /**
-     * Constructor.
-     *
-     * @var orderItemIdQtyArray
-     * @var float               $shipping_amount
-     * @var float               $adjustment_positive
-     * @var float               $adjustment_negative
-     *
-     * @param mixed $qtys
-     * @param mixed $shipping_amount
-     * @param mixed $adjustment_positive
-     * @param mixed $adjustment_negative
-     */
-    public function __construct($qtys, $shipping_amount, $adjustment_positive, $adjustment_negative)
-    {
-        $this->qtys = $qtys;
-        $this->shipping_amount = $shipping_amount;
-        $this->adjustment_positive = $adjustment_positive;
-        $this->adjustment_negative = $adjustment_negative;
-    }
-
-    /**
      * @return orderItemIdQtyArray
      */
     public function getQtys()
@@ -80,7 +59,7 @@ class SalesOrderCreditmemoData
     /**
      * @return float
      */
-    public function getShipping_amount()
+    public function getShippingAmount()
     {
         return $this->shipping_amount;
     }
@@ -90,7 +69,7 @@ class SalesOrderCreditmemoData
      *
      * @return $this
      */
-    public function setShipping_amount($shipping_amount)
+    public function setShippingAmount($shipping_amount)
     {
         $this->shipping_amount = $shipping_amount;
 
@@ -100,7 +79,7 @@ class SalesOrderCreditmemoData
     /**
      * @return float
      */
-    public function getAdjustment_positive()
+    public function getAdjustmentPositive()
     {
         return $this->adjustment_positive;
     }
@@ -110,7 +89,7 @@ class SalesOrderCreditmemoData
      *
      * @return $this
      */
-    public function setAdjustment_positive($adjustment_positive)
+    public function setAdjustmentPositive($adjustment_positive)
     {
         $this->adjustment_positive = $adjustment_positive;
 
@@ -120,7 +99,7 @@ class SalesOrderCreditmemoData
     /**
      * @return float
      */
-    public function getAdjustment_negative()
+    public function getAdjustmentNegative()
     {
         return $this->adjustment_negative;
     }
@@ -130,7 +109,7 @@ class SalesOrderCreditmemoData
      *
      * @return $this
      */
-    public function setAdjustment_negative($adjustment_negative)
+    public function setAdjustmentNegative($adjustment_negative)
     {
         $this->adjustment_negative = $adjustment_negative;
 

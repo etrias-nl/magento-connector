@@ -52,39 +52,9 @@ class ShoppingCartProductEntity
     protected $links = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string           $sku
-     * @var float            $qty
-     * @var associativeArray $options
-     * @var associativeArray $bundle_option
-     * @var associativeArray $bundle_option_qty
-     * @var string[]         $links
-     *
-     * @param mixed $product_id
-     * @param mixed $sku
-     * @param mixed $qty
-     * @param mixed $options
-     * @param mixed $bundle_option
-     * @param mixed $bundle_option_qty
-     * @param mixed $links
-     */
-    public function __construct($product_id, $sku, $qty, $options, $bundle_option, $bundle_option_qty, $links)
-    {
-        $this->product_id = $product_id;
-        $this->sku = $sku;
-        $this->qty = $qty;
-        $this->options = $options;
-        $this->bundle_option = $bundle_option;
-        $this->bundle_option_qty = $bundle_option_qty;
-        $this->links = $links;
-    }
-
-    /**
      * @return string
      */
-    public function getProduct_id()
+    public function getProductId()
     {
         return $this->product_id;
     }
@@ -94,7 +64,7 @@ class ShoppingCartProductEntity
      *
      * @return $this
      */
-    public function setProduct_id($product_id)
+    public function setProductId($product_id)
     {
         $this->product_id = $product_id;
 
@@ -164,7 +134,7 @@ class ShoppingCartProductEntity
     /**
      * @return associativeArray
      */
-    public function getBundle_option()
+    public function getBundleOption()
     {
         return $this->bundle_option;
     }
@@ -174,7 +144,7 @@ class ShoppingCartProductEntity
      *
      * @return $this
      */
-    public function setBundle_option($bundle_option)
+    public function setBundleOption($bundle_option)
     {
         $this->bundle_option = $bundle_option;
 
@@ -184,7 +154,7 @@ class ShoppingCartProductEntity
     /**
      * @return associativeArray
      */
-    public function getBundle_option_qty()
+    public function getBundleOptionQty()
     {
         return $this->bundle_option_qty;
     }
@@ -194,7 +164,7 @@ class ShoppingCartProductEntity
      *
      * @return $this
      */
-    public function setBundle_option_qty($bundle_option_qty)
+    public function setBundleOptionQty($bundle_option_qty)
     {
         $this->bundle_option_qty = $bundle_option_qty;
 

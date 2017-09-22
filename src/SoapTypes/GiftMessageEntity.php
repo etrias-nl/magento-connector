@@ -32,24 +32,6 @@ class GiftMessageEntity
     protected $message = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $to
-     * @var string $message
-     *
-     * @param mixed $from
-     * @param mixed $to
-     * @param mixed $message
-     */
-    public function __construct($from, $to, $message)
-    {
-        $this->from = $from;
-        $this->to = $to;
-        $this->message = $message;
-    }
-
-    /**
      * @return string
      */
     public function getFrom()

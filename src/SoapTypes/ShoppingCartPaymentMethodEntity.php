@@ -57,42 +57,9 @@ class ShoppingCartPaymentMethodEntity
     protected $cc_exp_month = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $method
-     * @var string $cc_cid
-     * @var string $cc_owner
-     * @var string $cc_number
-     * @var string $cc_type
-     * @var string $cc_exp_year
-     * @var string $cc_exp_month
-     *
-     * @param mixed $po_number
-     * @param mixed $method
-     * @param mixed $cc_cid
-     * @param mixed $cc_owner
-     * @param mixed $cc_number
-     * @param mixed $cc_type
-     * @param mixed $cc_exp_year
-     * @param mixed $cc_exp_month
-     */
-    public function __construct($po_number, $method, $cc_cid, $cc_owner, $cc_number, $cc_type, $cc_exp_year, $cc_exp_month)
-    {
-        $this->po_number = $po_number;
-        $this->method = $method;
-        $this->cc_cid = $cc_cid;
-        $this->cc_owner = $cc_owner;
-        $this->cc_number = $cc_number;
-        $this->cc_type = $cc_type;
-        $this->cc_exp_year = $cc_exp_year;
-        $this->cc_exp_month = $cc_exp_month;
-    }
-
-    /**
      * @return string
      */
-    public function getPo_number()
+    public function getPoNumber()
     {
         return $this->po_number;
     }
@@ -102,7 +69,7 @@ class ShoppingCartPaymentMethodEntity
      *
      * @return $this
      */
-    public function setPo_number($po_number)
+    public function setPoNumber($po_number)
     {
         $this->po_number = $po_number;
 
@@ -132,7 +99,7 @@ class ShoppingCartPaymentMethodEntity
     /**
      * @return string
      */
-    public function getCc_cid()
+    public function getCcCid()
     {
         return $this->cc_cid;
     }
@@ -142,7 +109,7 @@ class ShoppingCartPaymentMethodEntity
      *
      * @return $this
      */
-    public function setCc_cid($cc_cid)
+    public function setCcCid($cc_cid)
     {
         $this->cc_cid = $cc_cid;
 
@@ -152,7 +119,7 @@ class ShoppingCartPaymentMethodEntity
     /**
      * @return string
      */
-    public function getCc_owner()
+    public function getCcOwner()
     {
         return $this->cc_owner;
     }
@@ -162,7 +129,7 @@ class ShoppingCartPaymentMethodEntity
      *
      * @return $this
      */
-    public function setCc_owner($cc_owner)
+    public function setCcOwner($cc_owner)
     {
         $this->cc_owner = $cc_owner;
 
@@ -172,7 +139,7 @@ class ShoppingCartPaymentMethodEntity
     /**
      * @return string
      */
-    public function getCc_number()
+    public function getCcNumber()
     {
         return $this->cc_number;
     }
@@ -182,7 +149,7 @@ class ShoppingCartPaymentMethodEntity
      *
      * @return $this
      */
-    public function setCc_number($cc_number)
+    public function setCcNumber($cc_number)
     {
         $this->cc_number = $cc_number;
 
@@ -192,7 +159,7 @@ class ShoppingCartPaymentMethodEntity
     /**
      * @return string
      */
-    public function getCc_type()
+    public function getCcType()
     {
         return $this->cc_type;
     }
@@ -202,7 +169,7 @@ class ShoppingCartPaymentMethodEntity
      *
      * @return $this
      */
-    public function setCc_type($cc_type)
+    public function setCcType($cc_type)
     {
         $this->cc_type = $cc_type;
 
@@ -212,7 +179,7 @@ class ShoppingCartPaymentMethodEntity
     /**
      * @return string
      */
-    public function getCc_exp_year()
+    public function getCcExpYear()
     {
         return $this->cc_exp_year;
     }
@@ -222,7 +189,7 @@ class ShoppingCartPaymentMethodEntity
      *
      * @return $this
      */
-    public function setCc_exp_year($cc_exp_year)
+    public function setCcExpYear($cc_exp_year)
     {
         $this->cc_exp_year = $cc_exp_year;
 
@@ -232,7 +199,7 @@ class ShoppingCartPaymentMethodEntity
     /**
      * @return string
      */
-    public function getCc_exp_month()
+    public function getCcExpMonth()
     {
         return $this->cc_exp_month;
     }
@@ -242,7 +209,7 @@ class ShoppingCartPaymentMethodEntity
      *
      * @return $this
      */
-    public function setCc_exp_month($cc_exp_month)
+    public function setCcExpMonth($cc_exp_month)
     {
         $this->cc_exp_month = $cc_exp_month;
 

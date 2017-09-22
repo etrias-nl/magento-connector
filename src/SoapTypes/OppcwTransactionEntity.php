@@ -102,66 +102,6 @@ class OppcwTransactionEntity
     protected $data = null;
 
     /**
-     * Constructor.
-     *
-     * @var int
-     * @var string $transaction_external_id
-     * @var int    $order_id
-     * @var int    $order_payment_id
-     * @var string $alias_for_display
-     * @var bool   $alias_active
-     * @var string $payment_method
-     * @var string $authorization_type
-     * @var int    $customer_id
-     * @var string $updated_on
-     * @var string $created_on
-     * @var string $payment_id
-     * @var string $authorization_amount
-     * @var string $authorization_status
-     * @var bool   $paid
-     * @var string $currency
-     * @var array  $data
-     *
-     * @param mixed $transaction_id
-     * @param mixed $transaction_external_id
-     * @param mixed $order_id
-     * @param mixed $order_payment_id
-     * @param mixed $alias_for_display
-     * @param mixed $alias_active
-     * @param mixed $payment_method
-     * @param mixed $authorization_type
-     * @param mixed $customer_id
-     * @param mixed $updated_on
-     * @param mixed $created_on
-     * @param mixed $payment_id
-     * @param mixed $authorization_amount
-     * @param mixed $authorization_status
-     * @param mixed $paid
-     * @param mixed $currency
-     * @param mixed $data
-     */
-    public function __construct($transaction_id, $transaction_external_id, $order_id, $order_payment_id, $alias_for_display, $alias_active, $payment_method, $authorization_type, $customer_id, $updated_on, $created_on, $payment_id, $authorization_amount, $authorization_status, $paid, $currency, $data)
-    {
-        $this->transaction_id = $transaction_id;
-        $this->transaction_external_id = $transaction_external_id;
-        $this->order_id = $order_id;
-        $this->order_payment_id = $order_payment_id;
-        $this->alias_for_display = $alias_for_display;
-        $this->alias_active = $alias_active;
-        $this->payment_method = $payment_method;
-        $this->authorization_type = $authorization_type;
-        $this->customer_id = $customer_id;
-        $this->updated_on = $updated_on;
-        $this->created_on = $created_on;
-        $this->payment_id = $payment_id;
-        $this->authorization_amount = $authorization_amount;
-        $this->authorization_status = $authorization_status;
-        $this->paid = $paid;
-        $this->currency = $currency;
-        $this->data = $data;
-    }
-
-    /**
      * @return int
      */
     public function getTransactionId()
@@ -494,7 +434,7 @@ class OppcwTransactionEntity
      *
      * @return $this
      */
-    public function setData($data)
+    public function setData(array $data)
     {
         $this->data = $data;
 

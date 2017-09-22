@@ -174,7 +174,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -184,7 +184,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -194,7 +194,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -204,7 +204,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -214,7 +214,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -224,7 +224,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -234,7 +234,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -244,7 +244,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -254,7 +254,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_applied()
+    public function getWeeeTaxApplied()
     {
         return $this->weee_tax_applied;
     }
@@ -264,7 +264,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied($weee_tax_applied)
+    public function setWeeeTaxApplied($weee_tax_applied)
     {
         $this->weee_tax_applied = $weee_tax_applied;
 
@@ -334,7 +334,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getTax_amount()
+    public function getTaxAmount()
     {
         return $this->tax_amount;
     }
@@ -344,7 +344,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setTax_amount($tax_amount)
+    public function setTaxAmount($tax_amount)
     {
         $this->tax_amount = $tax_amount;
 
@@ -354,7 +354,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getRow_total()
+    public function getRowTotal()
     {
         return $this->row_total;
     }
@@ -364,7 +364,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setRow_total($row_total)
+    public function setRowTotal($row_total)
     {
         $this->row_total = $row_total;
 
@@ -374,7 +374,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getBase_price()
+    public function getBasePrice()
     {
         return $this->base_price;
     }
@@ -384,7 +384,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setBase_price($base_price)
+    public function setBasePrice($base_price)
     {
         $this->base_price = $base_price;
 
@@ -394,7 +394,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getBase_tax_amount()
+    public function getBaseTaxAmount()
     {
         return $this->base_tax_amount;
     }
@@ -404,7 +404,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setBase_tax_amount($base_tax_amount)
+    public function setBaseTaxAmount($base_tax_amount)
     {
         $this->base_tax_amount = $base_tax_amount;
 
@@ -414,7 +414,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getBase_row_total()
+    public function getBaseRowTotal()
     {
         return $this->base_row_total;
     }
@@ -424,7 +424,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setBase_row_total($base_row_total)
+    public function setBaseRowTotal($base_row_total)
     {
         $this->base_row_total = $base_row_total;
 
@@ -434,7 +434,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getBase_weee_tax_applied_amount()
+    public function getBaseWeeeTaxAppliedAmount()
     {
         return $this->base_weee_tax_applied_amount;
     }
@@ -444,7 +444,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_applied_amount($base_weee_tax_applied_amount)
+    public function setBaseWeeeTaxAppliedAmount($base_weee_tax_applied_amount)
     {
         $this->base_weee_tax_applied_amount = $base_weee_tax_applied_amount;
 
@@ -454,7 +454,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getBase_weee_tax_applied_row_amount()
+    public function getBaseWeeeTaxAppliedRowAmount()
     {
         return $this->base_weee_tax_applied_row_amount;
     }
@@ -464,7 +464,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_applied_row_amount($base_weee_tax_applied_row_amount)
+    public function setBaseWeeeTaxAppliedRowAmount($base_weee_tax_applied_row_amount)
     {
         $this->base_weee_tax_applied_row_amount = $base_weee_tax_applied_row_amount;
 
@@ -474,7 +474,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_applied_amount()
+    public function getWeeeTaxAppliedAmount()
     {
         return $this->weee_tax_applied_amount;
     }
@@ -484,7 +484,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied_amount($weee_tax_applied_amount)
+    public function setWeeeTaxAppliedAmount($weee_tax_applied_amount)
     {
         $this->weee_tax_applied_amount = $weee_tax_applied_amount;
 
@@ -494,7 +494,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_applied_row_amount()
+    public function getWeeeTaxAppliedRowAmount()
     {
         return $this->weee_tax_applied_row_amount;
     }
@@ -504,7 +504,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied_row_amount($weee_tax_applied_row_amount)
+    public function setWeeeTaxAppliedRowAmount($weee_tax_applied_row_amount)
     {
         $this->weee_tax_applied_row_amount = $weee_tax_applied_row_amount;
 
@@ -514,7 +514,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_disposition()
+    public function getWeeeTaxDisposition()
     {
         return $this->weee_tax_disposition;
     }
@@ -524,7 +524,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_disposition($weee_tax_disposition)
+    public function setWeeeTaxDisposition($weee_tax_disposition)
     {
         $this->weee_tax_disposition = $weee_tax_disposition;
 
@@ -534,7 +534,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getWeee_tax_row_disposition()
+    public function getWeeeTaxRowDisposition()
     {
         return $this->weee_tax_row_disposition;
     }
@@ -544,7 +544,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_row_disposition($weee_tax_row_disposition)
+    public function setWeeeTaxRowDisposition($weee_tax_row_disposition)
     {
         $this->weee_tax_row_disposition = $weee_tax_row_disposition;
 
@@ -554,7 +554,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getBase_weee_tax_disposition()
+    public function getBaseWeeeTaxDisposition()
     {
         return $this->base_weee_tax_disposition;
     }
@@ -564,7 +564,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_disposition($base_weee_tax_disposition)
+    public function setBaseWeeeTaxDisposition($base_weee_tax_disposition)
     {
         $this->base_weee_tax_disposition = $base_weee_tax_disposition;
 
@@ -574,7 +574,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getBase_weee_tax_row_disposition()
+    public function getBaseWeeeTaxRowDisposition()
     {
         return $this->base_weee_tax_row_disposition;
     }
@@ -584,7 +584,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_row_disposition($base_weee_tax_row_disposition)
+    public function setBaseWeeeTaxRowDisposition($base_weee_tax_row_disposition)
     {
         $this->base_weee_tax_row_disposition = $base_weee_tax_row_disposition;
 
@@ -634,7 +634,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getOrder_item_id()
+    public function getOrderItemId()
     {
         return $this->order_item_id;
     }
@@ -644,7 +644,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setOrder_item_id($order_item_id)
+    public function setOrderItemId($order_item_id)
     {
         $this->order_item_id = $order_item_id;
 
@@ -654,7 +654,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getProduct_id()
+    public function getProductId()
     {
         return $this->product_id;
     }
@@ -664,7 +664,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setProduct_id($product_id)
+    public function setProductId($product_id)
     {
         $this->product_id = $product_id;
 
@@ -674,7 +674,7 @@ class SalesOrderInvoiceItemEntity
     /**
      * @return string
      */
-    public function getItem_id()
+    public function getItemId()
     {
         return $this->item_id;
     }
@@ -684,7 +684,7 @@ class SalesOrderInvoiceItemEntity
      *
      * @return $this
      */
-    public function setItem_id($item_id)
+    public function setItemId($item_id)
     {
         $this->item_id = $item_id;
 

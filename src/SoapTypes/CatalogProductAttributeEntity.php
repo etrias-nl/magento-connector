@@ -107,55 +107,6 @@ class CatalogProductAttributeEntity
     protected $frontend_label = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string                                       $attribute_code
-     * @var string                                       $frontend_input
-     * @var string                                       $scope
-     * @var string                                       $default_value
-     * @var int                                          $is_unique
-     * @var int                                          $is_required
-     * @var string[]                                     $apply_to
-     * @var int                                          $is_configurable
-     * @var int                                          $is_searchable
-     * @var int                                          $is_visible_in_advanced_search
-     * @var int                                          $is_comparable
-     * @var int                                          $is_used_for_promo_rules
-     * @var int                                          $is_visible_on_front
-     * @var int                                          $used_in_product_listing
-     * @var array                                        $additional_fields
-     * @var CatalogAttributeOptionEntity[]               $options
-     * @var CatalogProductAttributeFrontendLabelEntity[] $frontend_label
-     *
-     * @param mixed $attribute_id
-     * @param mixed $attribute_code
-     * @param mixed $frontend_input
-     * @param mixed $scope
-     * @param mixed $default_value
-     * @param mixed $is_unique
-     * @param mixed $is_required
-     * @param mixed $apply_to
-     * @param mixed $is_configurable
-     * @param mixed $is_searchable
-     * @param mixed $is_visible_in_advanced_search
-     * @param mixed $is_comparable
-     * @param mixed $is_used_for_promo_rules
-     * @param mixed $is_visible_on_front
-     * @param mixed $used_in_product_listing
-     * @param mixed $additional_fields
-     * @param mixed $options
-     * @param mixed $frontend_label
-     */
-    public function __construct($attribute_id, $attribute_code, $frontend_input, $frontend_label)
-    {
-        $this->attribute_id = $attribute_id;
-        $this->attribute_code = $attribute_code;
-        $this->frontend_input = $frontend_input;
-        $this->frontend_label = $frontend_label;
-    }
-
-    /**
      * @return string
      */
     public function getAttributeId()

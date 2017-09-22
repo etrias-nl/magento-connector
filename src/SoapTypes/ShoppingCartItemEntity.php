@@ -277,174 +277,9 @@ class ShoppingCartItemEntity
     protected $tax_class_id = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $product_id
-     * @var string $store_id
-     * @var string $parent_item_id
-     * @var int    $is_virtual
-     * @var string $sku
-     * @var string $name
-     * @var string $description
-     * @var string $applied_rule_ids
-     * @var string $additional_data
-     * @var string $free_shipping
-     * @var string $is_qty_decimal
-     * @var string $no_discount
-     * @var float  $weight
-     * @var float  $qty
-     * @var float  $price
-     * @var float  $base_price
-     * @var float  $custom_price
-     * @var float  $discount_percent
-     * @var float  $discount_amount
-     * @var float  $base_discount_amount
-     * @var float  $tax_percent
-     * @var float  $tax_amount
-     * @var float  $base_tax_amount
-     * @var float  $row_total
-     * @var float  $base_row_total
-     * @var float  $row_total_with_discount
-     * @var float  $row_weight
-     * @var string $product_type
-     * @var float  $base_tax_before_discount
-     * @var float  $tax_before_discount
-     * @var float  $original_custom_price
-     * @var float  $base_cost
-     * @var float  $price_incl_tax
-     * @var float  $base_price_incl_tax
-     * @var float  $row_total_incl_tax
-     * @var float  $base_row_total_incl_tax
-     * @var string $gift_message_id
-     * @var string $gift_message
-     * @var string $gift_message_available
-     * @var float  $weee_tax_applied
-     * @var float  $weee_tax_applied_amount
-     * @var float  $weee_tax_applied_row_amount
-     * @var float  $base_weee_tax_applied_amount
-     * @var float  $base_weee_tax_applied_row_amount
-     * @var float  $weee_tax_disposition
-     * @var float  $weee_tax_row_disposition
-     * @var float  $base_weee_tax_disposition
-     * @var float  $base_weee_tax_row_disposition
-     * @var string $tax_class_id
-     *
-     * @param mixed $item_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $product_id
-     * @param mixed $store_id
-     * @param mixed $parent_item_id
-     * @param mixed $is_virtual
-     * @param mixed $sku
-     * @param mixed $name
-     * @param mixed $description
-     * @param mixed $applied_rule_ids
-     * @param mixed $additional_data
-     * @param mixed $free_shipping
-     * @param mixed $is_qty_decimal
-     * @param mixed $no_discount
-     * @param mixed $weight
-     * @param mixed $qty
-     * @param mixed $price
-     * @param mixed $base_price
-     * @param mixed $custom_price
-     * @param mixed $discount_percent
-     * @param mixed $discount_amount
-     * @param mixed $base_discount_amount
-     * @param mixed $tax_percent
-     * @param mixed $tax_amount
-     * @param mixed $base_tax_amount
-     * @param mixed $row_total
-     * @param mixed $base_row_total
-     * @param mixed $row_total_with_discount
-     * @param mixed $row_weight
-     * @param mixed $product_type
-     * @param mixed $base_tax_before_discount
-     * @param mixed $tax_before_discount
-     * @param mixed $original_custom_price
-     * @param mixed $base_cost
-     * @param mixed $price_incl_tax
-     * @param mixed $base_price_incl_tax
-     * @param mixed $row_total_incl_tax
-     * @param mixed $base_row_total_incl_tax
-     * @param mixed $gift_message_id
-     * @param mixed $gift_message
-     * @param mixed $gift_message_available
-     * @param mixed $weee_tax_applied
-     * @param mixed $weee_tax_applied_amount
-     * @param mixed $weee_tax_applied_row_amount
-     * @param mixed $base_weee_tax_applied_amount
-     * @param mixed $base_weee_tax_applied_row_amount
-     * @param mixed $weee_tax_disposition
-     * @param mixed $weee_tax_row_disposition
-     * @param mixed $base_weee_tax_disposition
-     * @param mixed $base_weee_tax_row_disposition
-     * @param mixed $tax_class_id
-     */
-    public function __construct($item_id, $created_at, $updated_at, $product_id, $store_id, $parent_item_id, $is_virtual, $sku, $name, $description, $applied_rule_ids, $additional_data, $free_shipping, $is_qty_decimal, $no_discount, $weight, $qty, $price, $base_price, $custom_price, $discount_percent, $discount_amount, $base_discount_amount, $tax_percent, $tax_amount, $base_tax_amount, $row_total, $base_row_total, $row_total_with_discount, $row_weight, $product_type, $base_tax_before_discount, $tax_before_discount, $original_custom_price, $base_cost, $price_incl_tax, $base_price_incl_tax, $row_total_incl_tax, $base_row_total_incl_tax, $gift_message_id, $gift_message, $gift_message_available, $weee_tax_applied, $weee_tax_applied_amount, $weee_tax_applied_row_amount, $base_weee_tax_applied_amount, $base_weee_tax_applied_row_amount, $weee_tax_disposition, $weee_tax_row_disposition, $base_weee_tax_disposition, $base_weee_tax_row_disposition, $tax_class_id)
-    {
-        $this->item_id = $item_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->product_id = $product_id;
-        $this->store_id = $store_id;
-        $this->parent_item_id = $parent_item_id;
-        $this->is_virtual = $is_virtual;
-        $this->sku = $sku;
-        $this->name = $name;
-        $this->description = $description;
-        $this->applied_rule_ids = $applied_rule_ids;
-        $this->additional_data = $additional_data;
-        $this->free_shipping = $free_shipping;
-        $this->is_qty_decimal = $is_qty_decimal;
-        $this->no_discount = $no_discount;
-        $this->weight = $weight;
-        $this->qty = $qty;
-        $this->price = $price;
-        $this->base_price = $base_price;
-        $this->custom_price = $custom_price;
-        $this->discount_percent = $discount_percent;
-        $this->discount_amount = $discount_amount;
-        $this->base_discount_amount = $base_discount_amount;
-        $this->tax_percent = $tax_percent;
-        $this->tax_amount = $tax_amount;
-        $this->base_tax_amount = $base_tax_amount;
-        $this->row_total = $row_total;
-        $this->base_row_total = $base_row_total;
-        $this->row_total_with_discount = $row_total_with_discount;
-        $this->row_weight = $row_weight;
-        $this->product_type = $product_type;
-        $this->base_tax_before_discount = $base_tax_before_discount;
-        $this->tax_before_discount = $tax_before_discount;
-        $this->original_custom_price = $original_custom_price;
-        $this->base_cost = $base_cost;
-        $this->price_incl_tax = $price_incl_tax;
-        $this->base_price_incl_tax = $base_price_incl_tax;
-        $this->row_total_incl_tax = $row_total_incl_tax;
-        $this->base_row_total_incl_tax = $base_row_total_incl_tax;
-        $this->gift_message_id = $gift_message_id;
-        $this->gift_message = $gift_message;
-        $this->gift_message_available = $gift_message_available;
-        $this->weee_tax_applied = $weee_tax_applied;
-        $this->weee_tax_applied_amount = $weee_tax_applied_amount;
-        $this->weee_tax_applied_row_amount = $weee_tax_applied_row_amount;
-        $this->base_weee_tax_applied_amount = $base_weee_tax_applied_amount;
-        $this->base_weee_tax_applied_row_amount = $base_weee_tax_applied_row_amount;
-        $this->weee_tax_disposition = $weee_tax_disposition;
-        $this->weee_tax_row_disposition = $weee_tax_row_disposition;
-        $this->base_weee_tax_disposition = $base_weee_tax_disposition;
-        $this->base_weee_tax_row_disposition = $base_weee_tax_row_disposition;
-        $this->tax_class_id = $tax_class_id;
-    }
-
-    /**
      * @return string
      */
-    public function getItem_id()
+    public function getItemId()
     {
         return $this->item_id;
     }
@@ -454,7 +289,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setItem_id($item_id)
+    public function setItemId($item_id)
     {
         $this->item_id = $item_id;
 
@@ -464,7 +299,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -474,7 +309,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -484,7 +319,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -494,7 +329,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -504,7 +339,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getProduct_id()
+    public function getProductId()
     {
         return $this->product_id;
     }
@@ -514,7 +349,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setProduct_id($product_id)
+    public function setProductId($product_id)
     {
         $this->product_id = $product_id;
 
@@ -524,7 +359,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -534,7 +369,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 
@@ -544,7 +379,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getParent_item_id()
+    public function getParentItemId()
     {
         return $this->parent_item_id;
     }
@@ -554,7 +389,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setParent_item_id($parent_item_id)
+    public function setParentItemId($parent_item_id)
     {
         $this->parent_item_id = $parent_item_id;
 
@@ -564,7 +399,7 @@ class ShoppingCartItemEntity
     /**
      * @return int
      */
-    public function getIs_virtual()
+    public function getIsVirtual()
     {
         return $this->is_virtual;
     }
@@ -574,7 +409,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setIs_virtual($is_virtual)
+    public function setIsVirtual($is_virtual)
     {
         $this->is_virtual = $is_virtual;
 
@@ -644,7 +479,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getApplied_rule_ids()
+    public function getAppliedRuleIds()
     {
         return $this->applied_rule_ids;
     }
@@ -654,7 +489,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setApplied_rule_ids($applied_rule_ids)
+    public function setAppliedRuleIds($applied_rule_ids)
     {
         $this->applied_rule_ids = $applied_rule_ids;
 
@@ -664,7 +499,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getAdditional_data()
+    public function getAdditionalData()
     {
         return $this->additional_data;
     }
@@ -674,7 +509,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setAdditional_data($additional_data)
+    public function setAdditionalData($additional_data)
     {
         $this->additional_data = $additional_data;
 
@@ -684,7 +519,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getFree_shipping()
+    public function getFreeShipping()
     {
         return $this->free_shipping;
     }
@@ -694,7 +529,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setFree_shipping($free_shipping)
+    public function setFreeShipping($free_shipping)
     {
         $this->free_shipping = $free_shipping;
 
@@ -704,7 +539,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getIs_qty_decimal()
+    public function getIsQtyDecimal()
     {
         return $this->is_qty_decimal;
     }
@@ -714,7 +549,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setIs_qty_decimal($is_qty_decimal)
+    public function setIsQtyDecimal($is_qty_decimal)
     {
         $this->is_qty_decimal = $is_qty_decimal;
 
@@ -724,7 +559,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getNo_discount()
+    public function getNoDiscount()
     {
         return $this->no_discount;
     }
@@ -734,7 +569,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setNo_discount($no_discount)
+    public function setNoDiscount($no_discount)
     {
         $this->no_discount = $no_discount;
 
@@ -804,7 +639,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_price()
+    public function getBasePrice()
     {
         return $this->base_price;
     }
@@ -814,7 +649,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_price($base_price)
+    public function setBasePrice($base_price)
     {
         $this->base_price = $base_price;
 
@@ -824,7 +659,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getCustom_price()
+    public function getCustomPrice()
     {
         return $this->custom_price;
     }
@@ -834,7 +669,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setCustom_price($custom_price)
+    public function setCustomPrice($custom_price)
     {
         $this->custom_price = $custom_price;
 
@@ -844,7 +679,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getDiscount_percent()
+    public function getDiscountPercent()
     {
         return $this->discount_percent;
     }
@@ -854,7 +689,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setDiscount_percent($discount_percent)
+    public function setDiscountPercent($discount_percent)
     {
         $this->discount_percent = $discount_percent;
 
@@ -864,7 +699,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getDiscount_amount()
+    public function getDiscountAmount()
     {
         return $this->discount_amount;
     }
@@ -874,7 +709,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setDiscount_amount($discount_amount)
+    public function setDiscountAmount($discount_amount)
     {
         $this->discount_amount = $discount_amount;
 
@@ -884,7 +719,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_discount_amount()
+    public function getBaseDiscountAmount()
     {
         return $this->base_discount_amount;
     }
@@ -894,7 +729,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_discount_amount($base_discount_amount)
+    public function setBaseDiscountAmount($base_discount_amount)
     {
         $this->base_discount_amount = $base_discount_amount;
 
@@ -904,7 +739,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getTax_percent()
+    public function getTaxPercent()
     {
         return $this->tax_percent;
     }
@@ -914,7 +749,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setTax_percent($tax_percent)
+    public function setTaxPercent($tax_percent)
     {
         $this->tax_percent = $tax_percent;
 
@@ -924,7 +759,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getTax_amount()
+    public function getTaxAmount()
     {
         return $this->tax_amount;
     }
@@ -934,7 +769,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setTax_amount($tax_amount)
+    public function setTaxAmount($tax_amount)
     {
         $this->tax_amount = $tax_amount;
 
@@ -944,7 +779,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_tax_amount()
+    public function getBaseTaxAmount()
     {
         return $this->base_tax_amount;
     }
@@ -954,7 +789,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_tax_amount($base_tax_amount)
+    public function setBaseTaxAmount($base_tax_amount)
     {
         $this->base_tax_amount = $base_tax_amount;
 
@@ -964,7 +799,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getRow_total()
+    public function getRowTotal()
     {
         return $this->row_total;
     }
@@ -974,7 +809,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setRow_total($row_total)
+    public function setRowTotal($row_total)
     {
         $this->row_total = $row_total;
 
@@ -984,7 +819,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_row_total()
+    public function getBaseRowTotal()
     {
         return $this->base_row_total;
     }
@@ -994,7 +829,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_row_total($base_row_total)
+    public function setBaseRowTotal($base_row_total)
     {
         $this->base_row_total = $base_row_total;
 
@@ -1004,7 +839,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getRow_total_with_discount()
+    public function getRowTotalWithDiscount()
     {
         return $this->row_total_with_discount;
     }
@@ -1014,7 +849,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setRow_total_with_discount($row_total_with_discount)
+    public function setRowTotalWithDiscount($row_total_with_discount)
     {
         $this->row_total_with_discount = $row_total_with_discount;
 
@@ -1024,7 +859,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getRow_weight()
+    public function getRowWeight()
     {
         return $this->row_weight;
     }
@@ -1034,7 +869,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setRow_weight($row_weight)
+    public function setRowWeight($row_weight)
     {
         $this->row_weight = $row_weight;
 
@@ -1044,7 +879,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getProduct_type()
+    public function getProductType()
     {
         return $this->product_type;
     }
@@ -1054,7 +889,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setProduct_type($product_type)
+    public function setProductType($product_type)
     {
         $this->product_type = $product_type;
 
@@ -1064,7 +899,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_tax_before_discount()
+    public function getBaseTaxBeforeDiscount()
     {
         return $this->base_tax_before_discount;
     }
@@ -1074,7 +909,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_tax_before_discount($base_tax_before_discount)
+    public function setBaseTaxBeforeDiscount($base_tax_before_discount)
     {
         $this->base_tax_before_discount = $base_tax_before_discount;
 
@@ -1084,7 +919,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getTax_before_discount()
+    public function getTaxBeforeDiscount()
     {
         return $this->tax_before_discount;
     }
@@ -1094,7 +929,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setTax_before_discount($tax_before_discount)
+    public function setTaxBeforeDiscount($tax_before_discount)
     {
         $this->tax_before_discount = $tax_before_discount;
 
@@ -1104,7 +939,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getOriginal_custom_price()
+    public function getOriginalCustomPrice()
     {
         return $this->original_custom_price;
     }
@@ -1114,7 +949,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setOriginal_custom_price($original_custom_price)
+    public function setOriginalCustomPrice($original_custom_price)
     {
         $this->original_custom_price = $original_custom_price;
 
@@ -1124,7 +959,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_cost()
+    public function getBaseCost()
     {
         return $this->base_cost;
     }
@@ -1134,7 +969,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_cost($base_cost)
+    public function setBaseCost($base_cost)
     {
         $this->base_cost = $base_cost;
 
@@ -1144,7 +979,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getPrice_incl_tax()
+    public function getPriceInclTax()
     {
         return $this->price_incl_tax;
     }
@@ -1154,7 +989,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setPrice_incl_tax($price_incl_tax)
+    public function setPriceInclTax($price_incl_tax)
     {
         $this->price_incl_tax = $price_incl_tax;
 
@@ -1164,7 +999,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_price_incl_tax()
+    public function getBasePriceInclTax()
     {
         return $this->base_price_incl_tax;
     }
@@ -1174,7 +1009,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_price_incl_tax($base_price_incl_tax)
+    public function setBasePriceInclTax($base_price_incl_tax)
     {
         $this->base_price_incl_tax = $base_price_incl_tax;
 
@@ -1184,7 +1019,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getRow_total_incl_tax()
+    public function getRowTotalInclTax()
     {
         return $this->row_total_incl_tax;
     }
@@ -1194,7 +1029,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setRow_total_incl_tax($row_total_incl_tax)
+    public function setRowTotalInclTax($row_total_incl_tax)
     {
         $this->row_total_incl_tax = $row_total_incl_tax;
 
@@ -1204,7 +1039,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_row_total_incl_tax()
+    public function getBaseRowTotalInclTax()
     {
         return $this->base_row_total_incl_tax;
     }
@@ -1214,7 +1049,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_row_total_incl_tax($base_row_total_incl_tax)
+    public function setBaseRowTotalInclTax($base_row_total_incl_tax)
     {
         $this->base_row_total_incl_tax = $base_row_total_incl_tax;
 
@@ -1224,7 +1059,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getGift_message_id()
+    public function getGiftMessageId()
     {
         return $this->gift_message_id;
     }
@@ -1234,7 +1069,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setGift_message_id($gift_message_id)
+    public function setGiftMessageId($gift_message_id)
     {
         $this->gift_message_id = $gift_message_id;
 
@@ -1244,7 +1079,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getGift_message()
+    public function getGiftMessage()
     {
         return $this->gift_message;
     }
@@ -1254,7 +1089,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setGift_message($gift_message)
+    public function setGiftMessage($gift_message)
     {
         $this->gift_message = $gift_message;
 
@@ -1264,7 +1099,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getGift_message_available()
+    public function getGiftMessageAvailable()
     {
         return $this->gift_message_available;
     }
@@ -1274,7 +1109,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setGift_message_available($gift_message_available)
+    public function setGiftMessageAvailable($gift_message_available)
     {
         $this->gift_message_available = $gift_message_available;
 
@@ -1284,7 +1119,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getWeee_tax_applied()
+    public function getWeeeTaxApplied()
     {
         return $this->weee_tax_applied;
     }
@@ -1294,7 +1129,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied($weee_tax_applied)
+    public function setWeeeTaxApplied($weee_tax_applied)
     {
         $this->weee_tax_applied = $weee_tax_applied;
 
@@ -1304,7 +1139,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getWeee_tax_applied_amount()
+    public function getWeeeTaxAppliedAmount()
     {
         return $this->weee_tax_applied_amount;
     }
@@ -1314,7 +1149,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied_amount($weee_tax_applied_amount)
+    public function setWeeeTaxAppliedAmount($weee_tax_applied_amount)
     {
         $this->weee_tax_applied_amount = $weee_tax_applied_amount;
 
@@ -1324,7 +1159,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getWeee_tax_applied_row_amount()
+    public function getWeeeTaxAppliedRowAmount()
     {
         return $this->weee_tax_applied_row_amount;
     }
@@ -1334,7 +1169,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_applied_row_amount($weee_tax_applied_row_amount)
+    public function setWeeeTaxAppliedRowAmount($weee_tax_applied_row_amount)
     {
         $this->weee_tax_applied_row_amount = $weee_tax_applied_row_amount;
 
@@ -1344,7 +1179,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_weee_tax_applied_amount()
+    public function getBaseWeeeTaxAppliedAmount()
     {
         return $this->base_weee_tax_applied_amount;
     }
@@ -1354,7 +1189,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_applied_amount($base_weee_tax_applied_amount)
+    public function setBaseWeeeTaxAppliedAmount($base_weee_tax_applied_amount)
     {
         $this->base_weee_tax_applied_amount = $base_weee_tax_applied_amount;
 
@@ -1364,7 +1199,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_weee_tax_applied_row_amount()
+    public function getBaseWeeeTaxAppliedRowAmount()
     {
         return $this->base_weee_tax_applied_row_amount;
     }
@@ -1374,7 +1209,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_applied_row_amount($base_weee_tax_applied_row_amount)
+    public function setBaseWeeeTaxAppliedRowAmount($base_weee_tax_applied_row_amount)
     {
         $this->base_weee_tax_applied_row_amount = $base_weee_tax_applied_row_amount;
 
@@ -1384,7 +1219,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getWeee_tax_disposition()
+    public function getWeeeTaxDisposition()
     {
         return $this->weee_tax_disposition;
     }
@@ -1394,7 +1229,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_disposition($weee_tax_disposition)
+    public function setWeeeTaxDisposition($weee_tax_disposition)
     {
         $this->weee_tax_disposition = $weee_tax_disposition;
 
@@ -1404,7 +1239,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getWeee_tax_row_disposition()
+    public function getWeeeTaxRowDisposition()
     {
         return $this->weee_tax_row_disposition;
     }
@@ -1414,7 +1249,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setWeee_tax_row_disposition($weee_tax_row_disposition)
+    public function setWeeeTaxRowDisposition($weee_tax_row_disposition)
     {
         $this->weee_tax_row_disposition = $weee_tax_row_disposition;
 
@@ -1424,7 +1259,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_weee_tax_disposition()
+    public function getBaseWeeeTaxDisposition()
     {
         return $this->base_weee_tax_disposition;
     }
@@ -1434,7 +1269,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_disposition($base_weee_tax_disposition)
+    public function setBaseWeeeTaxDisposition($base_weee_tax_disposition)
     {
         $this->base_weee_tax_disposition = $base_weee_tax_disposition;
 
@@ -1444,7 +1279,7 @@ class ShoppingCartItemEntity
     /**
      * @return float
      */
-    public function getBase_weee_tax_row_disposition()
+    public function getBaseWeeeTaxRowDisposition()
     {
         return $this->base_weee_tax_row_disposition;
     }
@@ -1454,7 +1289,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setBase_weee_tax_row_disposition($base_weee_tax_row_disposition)
+    public function setBaseWeeeTaxRowDisposition($base_weee_tax_row_disposition)
     {
         $this->base_weee_tax_row_disposition = $base_weee_tax_row_disposition;
 
@@ -1464,7 +1299,7 @@ class ShoppingCartItemEntity
     /**
      * @return string
      */
-    public function getTax_class_id()
+    public function getTaxClassId()
     {
         return $this->tax_class_id;
     }
@@ -1474,7 +1309,7 @@ class ShoppingCartItemEntity
      *
      * @return $this
      */
-    public function setTax_class_id($tax_class_id)
+    public function setTaxClassId($tax_class_id)
     {
         $this->tax_class_id = $tax_class_id;
 
