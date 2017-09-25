@@ -40,6 +40,7 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\ComplexFilter;
 use Etrias\MagentoConnector\SoapTypes\Filters;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\MultiArgumentRequest;
@@ -715,5 +716,62 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId, $product, $data]);
 
         return (bool) $this->processRequest('catalogInventoryStockItemUpdate', $request);
+    }
+
+    public function addCommentToOrder(
+        string $sessionId,
+        string $orderIncrementId,
+        string $status,
+        string $comment = null,
+        string $notify = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $orderIncrementId, $status, $comment, $notify]);
+
+        return (bool) $this->processRequest('salesOrderAddComment', $request);
+    }
+
+    public function listOrders(
+        string $sessionId,
+        array $filters = []
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $filters]);
+
+        return $this->processRequest('salesOrderList', $request);
+    }
+
+    public function getOrderInfo(
+        string $sessionId,
+        string $orderIncrementId
+    ): SalesOrderEntity {
+        $request = new MultiArgumentRequest([$sessionId, $orderIncrementId]);
+
+        return $this->processRequest('salesOrderInfo', $request);
+    }
+
+    public function holdOrder(
+        string $sessionId,
+        string $orderIncrementId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $orderIncrementId]);
+
+        return (bool) $this->processRequest('salesOrderHold', $request);
+    }
+
+    public function unHoldOrder(
+        string $sessionId,
+        string $orderIncrementId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $orderIncrementId]);
+
+        return (bool) $this->processRequest('salesOrderUnhold', $request);
+    }
+
+    public function cancelOrder(
+        string $sessionId,
+        string $orderIncrementId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $orderIncrementId]);
+
+        return (bool) $this->processRequest('salesOrderCancel', $request);
     }
 }

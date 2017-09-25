@@ -41,6 +41,7 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 interface AdapterInterface
@@ -496,5 +497,71 @@ interface AdapterInterface
         string $sessionId,
         string $product,
         CatalogInventoryStockItemUpdateEntity $data
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @param string $status
+     * @param string|null $comment
+     * @param string|null $notify
+     * @return bool
+     */
+    public function addCommentToOrder(
+        string $sessionId,
+        string $orderIncrementId,
+        string $status,
+        string $comment = null,
+        string $notify = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param array $filters
+     * @return array
+     */
+    public function listOrders(
+        string $sessionId,
+        array $filters = []
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @return SalesOrderEntity
+     */
+    public function getOrderInfo(
+        string $sessionId,
+        string $orderIncrementId
+    ): SalesOrderEntity;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @return bool
+     */
+    public function holdOrder(
+        string $sessionId,
+        string $orderIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @return bool
+     */
+    public function unHoldOrder(
+        string $sessionId,
+        string $orderIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @return bool
+     */
+    public function cancelOrder(
+        string $sessionId,
+        string $orderIncrementId
     ): bool;
 }

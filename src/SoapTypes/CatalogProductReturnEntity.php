@@ -912,7 +912,6 @@ class CatalogProductReturnEntity
     /**
      * @param string $attribute_code
      * @return mixed
-     * @throws AttributeNotExistsException
      */
     public function getAttribute(string $attribute_code)
     {
