@@ -41,7 +41,10 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 interface AdapterInterface
@@ -564,4 +567,145 @@ interface AdapterInterface
         string $sessionId,
         string $orderIncrementId
     ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $creditMemoIncrementId
+     * @param string|null $comment
+     * @param int|null $notifyCustomer
+     * @param int|null $includeComment
+     * @return bool
+     */
+    public function addCommentToCreditMemo(
+        string $sessionId,
+        string $creditMemoIncrementId,
+        string $comment = null,
+        int $notifyCustomer = null,
+        int $includeComment = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @param SalesOrderCreditmemoData|null $data
+     * @param string|null $comment
+     * @param int $notifyCustomer
+     * @param int $includeComment
+     * @param string $refundToStoreCreditAmount
+     * @return string
+     */
+    public function createCreditMemo(
+        string $sessionId,
+        string $orderIncrementId,
+        SalesOrderCreditmemoData $data = null,
+        string $comment = null,
+        int $notifyCustomer,
+        int $includeComment,
+        string $refundToStoreCreditAmount
+    ): string;
+
+    /**
+     * @param string $sessionId
+     * @param string $creditMemoIncrementId
+     * @return bool
+     */
+    public function cancelCreditMemo(
+        string $sessionId,
+        string $creditMemoIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $creditMemoIncrementId
+     * @return SalesOrderCreditmemoEntity
+     */
+    public function getCreditMemoInfo(
+        string $sessionId,
+        string $creditMemoIncrementId
+    ): SalesOrderCreditmemoEntity;
+
+    /**
+     * @param string $sessionId
+     * @param array $filters
+     * @return SalesOrderCreditmemoEntity[]
+     */
+    public function listCreditMemos(
+        string $sessionId,
+        array $filters = []
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $invoiceIncrementId
+     * @param string $comment
+     * @param int $sendEmail
+     * @param int $includeComment
+     * @return bool
+     */
+    public function addCommentToOrderInvoice(
+        string $sessionId,
+        string $invoiceIncrementId,
+        string $comment,
+        int $sendEmail,
+        int $includeComment
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @param array|null $itemsQty
+     * @param string|null $comment
+     * @param string|null $sendEmail
+     * @param string|null $includeComment
+     * @return string
+     */
+    public function createOrderInvoice(
+        string $sessionId,
+        string $orderIncrementId,
+        array $itemsQty = null,
+        string $comment = null,
+        string $sendEmail = null,
+        string $includeComment = null
+    ): string;
+
+    /**
+     * @param string $sessionId
+     * @param array $filters
+     * @return SalesOrderInvoiceEntity[]
+     */
+    public function listInvoices(
+        string $sessionId,
+        array $filters = []
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $invoiceIncrementId
+     * @return SalesOrderInvoiceEntity
+     */
+    public function getInvoiceInfo(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): SalesOrderInvoiceEntity;
+
+    /**
+     * @param string $sessionId
+     * @param string $invoiceIncrementId
+     * @return bool
+     */
+    public function cancelInvoice(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $invoiceIncrementId
+     * @return bool
+     */
+    public function captureInvoice(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): bool;
+
 }

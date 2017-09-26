@@ -26,7 +26,7 @@ use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 /**
  * @coversNothing
  */
-class GeneralServiceTest extends AbstractServiceTest
+class OrderServiceTest extends AbstractServiceTest
 {
     use RandomizeTrait;
 

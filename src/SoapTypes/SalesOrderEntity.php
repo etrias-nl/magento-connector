@@ -1757,7 +1757,7 @@ class SalesOrderEntity
     }
 
     /**
-     * @return salesOrderItemEntityArray
+     * @return salesOrderItemEntity[]
      */
     public function getItems()
     {
@@ -1765,7 +1765,7 @@ class SalesOrderEntity
     }
 
     /**
-     * @param salesOrderItemEntityArray $items
+     * @param salesOrderItemEntity[] $items
      *
      * @return $this
      */
@@ -1797,7 +1797,7 @@ class SalesOrderEntity
     }
 
     /**
-     * @return salesOrderStatusHistoryEntityArray
+     * @return salesOrderStatusHistoryEntity[]
      */
     public function getStatusHistory()
     {
@@ -1805,7 +1805,7 @@ class SalesOrderEntity
     }
 
     /**
-     * @param salesOrderStatusHistoryEntityArray $status_history
+     * @param salesOrderStatusHistoryEntity[] $status_history
      *
      * @return $this
      */

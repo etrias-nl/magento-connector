@@ -40,7 +40,10 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\ComplexFilter;
 use Etrias\MagentoConnector\SoapTypes\Filters;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\MultiArgumentRequest;
@@ -773,5 +776,127 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId, $orderIncrementId]);
 
         return (bool) $this->processRequest('salesOrderCancel', $request);
+    }
+
+    public function addCommentToCreditMemo(
+        string $sessionId,
+        string $creditMemoIncrementId,
+        string $comment = null,
+        int $notifyCustomer = null,
+        int $includeComment = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $creditMemoIncrementId, $comment, $notifyCustomer, $includeComment]);
+
+        return (bool) $this->processRequest('salesOrderCreditmemoAddComment', $request);
+    }
+
+    public function cancelCreditMemo(
+        string $sessionId,
+        string $creditMemoIncrementId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $creditMemoIncrementId]);
+
+        return (bool) $this->processRequest('salesOrderCreditmemoCancel', $request);
+    }
+
+    public function createCreditMemo(
+        string $sessionId,
+        string $orderIncrementId,
+        SalesOrderCreditmemoData $data = null,
+        string $comment = null,
+        int $notifyCustomer,
+        int $includeComment,
+        string $refundToStoreCreditAmount
+    ): string {
+        $request = new MultiArgumentRequest([
+            $sessionId,
+            $orderIncrementId,
+            $data,
+            $comment,
+            $notifyCustomer,
+            $includeComment,
+            $refundToStoreCreditAmount
+        ]);
+
+        return $this->processRequest('salesOrderCreditmemoCreate', $request);
+    }
+
+    public function getCreditMemoInfo(
+        string $sessionId,
+        string $creditMemoIncrementId
+    ): SalesOrderCreditmemoEntity {
+        $request = new MultiArgumentRequest([$sessionId, $creditMemoIncrementId]);
+
+        return $this->processRequest('salesOrderCreditmemoInfo', $request);
+    }
+
+    public function listCreditMemos(
+        string $sessionId,
+        array $filters = []
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $filters]);
+
+        return $this->processRequest('salesOrderCreditmemoList', $request);
+    }
+
+    public function addCommentToOrderInvoice(
+        string $sessionId,
+        string $invoiceIncrementId,
+        string $comment,
+        int $sendEmail,
+        int $includeComment
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $invoiceIncrementId, $comment, $sendEmail, $includeComment]);
+
+        return (bool) $this->processRequest('salesOrderInvoiceAddComment', $request);
+    }
+
+    public function cancelInvoice(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $invoiceIncrementId]);
+
+        return (bool) $this->processRequest('salesOrderInvoiceCancel', $request);
+    }
+
+    public function captureInvoice(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $invoiceIncrementId]);
+
+        return (bool) $this->processRequest('salesOrderInvoiceCapture', $request);
+    }
+
+    public function createOrderInvoice(
+        string $sessionId,
+        string $orderIncrementId,
+        array $itemsQty = null,
+        string $comment = null,
+        string $sendEmail = null,
+        string $includeComment = null
+    ): string {
+        $request = new MultiArgumentRequest([$sessionId, $orderIncrementId, $itemsQty, $comment, $sendEmail, $includeComment]);
+
+        return $this->processRequest('salesOrderInvoiceCreate', $request);
+    }
+
+    public function getInvoiceInfo(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): SalesOrderInvoiceEntity {
+        $request = new MultiArgumentRequest([$sessionId, $invoiceIncrementId]);
+
+        return $this->processRequest('salesOrderInvoiceInfo', $request);
+    }
+
+    public function listInvoices(
+        string $sessionId,
+        array $filters = []
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $filters]);
+
+        return $this->processRequest('salesOrderInvoiceList', $request);
     }
 }

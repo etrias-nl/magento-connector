@@ -15,13 +15,17 @@ declare(strict_types=1);
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
 use DateTime;
+use Etrias\MagentoConnector\Services\CreditMemoService;
 use Etrias\MagentoConnector\Services\GeneralService;
+use Etrias\MagentoConnector\Services\InvoiceService;
 use Etrias\MagentoConnector\Services\OrderService;
 use Etrias\MagentoConnector\Services\ProductAttributeService;
 use Etrias\MagentoConnector\Services\ProductService;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderListEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
@@ -36,8 +40,14 @@ trait RandomizeTrait
     /** @var ProductAttributeService */
     private $productAttributeService;
 
-    /** @var  OrderService */
+    /** @var OrderService */
     private $orderService;
+
+    /** @var CreditMemoService */
+    private $creditMemoService;
+
+    /** @var  InvoiceService */
+    private $invoiceService;
 
     /**
      * @param DateTime $min
@@ -99,7 +109,26 @@ trait RandomizeTrait
         $orders = $this->orderService->getOrders();
 
         return $orders[array_rand($orders, 1)];
+    }
 
+    /**
+     * @return SalesOrderCreditmemoEntity
+     */
+    private function getRandomCreditMemo()
+    {
+        $creditMemos = $this->creditMemoService->getCreditMemos();
+
+        return $creditMemos[array_rand($creditMemos, 1)];
+    }
+
+    /**
+     * @return SalesOrderInvoiceEntity
+     */
+    private function getRandomInvoice()
+    {
+        $invoices = $this->invoiceService->getInvoices();
+
+        return $invoices[array_rand($invoices, 1)];
     }
 
     /**

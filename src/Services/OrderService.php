@@ -68,7 +68,7 @@ class OrderService
         return $this->adapter->listOrders($this->authenticationService->login(), $filters);
     }
 
-    public function getOrderInfo(string $orderIncrementId): salesOrderEntity
+    public function getOrderInfo(string $orderIncrementId): SalesOrderEntity
     {
         return $this->adapter->getOrderInfo($this->authenticationService->login(), $orderIncrementId);
     }
