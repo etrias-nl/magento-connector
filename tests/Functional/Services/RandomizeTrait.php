@@ -28,6 +28,7 @@ use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderListEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
+use Faker;
 
 trait RandomizeTrait
 {
@@ -48,6 +49,24 @@ trait RandomizeTrait
 
     /** @var  InvoiceService */
     private $invoiceService;
+
+    /**
+     * @var Faker\Generator
+     */
+    private $faker;
+
+    private function getFaker()
+    {
+        if (!$this->faker instanceof Faker\Generator) {
+            $this->faker = new Faker\Generator();
+            $this->faker->addProvider(new Faker\Provider\nl_NL\Person($this->faker));
+            $this->faker->addProvider(new Faker\Provider\nl_NL\Address($this->faker));
+            $this->faker->addProvider(new Faker\Provider\nl_NL\PhoneNumber($this->faker));
+            $this->faker->addProvider(new Faker\Provider\nl_NL\Internet($this->faker));
+        }
+
+        return $this->faker;
+    }
 
     /**
      * @param DateTime $min

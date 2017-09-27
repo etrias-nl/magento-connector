@@ -23,7 +23,8 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.4",
         "phpunit/phpunit": "^6.2",
-        "zendframework/zend-code": "^3.0.4"
+        "zendframework/zend-code": "^3.0.4",
+        "fzaninotto/faker": "^1.7"
     },
     "scripts": {
         "fix-style": [

@@ -34,6 +34,7 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToUpdate;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
@@ -44,8 +45,12 @@ use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartCustomerAddressEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartCustomerEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartInfoEntity;
-use Etrias\MagentoConnector\SoapTypes\ShoppingCartLicenseEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartPaymentMethodEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartProductEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartShippingMethodEntity;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\MultiArgumentRequest;
@@ -951,5 +956,231 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId]);
 
         return $this->processRequest('shoppingCartTotals', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string $couponCode
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function addCouponToCart(
+        string $sessionId,
+        int $quoteId,
+        string $couponCode,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $couponCode, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartCouponAdd', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function removeCouponFromCart(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartCouponRemove', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartCustomerAddressEntity[] $data
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setCustomerAddresses(
+        string $sessionId,
+        int $quoteId,
+        array $data,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $data, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartCustomerAddresses', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartCustomerEntity $data
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setCustomerInfo(
+        string $sessionId,
+        int $quoteId,
+        ShoppingCartCustomerEntity $data,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $data, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartCustomerAddresses', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartPaymentMethodEntity[]
+     */
+    public function getPaymentMethods(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId]);
+
+        return $this->processRequest('shoppingCartPaymentList', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartPaymentMethodEntity $method
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setPaymentMethod(
+        string $sessionId,
+        int $quoteId,
+        ShoppingCartPaymentMethodEntity $method,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $method, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartPaymentMethod', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function addProductsToCart(
+        string $sessionId,
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $products, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartProductAdd', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return CatalogProductEntity[]
+     */
+    public function getProductsInCart(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId]);
+
+        return $this->processRequest('shoppingCartProductList', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function moveCartProductsToCustomerQuote(
+        string $sessionId,
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $products, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartProductMoveToCustomerQuote', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function removeProductsFromCart(
+        string $sessionId,
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $products, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartProductRemove', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function updateProductsInCart(
+        string $sessionId,
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $products, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartProductUpdate', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartShippingMethodEntity[]
+     */
+    public function getShippingMethods(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId]);
+
+        return $this->processRequest('shoppingCartShippingList', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string $shippingMethodCode
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setShippingMethod(
+        string $sessionId,
+        int $quoteId,
+        string $shippingMethodCode,
+        string $storeId = null
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $shippingMethodCode, $storeId]);
+
+        return (bool) $this->processRequest('shoppingCartShippingMethod', $request);
     }
 }

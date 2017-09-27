@@ -15,14 +15,20 @@ declare(strict_types=1);
 namespace Etrias\MagentoConnector\Services;
 
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\OrderItemIdQty;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartCustomerAddressEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartCustomerEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartLicenseEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartPaymentMethodEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartProductEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartShippingMethodEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartTotalsEntity;
 
 class ShoppingCartService
@@ -104,4 +110,221 @@ class ShoppingCartService
     {
         return $this->adapter->getCartTotals($this->authenticationService->login(), $quoteId, $storeId);
     }
+
+    /**
+     * @param int $quoteId
+     * @param string $couponCode
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function addCouponToCart(
+        int $quoteId,
+        string $couponCode,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->addCouponToCart($this->authenticationService->login(), $quoteId, $couponCode, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function removeCouponFromCart(
+        int $quoteId,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->removeCouponFromCart($this->authenticationService->login(), $quoteId, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartCustomerAddressEntity[] $data
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setCustomerAddresses(
+        int $quoteId,
+        array $data,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->setCustomerAddresses($this->authenticationService->login(), $quoteId, $data, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartCustomerEntity $data
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setCustomerInfo(
+        int $quoteId,
+        ShoppingCartCustomerEntity $data,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->setCustomerInfo($this->authenticationService->login(), $quoteId, $data, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartPaymentMethodEntity[]
+     */
+    public function getAvailablePaymentMethods(
+        int $quoteId,
+        string $storeId = null
+    ): array {
+        return $this->adapter->getPaymentMethods($this->authenticationService->login(), $quoteId, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartPaymentMethodEntity $method
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setPaymentMethod(
+        int $quoteId,
+        ShoppingCartPaymentMethodEntity $method,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->setPaymentMethod($this->authenticationService->login(), $quoteId, $method, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function addProductsToCart(
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->addProductsToCart($this->authenticationService->login(), $quoteId, $products, $storeId);
+    }
+
+    public function addProductToCart(
+        int $quoteId,
+        ShoppingCartProductEntity $product,
+        string $storeId = null
+    ): bool {
+        return $this->addProductsToCart($quoteId, [$product], $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return CatalogProductEntity[]
+     */
+    public function getProductsInCart(
+        int $quoteId,
+        string $storeId = null
+    ): array {
+        return $this->adapter->getProductsInCart($this->authenticationService->login(), $quoteId, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function moveCartProductsToCustomerQuote(
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ) {
+        return $this->adapter->moveCartProductsToCustomerQuote(
+            $this->authenticationService->login(),
+            $quoteId,
+            $products,
+            $storeId
+        );
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function removeProductsFromCart(
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->removeProductsFromCart($this->authenticationService->login(), $quoteId, $products, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity $product
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function removeProductFromCart(
+        int $quoteId,
+        ShoppingCartProductEntity $product,
+        string $storeId = null
+    ): bool {
+        return $this->removeProductsFromCart($quoteId, [$product], $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function updateProductsInCart(
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->updateProductsInCart($this->authenticationService->login(), $quoteId, $products, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity $product
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function updateProductInCart(
+        int $quoteId,
+        ShoppingCartProductEntity $product,
+        string $storeId = null
+    ): bool {
+        return $this->updateProductsInCart($quoteId, [$product], $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartShippingMethodEntity[]
+     */
+    public function getAvailableShippingMethods(
+        int $quoteId,
+        string $storeId = null
+    ) {
+        return $this->adapter->getShippingMethods($this->authenticationService->login(), $quoteId, $storeId);
+    }
+
+    /**
+     * @param int $quoteId
+     * @param string $shippingMethodCode
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setShippingMethod(
+        int $quoteId,
+        string $shippingMethodCode,
+        string $storeId = null
+    ): bool {
+        return $this->adapter->setShippingMethod($this->authenticationService->login(), $quoteId, $shippingMethodCode, $storeId);
+    }
+
+
 }
