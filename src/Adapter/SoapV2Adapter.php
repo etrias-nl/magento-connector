@@ -44,6 +44,8 @@ use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartLicenseEntity;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\MultiArgumentRequest;
@@ -898,5 +900,56 @@ class SoapV2Adapter implements AdapterInterface
         $request = new MultiArgumentRequest([$sessionId, $filters]);
 
         return $this->processRequest('salesOrderInvoiceList', $request);
+    }
+
+    public function createShoppingCart(
+        string $sessionId,
+        string $storeId = null
+    ): int {
+        $request = new MultiArgumentRequest([$sessionId, $storeId]);
+
+        return (int) $this->processRequest('shoppingCartCreate', $request);
+    }
+
+    public function getShoppingCartInfo(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): ShoppingCartInfoEntity {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId]);
+
+        return $this->processRequest('shoppingCartInfo', $request);
+    }
+
+    public function getShoppingCartLicences(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId]);
+
+        return $this->processRequest('shoppingCartLicense', $request);
+    }
+
+
+    public function createOrderFromCart(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null,
+        array $licenses = null
+    ): int {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId, $licenses]);
+
+        return $this->processRequest('shoppingCartOrder', $request);
+    }
+
+    public function getCartTotals(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $quoteId, $storeId]);
+
+        return $this->processRequest('shoppingCartTotals', $request);
     }
 }

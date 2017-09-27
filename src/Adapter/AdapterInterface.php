@@ -45,6 +45,9 @@ use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartLicenseEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartTotalsEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 interface AdapterInterface
@@ -707,5 +710,65 @@ interface AdapterInterface
         string $sessionId,
         string $invoiceIncrementId
     ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string|null $storeId
+     * @return int Cart(quote) id
+     */
+    public function createShoppingCart(
+        string $sessionId,
+        string $storeId = null
+    ): int;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartInfoEntity
+     */
+    public function getShoppingCartInfo(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): ShoppingCartInfoEntity;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartLicenseEntity[]
+     */
+    public function getShoppingCartLicences(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @param array|null $licenses
+     * @return int Order id
+     */
+    public function createOrderFromCart(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null,
+        array $licenses = null
+    ): int;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartTotalsEntity[]
+     */
+    public function getCartTotals(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array;
 
 }
