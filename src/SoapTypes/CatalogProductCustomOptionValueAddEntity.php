@@ -56,13 +56,12 @@ class CatalogProductCustomOptionValueAddEntity
      * @param mixed $sku
      * @param mixed $sort_order
      */
-    public function __construct($title, $price, $price_type, $sku, $sort_order)
+    public function __construct($title, $price, $price_type, $sku)
     {
         $this->title = $title;
         $this->price = $price;
         $this->price_type = $price_type;
         $this->sku = $sku;
-        $this->sort_order = $sort_order;
     }
 
     /**

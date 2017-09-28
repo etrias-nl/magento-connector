@@ -89,51 +89,12 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * Constructor.
      *
-     * @var string
-     * @var string                                    $default_value
-     * @var int                                       $is_unique
-     * @var int                                       $is_required
-     * @var string[]                                  $apply_to
-     * @var int                                       $is_configurable
-     * @var int                                       $is_searchable
-     * @var int                                       $is_visible_in_advanced_search
-     * @var int                                       $is_comparable
-     * @var int                                       $is_used_for_promo_rules
-     * @var int                                       $is_visible_on_front
-     * @var int                                       $used_in_product_listing
-     * @var associativeArray                          $additional_fields
-     * @var catalogProductAttributeFrontendLabelArray $frontend_label
+     * @var catalogProductAttributeFrontendLabelArray
      *
-     * @param mixed $scope
-     * @param mixed $default_value
-     * @param mixed $is_unique
-     * @param mixed $is_required
-     * @param mixed $apply_to
-     * @param mixed $is_configurable
-     * @param mixed $is_searchable
-     * @param mixed $is_visible_in_advanced_search
-     * @param mixed $is_comparable
-     * @param mixed $is_used_for_promo_rules
-     * @param mixed $is_visible_on_front
-     * @param mixed $used_in_product_listing
-     * @param mixed $additional_fields
-     * @param mixed $frontend_label
+     * @param string[] $frontend_label
      */
-    public function __construct($scope, $default_value, $is_unique, $is_required, $apply_to, $is_configurable, $is_searchable, $is_visible_in_advanced_search, $is_comparable, $is_used_for_promo_rules, $is_visible_on_front, $used_in_product_listing, $additional_fields, $frontend_label)
+    public function __construct(array $frontend_label)
     {
-        $this->scope = $scope;
-        $this->default_value = $default_value;
-        $this->is_unique = $is_unique;
-        $this->is_required = $is_required;
-        $this->apply_to = $apply_to;
-        $this->is_configurable = $is_configurable;
-        $this->is_searchable = $is_searchable;
-        $this->is_visible_in_advanced_search = $is_visible_in_advanced_search;
-        $this->is_comparable = $is_comparable;
-        $this->is_used_for_promo_rules = $is_used_for_promo_rules;
-        $this->is_visible_on_front = $is_visible_on_front;
-        $this->used_in_product_listing = $used_in_product_listing;
-        $this->additional_fields = $additional_fields;
         $this->frontend_label = $frontend_label;
     }
 
@@ -160,7 +121,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return string
      */
-    public function getDefault_value()
+    public function getDefaultValue()
     {
         return $this->default_value;
     }
@@ -170,7 +131,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setDefault_value($default_value)
+    public function setDefaultValue($default_value)
     {
         $this->default_value = $default_value;
 
@@ -180,7 +141,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getIs_unique()
+    public function getIsUnique()
     {
         return $this->is_unique;
     }
@@ -190,7 +151,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setIs_unique($is_unique)
+    public function setIsUnique($is_unique)
     {
         $this->is_unique = $is_unique;
 
@@ -200,7 +161,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getIs_required()
+    public function getIsRequired()
     {
         return $this->is_required;
     }
@@ -210,7 +171,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setIs_required($is_required)
+    public function setIsRequired($is_required)
     {
         $this->is_required = $is_required;
 
@@ -220,7 +181,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return string[]
      */
-    public function getApply_to()
+    public function getApplyTo()
     {
         return $this->apply_to;
     }
@@ -230,7 +191,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setApply_to($apply_to)
+    public function setApplyTo($apply_to)
     {
         $this->apply_to = $apply_to;
 
@@ -240,7 +201,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getIs_configurable()
+    public function getIsConfigurable()
     {
         return $this->is_configurable;
     }
@@ -250,7 +211,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setIs_configurable($is_configurable)
+    public function setIsConfigurable($is_configurable)
     {
         $this->is_configurable = $is_configurable;
 
@@ -260,7 +221,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getIs_searchable()
+    public function getIsSearchable()
     {
         return $this->is_searchable;
     }
@@ -270,7 +231,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setIs_searchable($is_searchable)
+    public function setIsSearchable($is_searchable)
     {
         $this->is_searchable = $is_searchable;
 
@@ -280,7 +241,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getIs_visible_in_advanced_search()
+    public function getIsVisibleInAdvancedSearch()
     {
         return $this->is_visible_in_advanced_search;
     }
@@ -290,7 +251,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setIs_visible_in_advanced_search($is_visible_in_advanced_search)
+    public function setIsVisibleInAdvancedSearch($is_visible_in_advanced_search)
     {
         $this->is_visible_in_advanced_search = $is_visible_in_advanced_search;
 
@@ -300,7 +261,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getIs_comparable()
+    public function getIsComparable()
     {
         return $this->is_comparable;
     }
@@ -310,7 +271,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setIs_comparable($is_comparable)
+    public function setIsComparable($is_comparable)
     {
         $this->is_comparable = $is_comparable;
 
@@ -320,7 +281,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getIs_used_for_promo_rules()
+    public function getIsUsedForPromoRules()
     {
         return $this->is_used_for_promo_rules;
     }
@@ -330,7 +291,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setIs_used_for_promo_rules($is_used_for_promo_rules)
+    public function setIsUsedForPromoRules($is_used_for_promo_rules)
     {
         $this->is_used_for_promo_rules = $is_used_for_promo_rules;
 
@@ -340,7 +301,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getIs_visible_on_front()
+    public function getIsVisibleOnFront()
     {
         return $this->is_visible_on_front;
     }
@@ -350,7 +311,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setIs_visible_on_front($is_visible_on_front)
+    public function setIsVisibleOnFront($is_visible_on_front)
     {
         $this->is_visible_on_front = $is_visible_on_front;
 
@@ -360,7 +321,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return int
      */
-    public function getUsed_in_product_listing()
+    public function getUsedInProductListing()
     {
         return $this->used_in_product_listing;
     }
@@ -370,7 +331,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setUsed_in_product_listing($used_in_product_listing)
+    public function setUsedInProductListing($used_in_product_listing)
     {
         $this->used_in_product_listing = $used_in_product_listing;
 
@@ -380,7 +341,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return associativeArray
      */
-    public function getAdditional_fields()
+    public function getAdditionalFields()
     {
         return $this->additional_fields;
     }
@@ -390,7 +351,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setAdditional_fields($additional_fields)
+    public function setAdditionalFields($additional_fields)
     {
         $this->additional_fields = $additional_fields;
 
@@ -400,7 +361,7 @@ class CatalogProductAttributeEntityToUpdate
     /**
      * @return catalogProductAttributeFrontendLabelArray
      */
-    public function getFrontend_label()
+    public function getFrontendLabel()
     {
         return $this->frontend_label;
     }
@@ -410,7 +371,7 @@ class CatalogProductAttributeEntityToUpdate
      *
      * @return $this
      */
-    public function setFrontend_label($frontend_label)
+    public function setFrontendLabel(array $frontend_label)
     {
         $this->frontend_label = $frontend_label;
 

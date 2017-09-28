@@ -27,21 +27,6 @@ class ShoppingCartTotalsEntity
     protected $amount = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var float  $amount
-     *
-     * @param mixed $title
-     * @param mixed $amount
-     */
-    public function __construct($title, $amount)
-    {
-        $this->title = $title;
-        $this->amount = $amount;
-    }
-
-    /**
      * @return string
      */
     public function getTitle()

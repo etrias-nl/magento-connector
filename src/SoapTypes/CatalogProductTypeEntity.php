@@ -27,21 +27,6 @@ class CatalogProductTypeEntity
     protected $label = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $label
-     *
-     * @param mixed $type
-     * @param mixed $label
-     */
-    public function __construct($type, $label)
-    {
-        $this->type = $type;
-        $this->label = $label;
-    }
-
-    /**
      * @return string
      */
     public function getType()

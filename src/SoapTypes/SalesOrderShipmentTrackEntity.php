@@ -67,48 +67,9 @@ class SalesOrderShipmentTrackEntity
     protected $track_id = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $parent_id
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $is_active
-     * @var string $carrier_code
-     * @var string $title
-     * @var string $number
-     * @var string $order_id
-     * @var string $track_id
-     *
-     * @param mixed $increment_id
-     * @param mixed $parent_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $is_active
-     * @param mixed $carrier_code
-     * @param mixed $title
-     * @param mixed $number
-     * @param mixed $order_id
-     * @param mixed $track_id
-     */
-    public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $carrier_code, $title, $number, $order_id, $track_id)
-    {
-        $this->increment_id = $increment_id;
-        $this->parent_id = $parent_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->is_active = $is_active;
-        $this->carrier_code = $carrier_code;
-        $this->title = $title;
-        $this->number = $number;
-        $this->order_id = $order_id;
-        $this->track_id = $track_id;
-    }
-
-    /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -118,7 +79,7 @@ class SalesOrderShipmentTrackEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -128,7 +89,7 @@ class SalesOrderShipmentTrackEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -138,7 +99,7 @@ class SalesOrderShipmentTrackEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -148,7 +109,7 @@ class SalesOrderShipmentTrackEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -158,7 +119,7 @@ class SalesOrderShipmentTrackEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -168,7 +129,7 @@ class SalesOrderShipmentTrackEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -178,7 +139,7 @@ class SalesOrderShipmentTrackEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -188,7 +149,7 @@ class SalesOrderShipmentTrackEntity
     /**
      * @return string
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -198,7 +159,7 @@ class SalesOrderShipmentTrackEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -208,7 +169,7 @@ class SalesOrderShipmentTrackEntity
     /**
      * @return string
      */
-    public function getCarrier_code()
+    public function getCarrierCode()
     {
         return $this->carrier_code;
     }
@@ -218,7 +179,7 @@ class SalesOrderShipmentTrackEntity
      *
      * @return $this
      */
-    public function setCarrier_code($carrier_code)
+    public function setCarrierCode($carrier_code)
     {
         $this->carrier_code = $carrier_code;
 
@@ -268,7 +229,7 @@ class SalesOrderShipmentTrackEntity
     /**
      * @return string
      */
-    public function getOrder_id()
+    public function getOrderId()
     {
         return $this->order_id;
     }
@@ -278,7 +239,7 @@ class SalesOrderShipmentTrackEntity
      *
      * @return $this
      */
-    public function setOrder_id($order_id)
+    public function setOrderId($order_id)
     {
         $this->order_id = $order_id;
 
@@ -288,7 +249,7 @@ class SalesOrderShipmentTrackEntity
     /**
      * @return string
      */
-    public function getTrack_id()
+    public function getTrackId()
     {
         return $this->track_id;
     }
@@ -298,7 +259,7 @@ class SalesOrderShipmentTrackEntity
      *
      * @return $this
      */
-    public function setTrack_id($track_id)
+    public function setTrackId($track_id)
     {
         $this->track_id = $track_id;
 

@@ -46,14 +46,12 @@ class CatalogProductCustomOptionToAdd
      *
      * @param string                                             $title
      * @param string                                             $type
-     * @param string                                             $sort_order
      * @param CatalogProductCustomOptionAdditionalFieldsEntity[] $additional_fields
      */
-    public function __construct($title, $type, $sort_order, array $additional_fields = [])
+    public function __construct($title, $type, array $additional_fields = [])
     {
         $this->title = $title;
         $this->type = $type;
-        $this->sort_order = $sort_order;
         $this->additional_fields = $additional_fields;
     }
 
@@ -150,7 +148,7 @@ class CatalogProductCustomOptionToAdd
      *
      * @return $this
      */
-    public function setAdditionalFields($additional_fields)
+    public function setAdditionalFields(array $additional_fields)
     {
         $this->additional_fields = $additional_fields;
 

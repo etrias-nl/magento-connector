@@ -27,21 +27,6 @@ class CatalogProductLinkAttributeEntity
     protected $type = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $type
-     *
-     * @param mixed $code
-     * @param mixed $type
-     */
-    public function __construct($code, $type)
-    {
-        $this->code = $code;
-        $this->type = $type;
-    }
-
-    /**
      * @return string
      */
     public function getCode()

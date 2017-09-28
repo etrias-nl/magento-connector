@@ -63,7 +63,7 @@ class CatalogProductImageEntity
      * @param mixed $url
      * @param mixed $types
      */
-    public function __construct($file, $label, $position, $exclude, $url, $types)
+    public function __construct($file, $label, $position, $exclude, $url, array $types)
     {
         $this->file = $file;
         $this->label = $label;

@@ -37,27 +37,6 @@ class CatalogProductTierPriceEntity
     protected $price = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $website
-     * @var int    $qty
-     * @var float  $price
-     *
-     * @param mixed $customer_group_id
-     * @param mixed $website
-     * @param mixed $qty
-     * @param mixed $price
-     */
-    public function __construct($customer_group_id, $website, $qty, $price)
-    {
-        $this->customer_group_id = $customer_group_id;
-        $this->website = $website;
-        $this->qty = $qty;
-        $this->price = $price;
-    }
-
-    /**
      * @return string
      */
     public function getCustomerGroupId()

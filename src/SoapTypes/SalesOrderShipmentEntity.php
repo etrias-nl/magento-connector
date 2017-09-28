@@ -102,69 +102,9 @@ class SalesOrderShipmentEntity
     protected $comments = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string                               $parent_id
-     * @var string                               $store_id
-     * @var string                               $created_at
-     * @var string                               $updated_at
-     * @var string                               $is_active
-     * @var string                               $shipping_address_id
-     * @var string                               $shipping_firstname
-     * @var string                               $shipping_lastname
-     * @var string                               $order_id
-     * @var string                               $order_increment_id
-     * @var string                               $order_created_at
-     * @var string                               $total_qty
-     * @var string                               $shipment_id
-     * @var salesOrderShipmentItemEntityArray    $items
-     * @var salesOrderShipmentTrackEntityArray   $tracks
-     * @var salesOrderShipmentCommentEntityArray $comments
-     *
-     * @param mixed $increment_id
-     * @param mixed $parent_id
-     * @param mixed $store_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $is_active
-     * @param mixed $shipping_address_id
-     * @param mixed $shipping_firstname
-     * @param mixed $shipping_lastname
-     * @param mixed $order_id
-     * @param mixed $order_increment_id
-     * @param mixed $order_created_at
-     * @param mixed $total_qty
-     * @param mixed $shipment_id
-     * @param mixed $items
-     * @param mixed $tracks
-     * @param mixed $comments
-     */
-    public function __construct($increment_id, $parent_id, $store_id, $created_at, $updated_at, $is_active, $shipping_address_id, $shipping_firstname, $shipping_lastname, $order_id, $order_increment_id, $order_created_at, $total_qty, $shipment_id, $items, $tracks, $comments)
-    {
-        $this->increment_id = $increment_id;
-        $this->parent_id = $parent_id;
-        $this->store_id = $store_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->is_active = $is_active;
-        $this->shipping_address_id = $shipping_address_id;
-        $this->shipping_firstname = $shipping_firstname;
-        $this->shipping_lastname = $shipping_lastname;
-        $this->order_id = $order_id;
-        $this->order_increment_id = $order_increment_id;
-        $this->order_created_at = $order_created_at;
-        $this->total_qty = $total_qty;
-        $this->shipment_id = $shipment_id;
-        $this->items = $items;
-        $this->tracks = $tracks;
-        $this->comments = $comments;
-    }
-
-    /**
      * @return string
      */
-    public function getIncrement_id()
+    public function getIncrementId()
     {
         return $this->increment_id;
     }
@@ -174,7 +114,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setIncrement_id($increment_id)
+    public function setIncrementId($increment_id)
     {
         $this->increment_id = $increment_id;
 
@@ -184,7 +124,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
@@ -194,7 +134,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parent_id)
     {
         $this->parent_id = $parent_id;
 
@@ -204,7 +144,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getStore_id()
+    public function getStoreId()
     {
         return $this->store_id;
     }
@@ -214,7 +154,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setStore_id($store_id)
+    public function setStoreId($store_id)
     {
         $this->store_id = $store_id;
 
@@ -224,7 +164,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -234,7 +174,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -244,7 +184,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -254,7 +194,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -264,7 +204,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -274,7 +214,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 
@@ -284,7 +224,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getShipping_address_id()
+    public function getShippingAddressId()
     {
         return $this->shipping_address_id;
     }
@@ -294,7 +234,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setShipping_address_id($shipping_address_id)
+    public function setShippingAddressId($shipping_address_id)
     {
         $this->shipping_address_id = $shipping_address_id;
 
@@ -304,7 +244,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getShipping_firstname()
+    public function getShippingFirstname()
     {
         return $this->shipping_firstname;
     }
@@ -314,7 +254,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setShipping_firstname($shipping_firstname)
+    public function setShippingFirstname($shipping_firstname)
     {
         $this->shipping_firstname = $shipping_firstname;
 
@@ -324,7 +264,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getShipping_lastname()
+    public function getShippingLastname()
     {
         return $this->shipping_lastname;
     }
@@ -334,7 +274,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setShipping_lastname($shipping_lastname)
+    public function setShippingLastname($shipping_lastname)
     {
         $this->shipping_lastname = $shipping_lastname;
 
@@ -344,7 +284,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getOrder_id()
+    public function getOrderId()
     {
         return $this->order_id;
     }
@@ -354,7 +294,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setOrder_id($order_id)
+    public function setOrderId($order_id)
     {
         $this->order_id = $order_id;
 
@@ -364,7 +304,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getOrder_increment_id()
+    public function getOrderIncrementId()
     {
         return $this->order_increment_id;
     }
@@ -374,7 +314,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setOrder_increment_id($order_increment_id)
+    public function setOrderIncrementId($order_increment_id)
     {
         $this->order_increment_id = $order_increment_id;
 
@@ -384,7 +324,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getOrder_created_at()
+    public function getOrderCreatedAt()
     {
         return $this->order_created_at;
     }
@@ -394,7 +334,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setOrder_created_at($order_created_at)
+    public function setOrderCreatedAt($order_created_at)
     {
         $this->order_created_at = $order_created_at;
 
@@ -404,7 +344,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getTotal_qty()
+    public function getTotalQty()
     {
         return $this->total_qty;
     }
@@ -414,7 +354,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setTotal_qty($total_qty)
+    public function setTotalQty($total_qty)
     {
         $this->total_qty = $total_qty;
 
@@ -424,7 +364,7 @@ class SalesOrderShipmentEntity
     /**
      * @return string
      */
-    public function getShipment_id()
+    public function getShipmentId()
     {
         return $this->shipment_id;
     }
@@ -434,7 +374,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setShipment_id($shipment_id)
+    public function setShipmentId($shipment_id)
     {
         $this->shipment_id = $shipment_id;
 
@@ -454,7 +394,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setItems($items)
+    public function setItems(array $items)
     {
         $this->items = $items;
 
@@ -474,7 +414,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setTracks($tracks)
+    public function setTracks(array $tracks)
     {
         $this->tracks = $tracks;
 
@@ -494,7 +434,7 @@ class SalesOrderShipmentEntity
      *
      * @return $this
      */
-    public function setComments($comments)
+    public function setComments(array $comments)
     {
         $this->comments = $comments;
 

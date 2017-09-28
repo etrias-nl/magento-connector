@@ -23,6 +23,8 @@ use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
 use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
+use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemUpdateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeEntityToCreate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeMediaCreateEntity;
@@ -35,9 +37,23 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionListEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToAdd;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionToUpdate;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCustomOptionTypesEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
+use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartCustomerAddressEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartCustomerEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartInfoEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartLicenseEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartPaymentMethodEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartProductEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartShippingMethodEntity;
+use Etrias\MagentoConnector\SoapTypes\ShoppingCartTotalsEntity;
 use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 interface AdapterInterface
@@ -187,14 +203,14 @@ interface AdapterInterface
         int $attributeSet,
         string $sku,
         CatalogProductCreateEntity $productData,
-        int $storeView
+        int $storeView = null
     ): int;
 
     public function updateProduct(
         string $sessionId,
         string $productId,
         CatalogProductCreateEntity $productData,
-        int $storeView,
+        int $storeView = null,
         string $identifierType = 'id'
     ): bool;
 
@@ -246,7 +262,7 @@ interface AdapterInterface
     public function getProductInfo(
         string $sessionId,
         string $productId,
-        array $attributes = null,
+        CatalogProductRequestAttributes $attributes = null,
         string $storeView = null,
         string $identifierType = ' id'
     ): CatalogProductReturnEntity;
@@ -472,4 +488,466 @@ interface AdapterInterface
         string $optionId,
         string $storeView = null
     ): CatalogProductCustomOptionInfoEntity;
+
+    /**
+     * @param string $sessionId
+     * @param array $productIds
+     * @return CatalogInventoryStockItemEntity[]
+     */
+    public function getCatalogInventoryStockItems(
+        string $sessionId,
+        array $productIds
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $product
+     * @param CatalogInventoryStockItemUpdateEntity $data
+     * @return mixed
+     */
+    public function updateCatalogInventoryStockData(
+        string $sessionId,
+        string $product,
+        CatalogInventoryStockItemUpdateEntity $data
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @param string $status
+     * @param string|null $comment
+     * @param string|null $notify
+     * @return bool
+     */
+    public function addCommentToOrder(
+        string $sessionId,
+        string $orderIncrementId,
+        string $status,
+        string $comment = null,
+        string $notify = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param array $filters
+     * @return array
+     */
+    public function listOrders(
+        string $sessionId,
+        array $filters = []
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @return SalesOrderEntity
+     */
+    public function getOrderInfo(
+        string $sessionId,
+        string $orderIncrementId
+    ): SalesOrderEntity;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @return bool
+     */
+    public function holdOrder(
+        string $sessionId,
+        string $orderIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @return bool
+     */
+    public function unHoldOrder(
+        string $sessionId,
+        string $orderIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @return bool
+     */
+    public function cancelOrder(
+        string $sessionId,
+        string $orderIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $creditMemoIncrementId
+     * @param string|null $comment
+     * @param int|null $notifyCustomer
+     * @param int|null $includeComment
+     * @return bool
+     */
+    public function addCommentToCreditMemo(
+        string $sessionId,
+        string $creditMemoIncrementId,
+        string $comment = null,
+        int $notifyCustomer = null,
+        int $includeComment = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @param SalesOrderCreditmemoData|null $data
+     * @param string|null $comment
+     * @param int $notifyCustomer
+     * @param int $includeComment
+     * @param string $refundToStoreCreditAmount
+     * @return string
+     */
+    public function createCreditMemo(
+        string $sessionId,
+        string $orderIncrementId,
+        SalesOrderCreditmemoData $data = null,
+        string $comment = null,
+        int $notifyCustomer,
+        int $includeComment,
+        string $refundToStoreCreditAmount
+    ): string;
+
+    /**
+     * @param string $sessionId
+     * @param string $creditMemoIncrementId
+     * @return bool
+     */
+    public function cancelCreditMemo(
+        string $sessionId,
+        string $creditMemoIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $creditMemoIncrementId
+     * @return SalesOrderCreditmemoEntity
+     */
+    public function getCreditMemoInfo(
+        string $sessionId,
+        string $creditMemoIncrementId
+    ): SalesOrderCreditmemoEntity;
+
+    /**
+     * @param string $sessionId
+     * @param array $filters
+     * @return SalesOrderCreditmemoEntity[]
+     */
+    public function listCreditMemos(
+        string $sessionId,
+        array $filters = []
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $invoiceIncrementId
+     * @param string $comment
+     * @param int $sendEmail
+     * @param int $includeComment
+     * @return bool
+     */
+    public function addCommentToOrderInvoice(
+        string $sessionId,
+        string $invoiceIncrementId,
+        string $comment,
+        int $sendEmail,
+        int $includeComment
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $orderIncrementId
+     * @param array|null $itemsQty
+     * @param string|null $comment
+     * @param string|null $sendEmail
+     * @param string|null $includeComment
+     * @return string
+     */
+    public function createOrderInvoice(
+        string $sessionId,
+        string $orderIncrementId,
+        array $itemsQty = null,
+        string $comment = null,
+        string $sendEmail = null,
+        string $includeComment = null
+    ): string;
+
+    /**
+     * @param string $sessionId
+     * @param array $filters
+     * @return SalesOrderInvoiceEntity[]
+     */
+    public function listInvoices(
+        string $sessionId,
+        array $filters = []
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param string $invoiceIncrementId
+     * @return SalesOrderInvoiceEntity
+     */
+    public function getInvoiceInfo(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): SalesOrderInvoiceEntity;
+
+    /**
+     * @param string $sessionId
+     * @param string $invoiceIncrementId
+     * @return bool
+     */
+    public function cancelInvoice(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string $invoiceIncrementId
+     * @return bool
+     */
+    public function captureInvoice(
+        string $sessionId,
+        string $invoiceIncrementId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param string|null $storeId
+     * @return int Cart(quote) id
+     */
+    public function createShoppingCart(
+        string $sessionId,
+        string $storeId = null
+    ): int;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartInfoEntity
+     */
+    public function getShoppingCartInfo(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): ShoppingCartInfoEntity;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartLicenseEntity[]
+     */
+    public function getShoppingCartLicences(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @param array|null $licenses
+     * @return int Order id
+     */
+    public function createOrderFromCart(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null,
+        array $licenses = null
+    ): int;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartTotalsEntity[]
+     */
+    public function getCartTotals(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string $couponCode
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function addCouponToCart(
+        string $sessionId,
+        int $quoteId,
+        string $couponCode,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function removeCouponFromCart(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartCustomerAddressEntity[] $data
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setCustomerAddresses(
+        string $sessionId,
+        int $quoteId,
+        array $data,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartCustomerEntity $data
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setCustomerInfo(
+        string $sessionId,
+        int $quoteId,
+        ShoppingCartCustomerEntity $data,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartPaymentMethodEntity[]
+     */
+    public function getPaymentMethods(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartPaymentMethodEntity $method
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setPaymentMethod(
+        string $sessionId,
+        int $quoteId,
+        ShoppingCartPaymentMethodEntity $method,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function addProductsToCart(
+        string $sessionId,
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return CatalogProductEntity[]
+     */
+    public function getProductsInCart(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function moveCartProductsToCustomerQuote(
+        string $sessionId,
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function removeProductsFromCart(
+        string $sessionId,
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param ShoppingCartProductEntity[] $products
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function updateProductsInCart(
+        string $sessionId,
+        int $quoteId,
+        array $products,
+        string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string|null $storeId
+     * @return ShoppingCartShippingMethodEntity[]
+     */
+    public function getShippingMethods(
+        string $sessionId,
+        int $quoteId,
+        string $storeId = null
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $quoteId
+     * @param string $shippingMethodCode
+     * @param string|null $storeId
+     * @return bool
+     */
+    public function setShippingMethod(
+        string $sessionId,
+        int $quoteId,
+        string $shippingMethodCode,
+        string $storeId = null
+    ): bool;
 }

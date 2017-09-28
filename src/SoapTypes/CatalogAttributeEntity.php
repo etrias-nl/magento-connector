@@ -42,30 +42,6 @@ class CatalogAttributeEntity
     protected $scope = null;
 
     /**
-     * Constructor.
-     *
-     * @var int
-     * @var string $code
-     * @var string $type
-     * @var string $required
-     * @var string $scope
-     *
-     * @param mixed $attribute_id
-     * @param mixed $code
-     * @param mixed $type
-     * @param mixed $required
-     * @param mixed $scope
-     */
-    public function __construct($attribute_id, $code, $type, $required, $scope)
-    {
-        $this->attribute_id = $attribute_id;
-        $this->code = $code;
-        $this->type = $type;
-        $this->required = $required;
-        $this->scope = $scope;
-    }
-
-    /**
      * @return int
      */
     public function getAttributeId()

@@ -124,7 +124,9 @@ class AuthenticationService
     {
         $cacheItem = $this->cacheAdapter->getItem($this->getCacheKey());
         if ($cacheItem->isHit()) {
-            return $this->adapter->endSession($cacheItem->get());
+            $endSessionResult = $this->adapter->endSession($cacheItem->get());
+            $this->cacheAdapter->deleteItem($cacheItem->getKey());
+            return $endSessionResult;
         }
 
         return true;

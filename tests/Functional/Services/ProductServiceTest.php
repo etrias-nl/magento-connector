@@ -17,7 +17,9 @@ namespace Tests\Etrias\MagentoConnector\Functional\Services;
 use DateTime;
 use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\ProductService;
+use Etrias\MagentoConnector\SoapTypes\AssociativeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductAdditionalAttributesEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
@@ -258,5 +260,44 @@ class ProductServiceTest extends AbstractServiceTest
         $attribute = reset($attributes);
 
         $this->assertInstanceOf(CatalogAttributeEntity::class, $attribute);
+    }
+
+    public function testUpdateAdditionalAttributes()
+    {
+        $product = $this->service->getProductInfoById(2822);
+        $sku = $product->getSku();
+
+        $this->assertTrue(
+            $this->service->updateProductById(
+                (int) $product->getProductId(),
+                (new CatalogProductCreateEntity())
+                    ->setAdditionalAttributes(
+                        (new CatalogProductAdditionalAttributesEntity())
+                            ->setSingleData([
+                                new AssociativeEntity('sku', '971')
+                            ])
+                    )
+            )
+        );
+
+        $product = $this->service->getProductInfoById(2822);
+        $this->assertEquals('971', $product->getSku());
+
+
+        $this->assertTrue(
+            $this->service->updateProductById(
+                (int) $product->getProductId(),
+                (new CatalogProductCreateEntity())
+                    ->setAdditionalAttributes(
+                        (new CatalogProductAdditionalAttributesEntity())
+                            ->setSingleData([
+                                new AssociativeEntity('sku', $sku)
+                            ])
+                    )
+            )
+        );
+
+        $product = $this->service->getProductInfoById(2822);
+        $this->assertEquals($sku, $product->getSku());
     }
 }

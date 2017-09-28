@@ -107,69 +107,6 @@ class SalesOrderAddressEntity
     protected $address_id = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $parent_id
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $is_active
-     * @var string $address_type
-     * @var string $firstname
-     * @var string $lastname
-     * @var string $company
-     * @var string $street
-     * @var string $city
-     * @var string $region
-     * @var string $postcode
-     * @var string $country_id
-     * @var string $telephone
-     * @var string $fax
-     * @var string $region_id
-     * @var string $address_id
-     *
-     * @param mixed $increment_id
-     * @param mixed $parent_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $is_active
-     * @param mixed $address_type
-     * @param mixed $firstname
-     * @param mixed $lastname
-     * @param mixed $company
-     * @param mixed $street
-     * @param mixed $city
-     * @param mixed $region
-     * @param mixed $postcode
-     * @param mixed $country_id
-     * @param mixed $telephone
-     * @param mixed $fax
-     * @param mixed $region_id
-     * @param mixed $address_id
-     */
-    public function __construct($increment_id, $parent_id, $created_at, $updated_at, $is_active, $address_type, $firstname, $lastname, $company, $street, $city, $region, $postcode, $country_id, $telephone, $fax, $region_id, $address_id)
-    {
-        $this->increment_id = $increment_id;
-        $this->parent_id = $parent_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->is_active = $is_active;
-        $this->address_type = $address_type;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->company = $company;
-        $this->street = $street;
-        $this->city = $city;
-        $this->region = $region;
-        $this->postcode = $postcode;
-        $this->country_id = $country_id;
-        $this->telephone = $telephone;
-        $this->fax = $fax;
-        $this->region_id = $region_id;
-        $this->address_id = $address_id;
-    }
-
-    /**
      * @return string
      */
     public function getIncrementId()

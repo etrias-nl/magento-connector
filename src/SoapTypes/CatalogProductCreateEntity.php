@@ -152,7 +152,7 @@ class CatalogProductCreateEntity
     protected $additional_attributes = null;
 
     /**
-     * @var DateTimeEntity
+     * @var CatalogInventoryStockItemUpdateEntity
      */
     protected $stock_data = null;
 
@@ -254,7 +254,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getShort_description()
+    public function getShortDescription()
     {
         return $this->short_description;
     }
@@ -264,7 +264,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setShort_description($short_description)
+    public function setShortDescription($short_description)
     {
         $this->short_description = $short_description;
 
@@ -314,7 +314,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getUrl_key()
+    public function getUrlKey()
     {
         return $this->url_key;
     }
@@ -324,7 +324,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setUrl_key($url_key)
+    public function setUrlKey($url_key)
     {
         $this->url_key = $url_key;
 
@@ -334,7 +334,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getUrl_path()
+    public function getUrlPath()
     {
         return $this->url_path;
     }
@@ -344,7 +344,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setUrl_path($url_path)
+    public function setUrlPath($url_path)
     {
         $this->url_path = $url_path;
 
@@ -374,7 +374,7 @@ class CatalogProductCreateEntity
     /**
      * @return string[]
      */
-    public function getCategory_ids()
+    public function getCategoryIds()
     {
         return $this->category_ids;
     }
@@ -384,7 +384,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setCategory_ids(array $category_ids)
+    public function setCategoryIds(array $category_ids)
     {
         $this->category_ids = $category_ids;
 
@@ -394,7 +394,7 @@ class CatalogProductCreateEntity
     /**
      * @return string[]
      */
-    public function getWebsite_ids()
+    public function getWebsiteIds()
     {
         return $this->website_ids;
     }
@@ -404,7 +404,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setWebsite_ids(array $website_ids)
+    public function setWebsiteIds(array $website_ids)
     {
         $this->website_ids = $website_ids;
 
@@ -414,7 +414,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getHas_options()
+    public function getHasOptions()
     {
         return $this->has_options;
     }
@@ -424,7 +424,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setHas_options($has_options)
+    public function setHasOptions($has_options)
     {
         $this->has_options = $has_options;
 
@@ -434,7 +434,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getGift_message_available()
+    public function getGiftMessageAvailable()
     {
         return $this->gift_message_available;
     }
@@ -444,7 +444,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setGift_message_available($gift_message_available)
+    public function setGiftMessageAvailable($gift_message_available)
     {
         $this->gift_message_available = $gift_message_available;
 
@@ -474,7 +474,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getSpecial_price()
+    public function getSpecialPrice()
     {
         return $this->special_price;
     }
@@ -484,7 +484,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setSpecial_price($special_price)
+    public function setSpecialPrice($special_price)
     {
         $this->special_price = $special_price;
 
@@ -494,7 +494,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getSpecial_from_date()
+    public function getSpecialFromDate()
     {
         return $this->special_from_date;
     }
@@ -504,7 +504,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setSpecial_from_date($special_from_date)
+    public function setSpecialFromDate($special_from_date)
     {
         $this->special_from_date = $special_from_date;
 
@@ -514,7 +514,7 @@ class CatalogProductCreateEntity
     /**
      * @return string
      */
-    public function getSpecial_to_date()
+    public function getSpecialToDate()
     {
         return $this->special_to_date;
     }
@@ -524,7 +524,7 @@ class CatalogProductCreateEntity
      *
      * @return $this
      */
-    public function setSpecial_to_date($special_to_date)
+    public function setSpecialToDate($special_to_date)
     {
         $this->special_to_date = $special_to_date;
 
@@ -712,7 +712,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return CatalogInventoryStockItemUp\DateTimeEntity
+     * @return CatalogInventoryStockItemUpDateEntity
      */
     public function getStockData()
     {
@@ -720,11 +720,11 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param catalogInventoryStockItemUp\DateTimeEntity $stock_data
+     * @param CatalogInventoryStockItemUpdateEntity $stock_data
      *
      * @return $this
      */
-    public function setStockData($stock_data)
+    public function setStockData(CatalogInventoryStockItemUpdateEntity $stock_data)
     {
         $this->stock_data = $stock_data;
 

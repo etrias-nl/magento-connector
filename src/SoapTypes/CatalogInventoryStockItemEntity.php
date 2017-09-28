@@ -37,27 +37,6 @@ class CatalogInventoryStockItemEntity
     protected $is_in_stock = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $sku
-     * @var string $qty
-     * @var string $is_in_stock
-     *
-     * @param mixed $product_id
-     * @param mixed $sku
-     * @param mixed $qty
-     * @param mixed $is_in_stock
-     */
-    public function __construct($product_id, $sku, $qty, $is_in_stock)
-    {
-        $this->product_id = $product_id;
-        $this->sku = $sku;
-        $this->qty = $qty;
-        $this->is_in_stock = $is_in_stock;
-    }
-
-    /**
      * @return string
      */
     public function getProductId()
@@ -120,7 +99,7 @@ class CatalogInventoryStockItemEntity
     /**
      * @return string
      */
-    public function getIs_in_stock()
+    public function getIsInStock()
     {
         return $this->is_in_stock;
     }
@@ -130,7 +109,7 @@ class CatalogInventoryStockItemEntity
      *
      * @return $this
      */
-    public function setIs_in_stock($is_in_stock)
+    public function setIsInStock($is_in_stock)
     {
         $this->is_in_stock = $is_in_stock;
 

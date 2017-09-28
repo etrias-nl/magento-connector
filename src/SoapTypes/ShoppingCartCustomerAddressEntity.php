@@ -16,6 +16,9 @@ namespace Etrias\MagentoConnector\SoapTypes;
 
 class ShoppingCartCustomerAddressEntity
 {
+    const MODE_BILLING = 'billing';
+    const MODE_SHIPPING = 'shipping';
+
     /**
      * @var string
      */
@@ -92,60 +95,6 @@ class ShoppingCartCustomerAddressEntity
     protected $is_default_shipping = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $address_id
-     * @var string $firstname
-     * @var string $lastname
-     * @var string $company
-     * @var string $street
-     * @var string $city
-     * @var string $region
-     * @var string $region_id
-     * @var string $postcode
-     * @var string $country_id
-     * @var string $telephone
-     * @var string $fax
-     * @var int    $is_default_billing
-     * @var int    $is_default_shipping
-     *
-     * @param mixed $mode
-     * @param mixed $address_id
-     * @param mixed $firstname
-     * @param mixed $lastname
-     * @param mixed $company
-     * @param mixed $street
-     * @param mixed $city
-     * @param mixed $region
-     * @param mixed $region_id
-     * @param mixed $postcode
-     * @param mixed $country_id
-     * @param mixed $telephone
-     * @param mixed $fax
-     * @param mixed $is_default_billing
-     * @param mixed $is_default_shipping
-     */
-    public function __construct($mode, $address_id, $firstname, $lastname, $company, $street, $city, $region, $region_id, $postcode, $country_id, $telephone, $fax, $is_default_billing, $is_default_shipping)
-    {
-        $this->mode = $mode;
-        $this->address_id = $address_id;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->company = $company;
-        $this->street = $street;
-        $this->city = $city;
-        $this->region = $region;
-        $this->region_id = $region_id;
-        $this->postcode = $postcode;
-        $this->country_id = $country_id;
-        $this->telephone = $telephone;
-        $this->fax = $fax;
-        $this->is_default_billing = $is_default_billing;
-        $this->is_default_shipping = $is_default_shipping;
-    }
-
-    /**
      * @return string
      */
     public function getMode()
@@ -168,7 +117,7 @@ class ShoppingCartCustomerAddressEntity
     /**
      * @return string
      */
-    public function getAddress_id()
+    public function getAddressId()
     {
         return $this->address_id;
     }
@@ -178,7 +127,7 @@ class ShoppingCartCustomerAddressEntity
      *
      * @return $this
      */
-    public function setAddress_id($address_id)
+    public function setAddressId($address_id)
     {
         $this->address_id = $address_id;
 
@@ -308,7 +257,7 @@ class ShoppingCartCustomerAddressEntity
     /**
      * @return string
      */
-    public function getRegion_id()
+    public function getRegionId()
     {
         return $this->region_id;
     }
@@ -318,7 +267,7 @@ class ShoppingCartCustomerAddressEntity
      *
      * @return $this
      */
-    public function setRegion_id($region_id)
+    public function setRegionId($region_id)
     {
         $this->region_id = $region_id;
 
@@ -348,7 +297,7 @@ class ShoppingCartCustomerAddressEntity
     /**
      * @return string
      */
-    public function getCountry_id()
+    public function getCountryId()
     {
         return $this->country_id;
     }
@@ -358,7 +307,7 @@ class ShoppingCartCustomerAddressEntity
      *
      * @return $this
      */
-    public function setCountry_id($country_id)
+    public function setCountryId($country_id)
     {
         $this->country_id = $country_id;
 
@@ -408,7 +357,7 @@ class ShoppingCartCustomerAddressEntity
     /**
      * @return int
      */
-    public function getIs_default_billing()
+    public function getIsDefaultBilling()
     {
         return $this->is_default_billing;
     }
@@ -418,7 +367,7 @@ class ShoppingCartCustomerAddressEntity
      *
      * @return $this
      */
-    public function setIs_default_billing($is_default_billing)
+    public function setIsDefaultBilling($is_default_billing)
     {
         $this->is_default_billing = $is_default_billing;
 
@@ -428,7 +377,7 @@ class ShoppingCartCustomerAddressEntity
     /**
      * @return int
      */
-    public function getIs_default_shipping()
+    public function getIsDefaultShipping()
     {
         return $this->is_default_shipping;
     }
@@ -438,7 +387,7 @@ class ShoppingCartCustomerAddressEntity
      *
      * @return $this
      */
-    public function setIs_default_shipping($is_default_shipping)
+    public function setIsDefaultShipping($is_default_shipping)
     {
         $this->is_default_shipping = $is_default_shipping;
 

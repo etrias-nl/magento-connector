@@ -136,7 +136,7 @@ class CatalogCategoryEntityNoChildren
     /**
      * @return int
      */
-    public function getIs_active()
+    public function getIsActive()
     {
         return $this->is_active;
     }
@@ -146,7 +146,7 @@ class CatalogCategoryEntityNoChildren
      *
      * @return $this
      */
-    public function setIs_active($is_active)
+    public function setIsActive($is_active)
     {
         $this->is_active = $is_active;
 

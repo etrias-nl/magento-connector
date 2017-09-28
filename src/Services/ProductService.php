@@ -19,6 +19,7 @@ use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
+use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 
 class ProductService
@@ -66,17 +67,17 @@ class ProductService
         return $this->adapter->getAttributeSetList($this->authenticationService->login());
     }
 
-    public function createProduct(string $productType, int $attributeSet, string $sku, CatalogProductCreateEntity $productData, int $storeView): int
+    public function createProduct(string $productType, int $attributeSet, string $sku, CatalogProductCreateEntity $productData, int $storeView = null): int
     {
         return $this->adapter->createProduct($this->authenticationService->login(), $productType, $attributeSet, $sku, $productData, $storeView);
     }
 
-    public function updateProductById(int $productId, CatalogProductCreateEntity $productData, int $storeView): bool
+    public function updateProductById(int $productId, CatalogProductCreateEntity $productData, int $storeView = null): bool
     {
         return $this->adapter->updateProduct($this->authenticationService->login(), (string) $productId, $productData, $storeView);
     }
 
-    public function updateProductBySku(string $sku, CatalogProductCreateEntity $productData, int $storeView): bool
+    public function updateProductBySku(string $sku, CatalogProductCreateEntity $productData, int $storeView = null): bool
     {
         return $this->adapter->updateProduct($this->authenticationService->login(), $sku, $productData, $storeView, 'sku');
     }
@@ -134,12 +135,12 @@ class ProductService
             'sku');
     }
 
-    public function getProductInfoById(int $productId, array $attributes = null, string $storeView = null): CatalogProductReturnEntity
+    public function getProductInfoById(int $productId, CatalogProductRequestAttributes $attributes = null, string $storeView = null): CatalogProductReturnEntity
     {
         return $this->adapter->getProductInfo($this->authenticationService->login(), (string) $productId, $attributes, $storeView);
     }
 
-    public function getProductInfoBySku(string $sku, array $attributes = null, string $storeView = null): CatalogProductReturnEntity
+    public function getProductInfoBySku(string $sku, CatalogProductRequestAttributes $attributes = null, string $storeView = null): CatalogProductReturnEntity
     {
         return $this->adapter->getProductInfo($this->authenticationService->login(), $sku, $attributes, $storeView);
     }

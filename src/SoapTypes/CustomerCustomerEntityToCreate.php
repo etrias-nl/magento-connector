@@ -57,39 +57,6 @@ class CustomerCustomerEntityToCreate
     protected $group_id = null;
 
     /**
-     * Constructor.
-     *
-     * @var int
-     * @var string $email
-     * @var string $firstname
-     * @var string $lastname
-     * @var string $password
-     * @var int    $website_id
-     * @var int    $store_id
-     * @var int    $group_id
-     *
-     * @param mixed $customer_id
-     * @param mixed $email
-     * @param mixed $firstname
-     * @param mixed $lastname
-     * @param mixed $password
-     * @param mixed $website_id
-     * @param mixed $store_id
-     * @param mixed $group_id
-     */
-    public function __construct($customer_id, $email, $firstname, $lastname, $password, $website_id, $store_id, $group_id)
-    {
-        $this->customer_id = $customer_id;
-        $this->email = $email;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->password = $password;
-        $this->website_id = $website_id;
-        $this->store_id = $store_id;
-        $this->group_id = $group_id;
-    }
-
-    /**
      * @return int
      */
     public function getCustomerId()

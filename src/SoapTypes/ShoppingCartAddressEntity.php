@@ -152,99 +152,9 @@ class ShoppingCartAddressEntity
     protected $weight = null;
 
     /**
-     * Constructor.
-     *
-     * @var string
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $customer_id
-     * @var int    $save_in_address_book
-     * @var string $customer_address_id
-     * @var string $address_type
-     * @var string $email
-     * @var string $prefix
-     * @var string $firstname
-     * @var string $middlename
-     * @var string $lastname
-     * @var string $suffix
-     * @var string $company
-     * @var string $street
-     * @var string $city
-     * @var string $region
-     * @var string $region_id
-     * @var string $postcode
-     * @var string $country_id
-     * @var string $telephone
-     * @var string $fax
-     * @var int    $same_as_billing
-     * @var int    $free_shipping
-     * @var string $shipping_method
-     * @var string $shipping_description
-     * @var float  $weight
-     *
-     * @param mixed $address_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $customer_id
-     * @param mixed $save_in_address_book
-     * @param mixed $customer_address_id
-     * @param mixed $address_type
-     * @param mixed $email
-     * @param mixed $prefix
-     * @param mixed $firstname
-     * @param mixed $middlename
-     * @param mixed $lastname
-     * @param mixed $suffix
-     * @param mixed $company
-     * @param mixed $street
-     * @param mixed $city
-     * @param mixed $region
-     * @param mixed $region_id
-     * @param mixed $postcode
-     * @param mixed $country_id
-     * @param mixed $telephone
-     * @param mixed $fax
-     * @param mixed $same_as_billing
-     * @param mixed $free_shipping
-     * @param mixed $shipping_method
-     * @param mixed $shipping_description
-     * @param mixed $weight
-     */
-    public function __construct($address_id, $created_at, $updated_at, $customer_id, $save_in_address_book, $customer_address_id, $address_type, $email, $prefix, $firstname, $middlename, $lastname, $suffix, $company, $street, $city, $region, $region_id, $postcode, $country_id, $telephone, $fax, $same_as_billing, $free_shipping, $shipping_method, $shipping_description, $weight)
-    {
-        $this->address_id = $address_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->customer_id = $customer_id;
-        $this->save_in_address_book = $save_in_address_book;
-        $this->customer_address_id = $customer_address_id;
-        $this->address_type = $address_type;
-        $this->email = $email;
-        $this->prefix = $prefix;
-        $this->firstname = $firstname;
-        $this->middlename = $middlename;
-        $this->lastname = $lastname;
-        $this->suffix = $suffix;
-        $this->company = $company;
-        $this->street = $street;
-        $this->city = $city;
-        $this->region = $region;
-        $this->region_id = $region_id;
-        $this->postcode = $postcode;
-        $this->country_id = $country_id;
-        $this->telephone = $telephone;
-        $this->fax = $fax;
-        $this->same_as_billing = $same_as_billing;
-        $this->free_shipping = $free_shipping;
-        $this->shipping_method = $shipping_method;
-        $this->shipping_description = $shipping_description;
-        $this->weight = $weight;
-    }
-
-    /**
      * @return string
      */
-    public function getAddress_id()
+    public function getAddressId()
     {
         return $this->address_id;
     }
@@ -254,7 +164,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setAddress_id($address_id)
+    public function setAddressId($address_id)
     {
         $this->address_id = $address_id;
 
@@ -264,7 +174,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -274,7 +184,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -284,7 +194,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -294,7 +204,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -304,7 +214,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getCustomer_id()
+    public function getCustomerId()
     {
         return $this->customer_id;
     }
@@ -314,7 +224,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setCustomer_id($customer_id)
+    public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
 
@@ -324,7 +234,7 @@ class ShoppingCartAddressEntity
     /**
      * @return int
      */
-    public function getSave_in_address_book()
+    public function getSaveInAddressBook()
     {
         return $this->save_in_address_book;
     }
@@ -334,7 +244,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setSave_in_address_book($save_in_address_book)
+    public function setSaveInAddressBook($save_in_address_book)
     {
         $this->save_in_address_book = $save_in_address_book;
 
@@ -344,7 +254,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getCustomer_address_id()
+    public function getCustomerAddressId()
     {
         return $this->customer_address_id;
     }
@@ -354,7 +264,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setCustomer_address_id($customer_address_id)
+    public function setCustomerAddressId($customer_address_id)
     {
         $this->customer_address_id = $customer_address_id;
 
@@ -364,7 +274,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getAddress_type()
+    public function getAddressType()
     {
         return $this->address_type;
     }
@@ -374,7 +284,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setAddress_type($address_type)
+    public function setAddressType($address_type)
     {
         $this->address_type = $address_type;
 
@@ -584,7 +494,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getRegion_id()
+    public function getRegionId()
     {
         return $this->region_id;
     }
@@ -594,7 +504,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setRegion_id($region_id)
+    public function setRegionId($region_id)
     {
         $this->region_id = $region_id;
 
@@ -624,7 +534,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getCountry_id()
+    public function getCountryId()
     {
         return $this->country_id;
     }
@@ -634,7 +544,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setCountry_id($country_id)
+    public function setCountryId($country_id)
     {
         $this->country_id = $country_id;
 
@@ -684,7 +594,7 @@ class ShoppingCartAddressEntity
     /**
      * @return int
      */
-    public function getSame_as_billing()
+    public function getSameAsBilling()
     {
         return $this->same_as_billing;
     }
@@ -694,7 +604,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setSame_as_billing($same_as_billing)
+    public function setSameAsBilling($same_as_billing)
     {
         $this->same_as_billing = $same_as_billing;
 
@@ -704,7 +614,7 @@ class ShoppingCartAddressEntity
     /**
      * @return int
      */
-    public function getFree_shipping()
+    public function getFreeShipping()
     {
         return $this->free_shipping;
     }
@@ -714,7 +624,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setFree_shipping($free_shipping)
+    public function setFreeShipping($free_shipping)
     {
         $this->free_shipping = $free_shipping;
 
@@ -724,7 +634,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getShipping_method()
+    public function getShippingMethod()
     {
         return $this->shipping_method;
     }
@@ -734,7 +644,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setShipping_method($shipping_method)
+    public function setShippingMethod($shipping_method)
     {
         $this->shipping_method = $shipping_method;
 
@@ -744,7 +654,7 @@ class ShoppingCartAddressEntity
     /**
      * @return string
      */
-    public function getShipping_description()
+    public function getShippingDescription()
     {
         return $this->shipping_description;
     }
@@ -754,7 +664,7 @@ class ShoppingCartAddressEntity
      *
      * @return $this
      */
-    public function setShipping_description($shipping_description)
+    public function setShippingDescription($shipping_description)
     {
         $this->shipping_description = $shipping_description;
 

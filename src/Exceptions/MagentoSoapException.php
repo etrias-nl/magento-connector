@@ -18,7 +18,7 @@ use Exception;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class MagentoSoapException extends Exception
+class MagentoSoapException extends MagentoConnectorException
 {
     /** @var RequestInterface|null */
     protected $request = null;

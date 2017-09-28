@@ -107,69 +107,6 @@ class CustomerCustomerEntity
     protected $password_hash = null;
 
     /**
-     * Constructor.
-     *
-     * @var int
-     * @var string $created_at
-     * @var string $updated_at
-     * @var string $increment_id
-     * @var int    $store_id
-     * @var int    $website_id
-     * @var string $created_in
-     * @var string $email
-     * @var string $firstname
-     * @var string $middlename
-     * @var string $lastname
-     * @var int    $group_id
-     * @var string $prefix
-     * @var string $suffix
-     * @var string $dob
-     * @var string $taxvat
-     * @var bool   $confirmation
-     * @var string $password_hash
-     *
-     * @param mixed $customer_id
-     * @param mixed $created_at
-     * @param mixed $updated_at
-     * @param mixed $increment_id
-     * @param mixed $store_id
-     * @param mixed $website_id
-     * @param mixed $created_in
-     * @param mixed $email
-     * @param mixed $firstname
-     * @param mixed $middlename
-     * @param mixed $lastname
-     * @param mixed $group_id
-     * @param mixed $prefix
-     * @param mixed $suffix
-     * @param mixed $dob
-     * @param mixed $taxvat
-     * @param mixed $confirmation
-     * @param mixed $password_hash
-     */
-    public function __construct($customer_id, $created_at, $updated_at, $increment_id, $store_id, $website_id, $created_in, $email, $firstname, $middlename, $lastname, $group_id, $prefix, $suffix, $dob, $taxvat, $confirmation, $password_hash)
-    {
-        $this->customer_id = $customer_id;
-        $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->increment_id = $increment_id;
-        $this->store_id = $store_id;
-        $this->website_id = $website_id;
-        $this->created_in = $created_in;
-        $this->email = $email;
-        $this->firstname = $firstname;
-        $this->middlename = $middlename;
-        $this->lastname = $lastname;
-        $this->group_id = $group_id;
-        $this->prefix = $prefix;
-        $this->suffix = $suffix;
-        $this->dob = $dob;
-        $this->taxvat = $taxvat;
-        $this->confirmation = $confirmation;
-        $this->password_hash = $password_hash;
-    }
-
-    /**
      * @return int
      */
     public function getCustomerId()
