@@ -47,7 +47,7 @@ trait RandomizeTrait
     /** @var CreditMemoService */
     private $creditMemoService;
 
-    /** @var  InvoiceService */
+    /** @var InvoiceService */
     private $invoiceService;
 
     /**

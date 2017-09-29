@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Etrias\MagentoConnector\Services;
 
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
-use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 
 class OrderService
@@ -41,10 +40,11 @@ class OrderService
     }
 
     /**
-     * @param string $orderIncrementId
-     * @param string $status
+     * @param string      $orderIncrementId
+     * @param string      $status
      * @param string|null $comment
      * @param string|null $notify
+     *
      * @return bool
      */
     public function addComment(
@@ -52,8 +52,7 @@ class OrderService
         string $status,
         string $comment = null,
         string $notify = null
-    ): bool
-    {
+    ): bool {
         return $this->adapter->addCommentToOrder(
             $this->authenticationService->login(),
             $orderIncrementId,

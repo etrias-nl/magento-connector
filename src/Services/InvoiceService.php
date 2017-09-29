@@ -15,11 +15,7 @@ declare(strict_types=1);
 namespace Etrias\MagentoConnector\Services;
 
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
-use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\OrderItemIdQty;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
 
 class InvoiceService
@@ -45,10 +41,11 @@ class InvoiceService
     }
 
     /**
-     * @param string $invoiceIncrementId
+     * @param string      $invoiceIncrementId
      * @param string|null $comment
-     * @param bool|null $sendEmail
-     * @param bool|null $includeComment
+     * @param bool|null   $sendEmail
+     * @param bool|null   $includeComment
+     *
      * @return bool
      */
     public function addComment(
@@ -56,8 +53,7 @@ class InvoiceService
         string $comment = null,
         bool $sendEmail = null,
         bool $includeComment = null
-    ): bool
-    {
+    ): bool {
         return $this->adapter->addCommentToOrderInvoice(
             $this->authenticationService->login(),
             $invoiceIncrementId,
@@ -68,11 +64,12 @@ class InvoiceService
     }
 
     /**
-     * @param string $orderIncrementId
+     * @param string           $orderIncrementId
      * @param OrderItemIdQty[] $itemsQty
-     * @param string|null $comment
-     * @param bool|null $sendEmail
-     * @param bool|null $includeComment
+     * @param string|null      $comment
+     * @param bool|null        $sendEmail
+     * @param bool|null        $includeComment
+     *
      * @return string InvoiceIncrementId
      */
     public function createInvoice(
@@ -94,6 +91,7 @@ class InvoiceService
 
     /**
      * @param array $filters
+     *
      * @return SalesOrderInvoiceEntity[]
      */
     public function getInvoices(array $filters = []): array
@@ -103,6 +101,7 @@ class InvoiceService
 
     /**
      * @param string $invoiceIncrementId
+     *
      * @return SalesOrderInvoiceEntity
      */
     public function getInvoiceInfo(string $invoiceIncrementId): SalesOrderInvoiceEntity
@@ -112,6 +111,7 @@ class InvoiceService
 
     /**
      * @param string $invoiceIncrementId
+     *
      * @return bool
      */
     public function cancelInvoice(string $invoiceIncrementId): bool
@@ -121,6 +121,7 @@ class InvoiceService
 
     /**
      * @param string $invoiceIncrementId
+     *
      * @return bool
      */
     public function captureInvoice(string $invoiceIncrementId): bool

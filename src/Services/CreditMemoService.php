@@ -15,10 +15,8 @@ declare(strict_types=1);
 namespace Etrias\MagentoConnector\Services;
 
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
-use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 
 class CreditMemoService
 {
@@ -43,10 +41,11 @@ class CreditMemoService
     }
 
     /**
-     * @param string $creditMemoIncrementId
+     * @param string      $creditMemoIncrementId
      * @param string|null $comment
-     * @param bool|null $notify
-     * @param bool|null $includeComment
+     * @param bool|null   $notify
+     * @param bool|null   $includeComment
+     *
      * @return bool
      */
     public function addComment(
@@ -54,8 +53,7 @@ class CreditMemoService
         string $comment = null,
         bool $notify = null,
         bool $includeComment = null
-    ): bool
-    {
+    ): bool {
         return $this->adapter->addCommentToCreditMemo(
             $this->authenticationService->login(),
             $creditMemoIncrementId,
@@ -66,12 +64,13 @@ class CreditMemoService
     }
 
     /**
-     * @param string $orderIncrementId
+     * @param string                        $orderIncrementId
      * @param SalesOrderCreditmemoData|null $data
-     * @param string|null $comment
-     * @param bool|null $notifyCustomer
-     * @param bool|null $includeComment
-     * @param bool $refundToStoreCreditAmount
+     * @param string|null                   $comment
+     * @param bool|null                     $notifyCustomer
+     * @param bool|null                     $includeComment
+     * @param bool                          $refundToStoreCreditAmount
+     *
      * @return string CreditMemoIncrementId
      */
     public function createCreditmemo(
@@ -81,7 +80,6 @@ class CreditMemoService
         bool $notifyCustomer = null,
         bool $includeComment = null,
         bool $refundToStoreCreditAmount = null
-
     ): string {
         return $this->adapter->createCreditMemo(
                 $this->authenticationService->login(),
@@ -96,6 +94,7 @@ class CreditMemoService
 
     /**
      * @param array $filters
+     *
      * @return SalesOrderCreditmemoEntity[]
      */
     public function getCreditMemos(array $filters = []): array
@@ -105,6 +104,7 @@ class CreditMemoService
 
     /**
      * @param string $creditMemoIncrementId
+     *
      * @return SalesOrderCreditmemoEntity
      */
     public function getCreditMemoInfo(string $creditMemoIncrementId): SalesOrderCreditmemoEntity
@@ -114,6 +114,7 @@ class CreditMemoService
 
     /**
      * @param string $creditMemoIncrementId
+     *
      * @return bool
      */
     public function cancelCreditMemo(string $creditMemoIncrementId): bool

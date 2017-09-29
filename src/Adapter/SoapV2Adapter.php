@@ -125,7 +125,7 @@ class SoapV2Adapter implements AdapterInterface
     {
         $request = new MultiArgumentRequest([$sessionId]);
 
-        return $this->processRequest(__FUNCTION__, $request);
+        return (bool) $this->processRequest(__FUNCTION__, $request);
     }
 
     public function login(string $username, string $password): string
@@ -405,11 +405,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string      $sessionId
-     * @param string      $productId
-     * @param CatalogProductRequestAttributes|null  $attributes
-     * @param string|null $storeView
-     * @param string      $identifierType
+     * @param string                               $sessionId
+     * @param string                               $productId
+     * @param CatalogProductRequestAttributes|null $attributes
+     * @param string|null                          $storeView
+     * @param string                               $identifierType
      *
      * @return CatalogProductReturnEntity
      */
@@ -713,9 +713,10 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param string $product
+     * @param string                                $sessionId
+     * @param string                                $product
      * @param CatalogInventoryStockItemUpdateEntity $data
+     *
      * @return mixed
      */
     public function updateCatalogInventoryStockData(
@@ -822,7 +823,7 @@ class SoapV2Adapter implements AdapterInterface
             $comment,
             $notifyCustomer,
             $includeComment,
-            $refundToStoreCreditAmount
+            $refundToStoreCreditAmount,
         ]);
 
         return $this->processRequest('salesOrderCreditmemoCreate', $request);
@@ -936,7 +937,6 @@ class SoapV2Adapter implements AdapterInterface
         return $this->processRequest('shoppingCartLicense', $request);
     }
 
-
     public function createOrderFromCart(
         string $sessionId,
         int $quoteId,
@@ -959,10 +959,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
-     * @param string $couponCode
+     * @param string      $sessionId
+     * @param int         $quoteId
+     * @param string      $couponCode
      * @param string|null $storeId
+     *
      * @return bool
      */
     public function addCouponToCart(
@@ -977,9 +978,10 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return bool
      */
     public function removeCouponFromCart(
@@ -993,10 +995,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                              $sessionId
+     * @param int                                 $quoteId
      * @param ShoppingCartCustomerAddressEntity[] $data
-     * @param string|null $storeId
+     * @param string|null                         $storeId
+     *
      * @return bool
      */
     public function setCustomerAddresses(
@@ -1011,10 +1014,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                     $sessionId
+     * @param int                        $quoteId
      * @param ShoppingCartCustomerEntity $data
-     * @param string|null $storeId
+     * @param string|null                $storeId
+     *
      * @return bool
      */
     public function setCustomerInfo(
@@ -1029,9 +1033,10 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return ShoppingCartPaymentMethodEntity[]
      */
     public function getPaymentMethods(
@@ -1045,10 +1050,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                          $sessionId
+     * @param int                             $quoteId
      * @param ShoppingCartPaymentMethodEntity $method
-     * @param string|null $storeId
+     * @param string|null                     $storeId
+     *
      * @return bool
      */
     public function setPaymentMethod(
@@ -1063,10 +1069,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                      $sessionId
+     * @param int                         $quoteId
      * @param ShoppingCartProductEntity[] $products
-     * @param string|null $storeId
+     * @param string|null                 $storeId
+     *
      * @return bool
      */
     public function addProductsToCart(
@@ -1081,9 +1088,10 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return CatalogProductEntity[]
      */
     public function getProductsInCart(
@@ -1097,10 +1105,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                      $sessionId
+     * @param int                         $quoteId
      * @param ShoppingCartProductEntity[] $products
-     * @param string|null $storeId
+     * @param string|null                 $storeId
+     *
      * @return bool
      */
     public function moveCartProductsToCustomerQuote(
@@ -1115,10 +1124,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                      $sessionId
+     * @param int                         $quoteId
      * @param ShoppingCartProductEntity[] $products
-     * @param string|null $storeId
+     * @param string|null                 $storeId
+     *
      * @return bool
      */
     public function removeProductsFromCart(
@@ -1133,10 +1143,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                      $sessionId
+     * @param int                         $quoteId
      * @param ShoppingCartProductEntity[] $products
-     * @param string|null $storeId
+     * @param string|null                 $storeId
+     *
      * @return bool
      */
     public function updateProductsInCart(
@@ -1151,9 +1162,10 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return ShoppingCartShippingMethodEntity[]
      */
     public function getShippingMethods(
@@ -1167,10 +1179,11 @@ class SoapV2Adapter implements AdapterInterface
     }
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
-     * @param string $shippingMethodCode
+     * @param string      $sessionId
+     * @param int         $quoteId
+     * @param string      $shippingMethodCode
      * @param string|null $storeId
+     *
      * @return bool
      */
     public function setShippingMethod(

@@ -15,22 +15,12 @@ declare(strict_types=1);
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
 use Etrias\MagentoConnector\Exceptions\MagentoSoapException;
-use Etrias\MagentoConnector\Services\GeneralService;
-use Etrias\MagentoConnector\Services\OrderService;
 use Etrias\MagentoConnector\Services\ShoppingCartService;
-use Etrias\MagentoConnector\SoapTypes\ApiEntity;
-use Etrias\MagentoConnector\SoapTypes\ExistsFaltureEntity;
-use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderListEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartCustomerAddressEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartCustomerEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartInfoEntity;
-use Etrias\MagentoConnector\SoapTypes\ShoppingCartLicenseEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartProductEntity;
 use Etrias\MagentoConnector\SoapTypes\ShoppingCartTotalsEntity;
-use Etrias\MagentoConnector\SoapTypes\StoreEntity;
-use Faker;
 
 /**
  * @coversNothing
@@ -54,7 +44,7 @@ class ShoppingCartServiceTest extends AbstractServiceTest
     {
         $shoppingCartId = $this->service->createCart();
 
-        $this->assertTrue(is_numeric($shoppingCartId));
+        $this->assertInternalType('numeric', $shoppingCartId);
     }
 
     public function testGetCartInfo()
@@ -70,7 +60,7 @@ class ShoppingCartServiceTest extends AbstractServiceTest
         $shoppingCartId = $this->service->createCart();
         $shoppingCartLicences = $this->service->getCartLicences($shoppingCartId);
 
-        $this->assertTrue(is_array($shoppingCartLicences));
+        $this->assertInternalType('array', $shoppingCartLicences);
     }
 
     public function testGetCartTotals()
@@ -78,7 +68,7 @@ class ShoppingCartServiceTest extends AbstractServiceTest
         $shoppingCartId = $this->service->createCart();
         $totals = $this->service->getCartTotals($shoppingCartId);
 
-        $this->assertTrue(is_array($totals));
+        $this->assertInternalType('array', $totals);
         $this->assertInstanceOf(ShoppingCartTotalsEntity::class, reset($totals));
     }
 
@@ -101,8 +91,6 @@ class ShoppingCartServiceTest extends AbstractServiceTest
 
     public function testSetCustomerAddresses()
     {
-
-
         $quoteId = $this->service->createCart('20');
         $billingAddress = new ShoppingCartCustomerAddressEntity();
         $billingAddress->setMode(ShoppingCartCustomerAddressEntity::MODE_BILLING)
@@ -130,19 +118,19 @@ class ShoppingCartServiceTest extends AbstractServiceTest
 
         $cardInfo = $this->service->getCartInfo($quoteId);
 
-        $this->assertEquals($shippingAddress->getFirstname(), $cardInfo->getShippingAddress()->getFirstname());
-        $this->assertEquals($shippingAddress->getLastname(), $cardInfo->getShippingAddress()->getLastname());
-        $this->assertEquals($shippingAddress->getStreet(), $cardInfo->getShippingAddress()->getStreet());
-        $this->assertEquals($shippingAddress->getCity(), $cardInfo->getShippingAddress()->getCity());
-        $this->assertEquals($shippingAddress->getPostcode(), $cardInfo->getShippingAddress()->getPostcode());
-        $this->assertEquals($shippingAddress->getCountryId(), $cardInfo->getShippingAddress()->getCountryId());
+        $this->assertSame($shippingAddress->getFirstname(), $cardInfo->getShippingAddress()->getFirstname());
+        $this->assertSame($shippingAddress->getLastname(), $cardInfo->getShippingAddress()->getLastname());
+        $this->assertSame($shippingAddress->getStreet(), $cardInfo->getShippingAddress()->getStreet());
+        $this->assertSame($shippingAddress->getCity(), $cardInfo->getShippingAddress()->getCity());
+        $this->assertSame($shippingAddress->getPostcode(), $cardInfo->getShippingAddress()->getPostcode());
+        $this->assertSame($shippingAddress->getCountryId(), $cardInfo->getShippingAddress()->getCountryId());
 
-        $this->assertEquals($billingAddress->getFirstname(), $cardInfo->getBillingAddress()->getFirstname());
-        $this->assertEquals($billingAddress->getLastname(), $cardInfo->getBillingAddress()->getLastname());
-        $this->assertEquals($billingAddress->getStreet(), $cardInfo->getBillingAddress()->getStreet());
-        $this->assertEquals($billingAddress->getCity(), $cardInfo->getBillingAddress()->getCity());
-        $this->assertEquals($billingAddress->getPostcode(), $cardInfo->getBillingAddress()->getPostcode());
-        $this->assertEquals($billingAddress->getCountryId(), $cardInfo->getBillingAddress()->getCountryId());
+        $this->assertSame($billingAddress->getFirstname(), $cardInfo->getBillingAddress()->getFirstname());
+        $this->assertSame($billingAddress->getLastname(), $cardInfo->getBillingAddress()->getLastname());
+        $this->assertSame($billingAddress->getStreet(), $cardInfo->getBillingAddress()->getStreet());
+        $this->assertSame($billingAddress->getCity(), $cardInfo->getBillingAddress()->getCity());
+        $this->assertSame($billingAddress->getPostcode(), $cardInfo->getBillingAddress()->getPostcode());
+        $this->assertSame($billingAddress->getCountryId(), $cardInfo->getBillingAddress()->getCountryId());
     }
 
     public function testSetCustomerInfo()
@@ -151,7 +139,6 @@ class ShoppingCartServiceTest extends AbstractServiceTest
         $this->expectException(MagentoSoapException::class);
 
         $quoteId = $this->service->createCart('20');
-
 
         $data = new ShoppingCartCustomerEntity();
         $data->setFirstname($this->getFaker()->firstName)
@@ -174,7 +161,4 @@ class ShoppingCartServiceTest extends AbstractServiceTest
 
         $paymentMethods = $this->service->getAvailablePaymentMethods($quoteId);
     }
-
-
-
 }

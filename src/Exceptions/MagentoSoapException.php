@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Etrias\MagentoConnector\Exceptions;
 
-use Exception;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 

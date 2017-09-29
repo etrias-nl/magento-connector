@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Etrias\MagentoConnector\Exceptions;
 
-use Exception;
-
-abstract class MagentoConnectorException extends Exception
+class NoSoapFaultException extends MagentoSoapException
 {
 }

@@ -491,7 +491,8 @@ interface AdapterInterface
 
     /**
      * @param string $sessionId
-     * @param array $productIds
+     * @param array  $productIds
+     *
      * @return CatalogInventoryStockItemEntity[]
      */
     public function getCatalogInventoryStockItems(
@@ -500,9 +501,10 @@ interface AdapterInterface
     ): array;
 
     /**
-     * @param string $sessionId
-     * @param string $product
+     * @param string                                $sessionId
+     * @param string                                $product
      * @param CatalogInventoryStockItemUpdateEntity $data
+     *
      * @return mixed
      */
     public function updateCatalogInventoryStockData(
@@ -512,11 +514,12 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param string $orderIncrementId
-     * @param string $status
+     * @param string      $sessionId
+     * @param string      $orderIncrementId
+     * @param string      $status
      * @param string|null $comment
      * @param string|null $notify
+     *
      * @return bool
      */
     public function addCommentToOrder(
@@ -529,7 +532,8 @@ interface AdapterInterface
 
     /**
      * @param string $sessionId
-     * @param array $filters
+     * @param array  $filters
+     *
      * @return array
      */
     public function listOrders(
@@ -540,6 +544,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $orderIncrementId
+     *
      * @return SalesOrderEntity
      */
     public function getOrderInfo(
@@ -550,6 +555,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $orderIncrementId
+     *
      * @return bool
      */
     public function holdOrder(
@@ -560,6 +566,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $orderIncrementId
+     *
      * @return bool
      */
     public function unHoldOrder(
@@ -570,6 +577,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $orderIncrementId
+     *
      * @return bool
      */
     public function cancelOrder(
@@ -578,11 +586,12 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param string $creditMemoIncrementId
+     * @param string      $sessionId
+     * @param string      $creditMemoIncrementId
      * @param string|null $comment
-     * @param int|null $notifyCustomer
-     * @param int|null $includeComment
+     * @param int|null    $notifyCustomer
+     * @param int|null    $includeComment
+     *
      * @return bool
      */
     public function addCommentToCreditMemo(
@@ -594,13 +603,14 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param string $orderIncrementId
+     * @param string                        $sessionId
+     * @param string                        $orderIncrementId
      * @param SalesOrderCreditmemoData|null $data
-     * @param string|null $comment
-     * @param int $notifyCustomer
-     * @param int $includeComment
-     * @param string $refundToStoreCreditAmount
+     * @param string|null                   $comment
+     * @param int                           $notifyCustomer
+     * @param int                           $includeComment
+     * @param string                        $refundToStoreCreditAmount
+     *
      * @return string
      */
     public function createCreditMemo(
@@ -616,6 +626,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $creditMemoIncrementId
+     *
      * @return bool
      */
     public function cancelCreditMemo(
@@ -626,6 +637,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $creditMemoIncrementId
+     *
      * @return SalesOrderCreditmemoEntity
      */
     public function getCreditMemoInfo(
@@ -635,7 +647,8 @@ interface AdapterInterface
 
     /**
      * @param string $sessionId
-     * @param array $filters
+     * @param array  $filters
+     *
      * @return SalesOrderCreditmemoEntity[]
      */
     public function listCreditMemos(
@@ -647,8 +660,9 @@ interface AdapterInterface
      * @param string $sessionId
      * @param string $invoiceIncrementId
      * @param string $comment
-     * @param int $sendEmail
-     * @param int $includeComment
+     * @param int    $sendEmail
+     * @param int    $includeComment
+     *
      * @return bool
      */
     public function addCommentToOrderInvoice(
@@ -660,12 +674,13 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param string $orderIncrementId
-     * @param array|null $itemsQty
+     * @param string      $sessionId
+     * @param string      $orderIncrementId
+     * @param array|null  $itemsQty
      * @param string|null $comment
      * @param string|null $sendEmail
      * @param string|null $includeComment
+     *
      * @return string
      */
     public function createOrderInvoice(
@@ -679,7 +694,8 @@ interface AdapterInterface
 
     /**
      * @param string $sessionId
-     * @param array $filters
+     * @param array  $filters
+     *
      * @return SalesOrderInvoiceEntity[]
      */
     public function listInvoices(
@@ -690,6 +706,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $invoiceIncrementId
+     *
      * @return SalesOrderInvoiceEntity
      */
     public function getInvoiceInfo(
@@ -700,6 +717,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $invoiceIncrementId
+     *
      * @return bool
      */
     public function cancelInvoice(
@@ -710,6 +728,7 @@ interface AdapterInterface
     /**
      * @param string $sessionId
      * @param string $invoiceIncrementId
+     *
      * @return bool
      */
     public function captureInvoice(
@@ -718,8 +737,9 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
+     * @param string      $sessionId
      * @param string|null $storeId
+     *
      * @return int Cart(quote) id
      */
     public function createShoppingCart(
@@ -728,9 +748,10 @@ interface AdapterInterface
     ): int;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return ShoppingCartInfoEntity
      */
     public function getShoppingCartInfo(
@@ -740,9 +761,10 @@ interface AdapterInterface
     ): ShoppingCartInfoEntity;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return ShoppingCartLicenseEntity[]
      */
     public function getShoppingCartLicences(
@@ -752,10 +774,11 @@ interface AdapterInterface
     ): array;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
-     * @param array|null $licenses
+     * @param array|null  $licenses
+     *
      * @return int Order id
      */
     public function createOrderFromCart(
@@ -766,9 +789,10 @@ interface AdapterInterface
     ): int;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return ShoppingCartTotalsEntity[]
      */
     public function getCartTotals(
@@ -778,10 +802,11 @@ interface AdapterInterface
     ): array;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
-     * @param string $couponCode
+     * @param string      $sessionId
+     * @param int         $quoteId
+     * @param string      $couponCode
      * @param string|null $storeId
+     *
      * @return bool
      */
     public function addCouponToCart(
@@ -792,9 +817,10 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return bool
      */
     public function removeCouponFromCart(
@@ -804,10 +830,11 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                              $sessionId
+     * @param int                                 $quoteId
      * @param ShoppingCartCustomerAddressEntity[] $data
-     * @param string|null $storeId
+     * @param string|null                         $storeId
+     *
      * @return bool
      */
     public function setCustomerAddresses(
@@ -818,10 +845,11 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                     $sessionId
+     * @param int                        $quoteId
      * @param ShoppingCartCustomerEntity $data
-     * @param string|null $storeId
+     * @param string|null                $storeId
+     *
      * @return bool
      */
     public function setCustomerInfo(
@@ -832,9 +860,10 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return ShoppingCartPaymentMethodEntity[]
      */
     public function getPaymentMethods(
@@ -844,10 +873,11 @@ interface AdapterInterface
     ): array;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                          $sessionId
+     * @param int                             $quoteId
      * @param ShoppingCartPaymentMethodEntity $method
-     * @param string|null $storeId
+     * @param string|null                     $storeId
+     *
      * @return bool
      */
     public function setPaymentMethod(
@@ -858,10 +888,11 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                      $sessionId
+     * @param int                         $quoteId
      * @param ShoppingCartProductEntity[] $products
-     * @param string|null $storeId
+     * @param string|null                 $storeId
+     *
      * @return bool
      */
     public function addProductsToCart(
@@ -872,9 +903,10 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return CatalogProductEntity[]
      */
     public function getProductsInCart(
@@ -884,10 +916,11 @@ interface AdapterInterface
     ): array;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                      $sessionId
+     * @param int                         $quoteId
      * @param ShoppingCartProductEntity[] $products
-     * @param string|null $storeId
+     * @param string|null                 $storeId
+     *
      * @return bool
      */
     public function moveCartProductsToCustomerQuote(
@@ -898,10 +931,11 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                      $sessionId
+     * @param int                         $quoteId
      * @param ShoppingCartProductEntity[] $products
-     * @param string|null $storeId
+     * @param string|null                 $storeId
+     *
      * @return bool
      */
     public function removeProductsFromCart(
@@ -912,10 +946,11 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string                      $sessionId
+     * @param int                         $quoteId
      * @param ShoppingCartProductEntity[] $products
-     * @param string|null $storeId
+     * @param string|null                 $storeId
+     *
      * @return bool
      */
     public function updateProductsInCart(
@@ -926,9 +961,10 @@ interface AdapterInterface
     ): bool;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
+     * @param string      $sessionId
+     * @param int         $quoteId
      * @param string|null $storeId
+     *
      * @return ShoppingCartShippingMethodEntity[]
      */
     public function getShippingMethods(
@@ -938,10 +974,11 @@ interface AdapterInterface
     ): array;
 
     /**
-     * @param string $sessionId
-     * @param int $quoteId
-     * @param string $shippingMethodCode
+     * @param string      $sessionId
+     * @param int         $quoteId
+     * @param string      $shippingMethodCode
      * @param string|null $storeId
+     *
      * @return bool
      */
     public function setShippingMethod(
