@@ -126,6 +126,7 @@ class AuthenticationService
         if ($cacheItem->isHit()) {
             $endSessionResult = $this->adapter->endSession($cacheItem->get());
             $this->cacheAdapter->deleteItem($cacheItem->getKey());
+
             return $endSessionResult;
         }
 
@@ -134,6 +135,7 @@ class AuthenticationService
 
     /**
      * @param bool $force
+     *
      * @return string SessionId
      */
     public function login(bool $force = false): string
