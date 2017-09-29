@@ -14,20 +14,10 @@ declare(strict_types=1);
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
-use Etrias\MagentoConnector\Services\CreditMemoService;
-use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\InvoiceService;
 use Etrias\MagentoConnector\Services\OrderService;
-use Etrias\MagentoConnector\SoapTypes\ApiEntity;
-use Etrias\MagentoConnector\SoapTypes\ExistsFaltureEntity;
-use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\OrderItemIdQty;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderListEntity;
-use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 /**
  * @coversNothing
@@ -61,7 +51,7 @@ class InvoiceServiceTest extends AbstractServiceTest
     {
         $invoice = $this->getRandomInvoice();
 
-        $result = $this->service->addComment($invoice->getIncrementId(), 'testcomment'. rand(0,9999));
+        $result = $this->service->addComment($invoice->getIncrementId(), 'testcomment'.random_int(0, 9999));
         $this->assertTrue($result);
     }
 
@@ -72,7 +62,6 @@ class InvoiceServiceTest extends AbstractServiceTest
 
         $this->assertInstanceOf(SalesOrderInvoiceEntity::class, $result);
     }
-
 
     public function testCreateAndCancelInvoice()
     {
@@ -88,7 +77,7 @@ class InvoiceServiceTest extends AbstractServiceTest
             $qtys
             );
 
-        $this->assertTrue(is_numeric($invoiceIncrementId));
+        $this->assertInternalType('numeric', $invoiceIncrementId);
 
         $this->assertTrue($this->service->cancelInvoice($invoiceIncrementId));
     }
@@ -107,9 +96,8 @@ class InvoiceServiceTest extends AbstractServiceTest
             $qtys
         );
 
-        $this->assertTrue(is_numeric($invoiceIncrementId));
+        $this->assertInternalType('numeric', $invoiceIncrementId);
 
         $this->assertTrue($this->service->captureInvoice($invoiceIncrementId));
     }
-
 }

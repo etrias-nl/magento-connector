@@ -15,16 +15,9 @@ declare(strict_types=1);
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
 use Etrias\MagentoConnector\Services\CreditMemoService;
-use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\OrderService;
-use Etrias\MagentoConnector\SoapTypes\ApiEntity;
-use Etrias\MagentoConnector\SoapTypes\ExistsFaltureEntity;
-use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
-use Etrias\MagentoConnector\SoapTypes\SalesOrderListEntity;
-use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 /**
  * @coversNothing
@@ -58,7 +51,7 @@ class CreditMemoServiceTest extends AbstractServiceTest
     {
         $creditMemo = $this->getRandomCreditMemo();
 
-        $result = $this->service->addComment($creditMemo->getIncrementId(), 'testcomment'. rand(0,9999));
+        $result = $this->service->addComment($creditMemo->getIncrementId(), 'testcomment'.random_int(0, 9999));
         $this->assertTrue($result);
     }
 
@@ -70,7 +63,6 @@ class CreditMemoServiceTest extends AbstractServiceTest
         $this->assertInstanceOf(SalesOrderCreditmemoEntity::class, $result);
     }
 
-
     public function testCreateAndCancelCreditMemo()
     {
         $order = $this->getRandomOrder();
@@ -79,9 +71,8 @@ class CreditMemoServiceTest extends AbstractServiceTest
             new SalesOrderCreditmemoData()
             );
 
-        $this->assertTrue(is_numeric($creditMemoIncrementId));
+        $this->assertInternalType('numeric', $creditMemoIncrementId);
 
         $this->assertTrue($this->service->cancelCreditMemo($creditMemoIncrementId));
     }
-
 }

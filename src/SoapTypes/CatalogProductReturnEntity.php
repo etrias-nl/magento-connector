@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Etrias\MagentoConnector\SoapTypes;
 
-use Etrias\MagentoConnector\Exceptions\AttributeNotExistsException;
-
 class CatalogProductReturnEntity
 {
     /**
@@ -873,26 +871,9 @@ class CatalogProductReturnEntity
         return $this;
     }
 
-
-    /**
-     * @param string $key
-     * @return AssociativeEntity|null
-     */
-    protected function getAdditionalAttributeByKey(string $key)
-    {
-        $additionalAttributes = array_filter($this->additional_attributes, function(AssociativeEntity $entity) use ($key) {
-            return $entity->getKey() === $key;
-        });
-
-        if (!empty($additionalAttributes)) {
-            return reset($additionalAttributes);
-        }
-
-        return null;
-    }
-
     /**
      * @param string $attribute_code
+     *
      * @return bool
      */
     public function hasAttribute(string $attribute_code)
@@ -903,14 +884,15 @@ class CatalogProductReturnEntity
 
         $additionalAttribute = $this->getAdditionalAttributeByKey($attribute_code);
 
-        if (!empty($additionalAttribute))
+        if (!empty($additionalAttribute)) {
             return false;
-
+        }
         return true;
     }
 
     /**
      * @param string $attribute_code
+     *
      * @return mixed
      */
     public function getAttribute(string $attribute_code)
@@ -946,5 +928,23 @@ class CatalogProductReturnEntity
         $this->enable_googlecheckout = $enable_googlecheckout;
 
         return $this;
+    }
+
+    /**
+     * @param string $key
+     *
+     * @return AssociativeEntity|null
+     */
+    protected function getAdditionalAttributeByKey(string $key)
+    {
+        $additionalAttributes = array_filter($this->additional_attributes, function (AssociativeEntity $entity) use ($key) {
+            return $entity->getKey() === $key;
+        });
+
+        if (!empty($additionalAttributes)) {
+            return reset($additionalAttributes);
+        }
+
+        return null;
     }
 }
