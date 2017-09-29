@@ -14,16 +14,7 @@ declare(strict_types=1);
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
-use Etrias\MagentoConnector\Exceptions\StoreViewNotFoundException;
 use Etrias\MagentoConnector\Services\CatalogInventoryService;
-use Etrias\MagentoConnector\Services\CatalogService;
-use Etrias\MagentoConnector\SoapTypes\CatalogAssignedProduct;
-use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogAttributeOptionEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityNoChildren;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryInfo;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemUpdateEntity;
 
@@ -64,5 +55,4 @@ class CatalogInventoryServiceTest extends AbstractServiceTest
             )
         );
     }
-
 }

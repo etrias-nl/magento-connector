@@ -15,11 +15,6 @@ declare(strict_types=1);
 namespace Etrias\MagentoConnector\Services;
 
 use Etrias\MagentoConnector\Adapter\AdapterInterface as MagentoAdapterInterface;
-use Etrias\MagentoConnector\Exceptions\ProductNotAssignedException;
-use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogAttributeOptionEntity;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryEntityCreate;
-use Etrias\MagentoConnector\SoapTypes\CatalogCategoryTree;
 use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogInventoryStockItemUpdateEntity;
 
@@ -47,6 +42,7 @@ class CatalogInventoryService
 
     /**
      * @param array $productIds
+     *
      * @return CatalogInventoryStockItemEntity[]
      */
     public function getStockDataByProductId(array $productIds)
@@ -63,8 +59,9 @@ class CatalogInventoryService
     }
 
     /**
-     * @param int $productId
+     * @param int                                   $productId
      * @param CatalogInventoryStockItemUpdateEntity $data
+     *
      * @return bool
      */
     public function updateStockDataByProductId(int $productId, CatalogInventoryStockItemUpdateEntity $data)

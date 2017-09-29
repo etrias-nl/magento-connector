@@ -274,15 +274,14 @@ class ProductServiceTest extends AbstractServiceTest
                     ->setAdditionalAttributes(
                         (new CatalogProductAdditionalAttributesEntity())
                             ->setSingleData([
-                                new AssociativeEntity('sku', '971')
+                                new AssociativeEntity('sku', '971'),
                             ])
                     )
             )
         );
 
         $product = $this->service->getProductInfoById(2822);
-        $this->assertEquals('971', $product->getSku());
-
+        $this->assertSame('971', $product->getSku());
 
         $this->assertTrue(
             $this->service->updateProductById(
@@ -291,13 +290,13 @@ class ProductServiceTest extends AbstractServiceTest
                     ->setAdditionalAttributes(
                         (new CatalogProductAdditionalAttributesEntity())
                             ->setSingleData([
-                                new AssociativeEntity('sku', $sku)
+                                new AssociativeEntity('sku', $sku),
                             ])
                     )
             )
         );
 
         $product = $this->service->getProductInfoById(2822);
-        $this->assertEquals($sku, $product->getSku());
+        $this->assertSame($sku, $product->getSku());
     }
 }

@@ -14,14 +14,9 @@ declare(strict_types=1);
 
 namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
-use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\OrderService;
-use Etrias\MagentoConnector\SoapTypes\ApiEntity;
-use Etrias\MagentoConnector\SoapTypes\ExistsFaltureEntity;
-use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderListEntity;
-use Etrias\MagentoConnector\SoapTypes\StoreEntity;
 
 /**
  * @coversNothing
@@ -54,7 +49,7 @@ class OrderServiceTest extends AbstractServiceTest
     {
         $order = $this->getRandomOrder();
 
-        $result = $this->service->addComment($order->getIncrementId(), $order->getStatus(), 'testcomment'. rand(0,9999));
+        $result = $this->service->addComment($order->getIncrementId(), $order->getStatus(), 'testcomment'.random_int(0, 9999));
         $this->assertTrue($result);
     }
 
