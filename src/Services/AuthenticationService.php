@@ -133,12 +133,13 @@ class AuthenticationService
     }
 
     /**
+     * @param bool $force
      * @return string SessionId
      */
-    public function login(): string
+    public function login(bool $force = false): string
     {
         $cacheItem = $this->cacheAdapter->getItem($this->getCacheKey());
-        if ($cacheItem->isHit()) {
+        if ($cacheItem->isHit() && !$force) {
             return $cacheItem->get();
         }
 
