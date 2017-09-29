@@ -125,7 +125,7 @@ class SoapV2Adapter implements AdapterInterface
     {
         $request = new MultiArgumentRequest([$sessionId]);
 
-        return $this->processRequest(__FUNCTION__, $request);
+        return (bool) $this->processRequest(__FUNCTION__, $request);
     }
 
     public function login(string $username, string $password): string
@@ -175,7 +175,6 @@ class SoapV2Adapter implements AdapterInterface
     public function getCurrentStoreView(string $sessionId): int
     {
         $request = new MultiArgumentRequest([$sessionId]);
-
         return $this->processRequest('catalogCategoryCurrentStore', $request);
     }
 
