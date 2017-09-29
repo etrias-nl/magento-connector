@@ -2,8 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Etrias\MagentoConnector\Middleware;
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
 
+namespace Etrias\MagentoConnector\Middleware;
 
 use DOMDocument;
 use Etrias\MagentoConnector\Exceptions\NoSoapFaultException;
@@ -17,21 +26,20 @@ class ReLoginMiddleware extends Middleware
 {
     const FAULT_CODE_SESSION_EXPIRED = 5;
 
-    /** @var  AuthenticationService */
+    /** @var AuthenticationService */
     protected $authenticationService;
 
-    /**@var RequestInterface|null */
+    /** @var RequestInterface|null */
     private $lastRequest;
 
-    /** @var  callable */
+    /** @var callable */
     private $nextHandler;
 
-    /** @var  array */
+    /** @var array */
     private $options;
 
     /** @var bool */
     private $reLoginInProcess = false;
-
 
     public function setAuthenticationService(AuthenticationService $authenticationService)
     {
@@ -63,7 +71,7 @@ class ReLoginMiddleware extends Middleware
     /**
      * {@inheritdoc}
      */
-    public function afterResponse(ResponseInterface $response)
+    public function afterResponse(ResponseInterface $response): ResponseInterface
     {
         try {
             if ($this->getSoapFaultCode($response) === static::FAULT_CODE_SESSION_EXPIRED) {
@@ -85,12 +93,14 @@ class ReLoginMiddleware extends Middleware
 
     /**
      * @param ResponseInterface $response
-     * @return int
+     *
      * @throws NoSoapFaultException
+     *
+     * @return int
      */
     private function getSoapFaultCode(ResponseInterface $response): int
     {
-        $content = (string)$response->getBody();
+        $content = (string) $response->getBody();
         if ($response->getBody()->isSeekable()) {
             $response->getBody()->seek(0);
         }
@@ -99,7 +109,7 @@ class ReLoginMiddleware extends Middleware
         $xml->registerXPathNamespace('SOAP-ENV', 'http://schemas.xmlsoap.org/soap/envelope/');
         $faultCodes = $xml->xpath('//SOAP-ENV:Body/SOAP-ENV:Fault[1]/faultcode');
 
-        if (sizeof($faultCodes) == 0) {
+        if (count($faultCodes) === 0) {
             throw new NoSoapFaultException();
         }
 
@@ -108,12 +118,13 @@ class ReLoginMiddleware extends Middleware
 
     /**
      * @param RequestInterface $request
-     * @param string $sessionId
+     * @param string           $sessionId
+     *
      * @return RequestInterface
      */
-    private function replaceSessionIdInRequest(RequestInterface $request, string $sessionId)
+    private function replaceSessionIdInRequest(RequestInterface $request, string $sessionId): RequestInterface
     {
-        $content = (string)$request->getBody();
+        $content = (string) $request->getBody();
         if ($request->getBody()->isSeekable()) {
             $request->getBody()->seek(0);
         }
