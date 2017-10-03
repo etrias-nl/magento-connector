@@ -97,6 +97,32 @@ class CustomerAddressEntityCreate
     protected $is_default_shipping = null;
 
     /**
+     * CustomerAddressEntityCreate constructor.
+     * @param string $firstName
+     * @param string $lastName
+     * @param string[] $streetAddresses
+     * @param string $city
+     * @param string $postcode
+     * @param string $countryId
+     */
+    public function __construct(
+        string $firstName,
+        string $lastName,
+        array $streetAddresses,
+        string $city,
+        string $postcode,
+        string $countryId
+    )
+    {
+        $this->firstname = $firstName;
+        $this->lastname = $lastName;
+        $this->street = $streetAddresses;
+        $this->city = $city;
+        $this->postcode = $postcode;
+        $this->country_id = $countryId;
+    }
+
+    /**
      * @return string
      */
     public function getCity()

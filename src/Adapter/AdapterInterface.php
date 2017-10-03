@@ -41,6 +41,11 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
+use Etrias\MagentoConnector\SoapTypes\CustomerAddressEntityCreate;
+use Etrias\MagentoConnector\SoapTypes\CustomerAddressEntityItem;
+use Etrias\MagentoConnector\SoapTypes\CustomerCustomerEntity;
+use Etrias\MagentoConnector\SoapTypes\CustomerCustomerEntityToCreate;
+use Etrias\MagentoConnector\SoapTypes\CustomerGroupEntity;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
@@ -986,5 +991,119 @@ interface AdapterInterface
         int $quoteId,
         string $shippingMethodCode,
         string $storeId = null
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @return CustomerGroupEntity[]
+     */
+    public function getCustomerGroups(
+        string $sessionId
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param CustomerCustomerEntityToCreate $data
+     * @return int
+     */
+    public function createCustomer(
+        string $sessionId,
+        CustomerCustomerEntityToCreate $data
+    ): int;
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @return bool
+     */
+    public function deleteCustomer(
+        string $sessionId,
+        int $customerId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @return CustomerCustomerEntity
+     */
+    public function getCustomerInfo(
+        string $sessionId,
+        int $customerId
+    ): CustomerCustomerEntity;
+
+    /**
+     * @param string $sessionId
+     * @param array|null $filters
+     * @return CustomerCustomerEntity[]
+     */
+    public function getCustomers(
+        string $sessionId,
+        array $filters = null
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @param CustomerCustomerEntityToCreate $data
+     * @return bool
+     */
+    public function updateCustomer(
+        string $sessionId,
+        int $customerId,
+        CustomerCustomerEntityToCreate $data
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @param CustomerAddressEntityCreate $data
+     * @return int
+     */
+    public function createCustomerAddress(
+        string $sessionId,
+        int $customerId,
+        CustomerAddressEntityCreate $data
+    ): int;
+
+    /**
+     * @param string $sessionId
+     * @param int $addressId
+     * @return bool
+     */
+    public function deleteCustomerAddress(
+        string $sessionId,
+        int $addressId
+    ): bool;
+
+    /**
+     * @param string $sessionId
+     * @param int $addressId
+     * @return CustomerAddressEntityItem
+     */
+    public function getCustomerAddressInfo(
+        string $sessionId,
+        int $addressId
+    ): CustomerAddressEntityItem;
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @return CustomerAddressEntityItem[]
+     */
+    public function getCustomerAddresses(
+        string $sessionId,
+        int $customerId
+    ): array;
+
+    /**
+     * @param string $sessionId
+     * @param int $addressId
+     * @param CustomerAddressEntityCreate $data
+     * @return bool
+     */
+    public function updateCustomerAddress(
+        string $sessionId,
+        int $addressId,
+        CustomerAddressEntityCreate $data
     ): bool;
 }

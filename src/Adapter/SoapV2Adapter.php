@@ -39,6 +39,11 @@ use Etrias\MagentoConnector\SoapTypes\CatalogProductImageEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductRequestAttributes;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductReturnEntity;
 use Etrias\MagentoConnector\SoapTypes\ComplexFilter;
+use Etrias\MagentoConnector\SoapTypes\CustomerAddressEntityCreate;
+use Etrias\MagentoConnector\SoapTypes\CustomerAddressEntityItem;
+use Etrias\MagentoConnector\SoapTypes\CustomerCustomerEntity;
+use Etrias\MagentoConnector\SoapTypes\CustomerCustomerEntityToCreate;
+use Etrias\MagentoConnector\SoapTypes\CustomerGroupEntity;
 use Etrias\MagentoConnector\SoapTypes\Filters;
 use Etrias\MagentoConnector\SoapTypes\MagentoInfoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoData;
@@ -1196,4 +1201,164 @@ class SoapV2Adapter implements AdapterInterface
 
         return (bool) $this->processRequest('shoppingCartShippingMethod', $request);
     }
+
+    /**
+     * @param string $sessionId
+     * @return CustomerGroupEntity[]
+     */
+    public function getCustomerGroups(
+        string $sessionId
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId]);
+
+        return $this->processRequest('customerGroupList', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param CustomerCustomerEntityToCreate $data
+     * @return int
+     */
+    public function createCustomer(
+        string $sessionId,
+        CustomerCustomerEntityToCreate $data
+    ): int {
+        $request = new MultiArgumentRequest([$sessionId, $data]);
+
+        return (int) $this->processRequest('customerCustomerCreate', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @return bool
+     */
+    public function deleteCustomer(
+        string $sessionId,
+        int $customerId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $customerId]);
+
+        return (bool) $this->processRequest('customerCustomerDelete', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @return CustomerCustomerEntity
+     */
+    public function getCustomerInfo(
+        string $sessionId,
+        int $customerId
+    ): CustomerCustomerEntity {
+        $request = new MultiArgumentRequest([$sessionId, $customerId]);
+
+        return $this->processRequest('customerCustomerInfo', $request);
+
+    }
+
+    /**
+     * @param string $sessionId
+     * @param array|null $filters
+     * @return CustomerCustomerEntity[]
+     */
+    public function getCustomers(
+        string $sessionId,
+        array $filters = null
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $filters]);
+
+        return $this->processRequest('customerCustomerList', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @param CustomerCustomerEntityToCreate $data
+     * @return bool
+     */
+    public function updateCustomer(
+        string $sessionId,
+        int $customerId,
+        CustomerCustomerEntityToCreate $data
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $customerId, $data]);
+
+        return (bool) $this->processRequest('customerCustomerUpdate', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @param CustomerAddressEntityCreate $data
+     * @return int
+     */
+    public function createCustomerAddress(
+        string $sessionId,
+        int $customerId,
+        CustomerAddressEntityCreate $data
+    ): int {
+        $request = new MultiArgumentRequest([$sessionId, $customerId, $data]);
+
+        return (int) $this->processRequest('customerAddressCreate', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $addressId
+     * @return bool
+     */
+    public function deleteCustomerAddress(
+        string $sessionId,
+        int $addressId
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $addressId]);
+
+        return (bool) $this->processRequest('customerAddressDelete', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $addressId
+     * @return CustomerAddressEntityItem
+     */
+    public function getCustomerAddressInfo(
+        string $sessionId,
+        int $addressId
+    ): CustomerAddressEntityItem {
+        $request = new MultiArgumentRequest([$sessionId, $addressId]);
+
+        return $this->processRequest('customerAddressDelete', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $customerId
+     * @return CustomerAddressEntityItem[]
+     */
+    public function getCustomerAddresses(
+        string $sessionId,
+        int $customerId
+    ): array {
+        $request = new MultiArgumentRequest([$sessionId, $customerId]);
+
+        return $this->processRequest('customerAddressList', $request);
+    }
+
+    /**
+     * @param string $sessionId
+     * @param int $addressId
+     * @param CustomerAddressEntityCreate $data
+     * @return bool
+     */
+    public function updateCustomerAddress(
+        string $sessionId,
+        int $addressId,
+        CustomerAddressEntityCreate $data
+    ): bool {
+        $request = new MultiArgumentRequest([$sessionId, $addressId, $data]);
+
+        return $this->processRequest('customerAddressUpdate', $request);
+    }
+
 }
