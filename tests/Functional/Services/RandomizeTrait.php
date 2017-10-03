@@ -16,6 +16,7 @@ namespace Tests\Etrias\MagentoConnector\Functional\Services;
 
 use DateTime;
 use Etrias\MagentoConnector\Services\CreditMemoService;
+use Etrias\MagentoConnector\Services\CustomerService;
 use Etrias\MagentoConnector\Services\GeneralService;
 use Etrias\MagentoConnector\Services\InvoiceService;
 use Etrias\MagentoConnector\Services\OrderService;
@@ -24,6 +25,7 @@ use Etrias\MagentoConnector\Services\ProductService;
 use Etrias\MagentoConnector\SoapTypes\CatalogAttributeEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductAttributeSetEntity;
 use Etrias\MagentoConnector\SoapTypes\CatalogProductCreateEntity;
+use Etrias\MagentoConnector\SoapTypes\CustomerCustomerEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderCreditmemoEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderInvoiceEntity;
 use Etrias\MagentoConnector\SoapTypes\SalesOrderListEntity;
@@ -49,6 +51,9 @@ trait RandomizeTrait
 
     /** @var InvoiceService */
     private $invoiceService;
+
+    /** @var  CustomerService */
+    private $customerService;
 
     /**
      * @var Faker\Generator
@@ -148,6 +153,16 @@ trait RandomizeTrait
         $invoices = $this->invoiceService->getInvoices();
 
         return $invoices[array_rand($invoices, 1)];
+    }
+
+    /**
+     * @return CustomerCustomerEntity
+     */
+    private function getRandomCustomer()
+    {
+        $customers = $this->customerService->getCustomers();
+
+        return $customers[array_rand($customers, 1)];
     }
 
     /**

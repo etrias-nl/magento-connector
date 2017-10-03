@@ -56,6 +56,17 @@ class CustomerCustomerEntityToCreate
      */
     protected $group_id = null;
 
+    public function __construct(
+        string $firstName,
+        string $lastName,
+        string $email
+    )
+    {
+        $this->firstname = $firstName;
+        $this->lastname = $lastName;
+        $this->email = $email;
+    }
+
     /**
      * @return int
      */
