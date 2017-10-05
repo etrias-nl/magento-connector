@@ -167,7 +167,7 @@ class CatalogProductCreateEntity
     protected $configurable_attributes = [];
 
     /**
-     * @var array
+     * @var AssociativeEntity[]
      */
     protected $price_changes = null;
 
@@ -772,7 +772,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @return array
+     * @return AssociativeEntity[]
      */
     public function getPriceChanges()
     {
@@ -780,7 +780,7 @@ class CatalogProductCreateEntity
     }
 
     /**
-     * @param array $price_changes
+     * @param AssociativeEntity[] $price_changes
      *
      * @return $this
      */
