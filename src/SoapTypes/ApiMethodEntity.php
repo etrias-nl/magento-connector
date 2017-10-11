@@ -32,7 +32,7 @@ class ApiMethodEntity
     protected $name = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $aliases = null;
 

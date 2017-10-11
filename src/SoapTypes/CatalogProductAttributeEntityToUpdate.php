@@ -37,7 +37,7 @@ class CatalogProductAttributeEntityToUpdate
     protected $is_required = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $apply_to = null;
 

@@ -72,7 +72,7 @@ class CustomerAddressEntityCreate
     protected $region = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $street = null;
 

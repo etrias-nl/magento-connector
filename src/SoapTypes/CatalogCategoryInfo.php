@@ -117,7 +117,7 @@ class CatalogCategoryInfo
     protected $is_anchor = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $available_sort_by = null;
 

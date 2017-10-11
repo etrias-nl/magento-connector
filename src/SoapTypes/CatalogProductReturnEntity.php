@@ -37,12 +37,12 @@ class CatalogProductReturnEntity
     protected $type = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $categories = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $websites = null;
 
@@ -102,14 +102,14 @@ class CatalogProductReturnEntity
     protected $visibility = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $category_ids = [];
+    protected $category_ids = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $website_ids = [];
+    protected $website_ids = null;
 
     /**
      * @var string

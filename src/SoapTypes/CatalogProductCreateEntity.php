@@ -17,14 +17,14 @@ namespace Etrias\MagentoConnector\SoapTypes;
 class CatalogProductCreateEntity
 {
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $categories = [];
+    protected $categories = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $websites = [];
+    protected $websites = null;
 
     /**
      * @var string
@@ -67,14 +67,14 @@ class CatalogProductCreateEntity
     protected $visibility = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $category_ids = [];
+    protected $category_ids = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $website_ids = [];
+    protected $website_ids = null;
 
     /**
      * @var string
@@ -157,24 +157,24 @@ class CatalogProductCreateEntity
     protected $stock_data = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $associated_skus = [];
+    protected $associated_skus = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $configurable_attributes = [];
+    protected $configurable_attributes = null;
 
     /**
-     * @var AssociativeEntity[]
+     * @var AssociativeEntity[]|null
      */
     protected $price_changes = null;
 
     /**
      * @return string[]
      */
-    public function getCategories(): array
+    public function getCategories()
     {
         return $this->categories;
     }
@@ -194,7 +194,7 @@ class CatalogProductCreateEntity
     /**
      * @return string[]
      */
-    public function getWebsites(): array
+    public function getWebsites()
     {
         return $this->websites;
     }
@@ -376,7 +376,7 @@ class CatalogProductCreateEntity
      */
     public function getCategoryIds()
     {
-        return $this->category_ids;
+        return (array)$this->category_ids;
     }
 
     /**
@@ -396,7 +396,7 @@ class CatalogProductCreateEntity
      */
     public function getWebsiteIds()
     {
-        return $this->website_ids;
+        return (array)$this->website_ids;
     }
 
     /**
@@ -736,7 +736,7 @@ class CatalogProductCreateEntity
      */
     public function getAssociatedSkus()
     {
-        return $this->associated_skus;
+        return (array)$this->associated_skus;
     }
 
     /**
@@ -756,7 +756,7 @@ class CatalogProductCreateEntity
      */
     public function getConfigurableAttributes()
     {
-        return $this->configurable_attributes;
+        return (array)$this->configurable_attributes;
     }
 
     /**

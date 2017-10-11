@@ -42,12 +42,12 @@ class CatalogProductEntity
     protected $type = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $category_ids = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $website_ids = null;
 
@@ -182,7 +182,7 @@ class CatalogProductEntity
     }
 
     /**
-     * @return string[]
+     * @return string[]|null
      */
     public function getCategoryIds()
     {
