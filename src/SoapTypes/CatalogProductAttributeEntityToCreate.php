@@ -56,7 +56,7 @@ class CatalogProductAttributeEntityToCreate
     protected $is_required = false;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $apply_to = self::APPLY_TO_ALL;
 
@@ -96,7 +96,7 @@ class CatalogProductAttributeEntityToCreate
     protected $used_in_product_listing = false;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $additional_fields = null;
 

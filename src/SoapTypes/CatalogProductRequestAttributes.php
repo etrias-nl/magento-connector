@@ -17,17 +17,17 @@ namespace Etrias\MagentoConnector\SoapTypes;
 class CatalogProductRequestAttributes
 {
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $attributes = [];
+    protected $attributes = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
-    protected $additional_attributes = [];
+    protected $additional_attributes = null;
 
     /**
-     * @return string[]
+     * @return string[]|null
      */
     public function getAttributes()
     {
@@ -47,7 +47,7 @@ class CatalogProductRequestAttributes
     }
 
     /**
-     * @return string[]
+     * @return string[]|null
      */
     public function getAdditionalAttributes()
     {

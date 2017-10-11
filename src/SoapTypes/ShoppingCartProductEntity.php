@@ -47,7 +47,7 @@ class ShoppingCartProductEntity
     protected $bundle_option_qty = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $links = null;
 

@@ -32,7 +32,7 @@ class CatalogProductAttributeMediaCreateEntity
     protected $position = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $types = null;
 

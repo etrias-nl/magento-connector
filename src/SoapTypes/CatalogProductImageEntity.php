@@ -42,7 +42,7 @@ class CatalogProductImageEntity
     protected $url = null;
 
     /**
-     * @var string[]
+     * @var string[]|null
      */
     protected $types = null;
 
