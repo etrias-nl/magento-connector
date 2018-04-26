@@ -96,7 +96,7 @@ class SoapV2Adapter implements AdapterInterface
                 $exceptionName = $this->exceptionMap->getExceptionClassName($previous->faultcode, $module);
 
                 /** @var MagentoSoapException $throwable */
-                $throwable = new $exceptionName($previous->faultstring, $previous->faultcode + 0, $exception);
+                $throwable = new $exceptionName($previous->faultstring, (int)$previous->faultcode + 0, $exception);
                 $throwable->setRequest($request);
 
                 throw $throwable;
